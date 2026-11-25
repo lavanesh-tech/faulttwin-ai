@@ -1,6 +1,7 @@
 # Phase 1 Implementation Report — C++20 Engineering Foundation
 
-Date: 2026-11-25 · Prepared for independent technical review · Status: **In review, not complete.**
+Date: 2026-11-25 (updated after the owner's macOS run and first commit) · Prepared for independent
+technical review · Status: **In review, not complete.**
 
 Terminology: *implemented* = code exists; *tested* = automated tests ran and passed;
 *measured* = a metric was recorded under a protocol; *independently verified* = someone other than
@@ -150,10 +151,19 @@ find src -name '*.cpp' | xargs clang-tidy -p build/debug-clang --quiet --warning
 ```
 
 ## 14. Test results
-| Compiler | debug | release | asan-ubsan | tsan |
-|---|---|---|---|---|
-| GCC 13.3.0 | 57/57 pass | 57/57 pass | 57/57 pass | 57/57 pass |
-| Clang 18.1.3 | 57/57 pass | 57/57 pass | 57/57 pass | 57/57 pass |
+| Platform / compiler | debug | release | asan-ubsan | tsan | Run by |
+|---|---|---|---|---|---|
+| Linux x86_64 / GCC 13.3.0 | 57/57 pass | 57/57 pass | 57/57 pass | 57/57 pass | assistant (cloud container) |
+| Linux x86_64 / Clang 18.1.3 | 57/57 pass | 57/57 pass | 57/57 pass | 57/57 pass | assistant (cloud container) |
+| macOS arm64 / AppleClang 21.0.0 | 57/57 pass | NOT RUN | NOT RUN | NOT RUN | owner (own Mac) |
+
+macOS build warnings seen by the owner, both outside first-party code:
+- `-Wcharacter-conversion` inside GoogleTest's `gtest-printers.h` (`char8_t` to `char32_t`). This is
+  third-party code, so our `-Werror` does not apply. Left as is; revisit when GoogleTest is upgraded.
+- `ld: warning: ignoring duplicate libraries: libfaulttwin_telemetry.a`. The test executable listed
+  `faulttwin::telemetry` and also got it transitively through `faulttwin_cli_lib`. **Fixed** in
+  `tests/CMakeLists.txt` by linking only `faulttwin_cli_lib`. After the fix all eight Linux
+  configurations were re-run and passed 57/57. The fix has **not** yet been re-run on macOS.
 
 The 57 CTest tests are 52 GoogleTest cases in 8 suites (NodeId 7, NodeRole 4, Validation 12,
 Freshness 2, PercentageCheck 10 parameterized boundary cases, Synthetic 8, CliOptions 5,
@@ -191,41 +201,47 @@ Not applicable in Phase 1.
 ## 18. Raw evidence artifact locations
 `results/phase-01/gcc/` and `results/phase-01/clang/`: `environment.txt` and one full log per preset
 (configure, build and test output). Produced by the assistant in the cloud container described in
-§12; not independently reproduced.
+§12 (latest run is after the link fix). `results/phase-01/macos/appleclang-debug.log`: the owner's
+own macOS run, transcribed from their terminal output (per-test lines abbreviated). Nothing is
+independently reproduced by a third party.
 
 ## 19. Updated evidence ledger
 `docs/resume/evidence-ledger.md`: every metric row is `PLANNED`. A Phase 1 functional table records
-validation, determinism and sanitizer cleanliness as `TESTED`, and the CI run and macOS build as
-`NOT RUN`. `docs/evaluation/verified-results.md` intentionally contains no results.
+validation, determinism and sanitizer cleanliness as `TESTED`, the macOS debug build as `TESTED`
+(owner-run), and the CI run as `NOT RUN`. `docs/evaluation/verified-results.md` intentionally contains no results.
 
 ## 20. Git status and commit SHA
-- The assistant ran **no git commands** in your repository: no commit, no push, no branch and no
-  config changes. The repository is still empty on GitHub.
-- The files were written into your clone at `~/Desktop/faulttwin-ai` as untracked files.
-- Commit SHA: not available (nothing committed). The recorded runs show
-  `git_commit: not a git repository` because they ran outside your clone.
+- **Commit `3223488`** (root commit on `main`, pushed by the owner): 75 files, authored by the owner
+  only. The assistant ran no git commands: no commit, push, branch or config change.
+- Not in that commit: `.github/workflows/ci.yml`. The assistant's file tool cannot write into
+  `.github/`, so the file was placed at the repository root as `ci.yml` for the owner to move.
+- Uncommitted working-tree changes after `3223488` (for the owner to review and commit):
+  `ci.yml` (to be moved to `.github/workflows/ci.yml`), `tests/CMakeLists.txt` (duplicate-link fix),
+  `results/phase-01/macos/appleclang-debug.log` (new), refreshed `results/phase-01/{gcc,clang}/` logs,
+  and documentation updates (`docs/phase-reports/phase-01.md`, `docs/PROGRESS.md`,
+  `docs/architecture/acceptance-criteria.md`, `docs/resume/evidence-ledger.md`,
+  `docs/evaluation/limitations.md`, `results/phase-01/README.md`).
 - No file names Claude, Anthropic or any AI as author or co-author. The README's "Development process
-  and AI assistance" paragraph is a draft disclosure for you to edit.
+  and AI assistance" paragraph is a draft disclosure for the owner to edit.
 
-Suggested commit message (for you to review and commit yourself):
+Suggested message for the follow-up commit (for the owner to review and commit):
 ```
-feat: C++20 foundation with telemetry validation, synthetic CLI and CI
+ci: add GitHub Actions workflow; fix duplicate test link; record macOS run
 
-- CMake presets: debug, release, asan-ubsan, tsan; strict per-target warnings
-- Telemetry value model with explicit validation (missing vs zero lag,
-  stale vs invalid, role-specific lag semantics)
-- faulttwin-synth CLI with deterministic generator and ground-truth self-check
-- GoogleTest pinned to v1.17.0 commit; 57 tests
-- GitHub Actions: gcc/clang x 4 presets, clang-format, clang-tidy
-- Phase 0 architecture docs, ADRs, metric definitions, empty evidence ledger
+- Add .github/workflows/ci.yml (gcc/clang x 4 presets, clang-format, clang-tidy)
+- Link unit tests only against faulttwin_cli_lib (telemetry comes transitively),
+  removing Apple ld "ignoring duplicate libraries" warning
+- Record owner's macOS AppleClang 21 debug run (57/57) as Phase 1 evidence
+- Update Phase 1 report, progress tracker, acceptance criteria and ledger
 ```
 
 ## 21. Known bugs and limitations
 - The GitHub Actions workflow has **never run**. Likely first-run risks: package names on the runner
   image and the `vm.mmap_rnd_bits` TSan workaround.
-- The project has **not been built on macOS**. Possible portability risks with Apple Clang/libc++:
-  `std::to_chars` for `double` with a precision argument and the C++20 calendar types need a recent
-  Xcode.
+- macOS was built and tested only in the debug preset with AppleClang 21. Release and sanitizer
+  presets on macOS have not been run, and the duplicate-link fix has not been re-run there. Older
+  Xcode versions may lack `std::to_chars` for `double` with a precision argument.
+- GoogleTest v1.17.0 emits a `-Wcharacter-conversion` warning under AppleClang 21 (third-party).
 - `misc-include-cleaner` is disabled. It flagged about 60 missing direct includes, mostly
   "include what you use" style; a few were real and were fixed.
 - Synthetic values are uniform within fixed ranges and do not model real load. A defect can change
@@ -239,7 +255,7 @@ feat: C++20 foundation with telemetry validation, synthetic CLI and CI
 | Requirement | Status |
 |---|---|
 | Linux GitHub Actions workflow — *runs green* | Written, NOT RUN |
-| Owner-machine build (macOS) | NOT RUN |
+| Owner-machine build (macOS) | Debug preset 57/57 (owner-run); other presets NOT RUN |
 | Coverage measurement (target ≥ 85% is a later-phase target) | NOT RUN |
 | Licence | Owner decision pending |
 
@@ -316,10 +332,10 @@ From `docs/architecture/acceptance-criteria.md`:
 | 1.11 | clang-format and clang-tidy clean | ✅ |
 | 1.12 | CI workflow exists | ✅ |
 | 1.13 | CI workflow green on GitHub | ⏳ NOT RUN |
-| 1.14 | Builds on owner's macOS | ⏳ NOT RUN |
+| 1.14 | Builds on owner's macOS | ✅ debug preset, 57/57, AppleClang 21 (owner-run) |
 | 1.15 | Docs, ADRs, metric definitions, plan, empty ledger | ✅ |
 | 1.16 | No AI authorship; no assistant commits | ✅ |
 | 1.17 | Owner approval after independent review | ⏳ |
 
-**Phase 1 is not complete.** Criteria 1.13, 1.14 and 1.17 need your push, your local build, and
-your review.
+**Phase 1 is not complete.** 1.13 needs `ci.yml` committed and a green CI run; 1.17 needs your
+review and approval.

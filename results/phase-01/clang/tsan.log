@@ -31,23 +31,23 @@ Preset CMake variables:
 [1/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_role.cpp.o
 [2/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_id.cpp.o
 [3/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/synthetic.cpp.o
-[4/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
-[5/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
-[6/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/options.cpp.o
-[7/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
+[4/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/options.cpp.o
+[5/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
+[6/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
+[7/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
 [8/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/report.cpp.o
 [9/21] Linking CXX static library src/cli/libfaulttwin_cli_lib.a
 [10/21] Linking CXX executable src/cli/faulttwin-synth
 [11/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-[12/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_id_test.cpp.o
-[13/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_role_test.cpp.o
+[12/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_role_test.cpp.o
+[13/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_id_test.cpp.o
 [14/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/cli_options_test.cpp.o
 [15/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/cli_report_test.cpp.o
 [16/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 [17/21] Linking CXX static library lib/libgtest.a
 [18/21] Linking CXX static library lib/libgtest_main.a
-[19/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/synthetic_test.cpp.o
-[20/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/validation_test.cpp.o
+[19/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/validation_test.cpp.o
+[20/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/synthetic_test.cpp.o
 [21/21] Linking CXX executable tests/faulttwin_unit_tests
 + env TSAN_OPTIONS=halt_on_error=1:second_deadlock_stack=1 ctest --test-dir /home/user/faulttwin-ai/build/tsan-clang --output-on-failure --no-tests=error
 Internal ctest changing into directory: /home/user/faulttwin-ai/build/tsan-clang
@@ -75,7 +75,7 @@ Test project /home/user/faulttwin-ai/build/tsan-clang
       Start 11: NodeRoleTest.ParseIsExactAndCaseSensitive
 11/57 Test #11: NodeRoleTest.ParseIsExactAndCaseSensitive ..........................................................   Passed    0.02 sec
       Start 12: ValidationTest.EachPercentageFieldIsReportedSeparately
-12/57 Test #12: ValidationTest.EachPercentageFieldIsReportedSeparately .............................................   Passed    0.03 sec
+12/57 Test #12: ValidationTest.EachPercentageFieldIsReportedSeparately .............................................   Passed    0.02 sec
       Start 13: ValidationTest.TimestampPolicy
 13/57 Test #13: ValidationTest.TimestampPolicy .....................................................................   Passed    0.02 sec
       Start 14: ValidationTest.FutureSkewIsConfigurable
@@ -83,7 +83,7 @@ Test project /home/user/faulttwin-ai/build/tsan-clang
       Start 15: ValidationTest.MissingLagOnReplicaIsNotZeroLag
 15/57 Test #15: ValidationTest.MissingLagOnReplicaIsNotZeroLag .....................................................   Passed    0.02 sec
       Start 16: ValidationTest.ZeroLagOnReplicaIsAMeasurement
-16/57 Test #16: ValidationTest.ZeroLagOnReplicaIsAMeasurement ......................................................   Passed    0.03 sec
+16/57 Test #16: ValidationTest.ZeroLagOnReplicaIsAMeasurement ......................................................   Passed    0.02 sec
       Start 17: ValidationTest.ReplicationLagRules
 17/57 Test #17: ValidationTest.ReplicationLagRules .................................................................   Passed    0.03 sec
       Start 18: ValidationTest.InvalidRoleStillChecksLagNumerically
@@ -101,27 +101,27 @@ Test project /home/user/faulttwin-ai/build/tsan-clang
       Start 24: FreshnessTest.StaleIsAPropertyOfValidData
 24/57 Test #24: FreshnessTest.StaleIsAPropertyOfValidData ..........................................................   Passed    0.02 sec
       Start 25: FreshnessTest.SlightlyFutureSampleIsFresh
-25/57 Test #25: FreshnessTest.SlightlyFutureSampleIsFresh ..........................................................   Passed    0.02 sec
+25/57 Test #25: FreshnessTest.SlightlyFutureSampleIsFresh ..........................................................   Passed    0.03 sec
       Start 26: SyntheticTest.ProducesNodeCountTimesSamples
 26/57 Test #26: SyntheticTest.ProducesNodeCountTimesSamples ........................................................   Passed    0.02 sec
       Start 27: SyntheticTest.SameSeedSameSequence
-27/57 Test #27: SyntheticTest.SameSeedSameSequence .................................................................   Passed    0.03 sec
+27/57 Test #27: SyntheticTest.SameSeedSameSequence .................................................................   Passed    0.02 sec
       Start 28: SyntheticTest.DifferentSeedDifferentSequence
 28/57 Test #28: SyntheticTest.DifferentSeedDifferentSequence .......................................................   Passed    0.02 sec
       Start 29: SyntheticTest.GoldenFirstSample
 29/57 Test #29: SyntheticTest.GoldenFirstSample ....................................................................   Passed    0.02 sec
       Start 30: SyntheticTest.CleanRunIsEntirelyValid
-30/57 Test #30: SyntheticTest.CleanRunIsEntirelyValid ..............................................................   Passed    0.05 sec
+30/57 Test #30: SyntheticTest.CleanRunIsEntirelyValid ..............................................................   Passed    0.04 sec
       Start 31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
 31/57 Test #31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue .......................................   Passed    0.07 sec
       Start 32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
 32/57 Test #32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag .........................................   Passed    0.03 sec
       Start 33: SyntheticTest.ReferenceNowIsLastTick
-33/57 Test #33: SyntheticTest.ReferenceNowIsLastTick ...............................................................   Passed    0.02 sec
+33/57 Test #33: SyntheticTest.ReferenceNowIsLastTick ...............................................................   Passed    0.03 sec
       Start 34: CliOptionsTest.DefaultsWithNoArguments
 34/57 Test #34: CliOptionsTest.DefaultsWithNoArguments .............................................................   Passed    0.02 sec
       Start 35: CliOptionsTest.ParsesEveryOption
-35/57 Test #35: CliOptionsTest.ParsesEveryOption ...................................................................   Passed    0.02 sec
+35/57 Test #35: CliOptionsTest.ParsesEveryOption ...................................................................   Passed    0.03 sec
       Start 36: CliOptionsTest.HelpWinsImmediately
 36/57 Test #36: CliOptionsTest.HelpWinsImmediately .................................................................   Passed    0.02 sec
       Start 37: CliOptionsTest.RejectsMalformedAndOutOfRangeValues
@@ -137,15 +137,15 @@ Test project /home/user/faulttwin-ai/build/tsan-clang
       Start 42: CliReportTest.SummaryCountsAndJsonLineShape
 42/57 Test #42: CliReportTest.SummaryCountsAndJsonLineShape ........................................................   Passed    0.02 sec
       Start 43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero
-43/57 Test #43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ...........................   Passed    0.03 sec
+43/57 Test #43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ...........................   Passed    0.02 sec
       Start 44: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero
-44/57 Test #44: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero ...........   Passed    0.02 sec
+44/57 Test #44: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero ...........   Passed    0.03 sec
       Start 45: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred
-45/57 Test #45: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred .....................   Passed    0.03 sec
+45/57 Test #45: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred .....................   Passed    0.02 sec
       Start 46: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty
-46/57 Test #46: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty .........................   Passed    0.03 sec
+46/57 Test #46: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty .........................   Passed    0.02 sec
       Start 47: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero
-47/57 Test #47: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero .........   Passed    0.03 sec
+47/57 Test #47: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero .........   Passed    0.02 sec
       Start 48: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred
 48/57 Test #48: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred ...   Passed    0.02 sec
       Start 49: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive  # GetParam() = MinusFive
@@ -153,7 +153,7 @@ Test project /home/user/faulttwin-ai/build/tsan-clang
       Start 50: Boundaries/PercentageCheckTest.ClassifiesValue/NaN  # GetParam() = NaN
 50/57 Test #50: Boundaries/PercentageCheckTest.ClassifiesValue/NaN  # GetParam() = NaN .............................   Passed    0.02 sec
       Start 51: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity  # GetParam() = PlusInfinity
-51/57 Test #51: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity  # GetParam() = PlusInfinity ...........   Passed    0.02 sec
+51/57 Test #51: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity  # GetParam() = PlusInfinity ...........   Passed    0.03 sec
       Start 52: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity  # GetParam() = MinusInfinity
 52/57 Test #52: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity  # GetParam() = MinusInfinity .........   Passed    0.02 sec
       Start 53: cli.help
@@ -163,10 +163,10 @@ Test project /home/user/faulttwin-ai/build/tsan-clang
       Start 55: cli.rejects_out_of_range_fraction
 55/57 Test #55: cli.rejects_out_of_range_fraction ..................................................................   Passed    0.01 sec
       Start 56: cli.ground_truth_matches
-56/57 Test #56: cli.ground_truth_matches ...........................................................................   Passed    0.03 sec
+56/57 Test #56: cli.ground_truth_matches ...........................................................................   Passed    0.04 sec
       Start 57: cli.deterministic_output
 57/57 Test #57: cli.deterministic_output ...........................................................................   Passed    0.08 sec
 
 100% tests passed, 0 tests failed out of 57
 
-Total Test time (real) =   1.44 sec
+Total Test time (real) =   1.40 sec

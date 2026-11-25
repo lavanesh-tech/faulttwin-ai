@@ -20,6 +20,6 @@ Kept current with the implementation. Each phase adds its limitations here.
   out-of-order handling belong to the ingestion pipeline (Phase 2).
 - `ValidationPolicy::max_future_skew` is trusted configuration; extreme values that overflow
   `now + skew` are not guarded.
-- Builds and tests were run on Linux x86_64 (GCC 13.3, Clang 18.1). macOS and the GitHub Actions
-  workflow have **not** been run yet.
+- Builds and tests ran on Linux x86_64 (GCC 13.3, Clang 18.1, all presets) and on macOS arm64
+  (AppleClang 21, debug only). The GitHub Actions workflow has **not** run yet.
 - Line coverage has not been measured.

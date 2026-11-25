@@ -8,7 +8,7 @@ approves it after technical review.
 | # | Phase | Status | Notes |
 |---|---|---|---|
 | 0 | Architecture and evaluation design | In review | Docs in `docs/architecture/`, `docs/adr/`, `docs/evaluation/` |
-| 1 | C++20 engineering foundation | In review | Built and tested on Linux (GCC + Clang, 4 presets). CI and macOS NOT RUN |
+| 1 | C++20 engineering foundation | In review | Committed as `3223488`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI NOT RUN |
 | 2 | Concurrent telemetry ingestion | Not started | Blocked on owner authorization |
 | 3 | PostgreSQL monitoring | Not started | |
 | 4 | Time-series features and anomaly detection | Not started | |
@@ -28,5 +28,9 @@ approves it after technical review.
   synthetic generator, `faulttwin-synth` CLI, CMake presets, sanitizer builds, CI workflow, docs.
 - Verified: 57/57 CTest tests pass for GCC 13.3 and Clang 18.1 in debug, release, asan-ubsan and
   tsan on Linux x86_64 (logs in `results/phase-01/`). clang-format and clang-tidy clean.
-- Not verified: GitHub Actions run, macOS build, line coverage.
+- Committed by the owner as root commit `3223488` (75 files). `ci.yml` not yet committed.
+- Owner ran the macOS debug preset: AppleClang 21, 57/57 pass. Two warnings, both outside our own
+  code: GoogleTest `-Wcharacter-conversion`, and an ld duplicate-library warning, now fixed
+  (uncommitted).
+- Not verified: GitHub Actions run, macOS release/sanitizer presets, line coverage.
 - Report: `docs/phase-reports/phase-01.md`.

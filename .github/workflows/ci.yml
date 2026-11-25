@@ -1,0 +1,79 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    name: clang-format
+    runs-on: ubuntu-24.04
+    steps:
+      # Third-party actions are pinned to full commit SHAs (tag in the comment).
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Install clang-format 18
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends clang-format-18
+      - name: Check formatting
+        run: |
+          find include src tests -name '*.cpp' -o -name '*.hpp' \
+            | xargs clang-format-18 --dry-run --Werror
+
+  build-test:
+    name: ${{ matrix.compiler }} / ${{ matrix.preset }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang]
+        preset: [debug, release, asan-ubsan, tsan]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build g++ clang-18 libclang-rt-18-dev
+          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-18 100
+          sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-18 100
+      - name: Reduce ASLR entropy for ThreadSanitizer
+        if: matrix.preset == 'tsan'
+        # Recent kernels use more mmap randomization bits than older TSan
+        # runtimes support, which makes TSan abort at startup.
+        run: sudo sysctl vm.mmap_rnd_bits=28
+      - name: Configure, build and test
+        run: scripts/verify-presets.sh ${{ matrix.compiler }} ${{ matrix.preset }}
+      - name: Show log on failure
+        if: failure()
+        run: cat results/phase-01/${{ matrix.compiler }}/${{ matrix.preset }}.log
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: logs-${{ matrix.compiler }}-${{ matrix.preset }}
+          path: results/phase-01/${{ matrix.compiler }}/
+          retention-days: 14
+
+  clang-tidy:
+    name: clang-tidy
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends cmake ninja-build clang-18 clang-tidy-18
+      - name: Configure
+        run: cmake --preset debug -DCMAKE_C_COMPILER=clang-18 -DCMAKE_CXX_COMPILER=clang++-18
+      - name: Run clang-tidy
+        run: |
+          find src -name '*.cpp' \
+            | xargs clang-tidy-18 -p build/debug --quiet --warnings-as-errors='*'

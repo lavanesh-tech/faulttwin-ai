@@ -23,19 +23,19 @@ Preset CMake variables:
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
--- Configuring done (3.2s)
+-- Configuring done (3.5s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/user/faulttwin-ai/build/release-gcc
 + cmake --build /home/user/faulttwin-ai/build/release-gcc
 [1/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_role.cpp.o
 [2/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_id.cpp.o
-[3/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
-[4/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/synthetic.cpp.o
-[5/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
-[6/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
+[3/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/synthetic.cpp.o
+[4/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
+[5/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
+[6/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/report.cpp.o
 [7/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/options.cpp.o
-[8/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/report.cpp.o
-[9/21] Linking CXX static library src/cli/libfaulttwin_cli_lib.a
+[8/21] Linking CXX static library src/cli/libfaulttwin_cli_lib.a
+[9/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
 [10/21] Linking CXX executable src/cli/faulttwin-synth
 [11/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 [12/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_id_test.cpp.o
@@ -114,7 +114,7 @@ Test project /home/user/faulttwin-ai/build/release-gcc
       Start 31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
 31/57 Test #31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue .......................................   Passed    0.00 sec
       Start 32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
-32/57 Test #32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag .........................................   Passed    0.01 sec
+32/57 Test #32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag .........................................   Passed    0.00 sec
       Start 33: SyntheticTest.ReferenceNowIsLastTick
 33/57 Test #33: SyntheticTest.ReferenceNowIsLastTick ...............................................................   Passed    0.00 sec
       Start 34: CliOptionsTest.DefaultsWithNoArguments
@@ -134,7 +134,7 @@ Test project /home/user/faulttwin-ai/build/release-gcc
       Start 41: CliReportTest.GroundTruthMatching
 41/57 Test #41: CliReportTest.GroundTruthMatching ..................................................................   Passed    0.00 sec
       Start 42: CliReportTest.SummaryCountsAndJsonLineShape
-42/57 Test #42: CliReportTest.SummaryCountsAndJsonLineShape ........................................................   Passed    0.00 sec
+42/57 Test #42: CliReportTest.SummaryCountsAndJsonLineShape ........................................................   Passed    0.02 sec
       Start 43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero
 43/57 Test #43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ...........................   Passed    0.00 sec
       Start 44: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero
@@ -168,4 +168,4 @@ Test project /home/user/faulttwin-ai/build/release-gcc
 
 100% tests passed, 0 tests failed out of 57
 
-Total Test time (real) =   0.22 sec
+Total Test time (real) =   0.24 sec

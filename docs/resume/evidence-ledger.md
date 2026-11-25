@@ -35,7 +35,7 @@ command; commit SHA; raw artifact; status; limitations; potential resume wording
 | Synthetic generator is deterministic per seed | TESTED | `cli.deterministic_output`, `SyntheticTest.SameSeedSameSequence` |
 | Test suite clean under ASan+UBSan and TSan (GCC 13.3, Clang 18.1, Linux x86_64) | TESTED | `results/phase-01/*/asan-ubsan.log`, `tsan.log` |
 | CI workflow green on GitHub | NOT RUN | — |
-| Build on macOS | NOT RUN | — |
+| Build and test on macOS (debug, AppleClang 21) | TESTED (owner-run) | `results/phase-01/macos/appleclang-debug.log` |
 
 These are correctness facts about a small foundation. They are not performance or business
 results and should not be phrased as such.

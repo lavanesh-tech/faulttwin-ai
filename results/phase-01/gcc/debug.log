@@ -23,28 +23,28 @@ Preset CMake variables:
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
--- Configuring done (3.4s)
+-- Configuring done (3.3s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/user/faulttwin-ai/build/debug-gcc
 + cmake --build /home/user/faulttwin-ai/build/debug-gcc
 [1/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_role.cpp.o
 [2/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_id.cpp.o
-[3/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
+[3/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
 [4/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/synthetic.cpp.o
-[5/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
-[6/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/report.cpp.o
-[7/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/options.cpp.o
-[8/21] Linking CXX static library src/cli/libfaulttwin_cli_lib.a
-[9/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
+[5/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
+[6/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
+[7/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/report.cpp.o
+[8/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/options.cpp.o
+[9/21] Linking CXX static library src/cli/libfaulttwin_cli_lib.a
 [10/21] Linking CXX executable src/cli/faulttwin-synth
 [11/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-[12/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_role_test.cpp.o
-[13/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_id_test.cpp.o
-[14/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/cli_report_test.cpp.o
-[15/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/cli_options_test.cpp.o
+[12/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_id_test.cpp.o
+[13/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_role_test.cpp.o
+[14/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/cli_options_test.cpp.o
+[15/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/cli_report_test.cpp.o
 [16/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/synthetic_test.cpp.o
-[17/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-[18/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/validation_test.cpp.o
+[17/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/validation_test.cpp.o
+[18/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 [19/21] Linking CXX static library lib/libgtest.a
 [20/21] Linking CXX static library lib/libgtest_main.a
 [21/21] Linking CXX executable tests/faulttwin_unit_tests
@@ -54,9 +54,9 @@ Test project /home/user/faulttwin-ai/build/debug-gcc
       Start  1: NodeIdTest.AcceptsTypicalIdentifiers
  1/57 Test  #1: NodeIdTest.AcceptsTypicalIdentifiers ...............................................................   Passed    0.00 sec
       Start  2: NodeIdTest.RejectsEmpty
- 2/57 Test  #2: NodeIdTest.RejectsEmpty ............................................................................   Passed    0.00 sec
+ 2/57 Test  #2: NodeIdTest.RejectsEmpty ............................................................................   Passed    0.01 sec
       Start  3: NodeIdTest.LengthBoundaryIsInclusive
- 3/57 Test  #3: NodeIdTest.LengthBoundaryIsInclusive ...............................................................   Passed    0.00 sec
+ 3/57 Test  #3: NodeIdTest.LengthBoundaryIsInclusive ...............................................................   Passed    0.01 sec
       Start  4: NodeIdTest.TooLongIsReportedBeforeCharacterErrors
  4/57 Test  #4: NodeIdTest.TooLongIsReportedBeforeCharacterErrors ..................................................   Passed    0.00 sec
       Start  5: NodeIdTest.RejectsNonAlphanumericFirstCharacter
@@ -98,23 +98,23 @@ Test project /home/user/faulttwin-ai/build/debug-gcc
       Start 23: ValidationTest.StableStringForms
 23/57 Test #23: ValidationTest.StableStringForms ...................................................................   Passed    0.00 sec
       Start 24: FreshnessTest.StaleIsAPropertyOfValidData
-24/57 Test #24: FreshnessTest.StaleIsAPropertyOfValidData ..........................................................   Passed    0.00 sec
+24/57 Test #24: FreshnessTest.StaleIsAPropertyOfValidData ..........................................................   Passed    0.01 sec
       Start 25: FreshnessTest.SlightlyFutureSampleIsFresh
 25/57 Test #25: FreshnessTest.SlightlyFutureSampleIsFresh ..........................................................   Passed    0.00 sec
       Start 26: SyntheticTest.ProducesNodeCountTimesSamples
 26/57 Test #26: SyntheticTest.ProducesNodeCountTimesSamples ........................................................   Passed    0.00 sec
       Start 27: SyntheticTest.SameSeedSameSequence
-27/57 Test #27: SyntheticTest.SameSeedSameSequence .................................................................   Passed    0.01 sec
+27/57 Test #27: SyntheticTest.SameSeedSameSequence .................................................................   Passed    0.00 sec
       Start 28: SyntheticTest.DifferentSeedDifferentSequence
-28/57 Test #28: SyntheticTest.DifferentSeedDifferentSequence .......................................................   Passed    0.01 sec
+28/57 Test #28: SyntheticTest.DifferentSeedDifferentSequence .......................................................   Passed    0.00 sec
       Start 29: SyntheticTest.GoldenFirstSample
-29/57 Test #29: SyntheticTest.GoldenFirstSample ....................................................................   Passed    0.01 sec
+29/57 Test #29: SyntheticTest.GoldenFirstSample ....................................................................   Passed    0.00 sec
       Start 30: SyntheticTest.CleanRunIsEntirelyValid
 30/57 Test #30: SyntheticTest.CleanRunIsEntirelyValid ..............................................................   Passed    0.01 sec
       Start 31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
 31/57 Test #31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue .......................................   Passed    0.02 sec
       Start 32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
-32/57 Test #32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag .........................................   Passed    0.01 sec
+32/57 Test #32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag .........................................   Passed    0.00 sec
       Start 33: SyntheticTest.ReferenceNowIsLastTick
 33/57 Test #33: SyntheticTest.ReferenceNowIsLastTick ...............................................................   Passed    0.00 sec
       Start 34: CliOptionsTest.DefaultsWithNoArguments
@@ -134,7 +134,7 @@ Test project /home/user/faulttwin-ai/build/debug-gcc
       Start 41: CliReportTest.GroundTruthMatching
 41/57 Test #41: CliReportTest.GroundTruthMatching ..................................................................   Passed    0.00 sec
       Start 42: CliReportTest.SummaryCountsAndJsonLineShape
-42/57 Test #42: CliReportTest.SummaryCountsAndJsonLineShape ........................................................   Passed    0.01 sec
+42/57 Test #42: CliReportTest.SummaryCountsAndJsonLineShape ........................................................   Passed    0.00 sec
       Start 43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero
 43/57 Test #43: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ...........................   Passed    0.00 sec
       Start 44: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero

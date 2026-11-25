@@ -7,7 +7,10 @@ add_executable(faulttwin_unit_tests
   unit/synthetic_test.cpp
   unit/cli_options_test.cpp
   unit/cli_report_test.cpp)
-target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin::telemetry faulttwin_cli_lib GTest::gtest_main)
+# faulttwin_cli_lib links faulttwin::telemetry PUBLICly, so the telemetry library
+# arrives transitively. Listing it again duplicates it on the link line, which
+# Apple's linker reports as "ignoring duplicate libraries".
+target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_cli_lib GTest::gtest_main)
 faulttwin_set_project_warnings(faulttwin_unit_tests)
 
 # PRE_TEST discovery lists tests when ctest runs rather than at build time, so a
