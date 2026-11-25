@@ -8,7 +8,7 @@ approves it after technical review.
 | # | Phase | Status | Notes |
 |---|---|---|---|
 | 0 | Architecture and evaluation design | In review | Docs in `docs/architecture/`, `docs/adr/`, `docs/evaluation/` |
-| 1 | C++20 engineering foundation | In review | Committed as `3223488`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI NOT RUN |
+| 1 | C++20 engineering foundation | In review | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
 | 2 | Concurrent telemetry ingestion | Not started | Blocked on owner authorization |
 | 3 | PostgreSQL monitoring | Not started | |
 | 4 | Time-series features and anomaly detection | Not started | |
@@ -32,5 +32,8 @@ approves it after technical review.
 - Owner ran the macOS debug preset: AppleClang 21, 57/57 pass. Two warnings, both outside our own
   code: GoogleTest `-Wcharacter-conversion`, and an ld duplicate-library warning, now fixed
   (uncommitted).
-- Not verified: GitHub Actions run, macOS release/sanitizer presets, line coverage.
+- Owner committed and pushed `b36a903` (workflow, link fix, macOS log). CI run #1 on it passed: all
+  10 jobs, 4m 45s (https://github.com/lavanesh-tech/faulttwin-ai/actions/runs/45714766090).
+- Not verified: macOS release/sanitizer presets, line coverage.
+- Waiting on: owner review and approval (criterion 1.17). Phase 2 not started.
 - Report: `docs/phase-reports/phase-01.md`.

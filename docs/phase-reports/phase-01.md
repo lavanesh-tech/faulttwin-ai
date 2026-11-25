@@ -208,36 +208,37 @@ independently reproduced by a third party.
 ## 19. Updated evidence ledger
 `docs/resume/evidence-ledger.md`: every metric row is `PLANNED`. A Phase 1 functional table records
 validation, determinism and sanitizer cleanliness as `TESTED`, the macOS debug build as `TESTED`
-(owner-run), and the CI run as `NOT RUN`. `docs/evaluation/verified-results.md` intentionally contains no results.
+(owner-run), and the first GitHub Actions run on `b36a903` as `TESTED`. `docs/evaluation/verified-results.md` intentionally contains no results.
 
 ## 20. Git status and commit SHA
 - **Commit `3223488`** (root commit on `main`, pushed by the owner): 75 files, authored by the owner
   only. The assistant ran no git commands: no commit, push, branch or config change.
-- Not in that commit: `.github/workflows/ci.yml`. The assistant's file tool cannot write into
-  `.github/`, so the file was placed at the repository root as `ci.yml` for the owner to move.
-- Uncommitted working-tree changes after `3223488` (for the owner to review and commit):
-  `ci.yml` (to be moved to `.github/workflows/ci.yml`), `tests/CMakeLists.txt` (duplicate-link fix),
-  `results/phase-01/macos/appleclang-debug.log` (new), refreshed `results/phase-01/{gcc,clang}/` logs,
-  and documentation updates (`docs/phase-reports/phase-01.md`, `docs/PROGRESS.md`,
-  `docs/architecture/acceptance-criteria.md`, `docs/resume/evidence-ledger.md`,
-  `docs/evaluation/limitations.md`, `results/phase-01/README.md`).
+- **Commit `b36a903`** (committed and pushed by the owner): adds `.github/workflows/ci.yml`, the
+  duplicate-link fix in `tests/CMakeLists.txt`, the macOS debug log and the matching doc updates.
+  The assistant's file tool cannot write into `.github/`, so the owner moved the workflow file there.
+- CI run #1 on `b36a903`: **Success**, all 10 jobs (clang-format, clang-tidy, and gcc/clang ×
+  debug/release/asan-ubsan/tsan), total duration 4m 45s. Read from the public run page:
+  https://github.com/lavanesh-tech/faulttwin-ai/actions/runs/45714766090.
+- Uncommitted working-tree changes after `b36a903` (for the owner to review and commit): this
+  report, `docs/PROGRESS.md`, `docs/architecture/acceptance-criteria.md`,
+  `docs/resume/evidence-ledger.md` and `docs/evaluation/limitations.md`, recording the CI result.
 - No file names Claude, Anthropic or any AI as author or co-author. The README's "Development process
   and AI assistance" paragraph is a draft disclosure for the owner to edit.
 
 Suggested message for the follow-up commit (for the owner to review and commit):
 ```
-ci: add GitHub Actions workflow; fix duplicate test link; record macOS run
+docs: record first green CI run for Phase 1
 
-- Add .github/workflows/ci.yml (gcc/clang x 4 presets, clang-format, clang-tidy)
-- Link unit tests only against faulttwin_cli_lib (telemetry comes transitively),
-  removing Apple ld "ignoring duplicate libraries" warning
-- Record owner's macOS AppleClang 21 debug run (57/57) as Phase 1 evidence
-- Update Phase 1 report, progress tracker, acceptance criteria and ledger
+- CI run #1 on b36a903 passed: clang-format, clang-tidy and the
+  gcc/clang x debug/release/asan-ubsan/tsan matrix (10 jobs, 4m 45s)
+- Mark acceptance criterion 1.13 met; update ledger, tracker, limitations
+- Note Node.js 20 deprecation warnings on pinned actions
 ```
 
 ## 21. Known bugs and limitations
-- The GitHub Actions workflow has **never run**. Likely first-run risks: package names on the runner
-  image and the `vm.mmap_rnd_bits` TSan workaround.
+- CI has run green once (run #1 on `b36a903`). GitHub annotated that the pinned
+  `actions/checkout` and `actions/upload-artifact` versions run on Node.js 20, which is deprecated,
+  and were forced onto Node 24. They still work; upgrading the pinned SHAs is a later fix.
 - macOS was built and tested only in the debug preset with AppleClang 21. Release and sanitizer
   presets on macOS have not been run, and the duplicate-link fix has not been re-run there. Older
   Xcode versions may lack `std::to_chars` for `double` with a precision argument.
@@ -254,7 +255,6 @@ ci: add GitHub Actions workflow; fix duplicate test link; record macOS run
 ## 22. Incomplete requirements
 | Requirement | Status |
 |---|---|
-| Linux GitHub Actions workflow — *runs green* | Written, NOT RUN |
 | Owner-machine build (macOS) | Debug preset 57/57 (owner-run); other presets NOT RUN |
 | Coverage measurement (target ≥ 85% is a later-phase target) | NOT RUN |
 | Licence | Owner decision pending |
@@ -331,11 +331,10 @@ From `docs/architecture/acceptance-criteria.md`:
 | 1.10 | CLI deterministic and self-checking | ✅ tested |
 | 1.11 | clang-format and clang-tidy clean | ✅ |
 | 1.12 | CI workflow exists | ✅ |
-| 1.13 | CI workflow green on GitHub | ⏳ NOT RUN |
+| 1.13 | CI workflow green on GitHub | ✅ run #1 on `b36a903`, 10/10 jobs |
 | 1.14 | Builds on owner's macOS | ✅ debug preset, 57/57, AppleClang 21 (owner-run) |
 | 1.15 | Docs, ADRs, metric definitions, plan, empty ledger | ✅ |
 | 1.16 | No AI authorship; no assistant commits | ✅ |
 | 1.17 | Owner approval after independent review | ⏳ |
 
-**Phase 1 is not complete.** 1.13 needs `ci.yml` committed and a green CI run; 1.17 needs your
-review and approval.
+**Phase 1 is not complete.** Only 1.17 remains: your review and approval.

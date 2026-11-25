@@ -34,7 +34,7 @@ command; commit SHA; raw artifact; status; limitations; potential resume wording
 | Telemetry validation rejects every injected defect kind and accepts clean samples | TESTED | `tests/unit/synthetic_test.cpp`, `cli.ground_truth_matches` |
 | Synthetic generator is deterministic per seed | TESTED | `cli.deterministic_output`, `SyntheticTest.SameSeedSameSequence` |
 | Test suite clean under ASan+UBSan and TSan (GCC 13.3, Clang 18.1, Linux x86_64) | TESTED | `results/phase-01/*/asan-ubsan.log`, `tsan.log` |
-| CI workflow green on GitHub | NOT RUN | — |
+| CI workflow green on GitHub | TESTED | run #1 on `b36a903`, 10/10 jobs: https://github.com/lavanesh-tech/faulttwin-ai/actions/runs/45714766090 |
 | Build and test on macOS (debug, AppleClang 21) | TESTED (owner-run) | `results/phase-01/macos/appleclang-debug.log` |
 
 These are correctness facts about a small foundation. They are not performance or business

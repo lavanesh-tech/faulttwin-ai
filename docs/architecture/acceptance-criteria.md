@@ -32,7 +32,7 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 1.10 | Synthetic CLI runs, is deterministic for a seed, and self-checks against injected ground truth | ✅ | `cli.deterministic_output`, `cli.ground_truth_matches` |
 | 1.11 | clang-format clean; clang-tidy clean on first-party sources with the committed config | ✅ | phase report §12–14 |
 | 1.12 | Linux GitHub Actions workflow exists | ✅ | `.github/workflows/ci.yml` |
-| 1.13 | **The workflow has actually run green on GitHub** | ⏳ NOT RUN | `ci.yml` not yet committed (not in `3223488`) |
+| 1.13 | **The workflow has actually run green on GitHub** | ✅ run #1 on `b36a903`, 10/10 jobs, 4m 45s | [run 45714766090](https://github.com/lavanesh-tech/faulttwin-ai/actions/runs/45714766090) |
 | 1.14 | Builds and tests on the owner's macOS machine | ✅ debug, 57/57, AppleClang 21 | `results/phase-01/macos/appleclang-debug.log` |
 | 1.15 | README, ADRs, metric definitions, evaluation plan, evidence ledger with no results | ✅ | `docs/` |
 | 1.16 | No AI listed as author/co-author anywhere; no commits made by the assistant | ✅ | phase report §20 |
