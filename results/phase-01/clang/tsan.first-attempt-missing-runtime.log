@@ -1,0 +1,225 @@
++ cd /home/user/faulttwin-ai
++ cmake --preset tsan -B /home/user/faulttwin-ai/build/tsan-clang -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+Preset CMake variables:
+
+  CMAKE_BUILD_TYPE="Debug"
+  CMAKE_EXPORT_COMPILE_COMMANDS="ON"
+  FAULTTWIN_BUILD_TESTS="ON"
+  FAULTTWIN_SANITIZER="thread"
+  FAULTTWIN_WARNINGS_AS_ERRORS="ON"
+
+-- The CXX compiler identification is Clang 18.1.3
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- FaultTwin sanitizer build: thread
+-- The C compiler identification is Clang 18.1.3
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done (3.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/user/faulttwin-ai/build/tsan-clang
++ cmake --build /home/user/faulttwin-ai/build/tsan-clang
+[1/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_role.cpp.o
+[2/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/node_id.cpp.o
+[3/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/synthetic.cpp.o
+[4/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/options.cpp.o
+[5/21] Building CXX object src/telemetry/CMakeFiles/faulttwin_telemetry.dir/validation.cpp.o
+[6/21] Linking CXX static library src/telemetry/libfaulttwin_telemetry.a
+[7/21] Building CXX object src/cli/CMakeFiles/faulttwin_cli_lib.dir/report.cpp.o
+[8/21] Linking CXX static library src/cli/libfaulttwin_cli_lib.a
+[9/21] Building CXX object src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o
+[10/21] Linking CXX executable src/cli/faulttwin-synth
+FAILED: src/cli/faulttwin-synth 
+: && /usr/bin/clang++ -g -fsanitize=thread -fno-omit-frame-pointer src/cli/CMakeFiles/faulttwin-synth.dir/main.cpp.o -o src/cli/faulttwin-synth  src/cli/libfaulttwin_cli_lib.a  src/telemetry/libfaulttwin_telemetry.a && :
+/usr/bin/ld: cannot find /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.tsan-x86_64.a: No such file or directory
+/usr/bin/ld: cannot find /usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.tsan_cxx-x86_64.a: No such file or directory
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+[11/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[12/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_id_test.cpp.o
+[13/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/node_role_test.cpp.o
+[14/21] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[15/21] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/validation_test.cpp.o
+ninja: build stopped: subcommand failed.
++ env TSAN_OPTIONS=halt_on_error=1:second_deadlock_stack=1 ctest --test-dir /home/user/faulttwin-ai/build/tsan-clang --output-on-failure --no-tests=error
+Internal ctest changing into directory: /home/user/faulttwin-ai/build/tsan-clang
+Test project /home/user/faulttwin-ai/build/tsan-clang
+    Start 1: faulttwin_unit_tests_NOT_BUILT
+Could not find executable faulttwin_unit_tests_NOT_BUILT
+Looked in the following places:
+faulttwin_unit_tests_NOT_BUILT
+faulttwin_unit_tests_NOT_BUILT
+Release/faulttwin_unit_tests_NOT_BUILT
+Release/faulttwin_unit_tests_NOT_BUILT
+Debug/faulttwin_unit_tests_NOT_BUILT
+Debug/faulttwin_unit_tests_NOT_BUILT
+MinSizeRel/faulttwin_unit_tests_NOT_BUILT
+MinSizeRel/faulttwin_unit_tests_NOT_BUILT
+RelWithDebInfo/faulttwin_unit_tests_NOT_BUILT
+RelWithDebInfo/faulttwin_unit_tests_NOT_BUILT
+Deployment/faulttwin_unit_tests_NOT_BUILT
+Deployment/faulttwin_unit_tests_NOT_BUILT
+Development/faulttwin_unit_tests_NOT_BUILT
+Development/faulttwin_unit_tests_NOT_BUILT
+Unable to find executable: faulttwin_unit_tests_NOT_BUILT
+1/6 Test #1: faulttwin_unit_tests_NOT_BUILT ......***Not Run   0.00 sec
+    Start 2: cli.help
+Could not find executable /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+Looked in the following places:
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+Unable to find executable: /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+2/6 Test #2: cli.help ............................***Not Run   0.00 sec
+    Start 3: cli.rejects_unknown_option
+Could not find executable /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+Looked in the following places:
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+Unable to find executable: /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+3/6 Test #3: cli.rejects_unknown_option ..........***Not Run   0.00 sec
+    Start 4: cli.rejects_out_of_range_fraction
+Could not find executable /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+Looked in the following places:
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+Unable to find executable: /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+4/6 Test #4: cli.rejects_out_of_range_fraction ...***Not Run   0.00 sec
+    Start 5: cli.ground_truth_matches
+Could not find executable /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+Looked in the following places:
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+/home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Release/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Debug/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/MinSizeRel/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/RelWithDebInfo/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Deployment/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+home/user/faulttwin-ai/build/tsan-clang/src/cli/Development/faulttwin-synth
+Unable to find executable: /home/user/faulttwin-ai/build/tsan-clang/src/cli/faulttwin-synth
+5/6 Test #5: cli.ground_truth_matches ............***Not Run   0.00 sec
+    Start 6: cli.deterministic_output
+6/6 Test #6: cli.deterministic_output ............***Failed    0.01 sec
+CMake Error at /home/user/faulttwin-ai/tests/cli/check_deterministic.cmake:9 (message):
+  CLI run a exited with No such file or directory
+
+
+
+
+0% tests passed, 6 tests failed out of 6
+
+Total Test time (real) =   0.01 sec
+
+The following tests FAILED:
+	  1 - faulttwin_unit_tests_NOT_BUILT (Not Run)
+	  2 - cli.help (Not Run)
+	  3 - cli.rejects_unknown_option (Not Run)
+	  4 - cli.rejects_out_of_range_fraction (Not Run)
+	  5 - cli.ground_truth_matches (Not Run)
+	  6 - cli.deterministic_output (Failed)
+Errors while running CTest

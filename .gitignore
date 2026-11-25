@@ -1,0 +1,18 @@
+# Build trees (one per preset, plus per-compiler trees from scripts/verify-presets.sh)
+/build/
+/out/
+/cmake-build-*/
+compile_commands.json
+CMakeUserPresets.json
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Secrets: never commit
+.env
+.env.*
+*.pem
+*.key
