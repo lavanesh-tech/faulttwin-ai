@@ -227,7 +227,14 @@ Integration tests with `FT_INTEGRATION=1` against the running lab:
 | GCC asan-ubsan | 7/7 pass | `…/linux-x86_64-container-asan-ubsan-gcc.log` |
 | Clang asan-ubsan | 7/7 pass | `…/linux-x86_64-container-asan-ubsan-clang.log` |
 
-**macOS: NOT RUN. CI with `ci.phase-03.yml`: NOT RUN.**
+**macOS (owner-run, Apple Silicon, AppleClang, libpq 19.0, Docker 29.6.2 / Compose v5.3.1):** debug
+179/179 pass (5 lab tests skipped), integration 7/7 pass against the lab on Docker Desktop
+(`results/phase-03/integration/macos-arm64.log`), and `faulttwin-monitor --cycles 3` collected 9/9
+with 96.4 % coverage, the gap being CPU, memory and load, which are `missing` on macOS because there
+is no procfs (as designed). The Mac link printed `ld: warning: ignoring duplicate libraries:
+'src/collectors/libfaulttwin_collectors.a'`; fixed afterwards in `tests/CMakeLists.txt`
+(re-verified on Linux, with and without libpq; not yet re-run on the Mac). macOS release and
+sanitizer presets: NOT RUN. **CI with `ci.phase-03.yml`: NOT RUN** at the time of writing.
 
 New tests: 56 unit tests (Reading 4, Lsn 4, Sql 2, Endpoint 3, PgCollector 15, Rates 5,
 Topology 7, LinuxResources 6, FakeProc 3, MonitorOptions 4, MonitorReport 3), 7 integration tests
@@ -371,7 +378,8 @@ Phase 3: PostgreSQL monitoring
 
 ## 21. Known bugs and limitations
 No known bugs. Limitations (also in `docs/evaluation/limitations.md`):
-1. Everything ran in one 4-vCPU cloud container. macOS and GitHub Actions are NOT RUN for Phase 3.
+1. Measurements ran in one 4-vCPU cloud container. On macOS only the debug preset and the
+   integration tests ran (owner); GitHub Actions NOT RUN at the time of writing.
 2. Host resources are the collector host's, not each database container's.
 3. Collector snapshots do not yet flow into the Phase 1 `TelemetrySample` or the Phase 2 pipeline
    (the model cannot express missing CPU/memory/disk).
@@ -387,8 +395,9 @@ No known bugs. Limitations (also in `docs/evaluation/limitations.md`):
     `up --wait` to cope.
 
 ## 22. Incomplete requirements
-- **NOT RUN:** the Phase 3 build and tests on the owner's Mac (Apple Silicon); the cluster on
-  Docker Desktop for arm64; CI with `ci.phase-03.yml`. The owner's steps cover all three.
+- **Done by the owner on the Mac:** debug build and tests, the lab on Docker Desktop for arm64,
+  integration 7/7 (§14).
+- **NOT RUN:** macOS release and sanitizer presets; CI with `ci.phase-03.yml` (pending the push).
 - **Not implemented:** per-container resource metrics; the `ICollector` streaming interface and
   feeding collector output into the ingest pipeline; Protobuf schemas (ADR-0003 says "Phase 2–5";
   nothing uses them yet).
@@ -472,10 +481,10 @@ From `docs/architecture/acceptance-criteria.md` (Phase 3 criteria made explicit 
 | 3.10 | Integration tests skip without Docker | ✅ tested |
 | 3.11 | All presets pass with GCC and Clang; tidy and format clean | ✅ tested (Linux container) |
 | 3.12 | Collection success, coverage, cost, freshness, throughput impact measured | ✅ measured (cloud container only) |
-| 3.13 | Builds, tests and runs the lab on the owner's Mac | ⏳ NOT RUN |
+| 3.13 | Builds, tests and runs the lab on the owner's Mac | ✅ owner-run: debug 179/179, integration 7/7 |
 | 3.14 | CI green with the Phase 3 workflow | ⏳ NOT RUN |
 | 3.15 | No AI authorship; no assistant commits | ✅ |
 | 3.16 | Owner approval after independent review | ⏳ |
 
-**Phase 3 is not complete.** Open: the run on your Mac (3.13), CI with the new workflow (3.14), and
+**Phase 3 is not complete.** Open: CI with the new workflow (3.14) and
 your review and approval (3.16). Phase 4 has not been started.

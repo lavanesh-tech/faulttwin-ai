@@ -10,7 +10,7 @@ approves it after technical review.
 | 0 | Architecture and evaluation design | Complete | Docs in `docs/architecture/`, `docs/adr/`, `docs/evaluation/` |
 | 1 | C++20 engineering foundation | Complete | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
 | 2 | Concurrent telemetry ingestion | Complete | Commits `3539c5c`, `f0624a4`. Approved by the owner; criterion 2.11 (full Experiment 2) deferred to Phase 11. Linux: GCC + Clang, 4 presets pass, TSan clean. macOS debug + release pass (AppleClang 21). CI green (run #3). Benchmarks measured in a cloud container only |
-| 3 | PostgreSQL monitoring | In review | Uncommitted on `f0624a4`. Linux container: GCC + Clang, 4 presets pass, 7/7 integration tests with the lab. macOS and CI NOT RUN yet. Collection measured in a cloud container only |
+| 3 | PostgreSQL monitoring | In review | Linux container: GCC + Clang, 4 presets pass, 7/7 integration tests with the lab. macOS (owner): debug 179/179, integration 7/7. CI pending. Collection measured in a cloud container only |
 | 4 | Time-series features and anomaly detection | Not started | |
 | 5 | Persistence, APIs and observability | Not started | |
 | 6 | Chaos engineering and dataset generation | Not started | |
@@ -35,7 +35,8 @@ approves it after technical review.
 - Measured (assistant, cloud container only): 100 % collection success and coverage; steady cycle
   15.2 ms mean / 20.5 ms p95 for 3 nodes; client CPU 1.7 ms per cycle; pgbench impact within noise.
 - Not run: macOS, CI with the new workflow, TLS, independent reproduction, MON-DETLAT experiment.
-- Waiting on: the owner's Mac run, CI, and approval (criteria 3.13, 3.14, 3.16). Phase 4 not started.
+- Owner ran Phase 3 on the Mac: owner-run on Apple Silicon, AppleClang, libpq 19.0 (Homebrew), Docker 29.6.2 / Compose v5.3.1: debug 179/179 (5 lab tests skipped), integration 7/7, monitor 3 cycles 100 % success. Host CPU/memory/load are `missing` on macOS (no procfs), as designed. Fixed afterwards: a duplicate `libfaulttwin_collectors.a` on the unit-test link line (Apple ld warning).
+- Waiting on: CI and approval (criteria 3.14, 3.16). Phase 4 not started.
 - Report: `docs/phase-reports/phase-03.md`.
 
 ### 2026-11-25 — Phase 1 approved; Phase 2 submitted for review

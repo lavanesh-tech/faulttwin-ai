@@ -21,11 +21,15 @@ add_executable(faulttwin_unit_tests
 # faulttwin::ingest brings faulttwin::concurrency with it (PUBLIC), and both share
 # faulttwin::telemetry with faulttwin_cli_lib; CMake de-duplicates static libraries
 # that arrive through different direct dependencies.
+# faulttwin_monitor_lib brings faulttwin::collectors with it, so the collectors library is
+# listed directly only when the monitor is not built (no libpq).
 target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_cli_lib faulttwin::ingest
-                                                   faulttwin::collectors GTest::gtest_main)
+                                                   GTest::gtest_main)
 if(FAULTTWIN_HAVE_LIBPQ)
   target_sources(faulttwin_unit_tests PRIVATE unit/monitor_cli_test.cpp)
   target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_monitor_lib)
+else()
+  target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin::collectors)
 endif()
 faulttwin_set_project_warnings(faulttwin_unit_tests)
 

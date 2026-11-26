@@ -12,7 +12,7 @@
 | Google Benchmark | v1.9.4, commit `eddb0241389718a23a42db6af5f0164b6e0139af` via FetchContent (Phase 2, ADR-0013) | `bench/` only, Release preset only | Apache-2.0 |
 | Python 3 (standard library only) | 3.13 used for the recorded runs | `scripts/summarize-benchmarks.py` (results only, not the build) | PSF |
 | Threads (pthreads via `find_package(Threads)`) | system | `std::jthread` in `faulttwin_concurrency`/`faulttwin_ingest` | system |
-| libpq | system package; 16.15 (Ubuntu 24.04 `libpq-dev`) for the Linux runs; Homebrew `libpq` on macOS | `faulttwin_collectors_pg`, `faulttwin-monitor`, integration tests (Phase 3, ADR-0015). Optional: found by `find_package(PostgreSQL)` | PostgreSQL Licence |
+| libpq | system package; 16.15 (Ubuntu 24.04 `libpq-dev`) for the Linux runs; Homebrew `libpq` on macOS (19.0 in the owner's run) | `faulttwin_collectors_pg`, `faulttwin-monitor`, integration tests (Phase 3, ADR-0015). Optional: found by `find_package(PostgreSQL)` | PostgreSQL Licence |
 | PostgreSQL server image | `postgres:17.12-bookworm@sha256:1eff563f6c868b9b433566e9f3cf6e5c79fbd3b95bf70ec7277d376cdbfc50d7` (multi-arch index) | Lab cluster only (`compose.yaml`, ADR-0014) | PostgreSQL Licence (image contents: Debian packages under their own licences) |
 | Docker Engine / Compose | 29.9.3 / v5.7.1 used for the Linux runs; the owner's Mac has Docker 29.6.2 / Compose v5.3.1 | Lab cluster, integration tests | Apache-2.0 |
 | actions/checkout | v4.4.0, `11d5960a326750d5838078e36cf38b85af677262` | CI | MIT |
