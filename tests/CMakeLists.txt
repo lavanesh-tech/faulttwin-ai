@@ -6,11 +6,19 @@ add_executable(faulttwin_unit_tests
   unit/validation_test.cpp
   unit/synthetic_test.cpp
   unit/cli_options_test.cpp
-  unit/cli_report_test.cpp)
+  unit/cli_report_test.cpp
+  unit/bounded_queue_test.cpp
+  unit/queue_stress_test.cpp
+  unit/order_tracker_test.cpp
+  unit/pipeline_test.cpp)
 # faulttwin_cli_lib links faulttwin::telemetry PUBLICly, so the telemetry library
 # arrives transitively. Listing it again duplicates it on the link line, which
 # Apple's linker reports as "ignoring duplicate libraries".
-target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_cli_lib GTest::gtest_main)
+# faulttwin::ingest brings faulttwin::concurrency with it (PUBLIC), and both share
+# faulttwin::telemetry with faulttwin_cli_lib; CMake de-duplicates static libraries
+# that arrive through different direct dependencies.
+target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_cli_lib faulttwin::ingest
+                                                   GTest::gtest_main)
 faulttwin_set_project_warnings(faulttwin_unit_tests)
 
 # PRE_TEST discovery lists tests when ctest runs rather than at build time, so a

@@ -23,7 +23,11 @@
       "name": "release",
       "displayName": "Release (use for performance measurements)",
       "inherits": "base",
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "FAULTTWIN_SANITIZER": "none" }
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "FAULTTWIN_SANITIZER": "none",
+        "FAULTTWIN_BUILD_BENCHMARKS": "ON"
+      }
     },
     {
       "name": "asan-ubsan",

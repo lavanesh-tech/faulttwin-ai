@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Configure, build and test every preset with one compiler, saving full logs as
-# raw evidence under results/phase-01/<compiler>/.
+# raw evidence under results/<phase>/<compiler>/ (phase defaults to phase-02;
+# override with FAULTTWIN_RESULTS_PHASE=phase-01 to reproduce older evidence).
 #
 # Usage: scripts/verify-presets.sh [gcc|clang] [preset ...]
 # Default presets: debug release asan-ubsan tsan
@@ -20,7 +21,8 @@ case "${compiler}" in
 esac
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-out="${root}/results/phase-01/${compiler}"
+phase="${FAULTTWIN_RESULTS_PHASE:-phase-02}"
+out="${root}/results/${phase}/${compiler}"
 mkdir -p "${out}"
 
 {
@@ -55,7 +57,7 @@ for preset in "${presets[@]}"; do
     cd "${root}"
     cmake --preset "${preset}" -B "${build_dir}" -DCMAKE_C_COMPILER="${cc}" -DCMAKE_CXX_COMPILER="${cxx}"
     cmake --build "${build_dir}"
-    env "${env_vars[@]}" ctest --test-dir "${build_dir}" --output-on-failure --no-tests=error
+    env ${env_vars[@]+"${env_vars[@]}"} ctest --test-dir "${build_dir}" --output-on-failure --no-tests=error
   ) > "${log}" 2>&1; then
     echo "    PASS  ($(grep -E 'tests passed' "${log}" | tail -1))"
   else

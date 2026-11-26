@@ -25,3 +25,23 @@ Kept current with the implementation. Each phase adds its limitations here.
   (Ubuntu runner, GCC + Clang, 4 presets) has run green once, on `b36a903`. Its pinned actions use
   the deprecated Node.js 20 runtime and should be upgraded.
 - Line coverage has not been measured.
+
+## Phase 2
+- All benchmark numbers come from one 4-vCPU Linux cloud container (Intel Xeon @ 2.10 GHz, shared
+  host). They are not from the owner's machine, are not independently reproduced, and other
+  tenants' load may affect them. Configurations with more than 4 threads oversubscribe the CPU.
+- The workload is synthetic (Phase 1 generator) and the "work" per event is a CPU loop, not real
+  enrichment or storage.
+- With near-zero per-event work, the concurrent pipeline is slower than the single-threaded
+  baseline: queue hand-off and cross-core cache traffic cost more than the work itself.
+- Experiment 2 ran in a reduced form only (one arrival profile, no memory cap, no latency or
+  drain-time measurement).
+- Several consumers can process events of one node out of queue order, so out-of-order counts
+  include pipeline-induced reordering. Duplicates older than the 64-sample window per node are
+  reported as out-of-order.
+- Shutdown cancellation is cooperative: a sink that blocks without watching its `stop_token` can
+  delay shutdown indefinitely.
+- No fairness between blocked producers.
+- macOS (AppleClang/libc++) has not built Phase 2. `std::jthread` and `stop_token` waits need a
+  recent libc++ (LLVM 18 or newer; AppleClang 21 should qualify, not verified).
+- Peak RSS (VmHWM) is only available on Linux; the benchmark reports -1 elsewhere.

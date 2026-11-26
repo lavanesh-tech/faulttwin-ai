@@ -52,6 +52,19 @@ measured yet. Each metric has a stable ID used by `experiment-protocols.md`,
 
 Invariant checked in every run: `ATT = ACC + REJ` and `ACC = PROC + DROP + in-flight-at-stop`.
 
+**Implementation mapping (Phase 2).** `faulttwin::ingest::IngestCounters` provides these counts:
+ING-ATT = `attempted`; ING-ACC = `accepted`; ING-REJ = `rejected()` = `rejected_full +
+rejected_timeout + rejected_cancelled + rejected_closed`; ING-DROP = `dropped_oldest`;
+ING-PROC = `processed()` (every consumer-handled event, whatever its disposition); ING-INV =
+`processing.count(kRejectedInvalid)`. "in-flight-at-stop" is split into `abandoned_at_shutdown`
+(accepted, unprocessed at the drain deadline, handed back to the caller), `in_queue` and
+`in_flight` (both 0 after `shutdown()`). The checked invariant is therefore
+`accepted = processed + dropped_oldest + abandoned_at_shutdown + in_queue + in_flight`.
+ING-LAT is measured from `submit()` (before the push, so it includes backpressure waiting) to the
+end of the sink call. ING-SUCC uses `processing.delivered()` only if a run reports it as such;
+Phase 2 reports `processed / accepted`. ING-SAT and ING-CPU are not reported in Phase 2 (queue depth
+is not sampled over time; CPU time is in the raw JSON as `cpu_time`).
+
 ## 4. Monitoring (Module B)
 
 | ID | Metric | Definition |

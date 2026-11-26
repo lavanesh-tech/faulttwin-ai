@@ -1,0 +1,45 @@
+date_utc: 2026-11-25T23:37:02Z
+binary: build/tsan-gcc/tests/faulttwin_unit_tests
+command: TSAN_OPTIONS=halt_on_error=1:second_deadlock_stack=1 build/tsan-gcc/tests/faulttwin_unit_tests --gtest_filter='QueueStress*:Pipeline*:OrderTracker*:BoundedQueue*:UnboundedQueue*:Policies/*:BaselineTest*' --gtest_repeat=20 --gtest_brief=1
+Running main() from /home/user/ft/build/tsan-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] 57 tests from 7 test suites ran. (4848 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4850 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4701 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4900 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (5276 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4964 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4761 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4818 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4942 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4687 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4913 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4885 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4969 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4777 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4744 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4774 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4941 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (4968 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (5501 ms total)
+[  PASSED  ] 57 tests.
+[==========] 57 tests from 7 test suites ran. (5320 ms total)
+[  PASSED  ] 57 tests.
+exit_code: 0

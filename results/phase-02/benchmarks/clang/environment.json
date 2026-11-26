@@ -1,0 +1,18 @@
+{
+  "date_utc": "2026-11-25T23:49:33Z",
+  "git_commit": "not a git repository",
+  "git_uncommitted_files": "unknown (no git repository; value repaired by hand, see results/phase-02/README.md)",
+  "uname": "Linux 6.18.44-fc-v880 x86_64",
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "logical_cpus": "4",
+  "mem_total_kib": "16473316",
+  "cgroup_cpu_max": "n/a",
+  "cgroup_memory_max": "n/a",
+  "load_average_before": "2.66, 2.80, 2.38",
+  "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "cmake": "cmake version 3.28.3",
+  "build_type": "Release",
+  "cxx_flags_release": "-O3 -DNDEBUG",
+  "google_benchmark": "v1.9.4 (eddb0241389718a23a42db6af5f0164b6e0139af)",
+  "quick_mode": "false"
+}

@@ -1,8 +1,12 @@
 # Baselines
 
 Every improvement is compared against a baseline that a competent engineer would accept as fair.
-Baselines are never weakened to make the proposed design look better. None has been implemented or
-measured yet (status: PLANNED).
+Baselines are never weakened to make the proposed design look better.
+
+Status (Phase 2): Experiment 1's baseline is implemented (`faulttwin::ingest::run_single_threaded_baseline`,
+same `EventProcessor` as the pipeline) and measured in a cloud container. Experiment 2's reference
+(`faulttwin::concurrency::UnboundedQueue`) is implemented and measured in a reduced form, without
+the memory cap. All other baselines are PLANNED.
 
 | Experiment | Baseline | Why it is fair | Proposed | Phase |
 |---|---|---|---|---|

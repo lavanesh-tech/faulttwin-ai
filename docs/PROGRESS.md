@@ -7,9 +7,9 @@ approves it after technical review.
 
 | # | Phase | Status | Notes |
 |---|---|---|---|
-| 0 | Architecture and evaluation design | In review | Docs in `docs/architecture/`, `docs/adr/`, `docs/evaluation/` |
-| 1 | C++20 engineering foundation | In review | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
-| 2 | Concurrent telemetry ingestion | Not started | Blocked on owner authorization |
+| 0 | Architecture and evaluation design | Complete | Docs in `docs/architecture/`, `docs/adr/`, `docs/evaluation/` |
+| 1 | C++20 engineering foundation | Complete | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
+| 2 | Concurrent telemetry ingestion | In review | Uncommitted on top of `d65152f`. Linux: GCC + Clang, 4 presets pass, TSan clean. Benchmarks measured in a cloud container only. macOS and CI NOT RUN |
 | 3 | PostgreSQL monitoring | Not started | |
 | 4 | Time-series features and anomaly detection | Not started | |
 | 5 | Persistence, APIs and observability | Not started | |
@@ -22,6 +22,25 @@ approves it after technical review.
 | 12 | Portfolio, documentation and interview preparation | Not started | |
 
 ## Phase log
+
+### 2026-11-25 — Phase 1 approved; Phase 2 submitted for review
+- The owner approved Phases 0 and 1 and authorised Phase 2 ("next").
+- Implemented: `faulttwin_concurrency` (`BoundedQueue<T>` with block / reject-newest /
+  drop-oldest, timeouts, `stop_token` cancellation, close/drain, `pop_batch`; `UnboundedQueue<T>`
+  reference), `faulttwin_ingest` (`NodeOrderTracker`, `EventProcessor`, `IngestPipeline` with
+  `std::jthread` consumers and drain-deadline shutdown, single-threaded baseline), Google Benchmark
+  suite and result scripts. ADR-0006 accepted; ADR-0012 and ADR-0013 added.
+- Verified (assistant, Linux container): all tests pass in debug, release, asan-ubsan and tsan with
+  GCC 13.3 and Clang 18.1; TSan stress suites clean over 20 extra repeats per compiler;
+  clang-format and clang-tidy clean. Logs in `results/phase-02/`.
+- Measured (assistant, cloud container only): Experiment 1 grid and a reduced Experiment 2.
+  With heavy per-event work the pipeline reached up to 3.4× the single-threaded baseline; with
+  near-zero work it was 0.1–0.4× (slower). Details in the Phase 2 report §16–17.
+- Not run: macOS build, CI with Phase 2 code, full Experiment 2, coverage, independent
+  reproduction.
+- Waiting on: owner review, commit, moving `ci.phase-02.yml` to `.github/workflows/ci.yml`, and
+  approval (criterion 2.15). Phase 3 not started.
+- Report: `docs/phase-reports/phase-02.md`.
 
 ### 2026-11-25 — Phases 0 and 1 submitted for review
 - Implemented: telemetry value model, validation contracts, freshness classification, deterministic

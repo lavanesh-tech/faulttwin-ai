@@ -26,10 +26,25 @@ queue capacity {1k, 16k}. 5 repetitions each after 1 warm-up. Metrics: ING-TPUT,
 ING-CPU, ING-MEM, ING-REJ/DROP, ING-SCALE. Question: does concurrency increase *useful* processed
 events under equivalent work?
 
+**Phase 2 run (2026-11-25), recorded deviations.** (1) A per-event work parameter was added to the
+grid: `work` = 0 (validation and ordering only) and 4096 extra SplitMix64 iterations in the sink,
+the same in the baseline and the pipeline. Reason: decided before the recorded runs, after
+exploratory runs showed that with near-zero work the result only measures queue hand-off cost.
+(2) The pipeline uses the `kBlock` policy, so nothing is rejected or dropped. (3) Every repetition
+is preceded by an untimed 100,000-event warm-up pass instead of one warm-up run per configuration.
+(4) ING-CPU, ING-MEM and ING-SAT are not reported for Experiment 1. (5) Runs are on a 4-vCPU cloud
+container, so the 4- and 8-consumer configurations oversubscribe the CPU.
+
 ### Experiment 2 — Overload resilience (Phase 2)
 Arrival profiles: sustained 2× and 5× consumer capacity for 60 s; bursts of 10× for 1 s every 10 s;
 recovery period after the spike. Compare baseline and bounded design under an identical memory cap.
 Metrics: ING-MEM peak, latency, ING-ACC/REJ/DROP, time to drain after the spike, stability.
+
+**Phase 2 run: reduced version only.** One producer offers 200,000 events as fast as it can to one
+slow consumer (2,000 SplitMix64 iterations per event), once for each bounded policy (capacity 1024)
+and once for the unbounded reference, each in its own process so that peak RSS (VmHWM) belongs to
+one design. Not run: the 2× / 5× sustained and 10× burst arrival profiles, the 60 s duration, the
+memory cap, latency and time-to-drain. The full protocol remains PLANNED.
 
 ### Experiment 3 — Rules vs ML (Phases 4, 7)
 Data: independent scenario runs from Phase 6, split **by run** into train / validation / test;

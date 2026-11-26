@@ -1,6 +1,6 @@
 # FaultTwin AI — Dependency Matrix
 
-## Actually used (Phase 1)
+## Actually used (Phases 1–2)
 
 | Dependency | Version / pin | Used for | Licence |
 |---|---|---|---|
@@ -9,11 +9,15 @@
 | GCC | 13.3.0 (Ubuntu 24.04) used for the recorded runs | Compiler | GPL (toolchain only) |
 | Clang / clang-tidy / clang-format | 18.1.3 (Ubuntu 24.04) used for the recorded runs | Compiler, lint, format | Apache-2.0 with LLVM exception |
 | GoogleTest | v1.17.0, commit `52eb8108c5bdec04579160ae17225d66034bd723` via FetchContent | Unit tests only | BSD-3-Clause |
+| Google Benchmark | v1.9.4, commit `eddb0241389718a23a42db6af5f0164b6e0139af` via FetchContent (Phase 2, ADR-0013) | `bench/` only, Release preset only | Apache-2.0 |
+| Python 3 (standard library only) | 3.13 used for the recorded runs | `scripts/summarize-benchmarks.py` (results only, not the build) | PSF |
+| Threads (pthreads via `find_package(Threads)`) | system | `std::jthread` in `faulttwin_concurrency`/`faulttwin_ingest` | system |
 | actions/checkout | v4.4.0, `11d5960a326750d5838078e36cf38b85af677262` | CI | MIT |
 | actions/upload-artifact | v4.6.2, `ea165f8d65b6e75b540449e92b4886f43607fa02` | CI | MIT |
 
-No runtime third-party library is linked into `faulttwin-synth` or `faulttwin_telemetry` (C++
-standard library only).
+No runtime third-party library is linked into `faulttwin-synth`, `faulttwin_telemetry`,
+`faulttwin_concurrency` or `faulttwin_ingest` (C++ standard library and the system thread library
+only).
 
 ## Planned for later phases (candidates, not yet resolved or built)
 
@@ -41,7 +45,7 @@ version here and justifies it in its phase report.
 | libpq | from PostgreSQL 17 | Collectors, meta-db | PostgreSQL |
 | spdlog | 1.x | Structured logging backend | MIT |
 | GoogleTest | 1.15+ | Unit/integration tests | BSD-3-Clause |
-| Google Benchmark | 1.9.x | Microbenchmarks | Apache-2.0 |
+| Google Benchmark | 1.9.4 (in use since Phase 2) | Benchmarks | Apache-2.0 |
 
 ## Infrastructure
 | Component | Candidate | Notes |

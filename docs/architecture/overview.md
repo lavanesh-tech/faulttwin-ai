@@ -307,7 +307,7 @@ JSON logs with `trace_id` propagated from HTTP request to jobs.
 | Small, synthetic datasets overfit | Inflated metrics | Grouped split by scenario, held-out fault type, report CIs and FP/hour |
 | Twin may not match reality | Misleading rankings | Calibration error reported; outcomes labelled simulated; rank stability shown |
 
-## 10. Implemented so far (Phase 1)
+## 10. Implemented so far (Phases 1–2)
 
 | Component | Location | Status |
 |---|---|---|
@@ -315,6 +315,14 @@ JSON logs with `trace_id` propagated from HTTP request to jobs.
 | Validation contracts and freshness classification | `validation.hpp/.cpp` | Implemented, unit tested |
 | Deterministic synthetic generator (SplitMix64) | `synthetic.hpp/.cpp` | Implemented, unit tested |
 | `faulttwin-synth` CLI | `src/cli/` | Implemented, tested via CTest |
-| Build, presets, sanitizers, CI | root `CMakeLists.txt`, `CMakePresets.json`, `cmake/`, `.github/workflows/ci.yml` | Built and tested locally on Linux; CI not yet run |
+| Build, presets, sanitizers, CI | root `CMakeLists.txt`, `CMakePresets.json`, `cmake/`, `.github/workflows/ci.yml` | Built and tested on Linux; CI green on `b36a903` |
+| `BoundedQueue<T>` (3 overload policies, timeouts, `stop_token` cancellation, close, `pop_batch`), `UnboundedQueue<T>` reference, `QueueLike` concept | `include/faulttwin/concurrency/`, `src/concurrency/` | Phase 2: implemented, unit + stress tested (incl. TSan) |
+| `NodeOrderTracker`, `EventProcessor`, `IngestPipeline` (jthread consumers, drain-deadline shutdown), single-threaded baseline | `include/faulttwin/ingest/`, `src/ingest/` | Phase 2: implemented, tested (incl. TSan) |
+| Google Benchmark suite and scripts | `bench/`, `scripts/run-benchmarks.sh`, `scripts/summarize-benchmarks.py` | Phase 2: measured in a cloud container only |
+
+Phase 2 differences from the target design in §4–§6: there is no `core` library yet (the only
+clock abstraction needed is the injectable `NowFn`), the event type is still the Phase 1
+`RawTelemetrySample` wrapped in `IngestEvent` (not the full `TelemetryEvent` of §6.1), and the
+pipeline has one stage (validate → order → sink) with no routing to storage or features.
 
 Everything else in this document is design only.

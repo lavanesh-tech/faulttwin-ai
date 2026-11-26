@@ -15,7 +15,7 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 0.2 | Architecture, module boundaries and safety model documented (`docs/architecture/overview.md`) | ✅ |
 | 0.3 | Metric definitions, baselines, experiment protocols, targets (`docs/evaluation/`) | ✅ drafted |
 | 0.4 | ADRs for decisions with real alternatives (`docs/adr/`) | ✅ |
-| 0.5 | Owner approval after review | ⏳ |
+| 0.5 | Owner approval after review | ✅ approved 2026-11-25 |
 
 ## Phase 1 — C++20 engineering foundation
 | # | Criterion | Status | Evidence |
@@ -36,17 +36,26 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 1.14 | Builds and tests on the owner's macOS machine | ✅ debug, 57/57, AppleClang 21 | `results/phase-01/macos/appleclang-debug.log` |
 | 1.15 | README, ADRs, metric definitions, evaluation plan, evidence ledger with no results | ✅ | `docs/` |
 | 1.16 | No AI listed as author/co-author anywhere; no commits made by the assistant | ✅ | phase report §20 |
-| 1.17 | Owner approval after independent review | ⏳ | |
+| 1.17 | Owner approval after independent review | ✅ approved 2026-11-25 ("next") | |
 
 ## Phase 2 — Concurrent telemetry ingestion
-- Bounded thread-safe queue with explicit overload policies (block with timeout, reject newest,
-  drop oldest) and counters for attempted/accepted/processed/rejected/dropped; nothing is discarded
-  silently.
-- Producers/consumers with `std::jthread` and `std::stop_token`; graceful shutdown with a drain
-  deadline; cancellation and timeout tests.
-- Duplicate, invalid and out-of-order policies with tests.
-- Concurrency stress tests pass under TSan.
-- Single-threaded baseline and Release-build benchmarks recorded per `docs/evaluation/experiment-protocols.md` (Experiments 1–2) *(T)*.
+| # | Criterion | Status | Evidence |
+|---|---|---|---|
+| 2.1 | Bounded thread-safe queue with explicit overload policies (block with timeout, reject newest, drop oldest) | ✅ implemented, tested | `bounded_queue.hpp`, `bounded_queue_test.cpp` |
+| 2.2 | Counters for attempted/accepted/processed/rejected/dropped; nothing discarded silently (refused/evicted/abandoned items handed back) | ✅ tested | `IngestCounters`, `QueueStats`, exactly-once stress tests, `invariant_ok` in every benchmark run |
+| 2.3 | Producers/consumers with `std::jthread` and `std::stop_token` | ✅ tested | `pipeline.hpp`, `pipeline_test.cpp` |
+| 2.4 | Graceful shutdown with a drain deadline | ✅ tested | `ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents`, `CancelledConsumerHandsBackTheRestOfItsBatch` |
+| 2.5 | Cancellation and timeout tests | ✅ tested | `*TimesOut*`, `*Cancelled*` tests |
+| 2.6 | Duplicate, invalid and out-of-order policies with tests | ✅ tested | `order_tracker_test.cpp`, `Policies/PipelinePolicyTest.*` |
+| 2.7 | Concurrency stress tests pass under TSan (GCC and Clang, Linux) | ✅ tested | `results/phase-02/{gcc,clang}/tsan.log`, `results/phase-02/tsan-repeat/` |
+| 2.8 | All presets pass with GCC and Clang on Linux | ✅ tested | `results/phase-02/{gcc,clang}/*.log` |
+| 2.9 | Single-threaded baseline implemented with identical work | ✅ tested | `baseline.hpp`, `BaselineTest.MatchesThePipelineOnTheSameInput` |
+| 2.10 | Release benchmarks recorded per Experiment 1 with machine-readable output and environment metadata *(T)* | ✅ measured (cloud container only; deviations recorded in `experiment-protocols.md`) | `results/phase-02/benchmarks/` |
+| 2.11 | Experiment 2 (overload) recorded *(T)* | ⏳ reduced version only | `overload-*.json`; full protocol NOT RUN |
+| 2.12 | Builds and tests on the owner's macOS machine | ⏳ NOT RUN | |
+| 2.13 | CI green on GitHub with the Phase 2 code | ⏳ NOT RUN | needs owner commit + `ci.phase-02.yml` moved |
+| 2.14 | No AI authorship; no assistant commits | ✅ | phase report §20 |
+| 2.15 | Owner approval after independent review | ⏳ | |
 
 ## Phase 3 — PostgreSQL monitoring
 - Compose lab: primary + 2 streaming replicas, read-only monitoring role, isolated network.

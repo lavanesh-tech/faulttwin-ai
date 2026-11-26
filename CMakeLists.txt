@@ -20,6 +20,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 option(FAULTTWIN_BUILD_TESTS "Build FaultTwin unit and CLI tests" ON)
 option(FAULTTWIN_WARNINGS_AS_ERRORS "Treat compiler warnings in first-party code as errors" ON)
 option(FAULTTWIN_ENABLE_CLANG_TIDY "Run clang-tidy on first-party code while compiling" OFF)
+option(FAULTTWIN_BUILD_BENCHMARKS "Build Google Benchmark benchmarks (use only with Release)" OFF)
 set(FAULTTWIN_SANITIZER "none" CACHE STRING "Sanitizer build: none | address-undefined | thread")
 set_property(CACHE FAULTTWIN_SANITIZER PROPERTY STRINGS none address-undefined thread)
 
@@ -43,4 +44,10 @@ if(FAULTTWIN_BUILD_TESTS)
   include(Dependencies)
   enable_testing()
   add_subdirectory(tests)
+endif()
+
+# ---- Benchmarks ---------------------------------------------------------------
+if(FAULTTWIN_BUILD_BENCHMARKS)
+  include(BenchmarkDependency)
+  add_subdirectory(bench)
 endif()
