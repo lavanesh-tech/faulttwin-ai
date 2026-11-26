@@ -52,8 +52,8 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 2.9 | Single-threaded baseline implemented with identical work | ✅ tested | `baseline.hpp`, `BaselineTest.MatchesThePipelineOnTheSameInput` |
 | 2.10 | Release benchmarks recorded per Experiment 1 with machine-readable output and environment metadata *(T)* | ✅ measured (cloud container only; deviations recorded in `experiment-protocols.md`) | `results/phase-02/benchmarks/` |
 | 2.11 | Experiment 2 (overload) recorded *(T)* | ⏳ reduced version only | `overload-*.json`; full protocol NOT RUN |
-| 2.12 | Builds and tests on the owner's macOS machine | ⏳ NOT RUN | |
-| 2.13 | CI green on GitHub with the Phase 2 code | ⏳ NOT RUN | needs owner commit + `ci.phase-02.yml` moved |
+| 2.12 | Builds and tests on the owner's macOS machine | ✅ debug 114/114, release 115/115, AppleClang 21 | `results/phase-02/macos/appleclang-{debug,release}.ctest.log` |
+| 2.13 | CI green on GitHub with the Phase 2 code | ✅ CI run #3 on `3539c5c` green (4m 59s, seen in the owner's GitHub Actions screenshot) | GitHub Actions run #3 |
 | 2.14 | No AI authorship; no assistant commits | ✅ | phase report §20 |
 | 2.15 | Owner approval after independent review | ⏳ | |
 

@@ -51,5 +51,5 @@ results and should not be phrased as such.
 | Pipeline policies, shutdown deadline, hand-back of abandoned work | TESTED | `tests/unit/pipeline_test.cpp` |
 | All tests clean under TSan and ASan+UBSan, GCC 13.3 and Clang 18.1 (Linux) | TESTED | `results/phase-02/{gcc,clang}/`, `results/phase-02/tsan-repeat/` |
 | Baseline and pipeline give identical disposition counts on the same input | TESTED | `BaselineTest.MatchesThePipelineOnTheSameInput` |
-| Phase 2 build and tests on macOS | NOT RUN | |
-| Phase 2 CI run | NOT RUN | |
+| Phase 2 build and tests on macOS (debug 114/114, release 115/115, AppleClang 21) | TESTED (owner-run) | `results/phase-02/macos/appleclang-{debug,release}.ctest.log` |
+| Phase 2 CI run (`3539c5c`) | TESTED (CI) | GitHub Actions `ci` run #3, green, 4m 59s |

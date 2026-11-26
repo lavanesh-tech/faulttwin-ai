@@ -205,7 +205,7 @@ find src -name '*.cpp' | xargs clang-tidy -p build/tidy --quiet --warnings-as-er
 |---|---|---|---|---|---|
 | Linux x86_64 / GCC 13.3.0 | 114/114 pass | 115/115 pass | 114/114 pass | 114/114 pass | assistant (cloud container) |
 | Linux x86_64 / Clang 18.1.3 | 114/114 pass | 115/115 pass | 114/114 pass | 114/114 pass | assistant (cloud container) |
-| macOS arm64 / AppleClang | NOT RUN | NOT RUN | NOT RUN | NOT RUN | — |
+| macOS arm64 / AppleClang 21.0.0 | 114/114 pass | 115/115 pass | NOT RUN | NOT RUN | owner (Mac), logs in `results/phase-02/macos/` |
 
 114 CTest tests = the 57 Phase 1 tests (unchanged) + 57 new GoogleTest cases: BoundedQueueTest
 20, UnboundedQueueTest 2, QueueStressTest 6, OrderTrackerTest 8, PipelineTest 17,
@@ -386,9 +386,8 @@ Phase 2: concurrent telemetry ingestion
   succeed.
 - The thread-creation failure path in the `IngestPipeline` constructor is not tested.
 - clang-tidy was run on `src/` only, as in Phase 1; tests and benchmarks were not linted.
-- macOS has not built Phase 2. If the owner's libc++ lacks `std::jthread` or
-  `condition_variable_any::wait(lock, stop_token, pred)`, the build fails there.
-- The CI workflow change (`ci.phase-02.yml`) has not run on GitHub.
+- On macOS only the debug and release presets were run (AppleClang 21, all pass); the
+  sanitizer presets were not run there.
 - Coverage is not measured.
 
 ## 22. Incomplete requirements
@@ -397,8 +396,8 @@ Phase 2: concurrent telemetry ingestion
 | Experiment 1 full grid, 5 repetitions, Release, GCC and Clang | Done in the cloud container (see §16) |
 | Experiment 1: ING-CPU, ING-MEM, ING-SAT | NOT RUN (CPU time is in the raw JSON but not summarised) |
 | Experiment 2 full protocol (2×/5×/10× profiles, 60 s, memory cap, drain time) | NOT RUN; reduced version only |
-| Owner-machine build and test (macOS) | NOT RUN |
-| CI run of the Phase 2 code | NOT RUN (needs the owner's commit and the moved workflow) |
+| Owner-machine build and test (macOS) | Done: debug 114/114, release 115/115, AppleClang 21 (sanitizer presets NOT RUN) |
+| CI run of the Phase 2 code | Done: CI run #3 on `3539c5c` green (4m 59s, seen in the owner's GitHub Actions screenshot) |
 | Independent reproduction of any benchmark | NOT RUN |
 | Coverage | NOT RUN |
 | macOS in CI (Phase 1 question 6) | Not added. Proposal: a `macos-14` job running the debug preset only, added by the owner if wanted |
@@ -489,12 +488,11 @@ From `docs/architecture/acceptance-criteria.md`:
 | 2.9 | Single-threaded baseline with identical work | ✅ tested |
 | 2.10 | Release benchmarks per Experiment 1, machine-readable, environment metadata *(T)* | ✅ measured in the cloud container; deviations recorded |
 | 2.11 | Experiment 2 *(T)* | ⏳ reduced version only |
-| 2.12 | Builds and tests on the owner's macOS machine | ⏳ NOT RUN |
-| 2.13 | CI green with Phase 2 code | ⏳ NOT RUN |
+| 2.12 | Builds and tests on the owner's macOS machine | ✅ debug 114/114, release 115/115, AppleClang 21 |
+| 2.13 | CI green with Phase 2 code | ✅ CI run #3 on `3539c5c` green (4m 59s, seen in the owner's GitHub Actions screenshot) |
 | 2.14 | No AI authorship; no assistant commits | ✅ |
 | 2.15 | Owner approval after independent review | ⏳ |
 
-**Phase 2 is not complete.** Open: your macOS run (2.12), the CI run after you commit and move
-the workflow (2.13), a decision on whether the reduced Experiment 2 is enough for now (2.11), and
+**Phase 2 is not complete.** Open: a decision on whether the reduced Experiment 2 is enough for now (2.11), and
 your review and approval (2.15). Phase 3 has not been started.
 

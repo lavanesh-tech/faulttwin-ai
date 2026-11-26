@@ -9,7 +9,7 @@ approves it after technical review.
 |---|---|---|---|
 | 0 | Architecture and evaluation design | Complete | Docs in `docs/architecture/`, `docs/adr/`, `docs/evaluation/` |
 | 1 | C++20 engineering foundation | Complete | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
-| 2 | Concurrent telemetry ingestion | In review | Uncommitted on top of `d65152f`. Linux: GCC + Clang, 4 presets pass, TSan clean. Benchmarks measured in a cloud container only. macOS and CI NOT RUN |
+| 2 | Concurrent telemetry ingestion | In review | Commit `3539c5c`. Linux: GCC + Clang, 4 presets pass, TSan clean. macOS debug + release pass (AppleClang 21). CI green (run #3). Benchmarks measured in a cloud container only |
 | 3 | PostgreSQL monitoring | Not started | |
 | 4 | Time-series features and anomaly detection | Not started | |
 | 5 | Persistence, APIs and observability | Not started | |
@@ -36,10 +36,11 @@ approves it after technical review.
 - Measured (assistant, cloud container only): Experiment 1 grid and a reduced Experiment 2.
   With heavy per-event work the pipeline reached up to 3.4× the single-threaded baseline; with
   near-zero work it was 0.1–0.4× (slower). Details in the Phase 2 report §16–17.
-- Not run: macOS build, CI with Phase 2 code, full Experiment 2, coverage, independent
-  reproduction.
-- Waiting on: owner review, commit, moving `ci.phase-02.yml` to `.github/workflows/ci.yml`, and
-  approval (criterion 2.15). Phase 3 not started.
+- Owner committed and pushed `3539c5c`. On the owner's Mac (AppleClang 21) debug passed 114/114
+  and release passed 115/115, including `bench.smoke`.
+- Not run: macOS sanitizer presets, full Experiment 2, coverage, independent reproduction.
+- CI run #3 on `3539c5c` passed (4m 59s).
+- Waiting on: owner approval (criterion 2.15). Phase 3 not started.
 - Report: `docs/phase-reports/phase-02.md`.
 
 ### 2026-11-25 — Phases 0 and 1 submitted for review

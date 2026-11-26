@@ -1,0 +1,3110 @@
+Start testing: Nov 25 20:35 EST
+----------------------------------------------------------
+1/114 Testing: NodeIdTest.AcceptsTypicalIdentifiers
+1/114 Test: NodeIdTest.AcceptsTypicalIdentifiers
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.AcceptsTypicalIdentifiers" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.AcceptsTypicalIdentifiers" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.AcceptsTypicalIdentifiers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.AcceptsTypicalIdentifiers
+[       OK ] NodeIdTest.AcceptsTypicalIdentifiers (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.AcceptsTypicalIdentifiers" end time: Nov 25 20:35 EST
+"NodeIdTest.AcceptsTypicalIdentifiers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/114 Testing: NodeIdTest.RejectsEmpty
+2/114 Test: NodeIdTest.RejectsEmpty
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.RejectsEmpty" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.RejectsEmpty" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.RejectsEmpty
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.RejectsEmpty
+[       OK ] NodeIdTest.RejectsEmpty (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.RejectsEmpty" end time: Nov 25 20:35 EST
+"NodeIdTest.RejectsEmpty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/114 Testing: NodeIdTest.LengthBoundaryIsInclusive
+3/114 Test: NodeIdTest.LengthBoundaryIsInclusive
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.LengthBoundaryIsInclusive" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.LengthBoundaryIsInclusive" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.LengthBoundaryIsInclusive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.LengthBoundaryIsInclusive
+[       OK ] NodeIdTest.LengthBoundaryIsInclusive (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.LengthBoundaryIsInclusive" end time: Nov 25 20:35 EST
+"NodeIdTest.LengthBoundaryIsInclusive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/114 Testing: NodeIdTest.TooLongIsReportedBeforeCharacterErrors
+4/114 Test: NodeIdTest.TooLongIsReportedBeforeCharacterErrors
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.TooLongIsReportedBeforeCharacterErrors" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.TooLongIsReportedBeforeCharacterErrors" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.TooLongIsReportedBeforeCharacterErrors
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.TooLongIsReportedBeforeCharacterErrors
+[       OK ] NodeIdTest.TooLongIsReportedBeforeCharacterErrors (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.TooLongIsReportedBeforeCharacterErrors" end time: Nov 25 20:35 EST
+"NodeIdTest.TooLongIsReportedBeforeCharacterErrors" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/114 Testing: NodeIdTest.RejectsNonAlphanumericFirstCharacter
+5/114 Test: NodeIdTest.RejectsNonAlphanumericFirstCharacter
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.RejectsNonAlphanumericFirstCharacter" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.RejectsNonAlphanumericFirstCharacter" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.RejectsNonAlphanumericFirstCharacter
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.RejectsNonAlphanumericFirstCharacter
+[       OK ] NodeIdTest.RejectsNonAlphanumericFirstCharacter (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.RejectsNonAlphanumericFirstCharacter" end time: Nov 25 20:35 EST
+"NodeIdTest.RejectsNonAlphanumericFirstCharacter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/114 Testing: NodeIdTest.RejectsDisallowedCharacters
+6/114 Test: NodeIdTest.RejectsDisallowedCharacters
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.RejectsDisallowedCharacters" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.RejectsDisallowedCharacters" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.RejectsDisallowedCharacters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.RejectsDisallowedCharacters
+[       OK ] NodeIdTest.RejectsDisallowedCharacters (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.RejectsDisallowedCharacters" end time: Nov 25 20:35 EST
+"NodeIdTest.RejectsDisallowedCharacters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/114 Testing: NodeIdTest.RejectsEmbeddedNul
+7/114 Test: NodeIdTest.RejectsEmbeddedNul
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeIdTest.RejectsEmbeddedNul" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeIdTest.RejectsEmbeddedNul" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeIdTest.RejectsEmbeddedNul
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeIdTest
+[ RUN      ] NodeIdTest.RejectsEmbeddedNul
+[       OK ] NodeIdTest.RejectsEmbeddedNul (0 ms)
+[----------] 1 test from NodeIdTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeIdTest.RejectsEmbeddedNul" end time: Nov 25 20:35 EST
+"NodeIdTest.RejectsEmbeddedNul" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/114 Testing: NodeRoleTest.DeclaredEnumeratorsAreValid
+8/114 Test: NodeRoleTest.DeclaredEnumeratorsAreValid
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeRoleTest.DeclaredEnumeratorsAreValid" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeRoleTest.DeclaredEnumeratorsAreValid" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeRoleTest.DeclaredEnumeratorsAreValid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeRoleTest
+[ RUN      ] NodeRoleTest.DeclaredEnumeratorsAreValid
+[       OK ] NodeRoleTest.DeclaredEnumeratorsAreValid (0 ms)
+[----------] 1 test from NodeRoleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeRoleTest.DeclaredEnumeratorsAreValid" end time: Nov 25 20:35 EST
+"NodeRoleTest.DeclaredEnumeratorsAreValid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/114 Testing: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid
+9/114 Test: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeRoleTest
+[ RUN      ] NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid
+[       OK ] NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid (0 ms)
+[----------] 1 test from NodeRoleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid" end time: Nov 25 20:35 EST
+"NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/114 Testing: NodeRoleTest.StringRoundTrip
+10/114 Test: NodeRoleTest.StringRoundTrip
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeRoleTest.StringRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeRoleTest.StringRoundTrip" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeRoleTest.StringRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeRoleTest
+[ RUN      ] NodeRoleTest.StringRoundTrip
+[       OK ] NodeRoleTest.StringRoundTrip (0 ms)
+[----------] 1 test from NodeRoleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeRoleTest.StringRoundTrip" end time: Nov 25 20:35 EST
+"NodeRoleTest.StringRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/114 Testing: NodeRoleTest.ParseIsExactAndCaseSensitive
+11/114 Test: NodeRoleTest.ParseIsExactAndCaseSensitive
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=NodeRoleTest.ParseIsExactAndCaseSensitive" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"NodeRoleTest.ParseIsExactAndCaseSensitive" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NodeRoleTest.ParseIsExactAndCaseSensitive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NodeRoleTest
+[ RUN      ] NodeRoleTest.ParseIsExactAndCaseSensitive
+[       OK ] NodeRoleTest.ParseIsExactAndCaseSensitive (0 ms)
+[----------] 1 test from NodeRoleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NodeRoleTest.ParseIsExactAndCaseSensitive" end time: Nov 25 20:35 EST
+"NodeRoleTest.ParseIsExactAndCaseSensitive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/114 Testing: ValidationTest.EachPercentageFieldIsReportedSeparately
+12/114 Test: ValidationTest.EachPercentageFieldIsReportedSeparately
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.EachPercentageFieldIsReportedSeparately" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.EachPercentageFieldIsReportedSeparately" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.EachPercentageFieldIsReportedSeparately
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.EachPercentageFieldIsReportedSeparately
+[       OK ] ValidationTest.EachPercentageFieldIsReportedSeparately (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.EachPercentageFieldIsReportedSeparately" end time: Nov 25 20:35 EST
+"ValidationTest.EachPercentageFieldIsReportedSeparately" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/114 Testing: ValidationTest.TimestampPolicy
+13/114 Test: ValidationTest.TimestampPolicy
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.TimestampPolicy" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.TimestampPolicy" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.TimestampPolicy
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.TimestampPolicy
+[       OK ] ValidationTest.TimestampPolicy (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.TimestampPolicy" end time: Nov 25 20:35 EST
+"ValidationTest.TimestampPolicy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/114 Testing: ValidationTest.FutureSkewIsConfigurable
+14/114 Test: ValidationTest.FutureSkewIsConfigurable
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.FutureSkewIsConfigurable" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.FutureSkewIsConfigurable" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.FutureSkewIsConfigurable
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.FutureSkewIsConfigurable
+[       OK ] ValidationTest.FutureSkewIsConfigurable (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.FutureSkewIsConfigurable" end time: Nov 25 20:35 EST
+"ValidationTest.FutureSkewIsConfigurable" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/114 Testing: ValidationTest.MissingLagOnReplicaIsNotZeroLag
+15/114 Test: ValidationTest.MissingLagOnReplicaIsNotZeroLag
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.MissingLagOnReplicaIsNotZeroLag" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.MissingLagOnReplicaIsNotZeroLag" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.MissingLagOnReplicaIsNotZeroLag
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.MissingLagOnReplicaIsNotZeroLag
+[       OK ] ValidationTest.MissingLagOnReplicaIsNotZeroLag (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.MissingLagOnReplicaIsNotZeroLag" end time: Nov 25 20:35 EST
+"ValidationTest.MissingLagOnReplicaIsNotZeroLag" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/114 Testing: ValidationTest.ZeroLagOnReplicaIsAMeasurement
+16/114 Test: ValidationTest.ZeroLagOnReplicaIsAMeasurement
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.ZeroLagOnReplicaIsAMeasurement" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.ZeroLagOnReplicaIsAMeasurement" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.ZeroLagOnReplicaIsAMeasurement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.ZeroLagOnReplicaIsAMeasurement
+[       OK ] ValidationTest.ZeroLagOnReplicaIsAMeasurement (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.ZeroLagOnReplicaIsAMeasurement" end time: Nov 25 20:35 EST
+"ValidationTest.ZeroLagOnReplicaIsAMeasurement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/114 Testing: ValidationTest.ReplicationLagRules
+17/114 Test: ValidationTest.ReplicationLagRules
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.ReplicationLagRules" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.ReplicationLagRules" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.ReplicationLagRules
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.ReplicationLagRules
+[       OK ] ValidationTest.ReplicationLagRules (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.ReplicationLagRules" end time: Nov 25 20:35 EST
+"ValidationTest.ReplicationLagRules" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/114 Testing: ValidationTest.InvalidRoleStillChecksLagNumerically
+18/114 Test: ValidationTest.InvalidRoleStillChecksLagNumerically
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.InvalidRoleStillChecksLagNumerically" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.InvalidRoleStillChecksLagNumerically" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.InvalidRoleStillChecksLagNumerically
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.InvalidRoleStillChecksLagNumerically
+[       OK ] ValidationTest.InvalidRoleStillChecksLagNumerically (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.InvalidRoleStillChecksLagNumerically" end time: Nov 25 20:35 EST
+"ValidationTest.InvalidRoleStillChecksLagNumerically" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/114 Testing: ValidationTest.PrimaryLagStateIsNotApplicable
+19/114 Test: ValidationTest.PrimaryLagStateIsNotApplicable
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.PrimaryLagStateIsNotApplicable" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.PrimaryLagStateIsNotApplicable" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.PrimaryLagStateIsNotApplicable
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.PrimaryLagStateIsNotApplicable
+[       OK ] ValidationTest.PrimaryLagStateIsNotApplicable (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.PrimaryLagStateIsNotApplicable" end time: Nov 25 20:35 EST
+"ValidationTest.PrimaryLagStateIsNotApplicable" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/114 Testing: ValidationTest.ValidSamplePreservesEveryField
+20/114 Test: ValidationTest.ValidSamplePreservesEveryField
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.ValidSamplePreservesEveryField" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.ValidSamplePreservesEveryField" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.ValidSamplePreservesEveryField
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.ValidSamplePreservesEveryField
+[       OK ] ValidationTest.ValidSamplePreservesEveryField (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.ValidSamplePreservesEveryField" end time: Nov 25 20:35 EST
+"ValidationTest.ValidSamplePreservesEveryField" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/114 Testing: ValidationTest.ReportsAllIssuesInFieldOrder
+21/114 Test: ValidationTest.ReportsAllIssuesInFieldOrder
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.ReportsAllIssuesInFieldOrder" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.ReportsAllIssuesInFieldOrder" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.ReportsAllIssuesInFieldOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.ReportsAllIssuesInFieldOrder
+[       OK ] ValidationTest.ReportsAllIssuesInFieldOrder (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.ReportsAllIssuesInFieldOrder" end time: Nov 25 20:35 EST
+"ValidationTest.ReportsAllIssuesInFieldOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/114 Testing: ValidationTest.ValidationIsDeterministic
+22/114 Test: ValidationTest.ValidationIsDeterministic
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.ValidationIsDeterministic" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.ValidationIsDeterministic" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.ValidationIsDeterministic
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.ValidationIsDeterministic
+[       OK ] ValidationTest.ValidationIsDeterministic (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.ValidationIsDeterministic" end time: Nov 25 20:35 EST
+"ValidationTest.ValidationIsDeterministic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/114 Testing: ValidationTest.StableStringForms
+23/114 Test: ValidationTest.StableStringForms
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=ValidationTest.StableStringForms" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"ValidationTest.StableStringForms" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ValidationTest.StableStringForms
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ValidationTest
+[ RUN      ] ValidationTest.StableStringForms
+[       OK ] ValidationTest.StableStringForms (0 ms)
+[----------] 1 test from ValidationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ValidationTest.StableStringForms" end time: Nov 25 20:35 EST
+"ValidationTest.StableStringForms" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/114 Testing: FreshnessTest.StaleIsAPropertyOfValidData
+24/114 Test: FreshnessTest.StaleIsAPropertyOfValidData
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=FreshnessTest.StaleIsAPropertyOfValidData" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"FreshnessTest.StaleIsAPropertyOfValidData" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = FreshnessTest.StaleIsAPropertyOfValidData
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from FreshnessTest
+[ RUN      ] FreshnessTest.StaleIsAPropertyOfValidData
+[       OK ] FreshnessTest.StaleIsAPropertyOfValidData (0 ms)
+[----------] 1 test from FreshnessTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"FreshnessTest.StaleIsAPropertyOfValidData" end time: Nov 25 20:35 EST
+"FreshnessTest.StaleIsAPropertyOfValidData" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/114 Testing: FreshnessTest.SlightlyFutureSampleIsFresh
+25/114 Test: FreshnessTest.SlightlyFutureSampleIsFresh
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=FreshnessTest.SlightlyFutureSampleIsFresh" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"FreshnessTest.SlightlyFutureSampleIsFresh" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = FreshnessTest.SlightlyFutureSampleIsFresh
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from FreshnessTest
+[ RUN      ] FreshnessTest.SlightlyFutureSampleIsFresh
+[       OK ] FreshnessTest.SlightlyFutureSampleIsFresh (0 ms)
+[----------] 1 test from FreshnessTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"FreshnessTest.SlightlyFutureSampleIsFresh" end time: Nov 25 20:35 EST
+"FreshnessTest.SlightlyFutureSampleIsFresh" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/114 Testing: SyntheticTest.ProducesNodeCountTimesSamples
+26/114 Test: SyntheticTest.ProducesNodeCountTimesSamples
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.ProducesNodeCountTimesSamples" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.ProducesNodeCountTimesSamples" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.ProducesNodeCountTimesSamples
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.ProducesNodeCountTimesSamples
+[       OK ] SyntheticTest.ProducesNodeCountTimesSamples (0 ms)
+[----------] 1 test from SyntheticTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.ProducesNodeCountTimesSamples" end time: Nov 25 20:35 EST
+"SyntheticTest.ProducesNodeCountTimesSamples" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/114 Testing: SyntheticTest.SameSeedSameSequence
+27/114 Test: SyntheticTest.SameSeedSameSequence
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.SameSeedSameSequence" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.SameSeedSameSequence" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.SameSeedSameSequence
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.SameSeedSameSequence
+[       OK ] SyntheticTest.SameSeedSameSequence (0 ms)
+[----------] 1 test from SyntheticTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.SameSeedSameSequence" end time: Nov 25 20:35 EST
+"SyntheticTest.SameSeedSameSequence" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/114 Testing: SyntheticTest.DifferentSeedDifferentSequence
+28/114 Test: SyntheticTest.DifferentSeedDifferentSequence
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.DifferentSeedDifferentSequence" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.DifferentSeedDifferentSequence" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.DifferentSeedDifferentSequence
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.DifferentSeedDifferentSequence
+[       OK ] SyntheticTest.DifferentSeedDifferentSequence (0 ms)
+[----------] 1 test from SyntheticTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.DifferentSeedDifferentSequence" end time: Nov 25 20:35 EST
+"SyntheticTest.DifferentSeedDifferentSequence" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/114 Testing: SyntheticTest.GoldenFirstSample
+29/114 Test: SyntheticTest.GoldenFirstSample
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.GoldenFirstSample" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.GoldenFirstSample" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.GoldenFirstSample
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.GoldenFirstSample
+[       OK ] SyntheticTest.GoldenFirstSample (0 ms)
+[----------] 1 test from SyntheticTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.GoldenFirstSample" end time: Nov 25 20:35 EST
+"SyntheticTest.GoldenFirstSample" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/114 Testing: SyntheticTest.CleanRunIsEntirelyValid
+30/114 Test: SyntheticTest.CleanRunIsEntirelyValid
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.CleanRunIsEntirelyValid" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.CleanRunIsEntirelyValid" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.CleanRunIsEntirelyValid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.CleanRunIsEntirelyValid
+[       OK ] SyntheticTest.CleanRunIsEntirelyValid (2 ms)
+[----------] 1 test from SyntheticTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.CleanRunIsEntirelyValid" end time: Nov 25 20:35 EST
+"SyntheticTest.CleanRunIsEntirelyValid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/114 Testing: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
+31/114 Test: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
+[       OK ] SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue (6 ms)
+[----------] 1 test from SyntheticTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (6 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue" end time: Nov 25 20:35 EST
+"SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/114 Testing: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
+32/114 Test: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
+[       OK ] SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag (0 ms)
+[----------] 1 test from SyntheticTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag" end time: Nov 25 20:35 EST
+"SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/114 Testing: SyntheticTest.ReferenceNowIsLastTick
+33/114 Test: SyntheticTest.ReferenceNowIsLastTick
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=SyntheticTest.ReferenceNowIsLastTick" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"SyntheticTest.ReferenceNowIsLastTick" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SyntheticTest.ReferenceNowIsLastTick
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SyntheticTest
+[ RUN      ] SyntheticTest.ReferenceNowIsLastTick
+[       OK ] SyntheticTest.ReferenceNowIsLastTick (0 ms)
+[----------] 1 test from SyntheticTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SyntheticTest.ReferenceNowIsLastTick" end time: Nov 25 20:35 EST
+"SyntheticTest.ReferenceNowIsLastTick" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/114 Testing: CliOptionsTest.DefaultsWithNoArguments
+34/114 Test: CliOptionsTest.DefaultsWithNoArguments
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliOptionsTest.DefaultsWithNoArguments" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliOptionsTest.DefaultsWithNoArguments" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliOptionsTest.DefaultsWithNoArguments
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliOptionsTest
+[ RUN      ] CliOptionsTest.DefaultsWithNoArguments
+[       OK ] CliOptionsTest.DefaultsWithNoArguments (0 ms)
+[----------] 1 test from CliOptionsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliOptionsTest.DefaultsWithNoArguments" end time: Nov 25 20:35 EST
+"CliOptionsTest.DefaultsWithNoArguments" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/114 Testing: CliOptionsTest.ParsesEveryOption
+35/114 Test: CliOptionsTest.ParsesEveryOption
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliOptionsTest.ParsesEveryOption" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliOptionsTest.ParsesEveryOption" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliOptionsTest.ParsesEveryOption
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliOptionsTest
+[ RUN      ] CliOptionsTest.ParsesEveryOption
+[       OK ] CliOptionsTest.ParsesEveryOption (0 ms)
+[----------] 1 test from CliOptionsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliOptionsTest.ParsesEveryOption" end time: Nov 25 20:35 EST
+"CliOptionsTest.ParsesEveryOption" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/114 Testing: CliOptionsTest.HelpWinsImmediately
+36/114 Test: CliOptionsTest.HelpWinsImmediately
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliOptionsTest.HelpWinsImmediately" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliOptionsTest.HelpWinsImmediately" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliOptionsTest.HelpWinsImmediately
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliOptionsTest
+[ RUN      ] CliOptionsTest.HelpWinsImmediately
+[       OK ] CliOptionsTest.HelpWinsImmediately (0 ms)
+[----------] 1 test from CliOptionsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliOptionsTest.HelpWinsImmediately" end time: Nov 25 20:35 EST
+"CliOptionsTest.HelpWinsImmediately" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/114 Testing: CliOptionsTest.RejectsMalformedAndOutOfRangeValues
+37/114 Test: CliOptionsTest.RejectsMalformedAndOutOfRangeValues
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliOptionsTest.RejectsMalformedAndOutOfRangeValues" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliOptionsTest.RejectsMalformedAndOutOfRangeValues" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliOptionsTest.RejectsMalformedAndOutOfRangeValues
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliOptionsTest
+[ RUN      ] CliOptionsTest.RejectsMalformedAndOutOfRangeValues
+[       OK ] CliOptionsTest.RejectsMalformedAndOutOfRangeValues (0 ms)
+[----------] 1 test from CliOptionsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliOptionsTest.RejectsMalformedAndOutOfRangeValues" end time: Nov 25 20:35 EST
+"CliOptionsTest.RejectsMalformedAndOutOfRangeValues" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/114 Testing: CliOptionsTest.UsageMentionsProgramName
+38/114 Test: CliOptionsTest.UsageMentionsProgramName
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliOptionsTest.UsageMentionsProgramName" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliOptionsTest.UsageMentionsProgramName" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliOptionsTest.UsageMentionsProgramName
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliOptionsTest
+[ RUN      ] CliOptionsTest.UsageMentionsProgramName
+[       OK ] CliOptionsTest.UsageMentionsProgramName (0 ms)
+[----------] 1 test from CliOptionsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliOptionsTest.UsageMentionsProgramName" end time: Nov 25 20:35 EST
+"CliOptionsTest.UsageMentionsProgramName" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/114 Testing: CliReportTest.FormatsTimestampAsUtcWithMilliseconds
+39/114 Test: CliReportTest.FormatsTimestampAsUtcWithMilliseconds
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliReportTest.FormatsTimestampAsUtcWithMilliseconds" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliReportTest.FormatsTimestampAsUtcWithMilliseconds" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliReportTest.FormatsTimestampAsUtcWithMilliseconds
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliReportTest
+[ RUN      ] CliReportTest.FormatsTimestampAsUtcWithMilliseconds
+[       OK ] CliReportTest.FormatsTimestampAsUtcWithMilliseconds (0 ms)
+[----------] 1 test from CliReportTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliReportTest.FormatsTimestampAsUtcWithMilliseconds" end time: Nov 25 20:35 EST
+"CliReportTest.FormatsTimestampAsUtcWithMilliseconds" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/114 Testing: CliReportTest.JsonQuoteEscapesUntrustedText
+40/114 Test: CliReportTest.JsonQuoteEscapesUntrustedText
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliReportTest.JsonQuoteEscapesUntrustedText" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliReportTest.JsonQuoteEscapesUntrustedText" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliReportTest.JsonQuoteEscapesUntrustedText
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliReportTest
+[ RUN      ] CliReportTest.JsonQuoteEscapesUntrustedText
+[       OK ] CliReportTest.JsonQuoteEscapesUntrustedText (0 ms)
+[----------] 1 test from CliReportTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliReportTest.JsonQuoteEscapesUntrustedText" end time: Nov 25 20:35 EST
+"CliReportTest.JsonQuoteEscapesUntrustedText" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/114 Testing: CliReportTest.GroundTruthMatching
+41/114 Test: CliReportTest.GroundTruthMatching
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliReportTest.GroundTruthMatching" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliReportTest.GroundTruthMatching" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliReportTest.GroundTruthMatching
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliReportTest
+[ RUN      ] CliReportTest.GroundTruthMatching
+[       OK ] CliReportTest.GroundTruthMatching (0 ms)
+[----------] 1 test from CliReportTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliReportTest.GroundTruthMatching" end time: Nov 25 20:35 EST
+"CliReportTest.GroundTruthMatching" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/114 Testing: CliReportTest.SummaryCountsAndJsonLineShape
+42/114 Test: CliReportTest.SummaryCountsAndJsonLineShape
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=CliReportTest.SummaryCountsAndJsonLineShape" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"CliReportTest.SummaryCountsAndJsonLineShape" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CliReportTest.SummaryCountsAndJsonLineShape
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CliReportTest
+[ RUN      ] CliReportTest.SummaryCountsAndJsonLineShape
+[       OK ] CliReportTest.SummaryCountsAndJsonLineShape (0 ms)
+[----------] 1 test from CliReportTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CliReportTest.SummaryCountsAndJsonLineShape" end time: Nov 25 20:35 EST
+"CliReportTest.SummaryCountsAndJsonLineShape" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/114 Testing: BoundedQueueTest.ZeroCapacityIsAConfigurationError
+43/114 Test: BoundedQueueTest.ZeroCapacityIsAConfigurationError
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.ZeroCapacityIsAConfigurationError" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.ZeroCapacityIsAConfigurationError" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.ZeroCapacityIsAConfigurationError
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.ZeroCapacityIsAConfigurationError
+[       OK ] BoundedQueueTest.ZeroCapacityIsAConfigurationError (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.ZeroCapacityIsAConfigurationError" end time: Nov 25 20:35 EST
+"BoundedQueueTest.ZeroCapacityIsAConfigurationError" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/114 Testing: BoundedQueueTest.IsFifo
+44/114 Test: BoundedQueueTest.IsFifo
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.IsFifo" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.IsFifo" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.IsFifo
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.IsFifo
+[       OK ] BoundedQueueTest.IsFifo (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.IsFifo" end time: Nov 25 20:35 EST
+"BoundedQueueTest.IsFifo" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/114 Testing: BoundedQueueTest.WrapsAroundTheRingBuffer
+45/114 Test: BoundedQueueTest.WrapsAroundTheRingBuffer
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.WrapsAroundTheRingBuffer" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.WrapsAroundTheRingBuffer" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.WrapsAroundTheRingBuffer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.WrapsAroundTheRingBuffer
+[       OK ] BoundedQueueTest.WrapsAroundTheRingBuffer (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.WrapsAroundTheRingBuffer" end time: Nov 25 20:35 EST
+"BoundedQueueTest.WrapsAroundTheRingBuffer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/114 Testing: BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem
+46/114 Test: BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem
+[       OK ] BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem" end time: Nov 25 20:35 EST
+"BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/114 Testing: BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem
+47/114 Test: BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem
+[       OK ] BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem" end time: Nov 25 20:35 EST
+"BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/114 Testing: BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem
+48/114 Test: BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem
+[       OK ] BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem" end time: Nov 25 20:35 EST
+"BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/114 Testing: BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem
+49/114 Test: BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem
+[       OK ] BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem (35 ms)
+[----------] 1 test from BoundedQueueTest (35 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (35 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem" end time: Nov 25 20:35 EST
+"BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/114 Testing: BoundedQueueTest.BlockingPushIsCancelledByStopToken
+50/114 Test: BoundedQueueTest.BlockingPushIsCancelledByStopToken
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.BlockingPushIsCancelledByStopToken" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.BlockingPushIsCancelledByStopToken" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.BlockingPushIsCancelledByStopToken
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.BlockingPushIsCancelledByStopToken
+[       OK ] BoundedQueueTest.BlockingPushIsCancelledByStopToken (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.BlockingPushIsCancelledByStopToken" end time: Nov 25 20:35 EST
+"BoundedQueueTest.BlockingPushIsCancelledByStopToken" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/114 Testing: BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed
+51/114 Test: BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed
+[       OK ] BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed" end time: Nov 25 20:35 EST
+"BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/114 Testing: BoundedQueueTest.CloseWakesBlockedProducerWithItsItem
+52/114 Test: BoundedQueueTest.CloseWakesBlockedProducerWithItsItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.CloseWakesBlockedProducerWithItsItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.CloseWakesBlockedProducerWithItsItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.CloseWakesBlockedProducerWithItsItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.CloseWakesBlockedProducerWithItsItem
+[       OK ] BoundedQueueTest.CloseWakesBlockedProducerWithItsItem (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.CloseWakesBlockedProducerWithItsItem" end time: Nov 25 20:35 EST
+"BoundedQueueTest.CloseWakesBlockedProducerWithItsItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/114 Testing: BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers
+53/114 Test: BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers
+[       OK ] BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers" end time: Nov 25 20:35 EST
+"BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/114 Testing: BoundedQueueTest.CloseWakesBlockedConsumer
+54/114 Test: BoundedQueueTest.CloseWakesBlockedConsumer
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.CloseWakesBlockedConsumer" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.CloseWakesBlockedConsumer" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.CloseWakesBlockedConsumer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.CloseWakesBlockedConsumer
+[       OK ] BoundedQueueTest.CloseWakesBlockedConsumer (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.CloseWakesBlockedConsumer" end time: Nov 25 20:35 EST
+"BoundedQueueTest.CloseWakesBlockedConsumer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/114 Testing: BoundedQueueTest.PopTimesOutOnEmptyQueue
+55/114 Test: BoundedQueueTest.PopTimesOutOnEmptyQueue
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.PopTimesOutOnEmptyQueue" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.PopTimesOutOnEmptyQueue" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.PopTimesOutOnEmptyQueue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.PopTimesOutOnEmptyQueue
+[       OK ] BoundedQueueTest.PopTimesOutOnEmptyQueue (35 ms)
+[----------] 1 test from BoundedQueueTest (35 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (35 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.PopTimesOutOnEmptyQueue" end time: Nov 25 20:35 EST
+"BoundedQueueTest.PopTimesOutOnEmptyQueue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/114 Testing: BoundedQueueTest.PopIsCancelledByStopToken
+56/114 Test: BoundedQueueTest.PopIsCancelledByStopToken
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.PopIsCancelledByStopToken" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.PopIsCancelledByStopToken" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.PopIsCancelledByStopToken
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.PopIsCancelledByStopToken
+[       OK ] BoundedQueueTest.PopIsCancelledByStopToken (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.PopIsCancelledByStopToken" end time: Nov 25 20:35 EST
+"BoundedQueueTest.PopIsCancelledByStopToken" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/114 Testing: BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested
+57/114 Test: BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested
+[       OK ] BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested" end time: Nov 25 20:35 EST
+"BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/114 Testing: BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval
+58/114 Test: BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval
+[       OK ] BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval" end time: Nov 25 20:35 EST
+"BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/114 Testing: BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder
+59/114 Test: BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder
+[       OK ] BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder (6 ms)
+[----------] 1 test from BoundedQueueTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (6 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder" end time: Nov 25 20:35 EST
+"BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/114 Testing: BoundedQueueTest.PopBatchWakesBlockedProducers
+60/114 Test: BoundedQueueTest.PopBatchWakesBlockedProducers
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.PopBatchWakesBlockedProducers" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.PopBatchWakesBlockedProducers" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.PopBatchWakesBlockedProducers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.PopBatchWakesBlockedProducers
+[       OK ] BoundedQueueTest.PopBatchWakesBlockedProducers (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.PopBatchWakesBlockedProducers" end time: Nov 25 20:35 EST
+"BoundedQueueTest.PopBatchWakesBlockedProducers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/114 Testing: BoundedQueueTest.SupportsMoveOnlyTypes
+61/114 Test: BoundedQueueTest.SupportsMoveOnlyTypes
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.SupportsMoveOnlyTypes" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.SupportsMoveOnlyTypes" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.SupportsMoveOnlyTypes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.SupportsMoveOnlyTypes
+[       OK ] BoundedQueueTest.SupportsMoveOnlyTypes (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.SupportsMoveOnlyTypes" end time: Nov 25 20:35 EST
+"BoundedQueueTest.SupportsMoveOnlyTypes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/114 Testing: BoundedQueueTest.PolicyNamesRoundTrip
+62/114 Test: BoundedQueueTest.PolicyNamesRoundTrip
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BoundedQueueTest.PolicyNamesRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BoundedQueueTest.PolicyNamesRoundTrip" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BoundedQueueTest.PolicyNamesRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BoundedQueueTest
+[ RUN      ] BoundedQueueTest.PolicyNamesRoundTrip
+[       OK ] BoundedQueueTest.PolicyNamesRoundTrip (0 ms)
+[----------] 1 test from BoundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BoundedQueueTest.PolicyNamesRoundTrip" end time: Nov 25 20:35 EST
+"BoundedQueueTest.PolicyNamesRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/114 Testing: UnboundedQueueTest.AcceptsEverythingUntilClosed
+63/114 Test: UnboundedQueueTest.AcceptsEverythingUntilClosed
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=UnboundedQueueTest.AcceptsEverythingUntilClosed" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"UnboundedQueueTest.AcceptsEverythingUntilClosed" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UnboundedQueueTest.AcceptsEverythingUntilClosed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UnboundedQueueTest
+[ RUN      ] UnboundedQueueTest.AcceptsEverythingUntilClosed
+[       OK ] UnboundedQueueTest.AcceptsEverythingUntilClosed (0 ms)
+[----------] 1 test from UnboundedQueueTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"UnboundedQueueTest.AcceptsEverythingUntilClosed" end time: Nov 25 20:35 EST
+"UnboundedQueueTest.AcceptsEverythingUntilClosed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/114 Testing: UnboundedQueueTest.PopTimesOutAndCancels
+64/114 Test: UnboundedQueueTest.PopTimesOutAndCancels
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=UnboundedQueueTest.PopTimesOutAndCancels" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"UnboundedQueueTest.PopTimesOutAndCancels" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UnboundedQueueTest.PopTimesOutAndCancels
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UnboundedQueueTest
+[ RUN      ] UnboundedQueueTest.PopTimesOutAndCancels
+[       OK ] UnboundedQueueTest.PopTimesOutAndCancels (12 ms)
+[----------] 1 test from UnboundedQueueTest (12 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (12 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"UnboundedQueueTest.PopTimesOutAndCancels" end time: Nov 25 20:35 EST
+"UnboundedQueueTest.PopTimesOutAndCancels" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/114 Testing: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce
+65/114 Test: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QueueStressTest
+[ RUN      ] QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce
+[       OK ] QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce (58 ms)
+[----------] 1 test from QueueStressTest (58 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (58 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce" end time: Nov 25 20:35 EST
+"QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/114 Testing: QueueStressTest.RejectNewestAccountsForEveryItem
+66/114 Test: QueueStressTest.RejectNewestAccountsForEveryItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=QueueStressTest.RejectNewestAccountsForEveryItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"QueueStressTest.RejectNewestAccountsForEveryItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QueueStressTest.RejectNewestAccountsForEveryItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QueueStressTest
+[ RUN      ] QueueStressTest.RejectNewestAccountsForEveryItem
+[       OK ] QueueStressTest.RejectNewestAccountsForEveryItem (35 ms)
+[----------] 1 test from QueueStressTest (35 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (35 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"QueueStressTest.RejectNewestAccountsForEveryItem" end time: Nov 25 20:35 EST
+"QueueStressTest.RejectNewestAccountsForEveryItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/114 Testing: QueueStressTest.DropOldestAccountsForEveryItem
+67/114 Test: QueueStressTest.DropOldestAccountsForEveryItem
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=QueueStressTest.DropOldestAccountsForEveryItem" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"QueueStressTest.DropOldestAccountsForEveryItem" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QueueStressTest.DropOldestAccountsForEveryItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QueueStressTest
+[ RUN      ] QueueStressTest.DropOldestAccountsForEveryItem
+[       OK ] QueueStressTest.DropOldestAccountsForEveryItem (46 ms)
+[----------] 1 test from QueueStressTest (46 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (46 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"QueueStressTest.DropOldestAccountsForEveryItem" end time: Nov 25 20:35 EST
+"QueueStressTest.DropOldestAccountsForEveryItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/114 Testing: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce
+68/114 Test: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QueueStressTest
+[ RUN      ] QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce
+[       OK ] QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce (32 ms)
+[----------] 1 test from QueueStressTest (32 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (32 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce" end time: Nov 25 20:35 EST
+"QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/114 Testing: QueueStressTest.ConsumersSeeEachProducersItemsInOrder
+69/114 Test: QueueStressTest.ConsumersSeeEachProducersItemsInOrder
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=QueueStressTest.ConsumersSeeEachProducersItemsInOrder" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"QueueStressTest.ConsumersSeeEachProducersItemsInOrder" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QueueStressTest.ConsumersSeeEachProducersItemsInOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QueueStressTest
+[ RUN      ] QueueStressTest.ConsumersSeeEachProducersItemsInOrder
+[       OK ] QueueStressTest.ConsumersSeeEachProducersItemsInOrder (118 ms)
+[----------] 1 test from QueueStressTest (118 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (118 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"QueueStressTest.ConsumersSeeEachProducersItemsInOrder" end time: Nov 25 20:35 EST
+"QueueStressTest.ConsumersSeeEachProducersItemsInOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/114 Testing: QueueStressTest.CancellingBlockedProducersLosesNothing
+70/114 Test: QueueStressTest.CancellingBlockedProducersLosesNothing
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=QueueStressTest.CancellingBlockedProducersLosesNothing" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"QueueStressTest.CancellingBlockedProducersLosesNothing" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QueueStressTest.CancellingBlockedProducersLosesNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QueueStressTest
+[ RUN      ] QueueStressTest.CancellingBlockedProducersLosesNothing
+[       OK ] QueueStressTest.CancellingBlockedProducersLosesNothing (1 ms)
+[----------] 1 test from QueueStressTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QueueStressTest.CancellingBlockedProducersLosesNothing" end time: Nov 25 20:35 EST
+"QueueStressTest.CancellingBlockedProducersLosesNothing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+71/114 Testing: OrderTrackerTest.RejectsZeroConfiguration
+71/114 Test: OrderTrackerTest.RejectsZeroConfiguration
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.RejectsZeroConfiguration" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.RejectsZeroConfiguration" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.RejectsZeroConfiguration
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.RejectsZeroConfiguration
+[       OK ] OrderTrackerTest.RejectsZeroConfiguration (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.RejectsZeroConfiguration" end time: Nov 25 20:35 EST
+"OrderTrackerTest.RejectsZeroConfiguration" time elapsed: 00:00:00
+----------------------------------------------------------
+
+72/114 Testing: OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder
+72/114 Test: OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder
+[       OK ] OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder" end time: Nov 25 20:35 EST
+"OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+73/114 Testing: OrderTrackerTest.NodesAreIndependent
+73/114 Test: OrderTrackerTest.NodesAreIndependent
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.NodesAreIndependent" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.NodesAreIndependent" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.NodesAreIndependent
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.NodesAreIndependent
+[       OK ] OrderTrackerTest.NodesAreIndependent (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.NodesAreIndependent" end time: Nov 25 20:35 EST
+"OrderTrackerTest.NodesAreIndependent" time elapsed: 00:00:00
+----------------------------------------------------------
+
+74/114 Testing: OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder
+74/114 Test: OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder
+[       OK ] OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder" end time: Nov 25 20:35 EST
+"OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+75/114 Testing: OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction
+75/114 Test: OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction
+[       OK ] OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction" end time: Nov 25 20:35 EST
+"OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+76/114 Testing: OrderTrackerTest.EnforcesTheNodeLimit
+76/114 Test: OrderTrackerTest.EnforcesTheNodeLimit
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.EnforcesTheNodeLimit" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.EnforcesTheNodeLimit" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.EnforcesTheNodeLimit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.EnforcesTheNodeLimit
+[       OK ] OrderTrackerTest.EnforcesTheNodeLimit (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.EnforcesTheNodeLimit" end time: Nov 25 20:35 EST
+"OrderTrackerTest.EnforcesTheNodeLimit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+77/114 Testing: OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit
+77/114 Test: OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit
+[       OK ] OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit (0 ms)
+[----------] 1 test from OrderTrackerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit" end time: Nov 25 20:35 EST
+"OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit" time elapsed: 00:00:00
+----------------------------------------------------------
+
+78/114 Testing: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce
+78/114 Test: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderTrackerTest
+[ RUN      ] OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce
+[       OK ] OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce (23 ms)
+[----------] 1 test from OrderTrackerTest (23 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (23 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce" end time: Nov 25 20:35 EST
+"OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce" time elapsed: 00:00:00
+----------------------------------------------------------
+
+79/114 Testing: PipelineTest.RejectsInvalidConfiguration
+79/114 Test: PipelineTest.RejectsInvalidConfiguration
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.RejectsInvalidConfiguration" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.RejectsInvalidConfiguration" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.RejectsInvalidConfiguration
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.RejectsInvalidConfiguration
+[       OK ] PipelineTest.RejectsInvalidConfiguration (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.RejectsInvalidConfiguration" end time: Nov 25 20:35 EST
+"PipelineTest.RejectsInvalidConfiguration" time elapsed: 00:00:00
+----------------------------------------------------------
+
+80/114 Testing: PipelineTest.DeliversEveryValidEventExactlyOnce
+80/114 Test: PipelineTest.DeliversEveryValidEventExactlyOnce
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.DeliversEveryValidEventExactlyOnce" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.DeliversEveryValidEventExactlyOnce" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.DeliversEveryValidEventExactlyOnce
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.DeliversEveryValidEventExactlyOnce
+[       OK ] PipelineTest.DeliversEveryValidEventExactlyOnce (1 ms)
+[----------] 1 test from PipelineTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.DeliversEveryValidEventExactlyOnce" end time: Nov 25 20:35 EST
+"PipelineTest.DeliversEveryValidEventExactlyOnce" time elapsed: 00:00:00
+----------------------------------------------------------
+
+81/114 Testing: PipelineTest.InvalidEventsReachTheSinkWithTheirIssues
+81/114 Test: PipelineTest.InvalidEventsReachTheSinkWithTheirIssues
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.InvalidEventsReachTheSinkWithTheirIssues" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.InvalidEventsReachTheSinkWithTheirIssues" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.InvalidEventsReachTheSinkWithTheirIssues
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.InvalidEventsReachTheSinkWithTheirIssues
+[       OK ] PipelineTest.InvalidEventsReachTheSinkWithTheirIssues (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.InvalidEventsReachTheSinkWithTheirIssues" end time: Nov 25 20:35 EST
+"PipelineTest.InvalidEventsReachTheSinkWithTheirIssues" time elapsed: 00:00:00
+----------------------------------------------------------
+
+82/114 Testing: PipelineTest.NodeLimitIsEnforcedAndCounted
+82/114 Test: PipelineTest.NodeLimitIsEnforcedAndCounted
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.NodeLimitIsEnforcedAndCounted" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.NodeLimitIsEnforcedAndCounted" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.NodeLimitIsEnforcedAndCounted
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.NodeLimitIsEnforcedAndCounted
+[       OK ] PipelineTest.NodeLimitIsEnforcedAndCounted (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.NodeLimitIsEnforcedAndCounted" end time: Nov 25 20:35 EST
+"PipelineTest.NodeLimitIsEnforcedAndCounted" time elapsed: 00:00:00
+----------------------------------------------------------
+
+83/114 Testing: PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers
+83/114 Test: PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers
+[       OK ] PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers" end time: Nov 25 20:35 EST
+"PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+84/114 Testing: PipelineTest.RejectNewestHandsTheSampleBackUnderOverload
+84/114 Test: PipelineTest.RejectNewestHandsTheSampleBackUnderOverload
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.RejectNewestHandsTheSampleBackUnderOverload" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.RejectNewestHandsTheSampleBackUnderOverload" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.RejectNewestHandsTheSampleBackUnderOverload
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.RejectNewestHandsTheSampleBackUnderOverload
+[       OK ] PipelineTest.RejectNewestHandsTheSampleBackUnderOverload (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.RejectNewestHandsTheSampleBackUnderOverload" end time: Nov 25 20:35 EST
+"PipelineTest.RejectNewestHandsTheSampleBackUnderOverload" time elapsed: 00:00:00
+----------------------------------------------------------
+
+85/114 Testing: PipelineTest.DropOldestHandsTheEvictedSampleBack
+85/114 Test: PipelineTest.DropOldestHandsTheEvictedSampleBack
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.DropOldestHandsTheEvictedSampleBack" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.DropOldestHandsTheEvictedSampleBack" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.DropOldestHandsTheEvictedSampleBack
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.DropOldestHandsTheEvictedSampleBack
+[       OK ] PipelineTest.DropOldestHandsTheEvictedSampleBack (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.DropOldestHandsTheEvictedSampleBack" end time: Nov 25 20:35 EST
+"PipelineTest.DropOldestHandsTheEvictedSampleBack" time elapsed: 00:00:00
+----------------------------------------------------------
+
+86/114 Testing: PipelineTest.BlockingSubmitTimesOut
+86/114 Test: PipelineTest.BlockingSubmitTimesOut
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.BlockingSubmitTimesOut" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.BlockingSubmitTimesOut" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.BlockingSubmitTimesOut
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.BlockingSubmitTimesOut
+[       OK ] PipelineTest.BlockingSubmitTimesOut (35 ms)
+[----------] 1 test from PipelineTest (35 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (35 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.BlockingSubmitTimesOut" end time: Nov 25 20:35 EST
+"PipelineTest.BlockingSubmitTimesOut" time elapsed: 00:00:00
+----------------------------------------------------------
+
+87/114 Testing: PipelineTest.BlockingSubmitIsCancelledByStopToken
+87/114 Test: PipelineTest.BlockingSubmitIsCancelledByStopToken
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.BlockingSubmitIsCancelledByStopToken" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.BlockingSubmitIsCancelledByStopToken" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.BlockingSubmitIsCancelledByStopToken
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.BlockingSubmitIsCancelledByStopToken
+[       OK ] PipelineTest.BlockingSubmitIsCancelledByStopToken (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.BlockingSubmitIsCancelledByStopToken" end time: Nov 25 20:35 EST
+"PipelineTest.BlockingSubmitIsCancelledByStopToken" time elapsed: 00:00:00
+----------------------------------------------------------
+
+88/114 Testing: PipelineTest.ShutdownWakesBlockedProducers
+88/114 Test: PipelineTest.ShutdownWakesBlockedProducers
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.ShutdownWakesBlockedProducers" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.ShutdownWakesBlockedProducers" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.ShutdownWakesBlockedProducers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.ShutdownWakesBlockedProducers
+[       OK ] PipelineTest.ShutdownWakesBlockedProducers (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.ShutdownWakesBlockedProducers" end time: Nov 25 20:35 EST
+"PipelineTest.ShutdownWakesBlockedProducers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+89/114 Testing: PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample
+89/114 Test: PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample
+[       OK ] PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample" end time: Nov 25 20:35 EST
+"PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample" time elapsed: 00:00:00
+----------------------------------------------------------
+
+90/114 Testing: PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents
+90/114 Test: PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents
+[       OK ] PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents (25 ms)
+[----------] 1 test from PipelineTest (25 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (25 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents" end time: Nov 25 20:35 EST
+"PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents" time elapsed: 00:00:00
+----------------------------------------------------------
+
+91/114 Testing: PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch
+91/114 Test: PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch
+[       OK ] PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch (12 ms)
+[----------] 1 test from PipelineTest (12 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (12 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch" end time: Nov 25 20:35 EST
+"PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+92/114 Testing: PipelineTest.UnbatchedConsumersDeliverEverything
+92/114 Test: PipelineTest.UnbatchedConsumersDeliverEverything
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.UnbatchedConsumersDeliverEverything" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.UnbatchedConsumersDeliverEverything" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.UnbatchedConsumersDeliverEverything
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.UnbatchedConsumersDeliverEverything
+[       OK ] PipelineTest.UnbatchedConsumersDeliverEverything (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.UnbatchedConsumersDeliverEverything" end time: Nov 25 20:35 EST
+"PipelineTest.UnbatchedConsumersDeliverEverything" time elapsed: 00:00:00
+----------------------------------------------------------
+
+93/114 Testing: PipelineTest.ShutdownIsIdempotent
+93/114 Test: PipelineTest.ShutdownIsIdempotent
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.ShutdownIsIdempotent" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.ShutdownIsIdempotent" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.ShutdownIsIdempotent
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.ShutdownIsIdempotent
+[       OK ] PipelineTest.ShutdownIsIdempotent (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.ShutdownIsIdempotent" end time: Nov 25 20:35 EST
+"PipelineTest.ShutdownIsIdempotent" time elapsed: 00:00:00
+----------------------------------------------------------
+
+94/114 Testing: PipelineTest.DestructorDrainsWithoutExplicitShutdown
+94/114 Test: PipelineTest.DestructorDrainsWithoutExplicitShutdown
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.DestructorDrainsWithoutExplicitShutdown" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.DestructorDrainsWithoutExplicitShutdown" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.DestructorDrainsWithoutExplicitShutdown
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.DestructorDrainsWithoutExplicitShutdown
+[       OK ] PipelineTest.DestructorDrainsWithoutExplicitShutdown (0 ms)
+[----------] 1 test from PipelineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.DestructorDrainsWithoutExplicitShutdown" end time: Nov 25 20:35 EST
+"PipelineTest.DestructorDrainsWithoutExplicitShutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+95/114 Testing: PipelineTest.ManyProducersAndConsumersKeepTheInvariants
+95/114 Test: PipelineTest.ManyProducersAndConsumersKeepTheInvariants
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=PipelineTest.ManyProducersAndConsumersKeepTheInvariants" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"PipelineTest.ManyProducersAndConsumersKeepTheInvariants" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PipelineTest.ManyProducersAndConsumersKeepTheInvariants
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PipelineTest
+[ RUN      ] PipelineTest.ManyProducersAndConsumersKeepTheInvariants
+[       OK ] PipelineTest.ManyProducersAndConsumersKeepTheInvariants (63 ms)
+[----------] 1 test from PipelineTest (63 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (63 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"PipelineTest.ManyProducersAndConsumersKeepTheInvariants" end time: Nov 25 20:35 EST
+"PipelineTest.ManyProducersAndConsumersKeepTheInvariants" time elapsed: 00:00:00
+----------------------------------------------------------
+
+96/114 Testing: BaselineTest.MatchesThePipelineOnTheSameInput
+96/114 Test: BaselineTest.MatchesThePipelineOnTheSameInput
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=BaselineTest.MatchesThePipelineOnTheSameInput" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"BaselineTest.MatchesThePipelineOnTheSameInput" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BaselineTest.MatchesThePipelineOnTheSameInput
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BaselineTest
+[ RUN      ] BaselineTest.MatchesThePipelineOnTheSameInput
+[       OK ] BaselineTest.MatchesThePipelineOnTheSameInput (3 ms)
+[----------] 1 test from BaselineTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BaselineTest.MatchesThePipelineOnTheSameInput" end time: Nov 25 20:35 EST
+"BaselineTest.MatchesThePipelineOnTheSameInput" time elapsed: 00:00:00
+----------------------------------------------------------
+
+97/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/Zero
+97/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/Zero
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/Zero" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/Zero" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/Zero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/Zero
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/Zero (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/Zero" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/Zero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+98/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero
+98/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+99/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred
+99/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/Hundred" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/Hundred" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/Hundred
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/Hundred
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/Hundred (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/Hundred" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/Hundred" time elapsed: 00:00:00
+----------------------------------------------------------
+
+100/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty
+100/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/Fifty" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/Fifty" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/Fifty
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/Fifty
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/Fifty (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/Fifty" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/Fifty" time elapsed: 00:00:00
+----------------------------------------------------------
+
+101/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero
+101/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+102/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred
+102/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred" time elapsed: 00:00:00
+----------------------------------------------------------
+
+103/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive
+103/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+104/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/NaN
+104/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/NaN
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/NaN" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/NaN" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/NaN
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/NaN
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/NaN (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/NaN" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/NaN" time elapsed: 00:00:00
+----------------------------------------------------------
+
+105/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity
+105/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+106/114 Testing: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity
+106/114 Test: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Boundaries/PercentageCheckTest
+[ RUN      ] Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity
+[       OK ] Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity (0 ms)
+[----------] 1 test from Boundaries/PercentageCheckTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity" end time: Nov 25 20:35 EST
+"Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+107/114 Testing: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate
+107/114 Test: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Policies/PipelinePolicyTest
+[ RUN      ] Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate
+[       OK ] Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate (0 ms)
+[----------] 1 test from Policies/PipelinePolicyTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate" end time: Nov 25 20:35 EST
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+108/114 Testing: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate
+108/114 Test: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Policies/PipelinePolicyTest
+[ RUN      ] Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate
+[       OK ] Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate (0 ms)
+[----------] 1 test from Policies/PipelinePolicyTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate" end time: Nov 25 20:35 EST
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+109/114 Testing: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate
+109/114 Test: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_unit_tests" "--gtest_filter=Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate" "--gtest_also_run_disabled_tests"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Policies/PipelinePolicyTest
+[ RUN      ] Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate
+[       OK ] Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate (0 ms)
+[----------] 1 test from Policies/PipelinePolicyTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate" end time: Nov 25 20:35 EST
+"Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+110/114 Testing: cli.help
+110/114 Test: cli.help
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth" "--help"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"cli.help" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+Usage: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth [options]
+
+Generates deterministic synthetic telemetry for a primary/replica cluster,
+optionally injects known defects, validates every sample and checks that the
+validator's verdict matches the injected ground truth.
+
+Options:
+  --nodes N                 Nodes in the cluster, 1..64 (default 3; node 0 is the primary)
+  --samples-per-node N      Samples per node, 1..100000 (default 5)
+  --seed N                  PRNG seed, unsigned 64-bit (default 42)
+  --invalid-fraction F      Probability of injecting a defect, 0..1 (default 0)
+  --lag-missing-fraction F  Probability a replica has no lag measurement, 0..1 (default 0.1)
+  --start-unix-ms N         Timestamp of the first tick in Unix ms (default 2026-01-01T00:00:00Z)
+  --interval-ms N           Tick interval in ms, 1..3600000 (default 1000)
+  --format text|jsonl       Per-sample output format (default text)
+  --quiet                   Print the summary only
+  -h, --help                Show this help
+
+Exit status: 0 = validator agreed with ground truth for every sample,
+             1 = at least one mismatch, 2 = usage error.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found. Regex=[Usage: ]
+"cli.help" end time: Nov 25 20:35 EST
+"cli.help" time elapsed: 00:00:00
+----------------------------------------------------------
+
+111/114 Testing: cli.rejects_unknown_option
+111/114 Test: cli.rejects_unknown_option
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth" "--bogus"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"cli.rejects_unknown_option" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+error: unknown option '--bogus'
+
+Usage: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth [options]
+
+Generates deterministic synthetic telemetry for a primary/replica cluster,
+optionally injects known defects, validates every sample and checks that the
+validator's verdict matches the injected ground truth.
+
+Options:
+  --nodes N                 Nodes in the cluster, 1..64 (default 3; node 0 is the primary)
+  --samples-per-node N      Samples per node, 1..100000 (default 5)
+  --seed N                  PRNG seed, unsigned 64-bit (default 42)
+  --invalid-fraction F      Probability of injecting a defect, 0..1 (default 0)
+  --lag-missing-fraction F  Probability a replica has no lag measurement, 0..1 (default 0.1)
+  --start-unix-ms N         Timestamp of the first tick in Unix ms (default 2026-01-01T00:00:00Z)
+  --interval-ms N           Tick interval in ms, 1..3600000 (default 1000)
+  --format text|jsonl       Per-sample output format (default text)
+  --quiet                   Print the summary only
+  -h, --help                Show this help
+
+Exit status: 0 = validator agreed with ground truth for every sample,
+             1 = at least one mismatch, 2 = usage error.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"cli.rejects_unknown_option" end time: Nov 25 20:35 EST
+"cli.rejects_unknown_option" time elapsed: 00:00:00
+----------------------------------------------------------
+
+112/114 Testing: cli.rejects_out_of_range_fraction
+112/114 Test: cli.rejects_out_of_range_fraction
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth" "--invalid-fraction" "1.5"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"cli.rejects_out_of_range_fraction" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+error: invalid value '1.5' for option '--invalid-fraction'
+
+Usage: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth [options]
+
+Generates deterministic synthetic telemetry for a primary/replica cluster,
+optionally injects known defects, validates every sample and checks that the
+validator's verdict matches the injected ground truth.
+
+Options:
+  --nodes N                 Nodes in the cluster, 1..64 (default 3; node 0 is the primary)
+  --samples-per-node N      Samples per node, 1..100000 (default 5)
+  --seed N                  PRNG seed, unsigned 64-bit (default 42)
+  --invalid-fraction F      Probability of injecting a defect, 0..1 (default 0)
+  --lag-missing-fraction F  Probability a replica has no lag measurement, 0..1 (default 0.1)
+  --start-unix-ms N         Timestamp of the first tick in Unix ms (default 2026-01-01T00:00:00Z)
+  --interval-ms N           Tick interval in ms, 1..3600000 (default 1000)
+  --format text|jsonl       Per-sample output format (default text)
+  --quiet                   Print the summary only
+  -h, --help                Show this help
+
+Exit status: 0 = validator agreed with ground truth for every sample,
+             1 = at least one mismatch, 2 = usage error.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"cli.rejects_out_of_range_fraction" end time: Nov 25 20:35 EST
+"cli.rejects_out_of_range_fraction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+113/114 Testing: cli.ground_truth_matches
+113/114 Test: cli.ground_truth_matches
+Command: "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth" "--nodes" "5" "--samples-per-node" "400" "--seed" "7" "--invalid-fraction" "0.3" "--quiet"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"cli.ground_truth_matches" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+---- summary ----
+seed                      7
+nodes x samples           5 x 400
+attempted                 2000
+valid                     1406
+invalid                   594
+injected defects          594
+ground-truth mismatches   0
+replica lag measured      1009
+replica lag not measured  116
+issue collected_at:timestamp_in_future  60
+issue collected_at:timestamp_unset  61
+issue cpu_usage_percent:out_of_range  45
+issue disk_usage_percent:not_finite  58
+issue memory_usage_percent:not_finite  53
+issue node_id:empty  48
+issue node_id:invalid_character  51
+issue node_id:too_long  59
+issue replication_lag_ms:negative  55
+issue replication_lag_ms:replication_lag_not_applicable  51
+issue role:invalid_enum_value  53
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found. Regex=[ground-truth mismatches   0
+]
+"cli.ground_truth_matches" end time: Nov 25 20:35 EST
+"cli.ground_truth_matches" time elapsed: 00:00:00
+----------------------------------------------------------
+
+114/114 Testing: cli.deterministic_output
+114/114 Test: cli.deterministic_output
+Command: "/opt/homebrew/bin/cmake" "-DCLI=/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/src/cli/faulttwin-synth" "-DOUT_DIR=/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests" "-P" "/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/tests/cli/check_deterministic.cmake"
+Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+"cli.deterministic_output" start time: Nov 25 20:35 EST
+Output:
+----------------------------------------------------------
+-- Deterministic output verified, sha256=cb38258998dd4444baf5fdc72446d41eccea9f8c0317d7a2f93fecd613cfa866
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"cli.deterministic_output" end time: Nov 25 20:35 EST
+"cli.deterministic_output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 25 20:35 EST
