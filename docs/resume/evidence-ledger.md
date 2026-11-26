@@ -72,4 +72,4 @@ results and should not be phrased as such.
 | Missing / stale / invalid / not-applicable kept apart from healthy values | TESTED | `tests/unit/collectors/` |
 | No password in argv, logs, JSON output or `postgresql.auto.conf` | CHECKED | replica entrypoint guard, `cli.monitor_requires_password` |
 | Phase 3 on macOS (debug 179/179, integration 7/7, AppleClang, libpq 19.0) | TESTED (owner-run) | `results/phase-03/integration/macos-arm64.log` |
-| Phase 3 in CI | NOT RUN (pending) | — |
+| Phase 3 CI run (`6e23c81`, including the lab integration job) | TESTED (CI) | GitHub Actions `ci` run #6, green, 5m 17s |

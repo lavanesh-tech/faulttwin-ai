@@ -73,7 +73,7 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 3.11 | All presets pass with GCC and Clang on Linux; clang-tidy and clang-format clean | ✅ tested (Linux container): 4 presets × 2 compilers; tidy and format clean | `results/phase-03/{gcc,clang}/*.log` |
 | 3.12 | Collection success, coverage, cost, freshness and throughput impact measured *(T)* | ✅ measured (cloud container only) | `results/phase-03/collection/linux-x86_64-container/` |
 | 3.13 | Builds, tests and runs the lab on the owner's Mac (Apple Silicon) | ✅ owner-run on Apple Silicon, AppleClang, libpq 19.0 (Homebrew), Docker 29.6.2 / Compose v5.3.1: debug 179/179 (5 lab tests skipped), integration 7/7, monitor 3 cycles 100 % success | `results/phase-03/integration/macos-arm64.log` |
-| 3.14 | CI green with the Phase 3 workflow (including the integration job) | ⏳ NOT RUN | `ci.phase-03.yml` → `.github/workflows/ci.yml` |
+| 3.14 | CI green with the Phase 3 workflow (including the integration job) | ✅ CI run #6 on `6e23c81` green (5m 17s, seen in the owner's GitHub Actions screenshot); run #5 on `09d2e74` stopped after 1m 38s with a grey "!" status, most likely cancelled when #6 started (not confirmed) | GitHub Actions run #6 |
 | 3.15 | No AI authorship; no assistant commits | ✅ | phase report §20 |
 | 3.16 | Owner approval after independent review | ⏳ | |
 
