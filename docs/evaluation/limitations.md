@@ -45,3 +45,27 @@ Kept current with the implementation. Each phase adds its limitations here.
 - macOS (AppleClang/libc++) has not built Phase 2. `std::jthread` and `stop_token` waits need a
   recent libc++ (LLVM 18 or newer; AppleClang 21 should qualify, not verified).
 - Peak RSS (VmHWM) is only available on Linux; the benchmark reports -1 elsewhere.
+
+## Phase 3
+- All Phase 3 runs (builds, tests, integration tests, measurements) were done by the AI assistant
+  in one Linux x86_64 cloud container (4 vCPUs). Nothing ran on the owner's Mac or in GitHub
+  Actions yet, and nothing is independently reproduced.
+- The lab is one Docker host. Primary, replicas, the monitor and pgbench share the same 4 vCPUs, so
+  the throughput-overhead experiment measures contention on one machine, not a networked
+  deployment. Differences of a few percent are inside the run-to-run spread.
+- Host resources are the collector host's (or container's) procfs, not each database container's.
+  Per-container CPU/memory needs cgroup access or the Docker API, which the unprivileged core must
+  not have (deferred to the privileged `ft-faultctl`, Phase 6). On macOS the procfs readings are
+  `missing` by design.
+- The Phase 1 `TelemetrySample` cannot represent missing CPU/memory/disk, so collector snapshots
+  are not yet converted into it or fed through the Phase 2 pipeline.
+- Collection is sequential across nodes; a down node costs up to `connect_timeout` (2 s) per cycle.
+- No TLS in the lab; connections are plaintext on loopback and the Compose bridge.
+- libpq connection errors are classified from English message text (no SQLSTATE is exposed).
+- `pg_stat_statements` sums can decrease when entries are evicted (`pg_stat_statements.max`);
+  the interval is then `invalid`, not a negative latency.
+- The background commit rate of an idle node is not zero: the Compose healthcheck's `pg_isready`
+  connection adds about one commit every 2 s per node, and it is reported, correctly, as workload.
+- Outage detection times in the integration tests are measured from the `docker compose` command
+  returning, not from a ground-truth fault onset; graceful `stop` closes connections at once, so
+  the measured detection time is a lower bound for a crash.

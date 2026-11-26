@@ -75,6 +75,23 @@ is not sampled over time; CPU time is in the raw JSON as `cpu_time`).
 | MON-FRESH | Freshness | now − collected_at at consumption time (p50/p95/p99) |
 | MON-DETLAT | Fault detection latency | first detection timestamp − ground-truth fault onset |
 
+How Phase 3 measures them (`faulttwin-monitor`, `scripts/measure-collection.sh`):
+- MON-SUCC: a collection attempt succeeds when the node was reachable (`up` or `degraded`).
+  A node that is down and reported as down is a *correct* observation but not a successful
+  collection.
+- MON-COV: readings with quality `ok` / readings that apply to the node's role (everything except
+  `not_applicable`), over the scalar readings of every node snapshot. Per-standby and per-slot
+  readings and host resources are not counted.
+- MON-OVH: client wall time per cycle and per node, client CPU per cycle (`getrusage` user +
+  system), server execution time of the monitor's own statements (`pg_stat_statements`, filtered
+  to the monitoring role), and the change in pgbench throughput with the monitor running.
+- MON-FRESH: report time − `collected_at`, per node, at the point the report is written. In the
+  CLI the consumer runs right after collection, so this is the collection-to-report age, not the
+  age a later consumer (detection, Phase 4) would see.
+- MON-DETLAT in Phase 3 is only the time from a `docker compose stop`/`pause` returning to the
+  first cycle that reports the node down (integration tests). It is not Experiment-grade: there is
+  no ground-truth onset timestamp inside the container.
+
 ## 5. Detection and prediction (Modules D–E, Experiment 3)
 
 An **alert** is a rule firing or a prediction above the chosen threshold. Alerts are matched to

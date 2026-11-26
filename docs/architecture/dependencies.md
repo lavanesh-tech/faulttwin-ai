@@ -1,6 +1,6 @@
 # FaultTwin AI — Dependency Matrix
 
-## Actually used (Phases 1–2)
+## Actually used (Phases 1–3)
 
 | Dependency | Version / pin | Used for | Licence |
 |---|---|---|---|
@@ -12,12 +12,18 @@
 | Google Benchmark | v1.9.4, commit `eddb0241389718a23a42db6af5f0164b6e0139af` via FetchContent (Phase 2, ADR-0013) | `bench/` only, Release preset only | Apache-2.0 |
 | Python 3 (standard library only) | 3.13 used for the recorded runs | `scripts/summarize-benchmarks.py` (results only, not the build) | PSF |
 | Threads (pthreads via `find_package(Threads)`) | system | `std::jthread` in `faulttwin_concurrency`/`faulttwin_ingest` | system |
+| libpq | system package; 16.15 (Ubuntu 24.04 `libpq-dev`) for the Linux runs; Homebrew `libpq` on macOS | `faulttwin_collectors_pg`, `faulttwin-monitor`, integration tests (Phase 3, ADR-0015). Optional: found by `find_package(PostgreSQL)` | PostgreSQL Licence |
+| PostgreSQL server image | `postgres:17.12-bookworm@sha256:1eff563f6c868b9b433566e9f3cf6e5c79fbd3b95bf70ec7277d376cdbfc50d7` (multi-arch index) | Lab cluster only (`compose.yaml`, ADR-0014) | PostgreSQL Licence (image contents: Debian packages under their own licences) |
+| Docker Engine / Compose | 29.9.3 / v5.7.1 used for the Linux runs; the owner's Mac has Docker 29.6.2 / Compose v5.3.1 | Lab cluster, integration tests | Apache-2.0 |
 | actions/checkout | v4.4.0, `11d5960a326750d5838078e36cf38b85af677262` | CI | MIT |
 | actions/upload-artifact | v4.6.2, `ea165f8d65b6e75b540449e92b4886f43607fa02` | CI | MIT |
 
 No runtime third-party library is linked into `faulttwin-synth`, `faulttwin_telemetry`,
-`faulttwin_concurrency` or `faulttwin_ingest` (C++ standard library and the system thread library
-only).
+`faulttwin_concurrency`, `faulttwin_ingest` or `faulttwin_collectors` (C++ standard library and the
+system thread library only). `faulttwin_collectors_pg` and `faulttwin-monitor` link libpq. libpq is
+taken from the system rather than pinned: it is a stable C ABI, and the server version that matters
+is pinned in the image. The 16.x client talks to the 17.12 server; libpq is backwards and forwards
+compatible for the protocol and functions used.
 
 ## Planned for later phases (candidates, not yet resolved or built)
 
@@ -42,7 +48,7 @@ version here and justifies it in its phase report.
 | Protobuf | version bundled at vcpkg baseline | Telemetry and incident log schemas | BSD-3-Clause |
 | gRPC | Phase 5 only if justified (ADR-0003) | Remote telemetry transport | Apache-2.0 |
 | ONNX Runtime | 1.2x (CPU) | Native inference | MIT |
-| libpq | from PostgreSQL 17 | Collectors, meta-db | PostgreSQL |
+| libpq | in use since Phase 3 (system package) | Collectors, meta-db | PostgreSQL |
 | spdlog | 1.x | Structured logging backend | MIT |
 | GoogleTest | 1.15+ | Unit/integration tests | BSD-3-Clause |
 | Google Benchmark | 1.9.4 (in use since Phase 2) | Benchmarks | Apache-2.0 |
@@ -50,7 +56,7 @@ version here and justifies it in its phase report.
 ## Infrastructure
 | Component | Candidate | Notes |
 |---|---|---|
-| PostgreSQL | 17.x | Primary + 2 streaming replicas + meta-db; 18.x is an option, decide in Phase 3 |
+| PostgreSQL | 17.12 (decided in Phase 3, ADR-0014) | Primary + 2 streaming replicas in use; meta-db later |
 | Toxiproxy | 2.x latest | Network faults |
 | Prometheus | 3.x | Self-observability |
 | Grafana | 11.x / 12.x | Provisioned dashboards |

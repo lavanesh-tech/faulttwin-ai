@@ -58,9 +58,24 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 2.15 | Owner approval after independent review | ⏳ | |
 
 ## Phase 3 — PostgreSQL monitoring
-- Compose lab: primary + 2 streaming replicas, read-only monitoring role, isolated network.
-- Collectors for every Module B metric; missing/stale/invalid states represented explicitly.
-- Integration tests including a node outage; collection overhead and freshness measured.
+| # | Criterion | Status | Evidence |
+|---|---|---|---|
+| 3.1 | Docker Compose lab: primary + 2 streaming replicas, PostgreSQL version pinned, isolated network, ports on localhost only | ✅ implemented, tested (Linux container) | `compose.yaml`, ADR-0014, `LabClusterTest.Topology` |
+| 3.2 | Least-privilege read-only monitoring role, denials proven on a live server | ✅ tested | `lab/primary/init/10-faulttwin-lab.sh`, `MonitoringRoleIsReadOnlyAndLeastPrivileged` |
+| 3.3 | Secrets only in `.env` (git-ignored), `.env.example` committed, no password in argv, logs or `postgresql.auto.conf` | ✅ implemented, checked | `.env.example`, `scripts/lab-init-env.sh`, replica entrypoint check, `cli.monitor_requires_password` |
+| 3.4 | Collectors: availability, connections, transaction throughput, query latency, WAL, replication state and lag, replay positions, role, topology | ✅ tested | `pg_collector_test.cpp`, `rates_topology_test.cpp`, `LabClusterTest.*` |
+| 3.5 | Linux resource monitoring (CPU, memory, load, disk) | ✅ tested | `linux_resources_test.cpp` |
+| 3.6 | Missing, stale, invalid and not-applicable telemetry distinguished from healthy values | ✅ tested | `Reading<T>`, `StalenessIsSeparateFromMissing`, `GarbageValuesAreInvalidNotZero`, `CounterResetIsInvalidNotNegative` |
+| 3.7 | Error handling: refused, auth, permission, timeout, unexpected result, missing extension | ✅ tested | `pg_collector_test.cpp`, `LibpqSessionTest.*` |
+| 3.8 | Integration test: stopped replica detected as down and recovers | ✅ tested (Linux container) | `StoppedReplicaIsDetectedAsDownAndRecovers`, `results/phase-03/integration/` |
+| 3.9 | Integration test: frozen replica costs one deadline, no hang | ✅ tested (Linux container) | `PausedReplicaTimesOutInsteadOfHanging` |
+| 3.10 | Integration tests skip cleanly without Docker (`FT_INTEGRATION` unset) | ✅ tested | normal preset runs report 5 tests Skipped |
+| 3.11 | All presets pass with GCC and Clang on Linux; clang-tidy and clang-format clean | ✅ tested (Linux container): 4 presets × 2 compilers; tidy and format clean | `results/phase-03/{gcc,clang}/*.log` |
+| 3.12 | Collection success, coverage, cost, freshness and throughput impact measured *(T)* | ✅ measured (cloud container only) | `results/phase-03/collection/linux-x86_64-container/` |
+| 3.13 | Builds, tests and runs the lab on the owner's Mac (Apple Silicon) | ⏳ NOT RUN | owner steps |
+| 3.14 | CI green with the Phase 3 workflow (including the integration job) | ⏳ NOT RUN | `ci.phase-03.yml` → `.github/workflows/ci.yml` |
+| 3.15 | No AI authorship; no assistant commits | ✅ | phase report §20 |
+| 3.16 | Owner approval after independent review | ⏳ | |
 
 ## Phase 4 — Time-series features and anomaly detection
 - Rolling-window features with documented complexity and numerically stable variance (Welford).

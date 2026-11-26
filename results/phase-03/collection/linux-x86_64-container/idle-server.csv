@@ -1,0 +1,4 @@
+node,calls,total_exec_ms
+pg-primary,3600,107.720
+pg-replica-1,3300,70.042
+pg-replica-2,3300,62.765

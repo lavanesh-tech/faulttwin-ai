@@ -1,0 +1,13 @@
+pgbench (17.12 (Debian 17.12-1.pgdg12+1))
+transaction type: /lab/workload/insert.sql
+scaling factor: 1
+query mode: simple
+number of clients: 4
+number of threads: 2
+maximum number of tries: 1
+duration: 15 s
+number of transactions actually processed: 81926
+number of failed transactions: 0 (0.000%)
+latency average = 0.732 ms
+initial connection time = 5.451 ms
+tps = 5462.229668 (without initial connection time)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Configure, build and test every preset with one compiler, saving full logs as
-# raw evidence under results/<phase>/<compiler>/ (phase defaults to phase-02;
+# raw evidence under results/<phase>/<compiler>/ (phase defaults to phase-03;
 # override with FAULTTWIN_RESULTS_PHASE=phase-01 to reproduce older evidence).
 #
 # Usage: scripts/verify-presets.sh [gcc|clang] [preset ...]
@@ -21,7 +21,7 @@ case "${compiler}" in
 esac
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-phase="${FAULTTWIN_RESULTS_PHASE:-phase-02}"
+phase="${FAULTTWIN_RESULTS_PHASE:-phase-03}"
 out="${root}/results/${phase}/${compiler}"
 mkdir -p "${out}"
 

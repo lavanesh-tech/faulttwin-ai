@@ -27,6 +27,7 @@ set_property(CACHE FAULTTWIN_SANITIZER PROPERTY STRINGS none address-undefined t
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 include(CompilerWarnings)
 include(Sanitizers)
+include(Libpq)
 
 # Sanitizer flags must be applied before third-party code is added so that the
 # whole program (including GoogleTest) is instrumented consistently.

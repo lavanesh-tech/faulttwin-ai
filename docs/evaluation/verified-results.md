@@ -23,5 +23,20 @@ repetitions; the 95% bootstrap CIs and every raw run are in the artifacts.
 | Exp. 2 reduced: ING-MEM peak RSS | bounded block vs unbounded | 39.5 vs 43.3 MiB | 39.4 vs 43.2 MiB | 5 | `d65152f` + uncommitted | `overload-*.json` | MEASURED (container, reduced protocol) |
 | ING-SUCC | block-policy runs | 100% | 100% | 310 per compiler | `d65152f` + uncommitted | `runs.csv` | MEASURED (container) |
 
+## Phase 3 (PostgreSQL monitoring)
+
+Measured by the AI assistant in one 4-vCPU Linux cloud container, with the 3-node lab, the
+monitor and pgbench on the same host; GCC 13.3 Release; `f0624a4` + uncommitted Phase 3.
+**Not independently verified; not run on macOS or in CI.**
+
+| Metric ID | Configuration | Value | Runs | Artifact | Status |
+|---|---|---|---|---|---|
+| MON-SUCC | idle lab, 300 cycles × 3 nodes, 200 ms | 100 % (900/900) | 1 | `results/phase-03/collection/linux-x86_64-container/` | MEASURED (container) |
+| MON-COV | as above | 100 % (16,503/16,503) | 1 | as above | MEASURED (container) |
+| MON-OVH client | cycles 2–300 | CPU 1.73 ms mean / 2.26 ms p95 per cycle; wall 15.16 ms mean / 20.51 p95 / 28.65 p99 | 1 | `summary.md` | MEASURED (container) |
+| MON-OVH server | pg_stat_statements, ft_monitor | 0.359 / 0.233 / 0.209 ms per cycle (primary / replica-1 / replica-2) | 1 | `idle-server.csv` | MEASURED (container) |
+| MON-OVH throughput | pgbench 4 × 15 s, none / 1 s / 100 ms | 5446 / 5391 / 5249 tps mean (−1.0 % / −3.6 %), within noise | 3 each | `pgbench.csv` | MEASURED (container) |
+| MON-FRESH | cycles 2–300 | 4.27 ms mean / 10.23 p95 / 13.47 p99 | 1 | `idle.jsonl.gz` | MEASURED (container) |
+
 Phase 1 produced **functional test results** (pass/fail), not metrics. They are recorded in
 `docs/phase-reports/phase-01.md` and `results/phase-01/`, not here.

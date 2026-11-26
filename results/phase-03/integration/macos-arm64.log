@@ -1,0 +1,158 @@
+date_utc: 2026-11-26T17:31:35Z
+uname: Darwin 25.6.0 arm64
+docker: 29.6.2
+compose: 5.3.1
+postgres: postgres (PostgreSQL) 17.12 (Debian 17.12-1.pgdg12+1)
+git_commit: f0624a490e53ed648447506b334f6478beaa61c0
+
+UpdateCTestConfiguration  from :/Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/DartConfiguration.tcl
+Test project /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 166
+    Start 166: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError
+
+166: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LibpqSessionTest.RefusedConnectionIsAClassifiedError" "--gtest_also_run_disabled_tests"
+166: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+166: Test timeout computed to be: 180
+166: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+166: Note: Google Test filter = LibpqSessionTest.RefusedConnectionIsAClassifiedError
+166: [==========] Running 1 test from 1 test suite.
+166: [----------] Global test environment set-up.
+166: [----------] 1 test from LibpqSessionTest
+166: [ RUN      ] LibpqSessionTest.RefusedConnectionIsAClassifiedError
+166: [       OK ] LibpqSessionTest.RefusedConnectionIsAClassifiedError (8 ms)
+166: [----------] 1 test from LibpqSessionTest (8 ms total)
+166: 
+166: [----------] Global test environment tear-down
+166: [==========] 1 test from 1 test suite ran. (8 ms total)
+166: [  PASSED  ] 1 test.
+1/7 Test #166: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError ..........   Passed    0.02 sec
+test 167
+    Start 167: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+
+167: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown" "--gtest_also_run_disabled_tests"
+167: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+167: Test timeout computed to be: 180
+167: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+167: Note: Google Test filter = LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+167: [==========] Running 1 test from 1 test suite.
+167: [----------] Global test environment set-up.
+167: [----------] 1 test from LibpqSessionTest
+167: [ RUN      ] LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+167: [       OK ] LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown (8 ms)
+167: [----------] 1 test from LibpqSessionTest (8 ms total)
+167: 
+167: [----------] Global test environment tear-down
+167: [==========] 1 test from 1 test suite ran. (8 ms total)
+167: [  PASSED  ] 1 test.
+2/7 Test #167: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown ......   Passed    0.02 sec
+test 168
+    Start 168: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+
+168: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas" "--gtest_also_run_disabled_tests"
+168: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+168: Test timeout computed to be: 180
+168: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+168: Note: Google Test filter = LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+168: [==========] Running 1 test from 1 test suite.
+168: [----------] Global test environment set-up.
+168: [----------] 1 test from LabClusterTest
+168: [ RUN      ] LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+168: [       OK ] LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas (44 ms)
+168: [----------] 1 test from LabClusterTest (44 ms total)
+168: 
+168: [----------] Global test environment tear-down
+168: [==========] 1 test from 1 test suite ran. (44 ms total)
+168: [  PASSED  ] 1 test.
+3/7 Test #168: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas ...   Passed    0.06 sec
+test 169
+    Start 169: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+
+169: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged" "--gtest_also_run_disabled_tests"
+169: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+169: Test timeout computed to be: 180
+169: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+169: Note: Google Test filter = LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+169: [==========] Running 1 test from 1 test suite.
+169: [----------] Global test environment set-up.
+169: [----------] 1 test from LabClusterTest
+169: [ RUN      ] LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+169: [       OK ] LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged (18 ms)
+169: [----------] 1 test from LabClusterTest (18 ms total)
+169: 
+169: [----------] Global test environment tear-down
+169: [==========] 1 test from 1 test suite ran. (18 ms total)
+169: [  PASSED  ] 1 test.
+4/7 Test #169: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged .....   Passed    0.03 sec
+test 170
+    Start 170: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+
+170: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp" "--gtest_also_run_disabled_tests"
+170: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+170: Test timeout computed to be: 180
+170: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+170: Note: Google Test filter = LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+170: [==========] Running 1 test from 1 test suite.
+170: [----------] Global test environment set-up.
+170: [----------] 1 test from LabClusterTest
+170: [ RUN      ] LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+170: [ measured ] replicas replayed 200 commits within 15 ms of the post-workload snapshot
+170: [       OK ] LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp (483 ms)
+170: [----------] 1 test from LabClusterTest (483 ms total)
+170: 
+170: [----------] Global test environment tear-down
+170: [==========] 1 test from 1 test suite ran. (483 ms total)
+170: [  PASSED  ] 1 test.
+5/7 Test #170: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp .......   Passed    0.50 sec
+test 171
+    Start 171: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+
+171: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers" "--gtest_also_run_disabled_tests"
+171: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+171: Test timeout computed to be: 180
+171: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+171: Note: Google Test filter = LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+171: [==========] Running 1 test from 1 test suite.
+171: [----------] Global test environment set-up.
+171: [----------] 1 test from LabClusterTest
+171: [ RUN      ] LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+171: [ measured ] docker compose stop took 279 ms; outage detected 15 ms after stop returned; healthy again 941 ms after start was issued
+171: [       OK ] LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers (1892 ms)
+171: [----------] 1 test from LabClusterTest (1893 ms total)
+171: 
+171: [----------] Global test environment tear-down
+171: [==========] 1 test from 1 test suite ran. (1893 ms total)
+171: [  PASSED  ] 1 test.
+6/7 Test #171: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers ......   Passed    1.92 sec
+test 172
+    Start 172: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+
+172: Test command: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.PausedReplicaTimesOutInsteadOfHanging" "--gtest_also_run_disabled_tests"
+172: Working Directory: /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/tests
+172: Test timeout computed to be: 180
+172: Running main() from /Users/lavaneshthirukondamahendran/Desktop/faulttwin-ai/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+172: Note: Google Test filter = LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+172: [==========] Running 1 test from 1 test suite.
+172: [----------] Global test environment set-up.
+172: [----------] 1 test from LabClusterTest
+172: [ RUN      ] LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+172: [ measured ] paused replica: cycle with open connection 1013 ms (client deadline 1000 ms), reconnect cycle 2017 ms (connect_timeout 2 s), healthy again 19 ms after unpause
+172: [       OK ] LabClusterTest.PausedReplicaTimesOutInsteadOfHanging (3385 ms)
+172: [----------] 1 test from LabClusterTest (3385 ms total)
+172: 
+172: [----------] Global test environment tear-down
+172: [==========] 1 test from 1 test suite ran. (3385 ms total)
+172: [  PASSED  ] 1 test.
+7/7 Test #172: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging ..........   Passed    3.40 sec
+
+100% tests passed out of 7
+
+Label Time Summary:
+integration    =   5.94 sec*proc (7 tests)
+
+Total Test time (real) =   5.95 sec

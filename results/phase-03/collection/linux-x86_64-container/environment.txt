@@ -1,0 +1,8 @@
+date_utc: 2026-11-26T02:43:20Z
+uname: Linux 6.18.44-fc-v880 x86_64
+cpus: 4
+docker: 29.9.3
+postgres: postgres (PostgreSQL) 17.12 (Debian 17.12-1.pgdg12+1)
+monitor_build: build/release
+git_commit: 44a3ff8b569319899d025691db60027e7665375a
+note: git_commit is the assistant's throw-away container repository, not the owner's; code = owner's f0624a4 + uncommitted Phase 3 (see results/phase-03/README.md)
