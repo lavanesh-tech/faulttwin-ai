@@ -14,6 +14,8 @@
 #include "faulttwin/collectors/linux_resources.hpp"
 #include "faulttwin/collectors/rates.hpp"
 #include "faulttwin/collectors/topology.hpp"
+#include "faulttwin/detection/online_detector.hpp"
+#include "faulttwin/detection/report.hpp"
 #include "monitor_options.hpp"
 #include "monitor_report.hpp"
 
@@ -37,6 +39,34 @@ double process_cpu_ms() {
     return to_ms(usage.ru_utime) + to_ms(usage.ru_stime);
 }
 
+/// Runs features + rules on one cycle and prints the state changes; returns how many.
+std::size_t report_detections(faulttwin::detection::OnlineDetector& detector,
+                              const mon::CycleRecord& record, mon::OutputFormat format) {
+    const auto detections = detector.on_cycle(record.nodes, record.rates);
+    for (const auto& d : detections) {
+        if (format == mon::OutputFormat::kJson) {
+            std::cout << faulttwin::detection::detection_json(d) << '\n';
+        } else {
+            std::cout << "detection: " << faulttwin::detection::detection_text(d) << '\n';
+        }
+    }
+    return detections.size();
+}
+
+void write_summary(mon::OutputFormat format, const mon::RunSummary& summary,
+                   const faulttwin::detection::OnlineDetector* detector,
+                   std::uint64_t detections_total) {
+    if (format == mon::OutputFormat::kJson) {
+        mon::write_summary_json(std::cout, summary);
+        return;
+    }
+    mon::write_summary_text(std::cout, summary);
+    if (detector != nullptr) {
+        std::cout << "detections: " << detections_total << " state changes, "
+                  << detector->firing().size() << " alert(s) firing at exit\n";
+    }
+}
+
 int run(const mon::MonitorOptions& options) {
     std::vector<col::PgNodeCollector> collectors;
     collectors.reserve(options.nodes.size());
@@ -46,6 +76,11 @@ int run(const mon::MonitorOptions& options) {
     col::LinuxResourceCollector resources;
     std::vector<std::optional<col::PgNodeSnapshot>> previous(options.nodes.size());
     mon::RunSummary summary;
+    std::optional<faulttwin::detection::OnlineDetector> detector;
+    if (options.detect) {
+        detector.emplace();
+    }
+    std::uint64_t detections_total = 0;
 
     auto next_start = std::chrono::steady_clock::now();
     for (std::uint32_t cycle = 1; cycle <= options.cycles; ++cycle) {
@@ -94,6 +129,9 @@ int run(const mon::MonitorOptions& options) {
         } else {
             mon::write_cycle_text(std::cout, record);
         }
+        if (detector) {
+            detections_total += report_detections(*detector, record, options.format);
+        }
         std::cout.flush();
         mon::accumulate(summary, record);
 
@@ -102,11 +140,7 @@ int run(const mon::MonitorOptions& options) {
             std::this_thread::sleep_until(next_start);
         }
     }
-    if (options.format == mon::OutputFormat::kJson) {
-        mon::write_summary_json(std::cout, summary);
-    } else {
-        mon::write_summary_text(std::cout, summary);
-    }
+    write_summary(options.format, summary, detector ? &*detector : nullptr, detections_total);
     std::cout.flush();
     if (!std::cout) {
         std::cerr << "error: failed to write output\n";

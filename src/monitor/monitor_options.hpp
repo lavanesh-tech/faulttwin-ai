@@ -26,6 +26,7 @@ struct MonitorOptions {
     std::chrono::milliseconds max_age{5000};
     OutputFormat format{OutputFormat::kText};
     bool resources{true};
+    bool detect{false};  ///< run Phase 4 features + rules on every cycle
 };
 
 struct HelpRequested {};

@@ -53,6 +53,28 @@ and scenario IDs are never features; post-onset data excluded from pre-failure f
 and model on validation; evaluate once on test. Metrics: DET-*. Report class balance, per-category
 results and distribution-shift checks (held-out fault intensities).
 
+**Phase 4 pre-check (synthetic, not Experiment 3).** Phase 6 data does not exist yet, so the rule
+baseline was tuned and evaluated on deterministic synthetic scenarios (`faulttwin-detect
+evaluate`): 900 s, 3 nodes, 1 s ticks, 3 fault episodes (replication lag build-up, CPU saturation,
+overload, node down) and 5 benign distractors (short CPU/latency spikes, telemetry gaps, lag
+blips, busy periods) per scenario. Split by seed: validation 1–40 (tuning only), test 1001–1040
+and shifted test 2001–2040 (fault intensity 0.5–0.8 instead of 0.8–1.2), each evaluated once.
+Comparison: the same rules without sustain, hysteresis and cooldown (naive thresholds, triggers
+tuned the same way). Recorded deviations: the scenario generator was made harder once after a
+first run showed near-perfect separation on every split, and its random-draw order was changed
+once during refactoring (so one node's faults no longer shift another node's noise); the rule
+features were switched from window means to last values after inspecting one validation scenario.
+All three changes were made before the recorded run; the chosen parameters were identical before
+and after the last two changes.
+
+Learned comparison detectors (ADR-0018), added at the owner's request after the rule results
+above had been recorded: a k-NN distance detector and an averaged perceptron on 8 projected
+features. They are fitted on validation seeds 1–20 only. Their alert trigger (a quantile of
+normal-vector scores) and sustain are chosen on validation seeds 21–40 with the rules' objective.
+They are evaluated once on the same test splits. Their design was fixed before their first test
+run and was not changed afterwards (the code was only refactored, and the results were checked
+to be identical). The rules' tuning and results did not change.
+
 ### Experiment 4 — Recovery policy comparison (Phase 9)
 Identical initial states, workloads and fault configurations per scenario; ≥ 10 runs per policy and
 scenario; every executed strategy must pass the safety checks. Metrics: REC-*.

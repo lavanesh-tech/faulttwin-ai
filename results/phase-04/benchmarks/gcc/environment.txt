@@ -1,0 +1,10 @@
+date_utc: 2026-11-26T19:08:57Z
+uname: Linux 6.18.44-fc-v880 x86_64
+cpu: Intel(R) Xeon(R) Processor @ 2.10GHz
+cpus: 4
+load_average_before: 0.68, 1.29, 1.50
+compiler: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+build_type: Release
+git_commit: 571a8e0d8a9cec3b9252fb2b64568f8c6b49193d
+git_uncommitted_files: 35
+note: git_commit above is the assistant's throw-away container repository, not the owner's repository; code = owner's 8f1dbb2 + uncommitted Phase 4 changes (see results/phase-04/README.md)

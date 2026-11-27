@@ -43,6 +43,8 @@ Options:
   --connect-timeout-s S  libpq connect timeout, 2-60              (default 2)
   --query-timeout-ms MS  client-side deadline per query, 100-60000 (default 2000)
   --no-resources         do not collect host CPU/memory/disk
+  --detect               evaluate the anomaly rules (faulttwin.rules.v1) every cycle and
+                         print detections (fired / escalated / resolved)
   -h, --help             show this help
 )";
     return text;
@@ -132,6 +134,10 @@ std::variant<MonitorOptions, HelpRequested, UsageError> parse_monitor_options(
         }
         if (arg == "--no-resources") {
             options.resources = false;
+            continue;
+        }
+        if (arg == "--detect") {
+            options.detect = true;
             continue;
         }
         if (i + 1 >= args.size()) {

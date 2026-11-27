@@ -14,22 +14,29 @@ add_executable(faulttwin_unit_tests
   unit/collectors/primitives_test.cpp
   unit/collectors/pg_collector_test.cpp
   unit/collectors/rates_topology_test.cpp
-  unit/collectors/linux_resources_test.cpp)
+  unit/collectors/linux_resources_test.cpp
+  unit/features/rolling_window_test.cpp
+  unit/features/feature_extractor_test.cpp
+  unit/detection/rule_engine_test.cpp
+  unit/detection/scenario_evaluation_test.cpp
+  unit/detection/detect_options_test.cpp
+  unit/detection/online_detector_test.cpp
+  unit/detection/learned_test.cpp)
 # faulttwin_cli_lib links faulttwin::telemetry PUBLICly, so the telemetry library
 # arrives transitively. Listing it again duplicates it on the link line, which
 # Apple's linker reports as "ignoring duplicate libraries".
 # faulttwin::ingest brings faulttwin::concurrency with it (PUBLIC), and both share
 # faulttwin::telemetry with faulttwin_cli_lib; CMake de-duplicates static libraries
 # that arrive through different direct dependencies.
-# faulttwin_monitor_lib brings faulttwin::collectors with it, so the collectors library is
-# listed directly only when the monitor is not built (no libpq).
+# faulttwin_monitor_lib also brings faulttwin::collectors; it is no longer listed directly
+# because faulttwin_detect_lib provides it in every configuration.
+# faulttwin_detect_lib brings faulttwin::detection, faulttwin::features and
+# faulttwin::collectors with it (PUBLIC).
 target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_cli_lib faulttwin::ingest
-                                                   GTest::gtest_main)
+                                                   faulttwin_detect_lib GTest::gtest_main)
 if(FAULTTWIN_HAVE_LIBPQ)
   target_sources(faulttwin_unit_tests PRIVATE unit/monitor_cli_test.cpp)
   target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin_monitor_lib)
-else()
-  target_link_libraries(faulttwin_unit_tests PRIVATE faulttwin::collectors)
 endif()
 faulttwin_set_project_warnings(faulttwin_unit_tests)
 
@@ -59,6 +66,24 @@ add_test(NAME cli.deterministic_output
                  -DOUT_DIR=${CMAKE_CURRENT_BINARY_DIR}
                  -P ${CMAKE_CURRENT_SOURCE_DIR}/cli/check_deterministic.cmake)
 
+# ---- faulttwin-detect (Phase 4) ---------------------------------------------------------
+add_test(NAME cli.detect_help COMMAND faulttwin-detect --help)
+set_tests_properties(cli.detect_help PROPERTIES PASS_REGULAR_EXPRESSION "validation scenarios only")
+
+add_test(NAME cli.detect_rejects_overlapping_splits
+         COMMAND faulttwin-detect evaluate --validation-seeds 1-10 --test-seeds 5-20)
+set_tests_properties(cli.detect_rejects_overlapping_splits PROPERTIES WILL_FAIL TRUE)
+
+add_test(NAME cli.detect_scenario COMMAND faulttwin-detect scenario --seed 3 --format jsonl)
+set_tests_properties(cli.detect_scenario PROPERTIES PASS_REGULAR_EXPRESSION
+                     "\"type\":\"episode\".*\"type\":\"detection\"")
+
+add_test(NAME cli.detect_deterministic
+         COMMAND ${CMAKE_COMMAND}
+                 -DCLI=$<TARGET_FILE:faulttwin-detect>
+                 -DOUT_DIR=${CMAKE_CURRENT_BINARY_DIR}
+                 -P ${CMAKE_CURRENT_SOURCE_DIR}/cli/check_detect_deterministic.cmake)
+
 # ---- Integration tests (need libpq; cluster tests also need FT_INTEGRATION=1) ----------
 # Tests that need the Docker Compose lab skip unless FT_INTEGRATION=1, so plain `ctest` stays
 # green without Docker. They share one cluster and stop/pause its containers, so they hold a
@@ -66,7 +91,7 @@ add_test(NAME cli.deterministic_output
 if(FAULTTWIN_HAVE_LIBPQ)
   add_executable(faulttwin_integration_tests integration/lab_test.cpp)
   target_link_libraries(faulttwin_integration_tests PRIVATE faulttwin::collectors_pg
-                                                            GTest::gtest_main)
+                                                            faulttwin::detection GTest::gtest_main)
   target_compile_definitions(faulttwin_integration_tests
                              PRIVATE FAULTTWIN_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
   faulttwin_set_project_warnings(faulttwin_integration_tests)

@@ -19,6 +19,7 @@
 #include "faulttwin/collectors/libpq_session.hpp"
 #include "faulttwin/collectors/rates.hpp"
 #include "faulttwin/collectors/topology.hpp"
+#include "faulttwin/detection/online_detector.hpp"
 
 namespace faulttwin::collectors {
 namespace {
@@ -207,7 +208,25 @@ TEST(LabClusterTest, TopologyIsOnePrimaryWithTwoStreamingReplicas) {
     REQUIRE_LAB();
     const Lab lab = Lab::load();
     auto collectors = lab.collectors();
-    const auto snapshots = lab.collect_all(collectors);
+    // Right after `docker compose up --wait` a replica can still have WAL pending replay, which
+    // makes its replay lag legitimately missing for a moment. Wait (up to 10 s) for a cycle
+    // in which every applicable reading is ok, then check that cycle.
+    const auto complete = [](const std::vector<PgNodeSnapshot>& snaps) {
+        for (const auto& s : snaps) {
+            const auto cov = coverage(s);
+            const int allowed = s.replica.last_replay_age_seconds.quality() == Quality::kMissing;
+            if (s.availability != Availability::kUp || cov.ok + allowed != cov.applicable) {
+                return false;
+            }
+        }
+        return true;
+    };
+    auto snapshots = lab.collect_all(collectors);
+    const auto deadline = SteadyClock::now() + seconds{10};
+    while (!complete(snapshots) && SteadyClock::now() < deadline) {
+        std::this_thread::sleep_for(milliseconds{250});
+        snapshots = lab.collect_all(collectors);
+    }
     for (const auto& s : snapshots) {
         EXPECT_EQ(s.availability, Availability::kUp) << s.node;
         for (const auto& e : s.errors) {
@@ -393,6 +412,98 @@ TEST(LabClusterTest, PausedReplicaTimesOutInsteadOfHanging) {
               << " ms (client deadline 1000 ms), reconnect cycle " << second_ms.count()
               << " ms (connect_timeout 2 s), healthy again " << recovered->count()
               << " ms after unpause\n";
+}
+
+// ---- Phase 4: features + rules on live telemetry -----------------------------------------
+
+/// Runs the monitor's detection path (OnlineDetector) one collection cycle at a time.
+class DetectionLoop {
+  public:
+    DetectionLoop(const Lab& lab, std::vector<PgNodeCollector>& collectors)
+        : lab_(&lab), collectors_(&collectors) {}
+
+    std::vector<detection::Detection> cycle() {
+        auto snaps = lab_->collect_all(*collectors_);
+        std::vector<std::optional<PgRates>> rates(snaps.size());
+        for (std::size_t i = 0; i < snaps.size() && i < previous_.size(); ++i) {
+            if (previous_[i].availability != Availability::kDown &&
+                snaps[i].availability != Availability::kDown) {
+                rates[i] = compute_rates(previous_[i], snaps[i]);
+            }
+        }
+        auto detections = detector_.on_cycle(snaps, rates);
+        previous_ = std::move(snaps);
+        return detections;
+    }
+    [[nodiscard]] const detection::OnlineDetector& detector() const { return detector_; }
+
+  private:
+    const Lab* lab_;
+    std::vector<PgNodeCollector>* collectors_;
+    detection::OnlineDetector detector_;
+    std::vector<PgNodeSnapshot> previous_;
+};
+
+bool has_detection(const std::vector<detection::Detection>& detections,
+                   detection::DetectionKind kind, const std::string& rule,
+                   const std::string& node) {
+    for (const auto& d : detections) {
+        if (d.kind == kind && d.rule_id == rule && d.node == node) {
+            return true;
+        }
+    }
+    return false;
+}
+
+TEST(LabDetectionTest, StoppedReplicaRaisesStaleTelemetryAndResolves) {
+    REQUIRE_LAB();
+    const Lab lab = Lab::load();
+    auto collectors = lab.collectors();
+    ASSERT_TRUE(cluster_healthy(lab.collect_all(collectors))) << "cluster not healthy at start";
+    DetectionLoop loop{lab, collectors};
+
+    // A healthy, idle cluster raises nothing.
+    for (int i = 0; i < 5; ++i) {
+        for (const auto& d : loop.cycle()) {
+            ADD_FAILURE() << "unexpected detection on a healthy cluster: " << d.rule_id << " on "
+                          << d.node;
+        }
+        std::this_thread::sleep_for(seconds{1});
+    }
+
+    ComposeGuard guard("start pg-replica-2");
+    ASSERT_EQ(compose("stop pg-replica-2"), 0);
+    const auto stopped = SteadyClock::now();
+    std::optional<milliseconds> detected;
+    while (SteadyClock::now() - stopped < seconds{30}) {
+        const auto d = loop.cycle();
+        for (const auto& x : d) {
+            EXPECT_EQ(x.node, "pg-replica-2") << "only the stopped node may alert: " << x.rule_id;
+        }
+        if (has_detection(d, detection::DetectionKind::kFired, "telemetry_stale", "pg-replica-2")) {
+            detected = std::chrono::duration_cast<milliseconds>(SteadyClock::now() - stopped);
+            break;
+        }
+        std::this_thread::sleep_for(seconds{1});
+    }
+    ASSERT_TRUE(detected.has_value()) << "telemetry_stale did not fire within 30 s";
+
+    ASSERT_EQ(compose("start pg-replica-2"), 0);
+    const auto started = SteadyClock::now();
+    std::optional<milliseconds> resolved;
+    while (SteadyClock::now() - started < seconds{60}) {
+        if (has_detection(loop.cycle(), detection::DetectionKind::kResolved, "telemetry_stale",
+                          "pg-replica-2")) {
+            resolved = std::chrono::duration_cast<milliseconds>(SteadyClock::now() - started);
+            break;
+        }
+        std::this_thread::sleep_for(seconds{1});
+    }
+    ASSERT_TRUE(resolved.has_value()) << "telemetry_stale did not resolve within 60 s";
+    EXPECT_EQ(loop.detector().counters().vectors_refused, 0U);
+    std::cout << "[ measured ] telemetry_stale fired " << detected->count()
+              << " ms after docker compose stop returned; resolved " << resolved->count()
+              << " ms after start was issued (1 s cycles)\n";
 }
 
 }  // namespace

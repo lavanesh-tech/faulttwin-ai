@@ -1,0 +1,84 @@
+-------------------------------------------------------------------------------------------
+Benchmark                                 Time             CPU   Iterations UserCounters...
+-------------------------------------------------------------------------------------------
+BM_RollingWindowPush/60                26.2 ns         26.2 ns     25555615 items_per_second=38.1962M/s
+BM_RollingWindowPush/60                25.5 ns         25.5 ns     25555615 items_per_second=39.2039M/s
+BM_RollingWindowPush/60                25.2 ns         25.2 ns     25555615 items_per_second=39.7326M/s
+BM_RollingWindowPush/60                26.8 ns         26.7 ns     25555615 items_per_second=37.4734M/s
+BM_RollingWindowPush/60                26.9 ns         26.6 ns     25555615 items_per_second=37.5834M/s
+BM_RollingWindowPush/60_mean           26.1 ns         26.0 ns            5 items_per_second=38.4379M/s
+BM_RollingWindowPush/60_median         26.2 ns         26.2 ns            5 items_per_second=38.1962M/s
+BM_RollingWindowPush/60_stddev        0.765 ns        0.671 ns            5 items_per_second=997.752k/s
+BM_RollingWindowPush/60_cv             2.93 %          2.58 %             5 items_per_second=2.60%
+BM_RollingWindowPush/256               27.7 ns         27.6 ns     25243760 items_per_second=36.1697M/s
+BM_RollingWindowPush/256               27.1 ns         27.1 ns     25243760 items_per_second=36.9558M/s
+BM_RollingWindowPush/256               28.8 ns         28.7 ns     25243760 items_per_second=34.8041M/s
+BM_RollingWindowPush/256               32.1 ns         31.4 ns     25243760 items_per_second=31.838M/s
+BM_RollingWindowPush/256               29.5 ns         29.3 ns     25243760 items_per_second=34.1701M/s
+BM_RollingWindowPush/256_mean          29.0 ns         28.8 ns            5 items_per_second=34.7875M/s
+BM_RollingWindowPush/256_median        28.8 ns         28.7 ns            5 items_per_second=34.8041M/s
+BM_RollingWindowPush/256_stddev        1.93 ns         1.69 ns            5 items_per_second=1.98074M/s
+BM_RollingWindowPush/256_cv            6.64 %          5.85 %             5 items_per_second=5.69%
+BM_RollingWindowStats/60                426 ns          424 ns      1515551 items_per_second=2.35689M/s
+BM_RollingWindowStats/60                464 ns          444 ns      1515551 items_per_second=2.2517M/s
+BM_RollingWindowStats/60                458 ns          447 ns      1515551 items_per_second=2.23837M/s
+BM_RollingWindowStats/60                436 ns          428 ns      1515551 items_per_second=2.33556M/s
+BM_RollingWindowStats/60                457 ns          451 ns      1515551 items_per_second=2.21822M/s
+BM_RollingWindowStats/60_mean           448 ns          439 ns            5 items_per_second=2.28015M/s
+BM_RollingWindowStats/60_median         457 ns          444 ns            5 items_per_second=2.2517M/s
+BM_RollingWindowStats/60_stddev        16.4 ns         11.8 ns            5 items_per_second=61.9489k/s
+BM_RollingWindowStats/60_cv            3.66 %          2.70 %             5 items_per_second=2.72%
+BM_RollingWindowStats/256              1736 ns         1732 ns       391763 items_per_second=577.46k/s
+BM_RollingWindowStats/256              1800 ns         1796 ns       391763 items_per_second=556.662k/s
+BM_RollingWindowStats/256              1686 ns         1684 ns       391763 items_per_second=593.827k/s
+BM_RollingWindowStats/256              1694 ns         1693 ns       391763 items_per_second=590.607k/s
+BM_RollingWindowStats/256              1690 ns         1689 ns       391763 items_per_second=592.168k/s
+BM_RollingWindowStats/256_mean         1721 ns         1719 ns            5 items_per_second=582.145k/s
+BM_RollingWindowStats/256_median       1694 ns         1693 ns            5 items_per_second=590.607k/s
+BM_RollingWindowStats/256_stddev       48.7 ns         47.3 ns            5 items_per_second=15.6515k/s
+BM_RollingWindowStats/256_cv           2.83 %          2.75 %             5 items_per_second=2.69%
+BM_FeatureExtract                      5095 ns         5094 ns       100000 items_per_second=196.297k/s
+BM_FeatureExtract                      4995 ns         4992 ns       100000 items_per_second=200.339k/s
+BM_FeatureExtract                      4920 ns         4919 ns       100000 items_per_second=203.305k/s
+BM_FeatureExtract                      4995 ns         4993 ns       100000 items_per_second=200.264k/s
+BM_FeatureExtract                      5171 ns         5150 ns       100000 items_per_second=194.188k/s
+BM_FeatureExtract_mean                 5035 ns         5030 ns            5 items_per_second=198.879k/s
+BM_FeatureExtract_median               4995 ns         4993 ns            5 items_per_second=200.264k/s
+BM_FeatureExtract_stddev               98.2 ns         91.7 ns            5 items_per_second=3.61638k/s
+BM_FeatureExtract_cv                   1.95 %          1.82 %             5 items_per_second=1.82%
+BM_RuleEngineEvaluate                   147 ns          147 ns      4613133 items_per_second=6.78245M/s
+BM_RuleEngineEvaluate                   137 ns          137 ns      4613133 items_per_second=7.28915M/s
+BM_RuleEngineEvaluate                   141 ns          139 ns      4613133 items_per_second=7.19196M/s
+BM_RuleEngineEvaluate                   143 ns          142 ns      4613133 items_per_second=7.03354M/s
+BM_RuleEngineEvaluate                   151 ns          149 ns      4613133 items_per_second=6.69858M/s
+BM_RuleEngineEvaluate_mean              144 ns          143 ns            5 items_per_second=6.99914M/s
+BM_RuleEngineEvaluate_median            143 ns          142 ns            5 items_per_second=7.03354M/s
+BM_RuleEngineEvaluate_stddev           5.44 ns         5.23 ns            5 items_per_second=254.834k/s
+BM_RuleEngineEvaluate_cv               3.78 %          3.65 %             5 items_per_second=3.64%
+BM_LearnedScore/0                     11856 ns        11717 ns        60184 items_per_second=85.3429k/s knn
+BM_LearnedScore/0                     12678 ns        12571 ns        60184 items_per_second=79.5462k/s knn
+BM_LearnedScore/0                     11846 ns        11811 ns        60184 items_per_second=84.6646k/s knn
+BM_LearnedScore/0                     11835 ns        11606 ns        60184 items_per_second=86.1634k/s knn
+BM_LearnedScore/0                     12690 ns        12453 ns        60184 items_per_second=80.3026k/s knn
+BM_LearnedScore/0_mean                12181 ns        12032 ns            5 items_per_second=83.2039k/s knn
+BM_LearnedScore/0_median              11856 ns        11811 ns            5 items_per_second=84.6646k/s knn
+BM_LearnedScore/0_stddev                459 ns          446 ns            5 items_per_second=3.0522k/s knn
+BM_LearnedScore/0_cv                   3.77 %          3.71 %             5 items_per_second=3.67% knn
+BM_LearnedScore/1                      6.81 ns         6.80 ns    102267114 items_per_second=146.972M/s perceptron
+BM_LearnedScore/1                      6.88 ns         6.80 ns    102267114 items_per_second=147.115M/s perceptron
+BM_LearnedScore/1                      7.64 ns         7.63 ns    102267114 items_per_second=131.023M/s perceptron
+BM_LearnedScore/1                      7.23 ns         7.17 ns    102267114 items_per_second=139.518M/s perceptron
+BM_LearnedScore/1                      6.92 ns         6.87 ns    102267114 items_per_second=145.484M/s perceptron
+BM_LearnedScore/1_mean                 7.10 ns         7.05 ns            5 items_per_second=142.022M/s perceptron
+BM_LearnedScore/1_median               6.92 ns         6.87 ns            5 items_per_second=145.484M/s perceptron
+BM_LearnedScore/1_stddev              0.345 ns        0.356 ns            5 items_per_second=6.88628M/s perceptron
+BM_LearnedScore/1_cv                   4.87 %          5.05 %             5 items_per_second=4.85% perceptron
+BM_ScenarioEndToEnd                    11.3 ms         11.3 ms           61 items_per_second=238.887k/s observations=24.291k
+BM_ScenarioEndToEnd                    13.1 ms         12.8 ms           61 items_per_second=210.157k/s observations=24.291k
+BM_ScenarioEndToEnd                    12.1 ms         12.0 ms           61 items_per_second=224.31k/s observations=24.291k
+BM_ScenarioEndToEnd                    12.3 ms         12.0 ms           61 items_per_second=224.189k/s observations=24.291k
+BM_ScenarioEndToEnd                    14.3 ms         14.0 ms           61 items_per_second=192.537k/s observations=24.291k
+BM_ScenarioEndToEnd_mean               12.6 ms         12.5 ms            5 items_per_second=218.016k/s observations=24.291k
+BM_ScenarioEndToEnd_median             12.3 ms         12.0 ms            5 items_per_second=224.189k/s observations=24.291k
+BM_ScenarioEndToEnd_stddev             1.14 ms         1.04 ms            5 items_per_second=17.4945k/s observations=0
+BM_ScenarioEndToEnd_cv                 9.05 %          8.31 %             5 items_per_second=8.02% observations=0.00%

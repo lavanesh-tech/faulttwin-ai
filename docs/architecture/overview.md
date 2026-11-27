@@ -307,7 +307,7 @@ JSON logs with `trace_id` propagated from HTTP request to jobs.
 | Small, synthetic datasets overfit | Inflated metrics | Grouped split by scenario, held-out fault type, report CIs and FP/hour |
 | Twin may not match reality | Misleading rankings | Calibration error reported; outcomes labelled simulated; rank stability shown |
 
-## 10. Implemented so far (Phases 1–2)
+## 10. Implemented so far (Phases 1–4)
 
 | Component | Location | Status |
 |---|---|---|
@@ -319,6 +319,10 @@ JSON logs with `trace_id` propagated from HTTP request to jobs.
 | `BoundedQueue<T>` (3 overload policies, timeouts, `stop_token` cancellation, close, `pop_batch`), `UnboundedQueue<T>` reference, `QueueLike` concept | `include/faulttwin/concurrency/`, `src/concurrency/` | Phase 2: implemented, unit + stress tested (incl. TSan) |
 | `NodeOrderTracker`, `EventProcessor`, `IngestPipeline` (jthread consumers, drain-deadline shutdown), single-threaded baseline | `include/faulttwin/ingest/`, `src/ingest/` | Phase 2: implemented, tested (incl. TSan) |
 | Google Benchmark suite and scripts | `bench/`, `scripts/run-benchmarks.sh`, `scripts/summarize-benchmarks.py` | Phase 2: measured in a cloud container only |
+| PostgreSQL lab, collectors, `faulttwin-monitor` | `compose.yaml`, `lab/`, `include/faulttwin/collectors/`, `src/collectors/`, `src/monitor/` | Phase 3: tested against the lab (Linux container, macOS, CI) |
+| Features: `Observation`, `RollingWindow` (Welford), `FeatureSchema` v1, `FeatureExtractor`, adapters | `include/faulttwin/features/`, `src/features/` | Phase 4: implemented, unit tested, golden fixture (ADR-0016) |
+| Detection: `Rule`, `RuleEngine`, `OnlineDetector`, scenarios, scoring, tuning; `faulttwin-detect`; `faulttwin-monitor --detect` | `include/faulttwin/detection/`, `src/detection/`, `src/detect/` | Phase 4: implemented, tested; evaluated on synthetic scenarios only (ADR-0017) |
+| Learned comparison detectors: `KnnDetector`, `AveragedPerceptron`, `Standardizer`, `ScoreAlerter`, `train_and_tune` | `include/faulttwin/detection/learned.hpp`, `src/detection/learned.cpp` | Phase 4: implemented, tested; synthetic scenarios only; not the Phase 7 model (ADR-0018) |
 
 Phase 2 differences from the target design in §4–§6: there is no `core` library yet (the only
 clock abstraction needed is the injectable `NowFn`), the event type is still the Phase 1
@@ -326,3 +330,10 @@ clock abstraction needed is the injectable `NowFn`), the event type is still the
 pipeline has one stage (validate → order → sink) with no routing to storage or features.
 
 Everything else in this document is design only.
+
+Phase 4 differences from §4–§6: there is no `tsdb` yet; features are computed from per-series
+in-memory windows inside the extractor (enough for one process and one evaluation thread). The
+detector interface is a concrete `RuleEngine` over `FeatureVector`s rather than an `IDetector`
+abstraction, because there is one implementation; EWMA and median/MAD detectors are deferred
+(ADR-0017). `ml/feature_spec.yaml` does not exist yet; the C++ `FeatureSchema` plus the golden
+fixture from `scripts/features-reference.py` are the current contract.

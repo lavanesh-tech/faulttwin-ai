@@ -75,13 +75,25 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 3.13 | Builds, tests and runs the lab on the owner's Mac (Apple Silicon) | ✅ owner-run on Apple Silicon, AppleClang, libpq 19.0 (Homebrew), Docker 29.6.2 / Compose v5.3.1: debug 179/179 (5 lab tests skipped), integration 7/7, monitor 3 cycles 100 % success | `results/phase-03/integration/macos-arm64.log` |
 | 3.14 | CI green with the Phase 3 workflow (including the integration job) | ✅ CI run #6 on `6e23c81` green (5m 17s, seen in the owner's GitHub Actions screenshot); run #5 on `09d2e74` stopped after 1m 38s with a grey "!" status, most likely cancelled when #6 started (not confirmed) | GitHub Actions run #6 |
 | 3.15 | No AI authorship; no assistant commits | ✅ | phase report §20 |
-| 3.16 | Owner approval after independent review | ⏳ | |
+| 3.16 | Owner approval after independent review | ✅ approved by the owner ("next", 2026-11-26) | project chat |
 
 ## Phase 4 — Time-series features and anomaly detection
-- Rolling-window features with documented complexity and numerically stable variance (Welford).
-- Versioned feature schema; deterministic extraction tests.
-- Rule baseline with sustained violations, hysteresis, cooldown, multi-signal rules, severity and
-  stale-telemetry detection; thresholds tuned on validation scenarios only.
+| # | Criterion | Status | Evidence |
+|---|---|---|---|
+| 4.1 | Event-time rolling windows (mean, variance, min, max, rate, slope, missing ratio, age) with documented complexity and numerically stable variance (Welford) | ✅ tested | ADR-0016, `rolling_window_test.cpp`, golden fixture |
+| 4.2 | Missing, stale, invalid and not-applicable data handled explicitly (never turned into 0) | ✅ tested | `feature_extractor_test.cpp` |
+| 4.3 | Versioned feature schema with pinned fingerprint; deterministic extraction | ✅ tested | `FeatureExtractorTest.*`, `cli.detect_deterministic` |
+| 4.4 | Rule baseline: thresholds, sustained violations, hysteresis, cooldown, multi-signal rules, severity and escalation, stale-telemetry detection | ✅ tested | ADR-0017, `rule_engine_test.cpp` |
+| 4.5 | Thresholds tuned on validation scenarios only; test splits evaluated once; overlapping splits refused | ✅ tested | `faulttwin-detect evaluate`, `cli.detect_rejects_overlapping_splits` |
+| 4.6 | Detection quality measured against ground truth (precision, recall, F1, false alerts/h, latency) with a naive baseline | ✅ measured (synthetic scenarios only) | `results/phase-04/detection/` |
+| 4.7 | k-NN and perceptron comparison detectors (owner request), trained and thresholded without test leakage | ✅ tested, measured (synthetic) | ADR-0018, `learned_test.cpp` |
+| 4.8 | Online detection on the live lab (`faulttwin-monitor --detect`): stopped replica raises and resolves `telemetry_stale` | ✅ tested (Linux container) | `results/phase-04/integration/` |
+| 4.9 | All presets pass with GCC and Clang on Linux; clang-tidy and clang-format clean | ✅ tested (Linux container) | `results/phase-04/{gcc,clang}/` |
+| 4.10 | Benchmarks for windows, extraction, rules and learned scoring | ✅ measured (cloud container only) | `results/phase-04/benchmarks/` |
+| 4.11 | Builds and tests on the owner's Mac | ⏳ owner-run (Apple Silicon, AppleClang): integration 8/8; `summary.json` byte-identical to Linux; debug ctest 245/246, the failure was a test bug (raw `system_clock` tick count differs between libstdc++ and libc++), fixed; re-run pending | `results/phase-04/integration/darwin-arm64.log` |
+| 4.12 | CI green with the Phase 4 workflow | ⏳ NOT RUN | |
+| 4.13 | No AI authorship; no assistant commits | ✅ | phase report §20 |
+| 4.14 | Owner approval after independent review | ⏳ | |
 
 ## Phase 5 — Persistence, APIs and observability
 - Incident storage, versioned Drogon REST API, health/readiness, Prometheus metrics, structured logs.

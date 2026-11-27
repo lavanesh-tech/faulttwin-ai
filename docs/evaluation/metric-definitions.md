@@ -111,6 +111,16 @@ ground-truth failure episodes with the same matching window for rules and ML.
 
 Per-category results (by failure type) and class imbalance are always reported.
 
+**Implementation mapping (Phase 4, `faulttwin::detection::score`).** An alert is a `fired`
+detection (escalations and resolutions are not alerts). An alert on node N at time t matches a
+ground-truth episode on N when `onset <= t <= end + grace` (grace 30 s by default). DET-P is per
+alert (matched alerts / alerts; several alerts in one episode are all matched); DET-R and
+DET-MISS are per episode (episodes with at least one matched alert). DET-FAH = unmatched alerts /
+node-hours outside every `[onset, end + grace]` window. Detection latency (reported next to DET-*,
+and MON-DETLAT for live runs) = first matched alert − onset, per episode, nearest-rank p50/p95/max.
+DET-FPR (window-based) is not computed in Phase 4: there are no labelled negative windows yet.
+Undefined ratios are reported as N/A.
+
 ## 6. Digital twin and recovery (Modules F, H; Experiments 4–5)
 
 | ID | Metric | Definition |

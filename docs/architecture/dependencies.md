@@ -1,6 +1,6 @@
 # FaultTwin AI — Dependency Matrix
 
-## Actually used (Phases 1–3)
+## Actually used (Phases 1–4)
 
 | Dependency | Version / pin | Used for | Licence |
 |---|---|---|---|
@@ -10,7 +10,7 @@
 | Clang / clang-tidy / clang-format | 18.1.3 (Ubuntu 24.04) used for the recorded runs | Compiler, lint, format | Apache-2.0 with LLVM exception |
 | GoogleTest | v1.17.0, commit `52eb8108c5bdec04579160ae17225d66034bd723` via FetchContent | Unit tests only | BSD-3-Clause |
 | Google Benchmark | v1.9.4, commit `eddb0241389718a23a42db6af5f0164b6e0139af` via FetchContent (Phase 2, ADR-0013) | `bench/` only, Release preset only | Apache-2.0 |
-| Python 3 (standard library only) | 3.13 used for the recorded runs | `scripts/summarize-benchmarks.py` (results only, not the build) | PSF |
+| Python 3 (standard library only) | 3.13 used for the recorded runs | `scripts/summarize-benchmarks.py`, `scripts/features-reference.py` (golden fixture generator, `fractions` module) — results and fixtures only, not the build | PSF |
 | Threads (pthreads via `find_package(Threads)`) | system | `std::jthread` in `faulttwin_concurrency`/`faulttwin_ingest` | system |
 | libpq | system package; 16.15 (Ubuntu 24.04 `libpq-dev`) for the Linux runs; Homebrew `libpq` on macOS (19.0 in the owner's run) | `faulttwin_collectors_pg`, `faulttwin-monitor`, integration tests (Phase 3, ADR-0015). Optional: found by `find_package(PostgreSQL)` | PostgreSQL Licence |
 | PostgreSQL server image | `postgres:17.12-bookworm@sha256:1eff563f6c868b9b433566e9f3cf6e5c79fbd3b95bf70ec7277d376cdbfc50d7` (multi-arch index) | Lab cluster only (`compose.yaml`, ADR-0014) | PostgreSQL Licence (image contents: Debian packages under their own licences) |
@@ -19,8 +19,9 @@
 | actions/upload-artifact | v4.6.2, `ea165f8d65b6e75b540449e92b4886f43607fa02` | CI | MIT |
 
 No runtime third-party library is linked into `faulttwin-synth`, `faulttwin_telemetry`,
-`faulttwin_concurrency`, `faulttwin_ingest` or `faulttwin_collectors` (C++ standard library and the
-system thread library only). `faulttwin_collectors_pg` and `faulttwin-monitor` link libpq. libpq is
+`faulttwin_concurrency`, `faulttwin_ingest`, `faulttwin_collectors`, `faulttwin_features` or
+`faulttwin_detection` (C++ standard library and the system thread library only; Phase 4 added no
+dependency, and the k-NN and perceptron detectors are implemented in-tree, ADR-0018). `faulttwin_collectors_pg` and `faulttwin-monitor` link libpq. libpq is
 taken from the system rather than pinned: it is a stable C ABI, and the server version that matters
 is pinned in the image. The 16.x client talks to the 17.12 server; libpq is backwards and forwards
 compatible for the protocol and functions used.

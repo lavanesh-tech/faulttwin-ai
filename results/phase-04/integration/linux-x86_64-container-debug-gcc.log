@@ -1,0 +1,180 @@
+date_utc: 2026-11-26T19:07:51Z
+uname: Linux 6.18.44-fc-v880 x86_64
+docker: 29.9.3
+compose: 5.7.1
+postgres: postgres (PostgreSQL) 17.12 (Debian 17.12-1.pgdg12+1)
+git_commit: 571a8e0d8a9cec3b9252fb2b64568f8c6b49193d
+
+Internal ctest changing into directory: /home/user/ft/build/debug-gcc
+UpdateCTestConfiguration  from :/home/user/ft/build/debug-gcc/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/user/ft/build/debug-gcc/DartConfiguration.tcl
+Test project /home/user/ft/build/debug-gcc
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 228
+    Start 228: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError
+
+228: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LibpqSessionTest.RefusedConnectionIsAClassifiedError" "--gtest_also_run_disabled_tests"
+228: Working Directory: /home/user/ft/build/debug-gcc/tests
+228: Test timeout computed to be: 180
+228: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+228: Note: Google Test filter = LibpqSessionTest.RefusedConnectionIsAClassifiedError
+228: [==========] Running 1 test from 1 test suite.
+228: [----------] Global test environment set-up.
+228: [----------] 1 test from LibpqSessionTest
+228: [ RUN      ] LibpqSessionTest.RefusedConnectionIsAClassifiedError
+228: [       OK ] LibpqSessionTest.RefusedConnectionIsAClassifiedError (0 ms)
+228: [----------] 1 test from LibpqSessionTest (0 ms total)
+228: 
+228: [----------] Global test environment tear-down
+228: [==========] 1 test from 1 test suite ran. (0 ms total)
+228: [  PASSED  ] 1 test.
+1/8 Test #228: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError .............   Passed    0.01 sec
+test 229
+    Start 229: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+
+229: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown" "--gtest_also_run_disabled_tests"
+229: Working Directory: /home/user/ft/build/debug-gcc/tests
+229: Test timeout computed to be: 180
+229: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+229: Note: Google Test filter = LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+229: [==========] Running 1 test from 1 test suite.
+229: [----------] Global test environment set-up.
+229: [----------] 1 test from LibpqSessionTest
+229: [ RUN      ] LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+229: [       OK ] LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown (0 ms)
+229: [----------] 1 test from LibpqSessionTest (0 ms total)
+229: 
+229: [----------] Global test environment tear-down
+229: [==========] 1 test from 1 test suite ran. (0 ms total)
+229: [  PASSED  ] 1 test.
+2/8 Test #229: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown .........   Passed    0.01 sec
+test 230
+    Start 230: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+
+230: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas" "--gtest_also_run_disabled_tests"
+230: Working Directory: /home/user/ft/build/debug-gcc/tests
+230: Test timeout computed to be: 180
+230: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+230: Note: Google Test filter = LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+230: [==========] Running 1 test from 1 test suite.
+230: [----------] Global test environment set-up.
+230: [----------] 1 test from LabClusterTest
+230: [ RUN      ] LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+230: [       OK ] LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas (37 ms)
+230: [----------] 1 test from LabClusterTest (37 ms total)
+230: 
+230: [----------] Global test environment tear-down
+230: [==========] 1 test from 1 test suite ran. (37 ms total)
+230: [  PASSED  ] 1 test.
+3/8 Test #230: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas ......   Passed    0.04 sec
+test 231
+    Start 231: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+
+231: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged" "--gtest_also_run_disabled_tests"
+231: Working Directory: /home/user/ft/build/debug-gcc/tests
+231: Test timeout computed to be: 180
+231: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+231: Note: Google Test filter = LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+231: [==========] Running 1 test from 1 test suite.
+231: [----------] Global test environment set-up.
+231: [----------] 1 test from LabClusterTest
+231: [ RUN      ] LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+231: [       OK ] LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged (11 ms)
+231: [----------] 1 test from LabClusterTest (11 ms total)
+231: 
+231: [----------] Global test environment tear-down
+231: [==========] 1 test from 1 test suite ran. (11 ms total)
+231: [  PASSED  ] 1 test.
+4/8 Test #231: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged ........   Passed    0.02 sec
+test 232
+    Start 232: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+
+232: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp" "--gtest_also_run_disabled_tests"
+232: Working Directory: /home/user/ft/build/debug-gcc/tests
+232: Test timeout computed to be: 180
+232: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+232: Note: Google Test filter = LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+232: [==========] Running 1 test from 1 test suite.
+232: [----------] Global test environment set-up.
+232: [----------] 1 test from LabClusterTest
+232: [ RUN      ] LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+232: [ measured ] replicas replayed 200 commits within 10 ms of the post-workload snapshot
+232: [       OK ] LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp (466 ms)
+232: [----------] 1 test from LabClusterTest (466 ms total)
+232: 
+232: [----------] Global test environment tear-down
+232: [==========] 1 test from 1 test suite ran. (466 ms total)
+232: [  PASSED  ] 1 test.
+5/8 Test #232: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp ..........   Passed    0.47 sec
+test 233
+    Start 233: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+
+233: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers" "--gtest_also_run_disabled_tests"
+233: Working Directory: /home/user/ft/build/debug-gcc/tests
+233: Test timeout computed to be: 180
+233: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+233: Note: Google Test filter = LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+233: [==========] Running 1 test from 1 test suite.
+233: [----------] Global test environment set-up.
+233: [----------] 1 test from LabClusterTest
+233: [ RUN      ] LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+233: [ measured ] docker compose stop took 323 ms; outage detected 7 ms after stop returned; healthy again 533 ms after start was issued
+233: [       OK ] LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers (1074 ms)
+233: [----------] 1 test from LabClusterTest (1074 ms total)
+233: 
+233: [----------] Global test environment tear-down
+233: [==========] 1 test from 1 test suite ran. (1074 ms total)
+233: [  PASSED  ] 1 test.
+6/8 Test #233: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers .........   Passed    1.08 sec
+test 234
+    Start 234: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+
+234: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.PausedReplicaTimesOutInsteadOfHanging" "--gtest_also_run_disabled_tests"
+234: Working Directory: /home/user/ft/build/debug-gcc/tests
+234: Test timeout computed to be: 180
+234: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+234: Note: Google Test filter = LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+234: [==========] Running 1 test from 1 test suite.
+234: [----------] Global test environment set-up.
+234: [----------] 1 test from LabClusterTest
+234: [ RUN      ] LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+234: [ measured ] paused replica: cycle with open connection 1009 ms (client deadline 1000 ms), reconnect cycle 2009 ms (connect_timeout 2 s), healthy again 20 ms after unpause
+234: [       OK ] LabClusterTest.PausedReplicaTimesOutInsteadOfHanging (3443 ms)
+234: [----------] 1 test from LabClusterTest (3444 ms total)
+234: 
+234: [----------] Global test environment tear-down
+234: [==========] 1 test from 1 test suite ran. (3444 ms total)
+234: [  PASSED  ] 1 test.
+7/8 Test #234: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging .............   Passed    3.45 sec
+test 235
+    Start 235: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+
+235: Test command: /home/user/ft/build/debug-gcc/tests/faulttwin_integration_tests "--gtest_filter=LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves" "--gtest_also_run_disabled_tests"
+235: Working Directory: /home/user/ft/build/debug-gcc/tests
+235: Test timeout computed to be: 180
+235: Running main() from /home/user/ft/build/debug-gcc/_deps/googletest-src/googletest/src/gtest_main.cc
+235: Note: Google Test filter = LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+235: [==========] Running 1 test from 1 test suite.
+235: [----------] Global test environment set-up.
+235: [----------] 1 test from LabDetectionTest
+235: [ RUN      ] LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+235: [ measured ] telemetry_stale fired 3037 ms after docker compose stop returned; resolved 6097 ms after start was issued (1 s cycles)
+235: [       OK ] LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves (14899 ms)
+235: [----------] 1 test from LabDetectionTest (14899 ms total)
+235: 
+235: [----------] Global test environment tear-down
+235: [==========] 1 test from 1 test suite ran. (14899 ms total)
+235: [  PASSED  ] 1 test.
+8/8 Test #235: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves ...   Passed   14.91 sec
+
+100% tests passed, 0 tests failed out of 8
+
+Label Time Summary:
+integration    =  19.99 sec*proc (8 tests)
+
+Total Test time (real) =  20.00 sec

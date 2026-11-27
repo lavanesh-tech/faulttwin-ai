@@ -69,3 +69,32 @@ Kept current with the implementation. Each phase adds its limitations here.
 - Outage detection times in the integration tests are measured from the `docker compose` command
   returning, not from a ground-truth fault onset; graceful `stop` closes connections at once, so
   the measured detection time is a lower bound for a crash.
+
+## Phase 4
+- **Detection quality is measured on synthetic scenarios only.** The generator is illustrative:
+  stationary AR(1) noise, faults shaped by hand, no real PostgreSQL behaviour. The scenarios turned
+  out to be easy to separate (tuned rules: 0 false alerts, F1 0.996 on the test split), so the
+  numbers say what sustain, hysteresis and cooldown buy over naive thresholds, not how well real
+  faults are detected. Experiment 3 needs the Phase 6 lab datasets.
+- The generator was changed after results were seen (made harder once; draw order fixed once),
+  before the recorded run. Tuning and test seeds never overlapped.
+- Untuned design values: hysteresis clear ratio 0.8, clear_for 5 s, cooldown 30 s; the replication
+  lag growth rule's level guard (1 s) and the latency rule's connection guard (60 %).
+- Per-rule tuning against its own fault class ignores interactions between rules; the full rule
+  set is only evaluated together on the test splits.
+- Allowed lateness is 0: an observation older than its series' newest one is dropped (counted).
+- Host CPU, memory and disk are not per database node in Phase 3 telemetry, so the CPU rule runs
+  on synthetic data and on Phase 1 samples, not on the live lab.
+- The live detection test covers one fault (stopped replica → `telemetry_stale`). Lag, CPU and
+  overload rules have not fired against the real lab; that needs Phase 6 fault injection.
+- The learned comparison detectors (k-NN, averaged perceptron) see the same synthetic data. A
+  single linear perceptron with unweighted classes misses CPU saturation and overload entirely
+  (0/34 and 0/35 on the test split). This was already visible on validation (recall 58 %) and is
+  reported as is, not tuned away on test results. The k-NN reference set is a 1,000-vector
+  subsample, and both detectors use untuned design values: k = 5, 10 epochs, hysteresis 0.5,
+  and missing values mapped to the training mean.
+- Feature definitions exist only in C++ so far; the Python implementation (Phase 7) must match
+  the golden fixture.
+- Cross-platform bit-identity of the scenarios rests on `-ffp-contract=off` and IEEE-754 doubles;
+  it is tested on Linux x86_64 with GCC and Clang, and on Apple Silicon with AppleClang
+  (`summary.json` byte-identical, owner-run).

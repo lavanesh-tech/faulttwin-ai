@@ -6,7 +6,12 @@ Baselines are never weakened to make the proposed design look better.
 Status (Phase 2): Experiment 1's baseline is implemented (`faulttwin::ingest::run_single_threaded_baseline`,
 same `EventProcessor` as the pipeline) and measured in a cloud container. Experiment 2's reference
 (`faulttwin::concurrency::UnboundedQueue`) is implemented and measured in a reduced form, without
-the memory cap. All other baselines are PLANNED.
+the memory cap. Experiment 3's rule baseline is implemented (Phase 4: `default_rule_set`, tuned by
+`tune_default_rules` on validation scenarios) and evaluated on synthetic scenarios only, together
+with a naive-threshold reference and two learned comparison detectors (k-NN distance and an
+averaged perceptron, ADR-0018; native C++, not the Phase 7 model). The Phase 6 data and the
+Phase 7 model are PLANNED. All other
+baselines are PLANNED.
 
 | Experiment | Baseline | Why it is fair | Proposed | Phase |
 |---|---|---|---|---|

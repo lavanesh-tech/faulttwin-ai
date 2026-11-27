@@ -42,12 +42,16 @@ constexpr std::string_view kStandbysSql =
 constexpr std::string_view kSlotsSql =
     "SELECT slot_name, active, coalesce(wal_status, ''), restart_lsn, pg_current_wal_lsn() "
     "FROM pg_replication_slots WHERE slot_type = 'physical' ORDER BY slot_name";
+// Ages use clock_timestamp(), not now(): now() is the start of the collection's transaction,
+// and a WAL message received after that start made the age slightly negative (seen on a fresh
+// lab in Phase 4; the reading was then reported as invalid).
 constexpr std::string_view kReplicaSql =
     "SELECT pg_last_wal_receive_lsn(), pg_last_wal_replay_lsn(), "
-    "extract(epoch FROM now() - pg_last_xact_replay_timestamp()), pg_is_wal_replay_paused()";
+    "extract(epoch FROM clock_timestamp() - pg_last_xact_replay_timestamp()), "
+    "pg_is_wal_replay_paused()";
 constexpr std::string_view kReceiverSql =
-    "SELECT status, coalesce(sender_host, ''), extract(epoch FROM now() - last_msg_receipt_time) "
-    "FROM pg_stat_wal_receiver";
+    "SELECT status, coalesce(sender_host, ''), "
+    "extract(epoch FROM clock_timestamp() - last_msg_receipt_time) FROM pg_stat_wal_receiver";
 
 using Field = std::optional<std::string>;
 

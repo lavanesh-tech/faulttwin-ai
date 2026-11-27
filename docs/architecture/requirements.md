@@ -2,7 +2,7 @@
 
 Status: **Phase 0 design document.** The owner's master specification is the source of truth; this
 file condenses it into stable requirement IDs, MVP boundaries and the assumptions behind them.
-Only the telemetry value model (FR-TEL-1, FR-TEL-2) is implemented so far, in Phase 1.
+Implemented so far: FR-TEL-1/2 (Phase 1), FR-TEL-3/4/5 (Phase 2), FR-MON-1/2/3 (Phase 3) and FR-FEAT-1, FR-DET-1 (Phase 4, detection measured on synthetic scenarios only).
 
 ## 1. Problem statement
 
@@ -28,8 +28,8 @@ results are not presented as commercial or production outcomes.
 | FR-MON-1 | PostgreSQL collectors with read-only credentials: availability, connections, transaction throughput, query latency, WAL generation, replication lag/state, replay positions, role/topology | B | 3 |
 | FR-MON-2 | Host/container resources: CPU, memory, disk capacity, disk I/O pressure, network latency/failures | B | 3 |
 | FR-MON-3 | Distinguish missing, stale and invalid telemetry from healthy values | B | 1 (model) / 3 |
-| FR-FEAT-1 | Rolling windows, moving average, variance, rate of change, trend, missing-value handling, event-time semantics, versioned feature schema, deterministic extraction | C | 4 |
-| FR-DET-1 | Rule baseline: thresholds, sustained violations, hysteresis, cooldown, multi-signal conditions, severity, stale-telemetry detection; tuned on validation data | D | 4 |
+| FR-FEAT-1 | Rolling windows, moving average, variance, rate of change, trend, missing-value handling, event-time semantics, versioned feature schema, deterministic extraction | C | 4 (implemented, tested) |
+| FR-DET-1 | Rule baseline: thresholds, sustained violations, hysteresis, cooldown, multi-signal conditions, severity, stale-telemetry detection; tuned on validation data | D | 4 (implemented, tested; tuned on synthetic validation scenarios until Phase 6; k-NN and perceptron comparison detectors added, ADR-0018) |
 | FR-ML-1 | Train LR / RF / gradient boosting in scikit-learn on leakage-safe splits; select empirically; export ONNX; model metadata | E | 7 |
 | FR-ML-2 | Native ONNX Runtime inference in C++; Python↔C++ parity tests; deterministic fallback; explicit abstention | E | 7 |
 | FR-TWIN-1 | Custom discrete-event simulator: logical clock, priority-queue scheduling, deterministic same-timestamp ordering, seeded randomness | F | 8 |

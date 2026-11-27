@@ -6,12 +6,15 @@ telemetry, detect anomalies, predict developing failures, simulate recovery stra
 discrete-event digital twin and recommend evidence-based actions. It is advisory: it does not
 execute destructive or production recovery actions.
 
-> **Status: Phase 3 of 12 (PostgreSQL monitoring) submitted for review.** What exists today is
-> the build system, the telemetry value model with validation, a synthetic-data CLI, a bounded
-> concurrent ingest pipeline, a Docker Compose PostgreSQL lab (primary + 2 streaming replicas), a
-> read-only PostgreSQL and host collector (`faulttwin-monitor`) and tests, including integration
+> **Status: Phase 4 of 12 (time-series features and anomaly detection) submitted for review.**
+> What exists today is the build system, the telemetry value model with validation, a
+> synthetic-data CLI, a bounded concurrent ingest pipeline, a Docker Compose PostgreSQL lab
+> (primary + 2 streaming replicas), a read-only PostgreSQL and host collector
+> (`faulttwin-monitor`), event-time rolling-window features, a rule-based anomaly detector with an
+> evaluation harness on synthetic scenarios (`faulttwin-detect`), and tests, including integration
 > tests against the lab. Measurements so far come from one cloud container and are not
-> independently reproduced. Everything else is design. See [`docs/PROGRESS.md`](docs/PROGRESS.md).
+> independently reproduced; detection quality has only been measured on synthetic data. Everything
+> else is design. See [`docs/PROGRESS.md`](docs/PROGRESS.md).
 
 ## What works now
 
@@ -35,7 +38,21 @@ execute destructive or production recovery actions.
   counters, probe and statement latency, WAL position, replication state, byte and time lag,
   replay positions, slots), derived rates and topology, and Linux host resources. Every value
   carries a quality (`ok`, `missing`, `stale`, `invalid`, `not_applicable`) with a reason.
-- `faulttwin-monitor` (needs libpq): collects from the lab and prints text or JSON lines.
+- `faulttwin-monitor` (needs libpq): collects from the lab and prints text or JSON lines;
+  `--detect` also runs the feature extractor and the rules on every cycle.
+- `faulttwin_features`: event-time rolling windows (fixed-capacity ring buffers, Welford mean and
+  variance with periodic exact re-seed), last/mean/stddev/min/max/rate/slope/missing-ratio/age per
+  metric, a versioned feature schema (`faulttwin.features.v1`, 90 columns, pinned fingerprint) and
+  adapters from collector snapshots and Phase 1 samples. Missing data is never turned into 0.
+- `faulttwin_detection`: rules with sustained violations, hysteresis, cooldown, multi-signal
+  (`all`/`any`, three-valued with missing data), severity and escalation, and stale-telemetry
+  detection; deterministic synthetic fault scenarios with ground truth; alert/episode scoring
+  (precision, recall, F1, false alerts per hour, detection latency) and per-rule tuning.
+- `faulttwin-detect`: tunes the rules on validation scenarios only, then evaluates them and a
+  naive-threshold baseline once on held-out test scenarios. Two learned comparison detectors, a
+  k-NN distance detector (unsupervised) and an averaged perceptron (supervised), train on the
+  first half of the validation seeds, pick their alert thresholds on the second half and are
+  evaluated on the same test splits (ADR-0018).
 
 ## Build and test
 
@@ -50,7 +67,7 @@ cmake --preset debug          # or: release, asan-ubsan, tsan
 cmake --build --preset debug
 ctest --preset debug
 
-# Everything, with full logs saved under results/phase-03/<compiler>/
+# Everything, with full logs saved under results/phase-04/<compiler>/
 scripts/verify-presets.sh gcc
 scripts/verify-presets.sh clang
 
@@ -75,6 +92,17 @@ docker compose down -v                   # stop and delete the lab data
 Integration tests that need the cluster are skipped unless `FT_INTEGRATION=1`, so a plain `ctest`
 passes without Docker. `scripts/measure-collection.sh` records collection cost and freshness.
 
+## Anomaly detection
+
+```bash
+./build/release/src/detect/faulttwin-detect evaluate --out /tmp/detect   # tune on seeds 1-40, test on 1001-1040 and 2001-2040
+./build/release/src/detect/faulttwin-detect scenario --seed 3            # one scenario: ground truth and detections
+./build/debug/src/monitor/faulttwin-monitor --cycles 30 --detect         # live: rules on the lab (needs .env loaded)
+```
+
+The scenarios are synthetic and illustrative; their results show how the rules behave, not how
+well they detect real PostgreSQL failures (that needs the Phase 6 lab datasets).
+
 ## Try the synthetic CLI
 
 ```bash
@@ -94,15 +122,19 @@ include/faulttwin/concurrency/ Bounded queue, unbounded reference queue, queue r
 include/faulttwin/ingest/      Order tracker, event processor, pipeline, single-threaded baseline
 include/faulttwin/collectors/  Reading quality, LSN, SQL session, PostgreSQL snapshot, rates,
                                topology, Linux resources, libpq adapter
+include/faulttwin/features/    Observation, rolling window, feature schema, extractor, adapters
+include/faulttwin/detection/   Rules, rule engine, online detector, scenarios, evaluation, JSON
 src/telemetry/                 Library implementation
 src/concurrency/, src/ingest/  Library implementations
 bench/                         Google Benchmark suite (Release only)
 src/collectors/                Collector implementation (src/collectors/pg/: libpq adapter)
 src/monitor/                   faulttwin-monitor CLI
+src/features/, src/detection/  Feature and detection libraries
+src/detect/                    faulttwin-detect CLI (tuning and evaluation on synthetic scenarios)
 src/cli/                       faulttwin-synth (options + report are a small testable library)
 tests/unit/                    GoogleTest suites
 tests/integration/             Tests against the Compose lab (skipped without FT_INTEGRATION=1)
-tests/cli/                     CLI determinism check (CMake script)
+tests/cli/                     CLI determinism checks (CMake scripts)
 compose.yaml, lab/             Lab cluster definition, init and replica bootstrap scripts
 .env.example                   Lab configuration template (copy to .env; never commit .env)
 cmake/                         Warnings, sanitizers, pinned dependencies
@@ -111,7 +143,9 @@ scripts/run-benchmarks.sh      Release build + benchmarks + environment record
 scripts/summarize-benchmarks.py  JSON -> runs.csv, summary.csv, summary.md (bootstrap CIs)
 scripts/lab-init-env.sh        Create .env with random passwords
 scripts/run-integration-tests.sh, measure-collection.sh  Lab tests and collection measurements
-results/phase-01/ … phase-03/  Raw logs and measurement output per phase
+scripts/features-reference.py  Exact-arithmetic reference for the feature golden fixture
+scripts/run-detection-benchmarks.sh  Release build + Phase 4 benchmarks
+results/phase-01/ … phase-04/  Raw logs and measurement output per phase
 docs/                          Architecture, ADRs, evaluation plan, evidence ledger, phase reports
 .github/workflows/ci.yml       Linux CI: gcc/clang × 4 presets, clang-format, clang-tidy, lab integration
 ```
@@ -130,7 +164,7 @@ Directories for later modules are created only when those modules are implemente
   [limitations](docs/evaluation/limitations.md)
 - [Evidence ledger](docs/resume/evidence-ledger.md)
 - [Phase 1 report](docs/phase-reports/phase-01.md), [Phase 2 report](docs/phase-reports/phase-02.md),
-  [Phase 3 report](docs/phase-reports/phase-03.md)
+  [Phase 3 report](docs/phase-reports/phase-03.md), [Phase 4 report](docs/phase-reports/phase-04.md)
 
 ## Development process and AI assistance
 

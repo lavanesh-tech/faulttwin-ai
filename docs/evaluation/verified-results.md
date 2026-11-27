@@ -40,3 +40,19 @@ monitor and pgbench on the same host; GCC 13.3 Release; `f0624a4` + uncommitted 
 
 Phase 1 produced **functional test results** (pass/fail), not metrics. They are recorded in
 `docs/phase-reports/phase-01.md` and `results/phase-01/`, not here.
+
+## Phase 4 (features and anomaly detection)
+
+Measured by the AI assistant in one 4-vCPU Linux cloud container, base `8f1dbb2` plus
+uncommitted Phase 4 changes. **Not independently verified; not run on macOS or in CI.**
+Detection quality is on deterministic **synthetic** scenarios only.
+
+| Item | Configuration | Value | Artifact | Status |
+|---|---|---|---|---|
+| Tuned rules, test split | seeds 1001–1040, 120 episodes | P 100 %, R 99.2 %, F1 0.996, 0 false alerts | `results/phase-04/detection/linux-x86_64-container/summary.json` | MEASURED (synthetic) |
+| Naive threshold, test split | same | P 88.5 %, R 91.7 %, F1 0.900, 1.86 false alerts/h | as above | MEASURED (synthetic) |
+| k-NN distance, test split | train 1–20, thresholds 21–40 | P 94.7 %, R 90.0 %, F1 0.923, 0.22 false alerts/h | as above | MEASURED (synthetic) |
+| Averaged perceptron, test split | same | P 86.0 %, R 40.8 %, F1 0.554 (CPU saturation and overload 0 detected) | as above | MEASURED (synthetic) |
+| Shifted split (weaker faults) | seeds 2001–2040 | F1: rules 0.970, naive 0.749, k-NN 0.904, perceptron 0.638 | as above | MEASURED (synthetic) |
+| Live stale-telemetry detection | `docker compose stop` of a replica, 1 s cycles | fired 3037–3046 ms after stop returned; resolved 6097–6125 ms after start | `results/phase-04/integration/` | MEASURED (container, 3 single runs) |
+| Benchmarks (GCC / Clang Release, median of 5) | see phase report §16 | rule evaluation 143 / 141 ns; feature vector 5.0 / 3.5 µs; k-NN score 11.9 / 11.2 µs; perceptron 6.9 / 6.6 ns | `results/phase-04/benchmarks/{gcc,clang}/` | MEASURED (container) |

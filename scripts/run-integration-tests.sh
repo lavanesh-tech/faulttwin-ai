@@ -5,12 +5,12 @@
 #
 # Loads .env, checks that Docker and the cluster are up (starting the cluster if needed),
 # then runs `ctest -L integration` with FT_INTEGRATION=1 and saves the log under
-# results/${FAULTTWIN_RESULTS_PHASE:-phase-03}/integration/.
+# results/${FAULTTWIN_RESULTS_PHASE:-phase-04}/integration/.
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 build_dir="${1:-${root}/build/debug}"
-phase="${FAULTTWIN_RESULTS_PHASE:-phase-03}"
+phase="${FAULTTWIN_RESULTS_PHASE:-phase-04}"
 out="${root}/results/${phase}/integration"
 label="${FAULTTWIN_RESULTS_LABEL:-$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m)}"
 

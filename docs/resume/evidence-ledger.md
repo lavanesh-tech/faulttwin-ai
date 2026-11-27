@@ -73,3 +73,35 @@ results and should not be phrased as such.
 | No password in argv, logs, JSON output or `postgresql.auto.conf` | CHECKED | replica entrypoint guard, `cli.monitor_requires_password` |
 | Phase 3 on macOS (debug 179/179, integration 7/7, AppleClang, libpq 19.0) | TESTED (owner-run) | `results/phase-03/integration/macos-arm64.log` |
 | Phase 3 CI run (`6e23c81`, including the lab integration job) | TESTED (CI) | GitHub Actions `ci` run #6, green, 5m 17s |
+
+## Phase 4 functional evidence (not resume metrics)
+
+| Item | Status | Evidence |
+|---|---|---|
+| Welford window statistics within 1e-9 of an exact rational reference (golden fixture) | TESTED | `tests/unit/features/rolling_window_test.cpp`, `scripts/features-reference.py` |
+| Feature schema `faulttwin.features.v1` fingerprint pinned; vectors of another schema refused | TESTED | `FeatureExtractorTest.*`, `RuleEngineTest.*` |
+| Rules: sustain, hysteresis, cooldown, three-valued missing data, escalation, stale telemetry | TESTED | `tests/unit/detection/rule_engine_test.cpp` |
+| Live lab: stopped replica raises `telemetry_stale`, resolves after restart | TESTED (Linux container) | `LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves`, `results/phase-04/integration/` |
+| Detection evaluation byte-identical across GCC/Clang and debug/release | TESTED (Linux container) | `cli.detect_deterministic`; `cmp` of all 8 output files (phase report §14) |
+| k-NN and perceptron: exact scoring, deterministic training, no train/tune/test overlap | TESTED | `tests/unit/detection/learned_test.cpp`, `cli.detect_rejects_overlapping_splits` |
+
+## Phase 4 (detection on synthetic scenarios)
+
+Measured by the AI assistant in one 4-vCPU Linux cloud container, GCC 13.3 Release, base
+`8f1dbb2` plus uncommitted Phase 4 changes. **Synthetic scenarios only: these numbers describe
+the generator, not real PostgreSQL faults. They are not Experiment 3 and are not resume metrics.**
+Test split = seeds 1001–1040 (120 episodes), shifted = 2001–2040 (weaker faults, 120 episodes).
+
+| Detector | Split | Precision | Recall | F1 | False alerts/h | Latency p50 / p95 | Status |
+|---|---|---|---|---|---|---|---|
+| Tuned rules | test | 100.0 % | 99.2 % | 0.996 | 0.00 | 3 / 33 s | MEASURED (synthetic) |
+| Naive threshold | test | 88.5 % | 91.7 % | 0.900 | 1.86 | 1 / 30 s | MEASURED (synthetic) |
+| k-NN distance | test | 94.7 % | 90.0 % | 0.923 | 0.22 | 16 / 37 s | MEASURED (synthetic) |
+| Averaged perceptron | test | 86.0 % | 40.8 % | 0.554 | 0.29 | 11 / 42 s | MEASURED (synthetic) |
+| Tuned rules | shifted | 100.0 % | 94.2 % | 0.970 | 0.00 | 3 / 30 s | MEASURED (synthetic) |
+| Naive threshold | shifted | 84.1 % | 67.5 % | 0.749 | 1.45 | 3 / 39 s | MEASURED (synthetic) |
+| k-NN distance | shifted | 95.4 % | 85.8 % | 0.904 | 0.18 | 22 / 39 s | MEASURED (synthetic) |
+| Averaged perceptron | shifted | 88.2 % | 50.0 % | 0.638 | 0.29 | 5 / 31 s | MEASURED (synthetic) |
+
+Artifact: `results/phase-04/detection/linux-x86_64-container/`. DET-F1 / DET-LEAD (Experiment 3)
+stay PLANNED until Phase 6 data and the Phase 7 model exist.

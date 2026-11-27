@@ -1,0 +1,537 @@
++ cd /home/user/ft
++ cmake --preset debug -B /home/user/ft/build/debug-clang -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+Preset CMake variables:
+
+  CMAKE_BUILD_TYPE="Debug"
+  CMAKE_EXPORT_COMPILE_COMMANDS="ON"
+  FAULTTWIN_BUILD_TESTS="ON"
+  FAULTTWIN_SANITIZER="none"
+  FAULTTWIN_WARNINGS_AS_ERRORS="ON"
+
+-- FaultTwin: libpq 16.15 found; building faulttwin-monitor
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/user/ft/build/debug-clang
++ cmake --build /home/user/ft/build/debug-clang
+[1/12] Building CXX object src/detect/CMakeFiles/faulttwin_detect_lib.dir/detect_options.cpp.o
+[2/12] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/detection/detect_options_test.cpp.o
+[3/12] Building CXX object src/detect/CMakeFiles/faulttwin-detect.dir/main.cpp.o
+[4/12] Building CXX object src/detect/CMakeFiles/faulttwin_detect_lib.dir/detect_report.cpp.o
+[5/12] Building CXX object src/detection/CMakeFiles/faulttwin_detection.dir/learned.cpp.o
+[6/12] Linking CXX static library src/detection/libfaulttwin_detection.a
+[7/12] Linking CXX static library src/detect/libfaulttwin_detect_lib.a
+[8/12] Linking CXX executable src/detect/faulttwin-detect
+[9/12] Linking CXX executable src/monitor/faulttwin-monitor
+[10/12] Linking CXX executable tests/faulttwin_integration_tests
+[11/12] Building CXX object tests/CMakeFiles/faulttwin_unit_tests.dir/unit/detection/learned_test.cpp.o
+[12/12] Linking CXX executable tests/faulttwin_unit_tests
++ env ctest --test-dir /home/user/ft/build/debug-clang --output-on-failure --no-tests=error
+Internal ctest changing into directory: /home/user/ft/build/debug-clang
+Test project /home/user/ft/build/debug-clang
+        Start   1: NodeIdTest.AcceptsTypicalIdentifiers
+  1/246 Test   #1: NodeIdTest.AcceptsTypicalIdentifiers ....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start   2: NodeIdTest.RejectsEmpty
+  2/246 Test   #2: NodeIdTest.RejectsEmpty .................................................................................................................................................................................................................................   Passed    0.01 sec
+        Start   3: NodeIdTest.LengthBoundaryIsInclusive
+  3/246 Test   #3: NodeIdTest.LengthBoundaryIsInclusive ....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start   4: NodeIdTest.TooLongIsReportedBeforeCharacterErrors
+  4/246 Test   #4: NodeIdTest.TooLongIsReportedBeforeCharacterErrors .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start   5: NodeIdTest.RejectsNonAlphanumericFirstCharacter
+  5/246 Test   #5: NodeIdTest.RejectsNonAlphanumericFirstCharacter .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start   6: NodeIdTest.RejectsDisallowedCharacters
+  6/246 Test   #6: NodeIdTest.RejectsDisallowedCharacters ..................................................................................................................................................................................................................   Passed    0.01 sec
+        Start   7: NodeIdTest.RejectsEmbeddedNul
+  7/246 Test   #7: NodeIdTest.RejectsEmbeddedNul ...........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start   8: NodeRoleTest.DeclaredEnumeratorsAreValid
+  8/246 Test   #8: NodeRoleTest.DeclaredEnumeratorsAreValid ................................................................................................................................................................................................................   Passed    0.01 sec
+        Start   9: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid
+  9/246 Test   #9: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start  10: NodeRoleTest.StringRoundTrip
+ 10/246 Test  #10: NodeRoleTest.StringRoundTrip ............................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  11: NodeRoleTest.ParseIsExactAndCaseSensitive
+ 11/246 Test  #11: NodeRoleTest.ParseIsExactAndCaseSensitive ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  12: ValidationTest.EachPercentageFieldIsReportedSeparately
+ 12/246 Test  #12: ValidationTest.EachPercentageFieldIsReportedSeparately ..................................................................................................................................................................................................   Passed    0.01 sec
+        Start  13: ValidationTest.TimestampPolicy
+ 13/246 Test  #13: ValidationTest.TimestampPolicy ..........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  14: ValidationTest.FutureSkewIsConfigurable
+ 14/246 Test  #14: ValidationTest.FutureSkewIsConfigurable .................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  15: ValidationTest.MissingLagOnReplicaIsNotZeroLag
+ 15/246 Test  #15: ValidationTest.MissingLagOnReplicaIsNotZeroLag ..........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  16: ValidationTest.ZeroLagOnReplicaIsAMeasurement
+ 16/246 Test  #16: ValidationTest.ZeroLagOnReplicaIsAMeasurement ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  17: ValidationTest.ReplicationLagRules
+ 17/246 Test  #17: ValidationTest.ReplicationLagRules ......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  18: ValidationTest.InvalidRoleStillChecksLagNumerically
+ 18/246 Test  #18: ValidationTest.InvalidRoleStillChecksLagNumerically .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start  19: ValidationTest.PrimaryLagStateIsNotApplicable
+ 19/246 Test  #19: ValidationTest.PrimaryLagStateIsNotApplicable ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  20: ValidationTest.ValidSamplePreservesEveryField
+ 20/246 Test  #20: ValidationTest.ValidSamplePreservesEveryField ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  21: ValidationTest.ReportsAllIssuesInFieldOrder
+ 21/246 Test  #21: ValidationTest.ReportsAllIssuesInFieldOrder .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  22: ValidationTest.ValidationIsDeterministic
+ 22/246 Test  #22: ValidationTest.ValidationIsDeterministic ................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  23: ValidationTest.StableStringForms
+ 23/246 Test  #23: ValidationTest.StableStringForms ........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  24: FreshnessTest.StaleIsAPropertyOfValidData
+ 24/246 Test  #24: FreshnessTest.StaleIsAPropertyOfValidData ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  25: FreshnessTest.SlightlyFutureSampleIsFresh
+ 25/246 Test  #25: FreshnessTest.SlightlyFutureSampleIsFresh ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  26: SyntheticTest.ProducesNodeCountTimesSamples
+ 26/246 Test  #26: SyntheticTest.ProducesNodeCountTimesSamples .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  27: SyntheticTest.SameSeedSameSequence
+ 27/246 Test  #27: SyntheticTest.SameSeedSameSequence ......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  28: SyntheticTest.DifferentSeedDifferentSequence
+ 28/246 Test  #28: SyntheticTest.DifferentSeedDifferentSequence ............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  29: SyntheticTest.GoldenFirstSample
+ 29/246 Test  #29: SyntheticTest.GoldenFirstSample .........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  30: SyntheticTest.CleanRunIsEntirelyValid
+ 30/246 Test  #30: SyntheticTest.CleanRunIsEntirelyValid ...................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue
+ 31/246 Test  #31: SyntheticTest.EveryDefectIsDetectedAsExactlyItsExpectedIssue ............................................................................................................................................................................................   Passed    0.02 sec
+        Start  32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag
+ 32/246 Test  #32: SyntheticTest.ReplicasDistinguishMissingLagFromMeasuredLag ..............................................................................................................................................................................................   Passed    0.01 sec
+        Start  33: SyntheticTest.ReferenceNowIsLastTick
+ 33/246 Test  #33: SyntheticTest.ReferenceNowIsLastTick ....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  34: CliOptionsTest.DefaultsWithNoArguments
+ 34/246 Test  #34: CliOptionsTest.DefaultsWithNoArguments ..................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  35: CliOptionsTest.ParsesEveryOption
+ 35/246 Test  #35: CliOptionsTest.ParsesEveryOption ........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  36: CliOptionsTest.HelpWinsImmediately
+ 36/246 Test  #36: CliOptionsTest.HelpWinsImmediately ......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  37: CliOptionsTest.RejectsMalformedAndOutOfRangeValues
+ 37/246 Test  #37: CliOptionsTest.RejectsMalformedAndOutOfRangeValues ......................................................................................................................................................................................................   Passed    0.01 sec
+        Start  38: CliOptionsTest.UsageMentionsProgramName
+ 38/246 Test  #38: CliOptionsTest.UsageMentionsProgramName .................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  39: CliReportTest.FormatsTimestampAsUtcWithMilliseconds
+ 39/246 Test  #39: CliReportTest.FormatsTimestampAsUtcWithMilliseconds .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start  40: CliReportTest.JsonQuoteEscapesUntrustedText
+ 40/246 Test  #40: CliReportTest.JsonQuoteEscapesUntrustedText .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  41: CliReportTest.GroundTruthMatching
+ 41/246 Test  #41: CliReportTest.GroundTruthMatching .......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  42: CliReportTest.SummaryCountsAndJsonLineShape
+ 42/246 Test  #42: CliReportTest.SummaryCountsAndJsonLineShape .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  43: BoundedQueueTest.ZeroCapacityIsAConfigurationError
+ 43/246 Test  #43: BoundedQueueTest.ZeroCapacityIsAConfigurationError ......................................................................................................................................................................................................   Passed    0.01 sec
+        Start  44: BoundedQueueTest.IsFifo
+ 44/246 Test  #44: BoundedQueueTest.IsFifo .................................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  45: BoundedQueueTest.WrapsAroundTheRingBuffer
+ 45/246 Test  #45: BoundedQueueTest.WrapsAroundTheRingBuffer ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  46: BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem
+ 46/246 Test  #46: BoundedQueueTest.TryPushOnFullBlockingQueueRejectsAndReturnsTheItem .....................................................................................................................................................................................   Passed    0.01 sec
+        Start  47: BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem
+ 47/246 Test  #47: BoundedQueueTest.RejectNewestNeverWaitsAndReturnsTheNewItem .............................................................................................................................................................................................   Passed    0.01 sec
+        Start  48: BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem
+ 48/246 Test  #48: BoundedQueueTest.DropOldestEvictsAndReturnsTheOldestItem ................................................................................................................................................................................................   Passed    0.01 sec
+        Start  49: BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem
+ 49/246 Test  #49: BoundedQueueTest.BlockingPushTimesOutAndReturnsTheItem ..................................................................................................................................................................................................   Passed    0.04 sec
+        Start  50: BoundedQueueTest.BlockingPushIsCancelledByStopToken
+ 50/246 Test  #50: BoundedQueueTest.BlockingPushIsCancelledByStopToken .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start  51: BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed
+ 51/246 Test  #51: BoundedQueueTest.BlockingPushProceedsWhenSpaceIsFreed ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start  52: BoundedQueueTest.CloseWakesBlockedProducerWithItsItem
+ 52/246 Test  #52: BoundedQueueTest.CloseWakesBlockedProducerWithItsItem ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start  53: BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers
+ 53/246 Test  #53: BoundedQueueTest.ClosedQueueRefusesPushesButDrainsForConsumers ..........................................................................................................................................................................................   Passed    0.01 sec
+        Start  54: BoundedQueueTest.CloseWakesBlockedConsumer
+ 54/246 Test  #54: BoundedQueueTest.CloseWakesBlockedConsumer ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  55: BoundedQueueTest.PopTimesOutOnEmptyQueue
+ 55/246 Test  #55: BoundedQueueTest.PopTimesOutOnEmptyQueue ................................................................................................................................................................................................................   Passed    0.04 sec
+        Start  56: BoundedQueueTest.PopIsCancelledByStopToken
+ 56/246 Test  #56: BoundedQueueTest.PopIsCancelledByStopToken ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  57: BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested
+ 57/246 Test  #57: BoundedQueueTest.PopReturnsAvailableItemEvenIfStopWasRequested ..........................................................................................................................................................................................   Passed    0.01 sec
+        Start  58: BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval
+ 58/246 Test  #58: BoundedQueueTest.TakeAllEmptiesTheQueueAndCountsRemoval .................................................................................................................................................................................................   Passed    0.01 sec
+        Start  59: BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder
+ 59/246 Test  #59: BoundedQueueTest.PopBatchTakesUpToMaxItemsInOrder .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start  60: BoundedQueueTest.PopBatchWakesBlockedProducers
+ 60/246 Test  #60: BoundedQueueTest.PopBatchWakesBlockedProducers ..........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  61: BoundedQueueTest.SupportsMoveOnlyTypes
+ 61/246 Test  #61: BoundedQueueTest.SupportsMoveOnlyTypes ..................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  62: BoundedQueueTest.PolicyNamesRoundTrip
+ 62/246 Test  #62: BoundedQueueTest.PolicyNamesRoundTrip ...................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  63: UnboundedQueueTest.AcceptsEverythingUntilClosed
+ 63/246 Test  #63: UnboundedQueueTest.AcceptsEverythingUntilClosed .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  64: UnboundedQueueTest.PopTimesOutAndCancels
+ 64/246 Test  #64: UnboundedQueueTest.PopTimesOutAndCancels ................................................................................................................................................................................................................   Passed    0.02 sec
+        Start  65: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce
+ 65/246 Test  #65: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce .................................................................................................................................................................................................   Passed    0.13 sec
+        Start  66: QueueStressTest.RejectNewestAccountsForEveryItem
+ 66/246 Test  #66: QueueStressTest.RejectNewestAccountsForEveryItem ........................................................................................................................................................................................................   Passed    0.05 sec
+        Start  67: QueueStressTest.DropOldestAccountsForEveryItem
+ 67/246 Test  #67: QueueStressTest.DropOldestAccountsForEveryItem ..........................................................................................................................................................................................................   Passed    0.06 sec
+        Start  68: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce
+ 68/246 Test  #68: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce ..........................................................................................................................................................................................   Passed    0.09 sec
+        Start  69: QueueStressTest.ConsumersSeeEachProducersItemsInOrder
+ 69/246 Test  #69: QueueStressTest.ConsumersSeeEachProducersItemsInOrder ...................................................................................................................................................................................................   Passed    0.39 sec
+        Start  70: QueueStressTest.CancellingBlockedProducersLosesNothing
+ 70/246 Test  #70: QueueStressTest.CancellingBlockedProducersLosesNothing ..................................................................................................................................................................................................   Passed    0.01 sec
+        Start  71: OrderTrackerTest.RejectsZeroConfiguration
+ 71/246 Test  #71: OrderTrackerTest.RejectsZeroConfiguration ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  72: OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder
+ 72/246 Test  #72: OrderTrackerTest.ClassifiesInOrderDuplicateAndOutOfOrder ................................................................................................................................................................................................   Passed    0.01 sec
+        Start  73: OrderTrackerTest.NodesAreIndependent
+ 73/246 Test  #73: OrderTrackerTest.NodesAreIndependent ....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  74: OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder
+ 74/246 Test  #74: OrderTrackerTest.DuplicateOlderThanWindowIsReportedAsOutOfOrder .........................................................................................................................................................................................   Passed    0.01 sec
+        Start  75: OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction
+ 75/246 Test  #75: OrderTrackerTest.NewestIsAlwaysADuplicateEvenAfterEviction ..............................................................................................................................................................................................   Passed    0.01 sec
+        Start  76: OrderTrackerTest.EnforcesTheNodeLimit
+ 76/246 Test  #76: OrderTrackerTest.EnforcesTheNodeLimit ...................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  77: OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit
+ 77/246 Test  #77: OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit .............................................................................................................................................................................................   Passed    0.01 sec
+        Start  78: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce
+ 78/246 Test  #78: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce .......................................................................................................................................................................................   Passed    0.06 sec
+        Start  79: PipelineTest.RejectsInvalidConfiguration
+ 79/246 Test  #79: PipelineTest.RejectsInvalidConfiguration ................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  80: PipelineTest.DeliversEveryValidEventExactlyOnce
+ 80/246 Test  #80: PipelineTest.DeliversEveryValidEventExactlyOnce .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  81: PipelineTest.InvalidEventsReachTheSinkWithTheirIssues
+ 81/246 Test  #81: PipelineTest.InvalidEventsReachTheSinkWithTheirIssues ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start  82: PipelineTest.NodeLimitIsEnforcedAndCounted
+ 82/246 Test  #82: PipelineTest.NodeLimitIsEnforcedAndCounted ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  83: PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers
+ 83/246 Test  #83: PipelineTest.SinkExceptionsAreCountedAndDoNotStopConsumers ..............................................................................................................................................................................................   Passed    0.01 sec
+        Start  84: PipelineTest.RejectNewestHandsTheSampleBackUnderOverload
+ 84/246 Test  #84: PipelineTest.RejectNewestHandsTheSampleBackUnderOverload ................................................................................................................................................................................................   Passed    0.01 sec
+        Start  85: PipelineTest.DropOldestHandsTheEvictedSampleBack
+ 85/246 Test  #85: PipelineTest.DropOldestHandsTheEvictedSampleBack ........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  86: PipelineTest.BlockingSubmitTimesOut
+ 86/246 Test  #86: PipelineTest.BlockingSubmitTimesOut .....................................................................................................................................................................................................................   Passed    0.04 sec
+        Start  87: PipelineTest.BlockingSubmitIsCancelledByStopToken
+ 87/246 Test  #87: PipelineTest.BlockingSubmitIsCancelledByStopToken .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start  88: PipelineTest.ShutdownWakesBlockedProducers
+ 88/246 Test  #88: PipelineTest.ShutdownWakesBlockedProducers ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  89: PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample
+ 89/246 Test  #89: PipelineTest.SubmitAfterShutdownIsRefusedWithTheSample ..................................................................................................................................................................................................   Passed    0.01 sec
+        Start  90: PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents
+ 90/246 Test  #90: PipelineTest.ShutdownDeadlineAbandonsAndReturnsUnprocessedEvents ........................................................................................................................................................................................   Passed    0.03 sec
+        Start  91: PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch
+ 91/246 Test  #91: PipelineTest.CancelledConsumerHandsBackTheRestOfItsBatch ................................................................................................................................................................................................   Passed    0.02 sec
+        Start  92: PipelineTest.UnbatchedConsumersDeliverEverything
+ 92/246 Test  #92: PipelineTest.UnbatchedConsumersDeliverEverything ........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  93: PipelineTest.ShutdownIsIdempotent
+ 93/246 Test  #93: PipelineTest.ShutdownIsIdempotent .......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  94: PipelineTest.DestructorDrainsWithoutExplicitShutdown
+ 94/246 Test  #94: PipelineTest.DestructorDrainsWithoutExplicitShutdown ....................................................................................................................................................................................................   Passed    0.01 sec
+        Start  95: PipelineTest.ManyProducersAndConsumersKeepTheInvariants
+ 95/246 Test  #95: PipelineTest.ManyProducersAndConsumersKeepTheInvariants .................................................................................................................................................................................................   Passed    0.09 sec
+        Start  96: BaselineTest.MatchesThePipelineOnTheSameInput
+ 96/246 Test  #96: BaselineTest.MatchesThePipelineOnTheSameInput ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start  97: ReadingTest.DefaultIsMissingNotZero
+ 97/246 Test  #97: ReadingTest.DefaultIsMissingNotZero .....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start  98: ReadingTest.ValueEngagedOnlyForOkAndStale
+ 98/246 Test  #98: ReadingTest.ValueEngagedOnlyForOkAndStale ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start  99: ReadingTest.MarkStaleLeavesNonOkReadingsAlone
+ 99/246 Test  #99: ReadingTest.MarkStaleLeavesNonOkReadingsAlone ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 100: ReadingTest.QualityStrings
+100/246 Test #100: ReadingTest.QualityStrings ..............................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 101: LsnTest.ParsesServerFormat
+101/246 Test #101: LsnTest.ParsesServerFormat ..............................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 102: LsnTest.RejectsMalformedText
+102/246 Test #102: LsnTest.RejectsMalformedText ............................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 103: LsnTest.FormatsLikeTheServerAndRoundTrips
+103/246 Test #103: LsnTest.FormatsLikeTheServerAndRoundTrips ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 104: LsnTest.BytesBetweenRefusesNegativeDistances
+104/246 Test #104: LsnTest.BytesBetweenRefusesNegativeDistances ............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 105: SqlTest.ClassifiesSqlstates
+105/246 Test #105: SqlTest.ClassifiesSqlstates .............................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 106: SqlTest.SanitizeCollapsesWhitespaceDropsControlsAndBounds
+106/246 Test #106: SqlTest.SanitizeCollapsesWhitespaceDropsControlsAndBounds ...............................................................................................................................................................................................   Passed    0.01 sec
+        Start 107: EndpointTest.ParsesList
+107/246 Test #107: EndpointTest.ParsesList .................................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 108: EndpointTest.AcceptsIpv6HostByLastColon
+108/246 Test #108: EndpointTest.AcceptsIpv6HostByLastColon .................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 109: EndpointTest.RejectsBadEntries
+109/246 Test #109: EndpointTest.RejectsBadEntries ..........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 110: PgCollectorTest.HealthyPrimary
+110/246 Test #110: PgCollectorTest.HealthyPrimary ..........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 111: PgCollectorTest.RunsInOneReadOnlyTransactionAndCountsItsOwnCommit
+111/246 Test #111: PgCollectorTest.RunsInOneReadOnlyTransactionAndCountsItsOwnCommit .......................................................................................................................................................................................   Passed    0.01 sec
+        Start 112: PgCollectorTest.CaughtUpReplica
+112/246 Test #112: PgCollectorTest.CaughtUpReplica .........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 113: PgCollectorTest.ReplicaWithPendingWalHasBacklogButNoTimeLag
+113/246 Test #113: PgCollectorTest.ReplicaWithPendingWalHasBacklogButNoTimeLag .............................................................................................................................................................................................   Passed    0.01 sec
+        Start 114: PgCollectorTest.ReceivePositionBehindReplayAfterReceiverRestartIsCaughtUp
+114/246 Test #114: PgCollectorTest.ReceivePositionBehindReplayAfterReceiverRestartIsCaughtUp ...............................................................................................................................................................................   Passed    0.01 sec
+        Start 115: PgCollectorTest.ReplicaWithoutWalReceiver
+115/246 Test #115: PgCollectorTest.ReplicaWithoutWalReceiver ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 116: PgCollectorTest.SilentReceiverMakesReceiveDerivedReadingsStale
+116/246 Test #116: PgCollectorTest.SilentReceiverMakesReceiveDerivedReadingsStale ..........................................................................................................................................................................................   Passed    0.01 sec
+        Start 117: PgCollectorTest.MissingPgStatStatementsIsAQualityNotAnError
+117/246 Test #117: PgCollectorTest.MissingPgStatStatementsIsAQualityNotAnError .............................................................................................................................................................................................   Passed    0.01 sec
+        Start 118: PgCollectorTest.PermissionDeniedDegradesAndRestartsTheTransaction
+118/246 Test #118: PgCollectorTest.PermissionDeniedDegradesAndRestartsTheTransaction .......................................................................................................................................................................................   Passed    0.01 sec
+        Start 119: PgCollectorTest.GarbageValuesAreInvalidNotZero
+119/246 Test #119: PgCollectorTest.GarbageValuesAreInvalidNotZero ..........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 120: PgCollectorTest.UnexpectedResultShapeIsReported
+120/246 Test #120: PgCollectorTest.UnexpectedResultShapeIsReported .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 121: PgCollectorTest.UnreadableRoleLeavesRoleUnknown
+121/246 Test #121: PgCollectorTest.UnreadableRoleLeavesRoleUnknown .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 122: PgCollectorTest.UnreachableSnapshotIsAllMissing
+122/246 Test #122: PgCollectorTest.UnreachableSnapshotIsAllMissing .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 123: PgCollectorTest.StalenessIsSeparateFromMissing
+123/246 Test #123: PgCollectorTest.StalenessIsSeparateFromMissing ..........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 124: PgCollectorTest.CoverageCountsOnlyApplicableReadings
+124/246 Test #124: PgCollectorTest.CoverageCountsOnlyApplicableReadings ....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 125: RatesTest.ComputesPerSecondRatesAndSubtractsTheCollectorsOwnCommit
+125/246 Test #125: RatesTest.ComputesPerSecondRatesAndSubtractsTheCollectorsOwnCommit ......................................................................................................................................................................................   Passed    0.01 sec
+        Start 126: RatesTest.CounterResetIsInvalidNotNegative
+126/246 Test #126: RatesTest.CounterResetIsInvalidNotNegative ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 127: RatesTest.NoStatementsInIntervalIsMissingNotZeroLatency
+127/246 Test #127: RatesTest.NoStatementsInIntervalIsMissingNotZeroLatency .................................................................................................................................................................................................   Passed    0.01 sec
+        Start 128: RatesTest.WalMovingBackwardsIsInvalid
+128/246 Test #128: RatesTest.WalMovingBackwardsIsInvalid ...................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 129: RatesTest.DifferentNodesOrZeroIntervalAreInvalid
+129/246 Test #129: RatesTest.DifferentNodesOrZeroIntervalAreInvalid ........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 130: TopologyTest.HealthyClusterHasOnePrimaryAndTwoEdges
+130/246 Test #130: TopologyTest.HealthyClusterHasOnePrimaryAndTwoEdges .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 131: TopologyTest.DownReplicaIsReportedAndPrimaryStillDerived
+131/246 Test #131: TopologyTest.DownReplicaIsReportedAndPrimaryStillDerived ................................................................................................................................................................................................   Passed    0.01 sec
+        Start 132: TopologyTest.NoReachablePrimary
+132/246 Test #132: TopologyTest.NoReachablePrimary .........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 133: TopologyTest.TwoPrimariesAreASplitBrainRisk
+133/246 Test #133: TopologyTest.TwoPrimariesAreASplitBrainRisk .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 134: TopologyTest.ReplicaMissingFromPrimaryViewAndInactiveSlot
+134/246 Test #134: TopologyTest.ReplicaMissingFromPrimaryViewAndInactiveSlot ...............................................................................................................................................................................................   Passed    0.01 sec
+        Start 135: TopologyTest.UnknownStandbyAndNotStreamingReplica
+135/246 Test #135: TopologyTest.UnknownStandbyAndNotStreamingReplica .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 136: TopologyTest.IssueCodeStrings
+136/246 Test #136: TopologyTest.IssueCodeStrings ...........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 137: LinuxResourcesTest.ParsesProcStatExcludingGuestTime
+137/246 Test #137: LinuxResourcesTest.ParsesProcStatExcludingGuestTime .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 138: LinuxResourcesTest.RejectsMalformedProcStat
+138/246 Test #138: LinuxResourcesTest.RejectsMalformedProcStat .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 139: LinuxResourcesTest.CpuPercentNeedsTwoSamplesAndForwardCounters
+139/246 Test #139: LinuxResourcesTest.CpuPercentNeedsTwoSamplesAndForwardCounters ..........................................................................................................................................................................................   Passed    0.01 sec
+        Start 140: LinuxResourcesTest.MemoryUsesMemAvailable
+140/246 Test #140: LinuxResourcesTest.MemoryUsesMemAvailable ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 141: LinuxResourcesTest.LoadAverage
+141/246 Test #141: LinuxResourcesTest.LoadAverage ..........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 142: LinuxResourcesTest.DiskUsesTheDfRule
+142/246 Test #142: LinuxResourcesTest.DiskUsesTheDfRule ....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 143: FakeProcTest.CollectorReadsInjectedProcRoot
+143/246 Test #143: FakeProcTest.CollectorReadsInjectedProcRoot .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 144: FakeProcTest.MissingProcfsIsMissingNotZero
+144/246 Test #144: FakeProcTest.MissingProcfsIsMissingNotZero ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 145: FakeProcTest.CorruptProcStatIsInvalid
+145/246 Test #145: FakeProcTest.CorruptProcStatIsInvalid ...................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 146: WelfordTest.AvoidsCatastrophicCancellationWithALargeOffset
+146/246 Test #146: WelfordTest.AvoidsCatastrophicCancellationWithALargeOffset ..............................................................................................................................................................................................   Passed    0.01 sec
+        Start 147: WelfordTest.RemoveIsTheInverseOfAdd
+147/246 Test #147: WelfordTest.RemoveIsTheInverseOfAdd .....................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 148: RollingWindowTest.WindowIsHalfOpenOnTheOldSide
+148/246 Test #148: RollingWindowTest.WindowIsHalfOpenOnTheOldSide ..........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 149: RollingWindowTest.OutOfOrderDuplicateAndNonFiniteAreRefusedAndCounted
+149/246 Test #149: RollingWindowTest.OutOfOrderDuplicateAndNonFiniteAreRefusedAndCounted ...................................................................................................................................................................................   Passed    0.01 sec
+        Start 150: RollingWindowTest.MissingEntriesCountButNeverBecomeNumbers
+150/246 Test #150: RollingWindowTest.MissingEntriesCountButNeverBecomeNumbers ..............................................................................................................................................................................................   Passed    0.01 sec
+        Start 151: RollingWindowTest.OnlyMissingDataGivesNoStatistics
+151/246 Test #151: RollingWindowTest.OnlyMissingDataGivesNoStatistics ......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 152: RollingWindowTest.StatsBeforeTheNewestEntryAreRefused
+152/246 Test #152: RollingWindowTest.StatsBeforeTheNewestEntryAreRefused ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start 153: RollingWindowTest.CapacityBoundsMemoryAndCountsEvictions
+153/246 Test #153: RollingWindowTest.CapacityBoundsMemoryAndCountsEvictions ................................................................................................................................................................................................   Passed    0.01 sec
+        Start 154: RollingWindowTest.SlopeOfALinearSeriesIsExactEvenWithIrregularSpacing
+154/246 Test #154: RollingWindowTest.SlopeOfALinearSeriesIsExactEvenWithIrregularSpacing ...................................................................................................................................................................................   Passed    0.01 sec
+        Start 155: RollingWindowTest.LongSlidingRunStaysCloseToAnExactRecomputation
+155/246 Test #155: RollingWindowTest.LongSlidingRunStaysCloseToAnExactRecomputation ........................................................................................................................................................................................   Passed    0.03 sec
+        Start 156: RollingWindowTest.InvalidConfigurationThrows
+156/246 Test #156: RollingWindowTest.InvalidConfigurationThrows ............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 157: RollingWindowTest.MatchesTheExactRationalReference
+157/246 Test #157: RollingWindowTest.MatchesTheExactRationalReference ......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 158: FeatureExtractorTest.MatchesTheExactRationalReferenceIncludingAge
+158/246 Test #158: FeatureExtractorTest.MatchesTheExactRationalReferenceIncludingAge .......................................................................................................................................................................................   Passed    0.01 sec
+        Start 159: FeatureExtractorTest.NotApplicableIsIgnoredAndStaleCountsAsMissing
+159/246 Test #159: FeatureExtractorTest.NotApplicableIsIgnoredAndStaleCountsAsMissing ......................................................................................................................................................................................   Passed    0.01 sec
+        Start 160: FeatureExtractorTest.AgeGrowsWithoutDataAndCountsFromFirstSightWithoutOkData
+160/246 Test #160: FeatureExtractorTest.AgeGrowsWithoutDataAndCountsFromFirstSightWithoutOkData ............................................................................................................................................................................   Passed    0.01 sec
+        Start 161: FeatureExtractorTest.EventTimeNotArrivalOrderAcrossSeries
+161/246 Test #161: FeatureExtractorTest.EventTimeNotArrivalOrderAcrossSeries ...............................................................................................................................................................................................   Passed    0.01 sec
+        Start 162: FeatureExtractorTest.RefusalsAreCounted
+162/246 Test #162: FeatureExtractorTest.RefusalsAreCounted .................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 163: FeatureExtractorTest.VectorsCarryTheSchemaIdentity
+163/246 Test #163: FeatureExtractorTest.VectorsCarryTheSchemaIdentity ......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 164: FeatureSchemaTest.DefaultSchemaIsVersionedAndPinned
+164/246 Test #164: FeatureSchemaTest.DefaultSchemaIsVersionedAndPinned .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 165: FeatureSchemaTest.NamesRoundTripAndBadNamesAreRejected
+165/246 Test #165: FeatureSchemaTest.NamesRoundTripAndBadNamesAreRejected ..................................................................................................................................................................................................   Passed    0.01 sec
+        Start 166: FeatureSchemaTest.InvalidSchemasThrow
+166/246 Test #166: FeatureSchemaTest.InvalidSchemasThrow ...................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 167: FeatureSchemaTest.FingerprintDependsOnOrderAndWindow
+167/246 Test #167: FeatureSchemaTest.FingerprintDependsOnOrderAndWindow ....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 168: AdaptersTest.CycleMapsAvailabilityLagAndRates
+168/246 Test #168: AdaptersTest.CycleMapsAvailabilityLagAndRates ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 169: AdaptersTest.ReplicaLagIsMissingWithoutAPrimaryOrWithTwoPrimaries
+169/246 Test #169: AdaptersTest.ReplicaLagIsMissingWithoutAPrimaryOrWithTwoPrimaries .......................................................................................................................................................................................   Passed    0.01 sec
+        Start 170: AdaptersTest.ValidatedSampleMapsToObservations
+170/246 Test #170: AdaptersTest.ValidatedSampleMapsToObservations ..........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 171: RuleValidationTest.CatchesEveryClassOfMistake
+171/246 Test #171: RuleValidationTest.CatchesEveryClassOfMistake ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 172: RuleValidationTest.DefaultRuleSetIsValidForTheDefaultSchema
+172/246 Test #172: RuleValidationTest.DefaultRuleSetIsValidForTheDefaultSchema .............................................................................................................................................................................................   Passed    0.01 sec
+        Start 173: RuleEngineTest.FiresOnlyAfterTheSustainPeriod
+173/246 Test #173: RuleEngineTest.FiresOnlyAfterTheSustainPeriod ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 174: RuleEngineTest.ShortSpikeShorterThanSustainNeverFires
+174/246 Test #174: RuleEngineTest.ShortSpikeShorterThanSustainNeverFires ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start 175: RuleEngineTest.HysteresisPreventsFlappingAroundTheTrigger
+175/246 Test #175: RuleEngineTest.HysteresisPreventsFlappingAroundTheTrigger ...............................................................................................................................................................................................   Passed    0.01 sec
+        Start 176: RuleEngineTest.ClearForRequiresARecoveryPeriodAndReViolationContinues
+176/246 Test #176: RuleEngineTest.ClearForRequiresARecoveryPeriodAndReViolationContinues ...................................................................................................................................................................................   Passed    0.01 sec
+        Start 177: RuleEngineTest.CooldownSuppressesARefireAndCountsIt
+177/246 Test #177: RuleEngineTest.CooldownSuppressesARefireAndCountsIt .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 178: RuleEngineTest.EscalatesOnceAndFiresCriticalWhenAlreadyBeyond
+178/246 Test #178: RuleEngineTest.EscalatesOnceAndFiresCriticalWhenAlreadyBeyond ...........................................................................................................................................................................................   Passed    0.01 sec
+        Start 179: RuleEngineTest.MissingDataResetsPendingAndHoldsFiring
+179/246 Test #179: RuleEngineTest.MissingDataResetsPendingAndHoldsFiring ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start 180: RuleEngineTest.MultiSignalAllAndAnyAreThreeValued
+180/246 Test #180: RuleEngineTest.MultiSignalAllAndAnyAreThreeValued .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 181: RuleEngineTest.BelowComparisonAndNodesAreIndependent
+181/246 Test #181: RuleEngineTest.BelowComparisonAndNodesAreIndependent ....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 182: RuleEngineTest.RejectsForeignSchemaTimeTravelAndTooManyNodes
+182/246 Test #182: RuleEngineTest.RejectsForeignSchemaTimeTravelAndTooManyNodes ............................................................................................................................................................................................   Passed    0.01 sec
+        Start 183: RuleEngineTest.DeterministicForTheSameInput
+183/246 Test #183: RuleEngineTest.DeterministicForTheSameInput .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 184: DetectionReportTest.JsonIsStableAndEscaped
+184/246 Test #184: DetectionReportTest.JsonIsStableAndEscaped ..............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 185: ScenarioTest.SameSeedSameScenarioDifferentSeedDifferentScenario
+185/246 Test #185: ScenarioTest.SameSeedSameScenarioDifferentSeedDifferentScenario .........................................................................................................................................................................................   Passed    0.06 sec
+        Start 186: ScenarioTest.GoldenHashPinsCrossPlatformDeterminism
+186/246 Test #186: ScenarioTest.GoldenHashPinsCrossPlatformDeterminism .....................................................................................................................................................................................................   Passed    0.03 sec
+        Start 187: ScenarioTest.ObservationsAreOrderedAndGroundTruthIsInsideTheRun
+187/246 Test #187: ScenarioTest.ObservationsAreOrderedAndGroundTruthIsInsideTheRun .........................................................................................................................................................................................   Passed    0.04 sec
+        Start 188: ScoringTest.MatchesByNodeAndWindowWithGrace
+188/246 Test #188: ScoringTest.MatchesByNodeAndWindowWithGrace .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 189: ScoringTest.TargetFilterIgnoresOtherEpisodes
+189/246 Test #189: ScoringTest.TargetFilterIgnoresOtherEpisodes ............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 190: ScoringTest.UndefinedRatiosAreNotApplicable
+190/246 Test #190: ScoringTest.UndefinedRatiosAreNotApplicable .............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 191: ScoringTest.NearestRankPercentile
+191/246 Test #191: ScoringTest.NearestRankPercentile .......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 192: EndToEndTest.ExtractionHasNoLookAhead
+192/246 Test #192: EndToEndTest.ExtractionHasNoLookAhead ...................................................................................................................................................................................................................   Passed    0.05 sec
+        Start 193: EndToEndTest.TuningSeesOnlyTheScenariosItIsGiven
+193/246 Test #193: EndToEndTest.TuningSeesOnlyTheScenariosItIsGiven ........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 194: EndToEndTest.TunedRulesBeatTheNaiveBaselineOnFalseAlertsOnASmallValidationSet
+194/246 Test #194: EndToEndTest.TunedRulesBeatTheNaiveBaselineOnFalseAlertsOnASmallValidationSet ...........................................................................................................................................................................   Passed    1.64 sec
+        Start 195: DetectOptionsTest.EvaluateDefaultsAreDisjointSplits
+195/246 Test #195: DetectOptionsTest.EvaluateDefaultsAreDisjointSplits .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 196: DetectOptionsTest.ParsesRangesAndOptions
+196/246 Test #196: DetectOptionsTest.ParsesRangesAndOptions ................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 197: DetectOptionsTest.RefusesOverlappingSplitsAndBadInput
+197/246 Test #197: DetectOptionsTest.RefusesOverlappingSplitsAndBadInput ...................................................................................................................................................................................................   Passed    0.01 sec
+        Start 198: OnlineDetectorTest.DownReplicaRaisesStaleTelemetryThenResolves
+198/246 Test #198: OnlineDetectorTest.DownReplicaRaisesStaleTelemetryThenResolves ..........................................................................................................................................................................................   Passed    0.01 sec
+        Start 199: OnlineDetectorTest.ASlowNodeDoesNotMakeTheOthersLookStale
+199/246 Test #199: OnlineDetectorTest.ASlowNodeDoesNotMakeTheOthersLookStale ...............................................................................................................................................................................................   Passed    0.01 sec
+        Start 200: LearnedTest.ProjectionPicksTheLearnedFeatures
+200/246 Test #200: LearnedTest.ProjectionPicksTheLearnedFeatures ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 201: LearnedTest.StandardizerUsesPresentValuesAndClips
+201/246 Test #201: LearnedTest.StandardizerUsesPresentValuesAndClips .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 202: LearnedTest.KnnScoreIsMeanSquaredDistanceToKNearest
+202/246 Test #202: LearnedTest.KnnScoreIsMeanSquaredDistanceToKNearest .....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 203: LearnedTest.KnnEarlyExitMatchesExhaustiveSearch
+203/246 Test #203: LearnedTest.KnnEarlyExitMatchesExhaustiveSearch .........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 204: LearnedTest.PerceptronSeparatesLinearlySeparableData
+204/246 Test #204: LearnedTest.PerceptronSeparatesLinearlySeparableData ....................................................................................................................................................................................................   Passed    0.01 sec
+        Start 205: LearnedTest.AlerterSustainsClearsAndCoolsDown
+205/246 Test #205: LearnedTest.AlerterSustainsClearsAndCoolsDown ...........................................................................................................................................................................................................   Passed    0.01 sec
+        Start 206: LearnedTest.LabelsLeaveTheRecoveryTailOut
+206/246 Test #206: LearnedTest.LabelsLeaveTheRecoveryTailOut ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 207: LearnedTest.TrainAndTuneIsDeterministicAndUsesOnlyItsInputs
+207/246 Test #207: LearnedTest.TrainAndTuneIsDeterministicAndUsesOnlyItsInputs .............................................................................................................................................................................................   Passed    0.36 sec
+        Start 208: MonitorOptionsTest.DefaultsAndEnvironment
+208/246 Test #208: MonitorOptionsTest.DefaultsAndEnvironment ...............................................................................................................................................................................................................   Passed    0.01 sec
+        Start 209: MonitorOptionsTest.ParsesOptions
+209/246 Test #209: MonitorOptionsTest.ParsesOptions ........................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 210: MonitorOptionsTest.RejectsBadInput
+210/246 Test #210: MonitorOptionsTest.RejectsBadInput ......................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 211: MonitorOptionsTest.RequiresNodesAndPasswordFromEnvironment
+211/246 Test #211: MonitorOptionsTest.RequiresNodesAndPasswordFromEnvironment ..............................................................................................................................................................................................   Passed    0.01 sec
+        Start 212: MonitorReportTest.JsonEscape
+212/246 Test #212: MonitorReportTest.JsonEscape ............................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 213: MonitorReportTest.NearestRankPercentile
+213/246 Test #213: MonitorReportTest.NearestRankPercentile .................................................................................................................................................................................................................   Passed    0.01 sec
+        Start 214: MonitorReportTest.SummaryCountsSuccessAndCoverage
+214/246 Test #214: MonitorReportTest.SummaryCountsSuccessAndCoverage .......................................................................................................................................................................................................   Passed    0.01 sec
+        Start 215: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero
+215/246 Test #215: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ................................................................................................................................................................................   Passed    0.01 sec
+        Start 216: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero
+216/246 Test #216: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero ................................................................................................................................................................   Passed    0.01 sec
+        Start 217: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred
+217/246 Test #217: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred ..........................................................................................................................................................................   Passed    0.01 sec
+        Start 218: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty
+218/246 Test #218: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty ..............................................................................................................................................................................   Passed    0.01 sec
+        Start 219: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero
+219/246 Test #219: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero ..............................................................................................................................................................   Passed    0.01 sec
+        Start 220: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred
+220/246 Test #220: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred ........................................................................................................................................................   Passed    0.01 sec
+        Start 221: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive  # GetParam() = MinusFive
+221/246 Test #221: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive  # GetParam() = MinusFive ......................................................................................................................................................................   Passed    0.01 sec
+        Start 222: Boundaries/PercentageCheckTest.ClassifiesValue/NaN  # GetParam() = NaN
+222/246 Test #222: Boundaries/PercentageCheckTest.ClassifiesValue/NaN  # GetParam() = NaN ..................................................................................................................................................................................   Passed    0.01 sec
+        Start 223: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity  # GetParam() = PlusInfinity
+223/246 Test #223: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity  # GetParam() = PlusInfinity ................................................................................................................................................................   Passed    0.01 sec
+        Start 224: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity  # GetParam() = MinusInfinity
+224/246 Test #224: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity  # GetParam() = MinusInfinity ..............................................................................................................................................................   Passed    0.01 sec
+        Start 225: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate  # GetParam() = 40-byte object <F3-8F 4E-E5 2B-56 00-00 00-00 00-00 00-00 00-00 50-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00>
+225/246 Test #225: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate  # GetParam() = 40-byte object <F3-8F 4E-E5 2B-56 00-00 00-00 00-00 00-00 00-00 50-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00> ...   Passed    0.01 sec
+        Start 226: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate  # GetParam() = 40-byte object <0E-90 4E-E5 2B-56 00-00 01-00 00-00 00-00 00-00 50-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00>
+226/246 Test #226: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate  # GetParam() = 40-byte object <0E-90 4E-E5 2B-56 00-00 01-00 00-00 00-00 00-00 50-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00> ...   Passed    0.01 sec
+        Start 227: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate  # GetParam() = 40-byte object <29-90 4E-E5 2B-56 00-00 00-01 00-00 00-00 00-00 50-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00>
+227/246 Test #227: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate  # GetParam() = 40-byte object <29-90 4E-E5 2B-56 00-00 00-01 00-00 00-00 00-00 50-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00 54-3F 43-02 2C-56 00-00> ...   Passed    0.01 sec
+        Start 228: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError
+228/246 Test #228: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError ........................................................................................................................................................................................   Passed    0.00 sec
+        Start 229: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+229/246 Test #229: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown ....................................................................................................................................................................................   Passed    0.00 sec
+        Start 230: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+230/246 Test #230: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas .................................................................................................................................................................................***Skipped   0.00 sec
+        Start 231: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+231/246 Test #231: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged ...................................................................................................................................................................................***Skipped   0.01 sec
+        Start 232: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+232/246 Test #232: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp .....................................................................................................................................................................................***Skipped   0.00 sec
+        Start 233: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+233/246 Test #233: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers ....................................................................................................................................................................................***Skipped   0.00 sec
+        Start 234: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+234/246 Test #234: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging ........................................................................................................................................................................................***Skipped   0.00 sec
+        Start 235: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+235/246 Test #235: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves ..............................................................................................................................................................................***Skipped   0.01 sec
+        Start 236: cli.help
+236/246 Test #236: cli.help ................................................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 237: cli.rejects_unknown_option
+237/246 Test #237: cli.rejects_unknown_option ..............................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 238: cli.rejects_out_of_range_fraction
+238/246 Test #238: cli.rejects_out_of_range_fraction .......................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 239: cli.ground_truth_matches
+239/246 Test #239: cli.ground_truth_matches ................................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 240: cli.deterministic_output
+240/246 Test #240: cli.deterministic_output ................................................................................................................................................................................................................................   Passed    0.02 sec
+        Start 241: cli.detect_help
+241/246 Test #241: cli.detect_help .........................................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 242: cli.detect_rejects_overlapping_splits
+242/246 Test #242: cli.detect_rejects_overlapping_splits ...................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 243: cli.detect_scenario
+243/246 Test #243: cli.detect_scenario .....................................................................................................................................................................................................................................   Passed    0.14 sec
+        Start 244: cli.detect_deterministic
+244/246 Test #244: cli.detect_deterministic ................................................................................................................................................................................................................................   Passed    6.94 sec
+        Start 245: cli.monitor_help
+245/246 Test #245: cli.monitor_help ........................................................................................................................................................................................................................................   Passed    0.00 sec
+        Start 246: cli.monitor_requires_password
+246/246 Test #246: cli.monitor_requires_password ...........................................................................................................................................................................................................................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 246
+
+Label Time Summary:
+integration    =   0.04 sec*proc (8 tests)
+
+Total Test time (real) =  11.98 sec
+
+The following tests did not run:
+	230 - integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas (Skipped)
+	231 - integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged (Skipped)
+	232 - integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp (Skipped)
+	233 - integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers (Skipped)
+	234 - integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging (Skipped)
+	235 - integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves (Skipped)

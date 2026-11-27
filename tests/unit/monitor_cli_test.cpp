@@ -37,7 +37,7 @@ TEST(MonitorOptionsTest, DefaultsAndEnvironment) {
 TEST(MonitorOptionsTest, ParsesOptions) {
     const auto parsed =
         parse_monitor_options({"--cycles", "5", "--interval-ms", "250", "--format", "json",
-                               "--query-timeout-ms", "800", "--no-resources"},
+                               "--query-timeout-ms", "800", "--no-resources", "--detect"},
                               env_of(kEnv));
     const auto* o = std::get_if<MonitorOptions>(&parsed);
     ASSERT_NE(o, nullptr);
@@ -47,6 +47,7 @@ TEST(MonitorOptionsTest, ParsesOptions) {
     EXPECT_EQ(o->connect.query_timeout.count(), 800);
     EXPECT_EQ(o->connect.statement_timeout.count(), 600);
     EXPECT_FALSE(o->resources);
+    EXPECT_TRUE(o->detect);
 }
 
 TEST(MonitorOptionsTest, RejectsBadInput) {

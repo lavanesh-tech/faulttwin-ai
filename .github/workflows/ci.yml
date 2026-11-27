@@ -24,7 +24,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends clang-format-18
       - name: Check formatting
         run: |
-          find include src tests -name '*.cpp' -o -name '*.hpp' \
+          find include src tests bench -name '*.cpp' -o -name '*.hpp' \
             | xargs clang-format-18 --dry-run --Werror
 
   build-test:
@@ -53,13 +53,13 @@ jobs:
         run: scripts/verify-presets.sh ${{ matrix.compiler }} ${{ matrix.preset }}
       - name: Show log on failure
         if: failure()
-        run: cat results/phase-03/${{ matrix.compiler }}/${{ matrix.preset }}.log
+        run: cat results/phase-04/${{ matrix.compiler }}/${{ matrix.preset }}.log
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: logs-${{ matrix.compiler }}-${{ matrix.preset }}
-          path: results/phase-03/${{ matrix.compiler }}/
+          path: results/phase-04/${{ matrix.compiler }}/
           retention-days: 14
 
   clang-tidy:
@@ -80,6 +80,8 @@ jobs:
 
   # Phase 3: collectors against a real primary + 2 streaming replicas (compose.yaml). The
   # cluster tests skip without FT_INTEGRATION=1 in the matrix above; here they must pass.
+  # Phase 4 adds the live detection test (stopped replica -> telemetry_stale) to that suite and
+  # checks that the synthetic detection evaluation reproduces the committed results exactly.
   integration:
     name: integration (PostgreSQL lab)
     runs-on: ubuntu-24.04
@@ -96,6 +98,12 @@ jobs:
         run: |
           cmake --preset debug
           cmake --build build/debug
+      - name: Detection evaluation reproduces the committed results
+        run: |
+          build/debug/src/detect/faulttwin-detect evaluate --out /tmp/detect > /dev/null
+          for f in summary.json summary.md tuning-tuned.csv tuning-naive.csv tuning-knn.csv tuning-perceptron.csv alerts-test.csv alerts-test_shifted.csv; do
+            cmp "/tmp/detect/${f}" "results/phase-04/detection/linux-x86_64-container/${f}"
+          done
       - name: Start the lab cluster
         run: docker compose up -d --wait
       - name: Integration tests
@@ -110,7 +118,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: logs-integration
-          path: results/phase-03/integration/
+          path: results/phase-04/integration/
           retention-days: 14
       - name: Stop the lab cluster
         if: always()

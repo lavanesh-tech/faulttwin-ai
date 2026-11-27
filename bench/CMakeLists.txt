@@ -9,10 +9,18 @@ add_executable(faulttwin_bench ingest_bench.cpp)
 target_link_libraries(faulttwin_bench PRIVATE faulttwin::ingest benchmark::benchmark)
 faulttwin_set_project_warnings(faulttwin_bench)
 
+# Phase 4: features and detection.
+add_executable(faulttwin_detection_bench detection_bench.cpp)
+target_link_libraries(faulttwin_detection_bench PRIVATE faulttwin::detection benchmark::benchmark)
+faulttwin_set_project_warnings(faulttwin_detection_bench)
+
 # Smoke test: the benchmark binary starts, runs the cheapest benchmark once and
 # exits 0. It checks that the binary works, not how fast anything is.
 if(FAULTTWIN_BUILD_TESTS)
   add_test(NAME bench.smoke
            COMMAND faulttwin_bench --benchmark_filter=BM_BoundedQueuePushPop
+                   --benchmark_min_time=1x --benchmark_repetitions=1)
+  add_test(NAME bench.detection_smoke
+           COMMAND faulttwin_detection_bench --benchmark_filter=BM_RuleEngineEvaluate
                    --benchmark_min_time=1x --benchmark_repetitions=1)
 endif()
