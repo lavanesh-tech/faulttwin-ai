@@ -90,8 +90,8 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 4.8 | Online detection on the live lab (`faulttwin-monitor --detect`): stopped replica raises and resolves `telemetry_stale` | ✅ tested (Linux container) | `results/phase-04/integration/` |
 | 4.9 | All presets pass with GCC and Clang on Linux; clang-tidy and clang-format clean | ✅ tested (Linux container) | `results/phase-04/{gcc,clang}/` |
 | 4.10 | Benchmarks for windows, extraction, rules and learned scoring | ✅ measured (cloud container only) | `results/phase-04/benchmarks/` |
-| 4.11 | Builds and tests on the owner's Mac | ⏳ owner-run (Apple Silicon, AppleClang): integration 8/8; `summary.json` byte-identical to Linux; debug ctest 245/246, the failure was a test bug (raw `system_clock` tick count differs between libstdc++ and libc++), fixed; re-run pending | `results/phase-04/integration/darwin-arm64.log` |
-| 4.12 | CI green with the Phase 4 workflow | ⏳ NOT RUN | |
+| 4.11 | Builds and tests on the owner's Mac | ✅ owner-run (Apple Silicon, AppleClang): debug 246/246 after a test-only fix (the golden-hash test hashed the raw `system_clock` tick count, which differs between libstdc++ and libc++); integration 8/8; `summary.json` byte-identical to Linux | `results/phase-04/integration/darwin-arm64.log` |
+| 4.12 | CI green with the Phase 4 workflow | ✅ CI run #8 on `34879bf` green (6m 4s, seen in the owner's GitHub Actions screenshot), including the step that reproduces the committed detection results byte for byte | GitHub Actions run #8 |
 | 4.13 | No AI authorship; no assistant commits | ✅ | phase report §20 |
 | 4.14 | Owner approval after independent review | ⏳ | |
 

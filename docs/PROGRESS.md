@@ -11,7 +11,7 @@ approves it after technical review.
 | 1 | C++20 engineering foundation | Complete | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
 | 2 | Concurrent telemetry ingestion | Complete | Commits `3539c5c`, `f0624a4`. Approved by the owner; criterion 2.11 (full Experiment 2) deferred to Phase 11. Linux: GCC + Clang, 4 presets pass, TSan clean. macOS debug + release pass (AppleClang 21). CI green (run #3). Benchmarks measured in a cloud container only |
 | 3 | PostgreSQL monitoring | Complete | Commits `09d2e74`, `6e23c81`. Approved by the owner. macOS (owner): debug 179/179, integration 7/7. CI green (run #6). Collection measured in a cloud container only |
-| 4 | Time-series features and anomaly detection | In review | Linux container: GCC + Clang, 4 presets pass (246/248 tests), 8/8 integration tests. Rules, naive baseline, k-NN and perceptron evaluated on synthetic scenarios only. Uncommitted on `8f1dbb2` |
+| 4 | Time-series features and anomaly detection | In review | Linux container: GCC + Clang, 4 presets pass (246/248 tests), 8/8 integration tests. Rules, naive baseline, k-NN and perceptron evaluated on synthetic scenarios only. Commit `34879bf`. macOS (owner): debug 246/246, integration 8/8. CI green (run #8) |
 | 5 | Persistence, APIs and observability | Not started | |
 | 6 | Chaos engineering and dataset generation | Not started | |
 | 7 | ML training and native C++ inference | Not started | |
@@ -38,8 +38,9 @@ approves it after technical review.
   across compilers and build types.
 - Measured (synthetic scenarios only), test split F1: tuned rules 0.996, naive 0.900, k-NN
   0.923, perceptron 0.554. Details in the Phase 4 report §12 and §16.
-- Owner ran Phase 4 on the Mac (Apple Silicon, AppleClang, libpq 19.0): integration 8/8, `faulttwin-detect evaluate` output byte-identical to Linux. Debug ctest 245/246: the golden-hash test hashed the raw `system_clock` tick count (ns in libstdc++, µs in libc++). Fixed in the test (hash nanoseconds); Mac re-run pending.
-- Not run: CI with `ci.phase-04.yml`, real fault injection (Phase 6).
+- Owner ran Phase 4 on the Mac (Apple Silicon, AppleClang, libpq 19.0): integration 8/8, `faulttwin-detect evaluate` output byte-identical to Linux. Debug ctest 245/246: the golden-hash test hashed the raw `system_clock` tick count (ns in libstdc++, µs in libc++). Fixed in the test (hash nanoseconds); Mac re-run: debug 246/246.
+- Owner committed and pushed `34879bf` (Phase 4). CI run #8 on `34879bf` green (6m 4s, seen in the owner's GitHub Actions screenshot), including the step that reproduces the committed detection results byte for byte.
+- Not run: real fault injection (Phase 6).
 - Waiting on: owner review and approval (criterion 4.14). Phase 5 not started.
 - Report: `docs/phase-reports/phase-04.md`.
 

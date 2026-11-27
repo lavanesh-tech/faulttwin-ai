@@ -83,6 +83,8 @@ results and should not be phrased as such.
 | Rules: sustain, hysteresis, cooldown, three-valued missing data, escalation, stale telemetry | TESTED | `tests/unit/detection/rule_engine_test.cpp` |
 | Live lab: stopped replica raises `telemetry_stale`, resolves after restart | TESTED (Linux container) | `LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves`, `results/phase-04/integration/` |
 | Detection evaluation byte-identical across GCC/Clang and debug/release | TESTED (Linux container) | `cli.detect_deterministic`; `cmp` of all 8 output files (phase report §14) |
+| Phase 4 on macOS (debug 246/246, integration 8/8, evaluation byte-identical to Linux) | TESTED (owner-run) | `results/phase-04/integration/darwin-arm64.log` |
+| Phase 4 CI run (`34879bf`, including the byte-for-byte detection reproduction step) | TESTED (CI) | GitHub Actions `ci` run #8, green, 6m 4s |
 | k-NN and perceptron: exact scoring, deterministic training, no train/tune/test overlap | TESTED | `tests/unit/detection/learned_test.cpp`, `cli.detect_rejects_overlapping_splits` |
 
 ## Phase 4 (detection on synthetic scenarios)

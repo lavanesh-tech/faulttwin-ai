@@ -5,8 +5,8 @@ Date: 2026-11-26 · Prepared for independent technical review · Status: **In re
 Terminology: *implemented* = code exists; *tested* = automated tests ran and passed;
 *measured* = a metric was recorded under a protocol; *independently verified* = someone other
 than the implementer reproduced it. In Phase 4 everything was built, tested and measured **by
-the AI assistant in one Linux cloud container only**. Nothing has run on the owner's Mac or in
-GitHub Actions yet, and nothing is independently verified. **All detection-quality numbers come
+the AI assistant in one Linux cloud container only**. Afterwards the owner ran the debug preset
+and the integration tests on the Mac and CI ran green (§14). Nothing is independently verified. **All detection-quality numbers come
 from synthetic scenarios.**
 
 Base: the owner's `main` at `8f1dbb2` (Phase 3 approved). All Phase 4 changes are uncommitted in
@@ -352,9 +352,10 @@ different test seeds give different alerts.
   nanoseconds in libstdc++ but microseconds in libc++, so identical timestamps gave different
   counts. This was a bug in the test, not in the generator; the identical `summary.json` shows
   the data matched. The test now hashes `duration_cast<nanoseconds>`. The golden value is
-  unchanged on Linux, where GCC and Clang were re-run. The Mac re-run of ctest is pending.
+  unchanged on Linux, where GCC and Clang were re-run. After the fix the Mac debug ctest passed
+  **246/246** (6 lab tests skipped inside).
 
-CI: **NOT RUN.**
+CI: CI run #8 on `34879bf` green (6m 4s, seen in the owner's GitHub Actions screenshot), including the step that reproduces the committed detection results byte for byte.
 
 ## 15. Sanitizer results
 ASan + UBSan and TSan ran with the options from `CMakePresets.json`. The whole unit and CLI
@@ -466,12 +467,12 @@ No known bugs. Limitations (also in `docs/evaluation/limitations.md`):
 9. Bit-identical evaluation output is tested on Linux x86_64 (GCC and Clang) and on Apple Silicon
    (AppleClang, `summary.json` only, owner-run).
 10. Measurements come from one 4-vCPU cloud container. On macOS only the debug preset and the
-    integration tests ran (owner). CI was NOT RUN at the time of writing.
+    integration tests ran (owner). CI run #8 on `34879bf` is green.
 
 ## 22. Incomplete requirements
-- **Partly run:** macOS (4.11): integration 8/8 and identical evaluation output; the debug ctest
-  re-run after the test fix is pending.
-- **NOT RUN:** CI with `ci.phase-04.yml` (4.12).
+- **Done by the owner on the Mac:** debug 246/246, integration 8/8, identical evaluation output
+  (4.11). macOS release and sanitizer presets: NOT RUN.
+- **NOT RUN:** macOS release and sanitizer presets; real fault injection (Phase 6).
 - **Not implemented:**
   - EWMA and median-MAD adaptive thresholds, deferred to Phases 6–7 (ADR-0017);
   - a reorder buffer for late data, deferred to an ADR if needed;
@@ -542,10 +543,10 @@ From `docs/architecture/acceptance-criteria.md` (Phase 4 criteria made explicit 
 | 4.8 | Online detection on the live lab | ✅ tested (Linux container) |
 | 4.9 | All presets pass with GCC and Clang; tidy and format clean | ✅ tested (Linux container) |
 | 4.10 | Benchmarks | ✅ measured (cloud container only) |
-| 4.11 | Builds and tests on the owner's Mac | ⏳ owner-run: integration 8/8, evaluation byte-identical; ctest 245/246 before a test-only fix, re-run pending |
-| 4.12 | CI green with the Phase 4 workflow | ⏳ NOT RUN |
+| 4.11 | Builds and tests on the owner's Mac | ✅ owner-run: debug 246/246, integration 8/8, evaluation byte-identical |
+| 4.12 | CI green with the Phase 4 workflow | ✅ CI run #8 on `34879bf` green (6m 4s) |
 | 4.13 | No AI authorship; no assistant commits | ✅ |
 | 4.14 | Owner approval after independent review | ⏳ |
 
-**Phase 4 is not complete.** Still open: the macOS ctest re-run (4.11), CI (4.12) and your review and
+**Phase 4 is not complete.** Still open: your review and
 approval (4.14). Phase 5 has not been started.
