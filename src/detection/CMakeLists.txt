@@ -12,6 +12,6 @@ add_library(faulttwin_detection
 add_library(faulttwin::detection ALIAS faulttwin_detection)
 target_include_directories(faulttwin_detection PUBLIC "${PROJECT_SOURCE_DIR}/include")
 target_compile_features(faulttwin_detection PUBLIC cxx_std_20)
-target_link_libraries(faulttwin_detection PUBLIC faulttwin::features)
+target_link_libraries(faulttwin_detection PUBLIC faulttwin::features faulttwin::core)
 faulttwin_set_project_warnings(faulttwin_detection)
 target_compile_options(faulttwin_detection PRIVATE -ffp-contract=off)

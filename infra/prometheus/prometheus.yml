@@ -1,0 +1,13 @@
+# Prometheus for FaultTwin's own metrics (self-observability, ADR-0019). It scrapes
+# faulttwind's /metrics on the host. Lab only.
+global:
+  scrape_interval: 5s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: faulttwind
+    metrics_path: /metrics
+    static_configs:
+      # host.docker.internal is mapped to the host by compose.yaml (extra_hosts). The port
+      # must match faulttwind --listen; see docs/phase-reports/phase-05.md for the Linux note.
+      - targets: ["host.docker.internal:8080"]

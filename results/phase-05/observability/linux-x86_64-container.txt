@@ -1,0 +1,20 @@
+date_utc: 2026-11-28T16:29:46Z
+docker: 29.9.3
+faulttwind: --listen 172.17.0.1:8080 --allow-remote --interval-ms 200 (synthetic source, memory store)
+note: on Linux, host.docker.internal (host-gateway) is the docker0 address, so faulttwind listens there. Docker Desktop on macOS is expected to reach a loopback listener through host.docker.internal; that was not verified in this run
+
+$ curl -s "127.0.0.1:59090/api/v1/query?query=up"
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"host.docker.internal:8080","job":"faulttwind"},"value":[1795883386.783,"1"]}]}}
+$ curl -s "127.0.0.1:59090/api/v1/query?query=faulttwin_monitor_cycles_total"
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"faulttwin_monitor_cycles_total","instance":"host.docker.internal:8080","job":"faulttwind"},"value":[1795883386.790,"58"]}]}}
+$ curl -s 127.0.0.1:53000/api/health
+{
+  "database": "ok",
+  "version": "12.1.0",
+  "commit": "ccd7b6ce7ea6184b8c7eb1de044174147dd9a648"
+}
+$ curl -s -u admin:*** "127.0.0.1:53000/api/search?type=dash-db"
+[{"id":2,"uid":"faulttwin-self","orgId":1,"title":"FaultTwin self-observability","uri":"db/faulttwin-self-observability","url":"/d/faulttwin-self/faulttwin-self-observability","slug":"","type":"dash-db","tags":[],"isStarred":false,"folderId":1,"folderUid":"fg5ohk9fhh4w0c","folderTitle":"FaultTwin","folderUrl":"/dashboards/f/fg5ohk9fhh4w0c/faulttwin","sortMeta":0,"isDeleted":false}]
+$ curl -s -u admin:*** 127.0.0.1:53000/api/datasources/uid/faulttwin-prometheus/health
+{"details":{"application":"Prometheus","features":{"rulerApiEnabled":false}},"message":"Successfully queried the Prometheus API.","status":"OK"}
+faulttwind exit after SIGTERM: 0

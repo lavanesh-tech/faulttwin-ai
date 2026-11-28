@@ -1,0 +1,492 @@
+date_utc: 2026-11-28T17:00:09Z
+uname: Linux 6.18.44-fc-v880 x86_64
+docker: 29.9.3
+compose: 5.7.1
+postgres: postgres (PostgreSQL) 17.12 (Debian 17.12-1.pgdg12+1)
+git_commit: 80ed0cfe62383dddcab801391223629674a71b7e
+
+Internal ctest changing into directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug
+UpdateCTestConfiguration  from :/tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/DartConfiguration.tcl
+Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 302
+      Start 302: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError
+
+302: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LibpqSessionTest.RefusedConnectionIsAClassifiedError" "--gtest_also_run_disabled_tests"
+302: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+302: Test timeout computed to be: 180
+302: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+302: Note: Google Test filter = LibpqSessionTest.RefusedConnectionIsAClassifiedError
+302: [==========] Running 1 test from 1 test suite.
+302: [----------] Global test environment set-up.
+302: [----------] 1 test from LibpqSessionTest
+302: [ RUN      ] LibpqSessionTest.RefusedConnectionIsAClassifiedError
+302: [       OK ] LibpqSessionTest.RefusedConnectionIsAClassifiedError (0 ms)
+302: [----------] 1 test from LibpqSessionTest (0 ms total)
+302: 
+302: [----------] Global test environment tear-down
+302: [==========] 1 test from 1 test suite ran. (0 ms total)
+302: [  PASSED  ] 1 test.
+ 1/25 Test #302: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError ....................................................................................................................................   Passed    0.01 sec
+test 303
+      Start 303: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+
+303: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown" "--gtest_also_run_disabled_tests"
+303: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+303: Test timeout computed to be: 180
+303: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+303: Note: Google Test filter = LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+303: [==========] Running 1 test from 1 test suite.
+303: [----------] Global test environment set-up.
+303: [----------] 1 test from LibpqSessionTest
+303: [ RUN      ] LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
+303: [       OK ] LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown (0 ms)
+303: [----------] 1 test from LibpqSessionTest (0 ms total)
+303: 
+303: [----------] Global test environment tear-down
+303: [==========] 1 test from 1 test suite ran. (0 ms total)
+303: [  PASSED  ] 1 test.
+ 2/25 Test #303: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown ................................................................................................................................   Passed    0.00 sec
+test 304
+      Start 304: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+
+304: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas" "--gtest_also_run_disabled_tests"
+304: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+304: Test timeout computed to be: 180
+304: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+304: Note: Google Test filter = LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+304: [==========] Running 1 test from 1 test suite.
+304: [----------] Global test environment set-up.
+304: [----------] 1 test from LabClusterTest
+304: [ RUN      ] LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
+304: [       OK ] LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas (37 ms)
+304: [----------] 1 test from LabClusterTest (37 ms total)
+304: 
+304: [----------] Global test environment tear-down
+304: [==========] 1 test from 1 test suite ran. (37 ms total)
+304: [  PASSED  ] 1 test.
+ 3/25 Test #304: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas .............................................................................................................................   Passed    0.04 sec
+test 305
+      Start 305: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+
+305: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged" "--gtest_also_run_disabled_tests"
+305: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+305: Test timeout computed to be: 180
+305: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+305: Note: Google Test filter = LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+305: [==========] Running 1 test from 1 test suite.
+305: [----------] Global test environment set-up.
+305: [----------] 1 test from LabClusterTest
+305: [ RUN      ] LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
+305: [       OK ] LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged (11 ms)
+305: [----------] 1 test from LabClusterTest (11 ms total)
+305: 
+305: [----------] Global test environment tear-down
+305: [==========] 1 test from 1 test suite ran. (11 ms total)
+305: [  PASSED  ] 1 test.
+ 4/25 Test #305: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged ...............................................................................................................................   Passed    0.02 sec
+test 306
+      Start 306: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+
+306: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp" "--gtest_also_run_disabled_tests"
+306: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+306: Test timeout computed to be: 180
+306: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+306: Note: Google Test filter = LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+306: [==========] Running 1 test from 1 test suite.
+306: [----------] Global test environment set-up.
+306: [----------] 1 test from LabClusterTest
+306: [ RUN      ] LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp
+306: [ measured ] replicas replayed 200 commits within 7 ms of the post-workload snapshot
+306: [       OK ] LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp (457 ms)
+306: [----------] 1 test from LabClusterTest (457 ms total)
+306: 
+306: [----------] Global test environment tear-down
+306: [==========] 1 test from 1 test suite ran. (457 ms total)
+306: [  PASSED  ] 1 test.
+ 5/25 Test #306: integration.LabClusterTest.WorkloadShowsUpInRatesAndReplicasCatchUp .................................................................................................................................   Passed    0.46 sec
+test 307
+      Start 307: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+
+307: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers" "--gtest_also_run_disabled_tests"
+307: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+307: Test timeout computed to be: 180
+307: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+307: Note: Google Test filter = LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+307: [==========] Running 1 test from 1 test suite.
+307: [----------] Global test environment set-up.
+307: [----------] 1 test from LabClusterTest
+307: [ RUN      ] LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
+307: [ measured ] docker compose stop took 468 ms; outage detected 9 ms after stop returned; healthy again 495 ms after start was issued
+307: [       OK ] LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers (1126 ms)
+307: [----------] 1 test from LabClusterTest (1126 ms total)
+307: 
+307: [----------] Global test environment tear-down
+307: [==========] 1 test from 1 test suite ran. (1126 ms total)
+307: [  PASSED  ] 1 test.
+ 6/25 Test #307: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers ................................................................................................................................   Passed    1.13 sec
+test 308
+      Start 308: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+
+308: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabClusterTest.PausedReplicaTimesOutInsteadOfHanging" "--gtest_also_run_disabled_tests"
+308: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+308: Test timeout computed to be: 180
+308: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+308: Note: Google Test filter = LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+308: [==========] Running 1 test from 1 test suite.
+308: [----------] Global test environment set-up.
+308: [----------] 1 test from LabClusterTest
+308: [ RUN      ] LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
+308: [ measured ] paused replica: cycle with open connection 1007 ms (client deadline 1000 ms), reconnect cycle 2008 ms (connect_timeout 2 s), healthy again 14 ms after unpause
+308: [       OK ] LabClusterTest.PausedReplicaTimesOutInsteadOfHanging (3314 ms)
+308: [----------] 1 test from LabClusterTest (3314 ms total)
+308: 
+308: [----------] Global test environment tear-down
+308: [==========] 1 test from 1 test suite ran. (3314 ms total)
+308: [  PASSED  ] 1 test.
+ 7/25 Test #308: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging ....................................................................................................................................   Passed    3.32 sec
+test 309
+      Start 309: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+
+309: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves" "--gtest_also_run_disabled_tests"
+309: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+309: Test timeout computed to be: 180
+309: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+309: Note: Google Test filter = LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+309: [==========] Running 1 test from 1 test suite.
+309: [----------] Global test environment set-up.
+309: [----------] 1 test from LabDetectionTest
+309: [ RUN      ] LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
+309: [ measured ] telemetry_stale fired 3027 ms after docker compose stop returned; resolved 6076 ms after start was issued (1 s cycles)
+309: [       OK ] LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves (14791 ms)
+309: [----------] 1 test from LabDetectionTest (14791 ms total)
+309: 
+309: [----------] Global test environment tear-down
+309: [==========] 1 test from 1 test suite ran. (14791 ms total)
+309: [  PASSED  ] 1 test.
+ 8/25 Test #309: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves ..........................................................................................................................   Passed   14.80 sec
+test 310
+      Start 310: integration.MetaDb.MigrateIsIdempotent
+
+310: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=MetaDb.MigrateIsIdempotent" "--gtest_also_run_disabled_tests"
+310: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+310: Test timeout computed to be: 180
+310: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+310: Note: Google Test filter = MetaDb.MigrateIsIdempotent
+310: [==========] Running 1 test from 1 test suite.
+310: [----------] Global test environment set-up.
+310: [----------] 1 test from MetaDb
+310: [ RUN      ] MetaDb.MigrateIsIdempotent
+310: [       OK ] MetaDb.MigrateIsIdempotent (17 ms)
+310: [----------] 1 test from MetaDb (17 ms total)
+310: 
+310: [----------] Global test environment tear-down
+310: [==========] 1 test from 1 test suite ran. (17 ms total)
+310: [  PASSED  ] 1 test.
+ 9/25 Test #310: integration.MetaDb.MigrateIsIdempotent ..............................................................................................................................................................   Passed    0.02 sec
+test 311
+      Start 311: integration.MetaDb.RefusesASchemaNewerThanThisBuild
+
+311: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=MetaDb.RefusesASchemaNewerThanThisBuild" "--gtest_also_run_disabled_tests"
+311: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+311: Test timeout computed to be: 180
+311: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+311: Note: Google Test filter = MetaDb.RefusesASchemaNewerThanThisBuild
+311: [==========] Running 1 test from 1 test suite.
+311: [----------] Global test environment set-up.
+311: [----------] 1 test from MetaDb
+311: [ RUN      ] MetaDb.RefusesASchemaNewerThanThisBuild
+311: [       OK ] MetaDb.RefusesASchemaNewerThanThisBuild (22 ms)
+311: [----------] 1 test from MetaDb (22 ms total)
+311: 
+311: [----------] Global test environment tear-down
+311: [==========] 1 test from 1 test suite ran. (22 ms total)
+311: [  PASSED  ] 1 test.
+10/25 Test #311: integration.MetaDb.RefusesASchemaNewerThanThisBuild .................................................................................................................................................   Passed    0.03 sec
+test 312
+      Start 312: integration.MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase
+
+312: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase" "--gtest_also_run_disabled_tests"
+312: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+312: Test timeout computed to be: 180
+312: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+312: Note: Google Test filter = MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase
+312: [==========] Running 1 test from 1 test suite.
+312: [----------] Global test environment set-up.
+312: [----------] 1 test from MetaDb
+312: [ RUN      ] MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase
+312: [       OK ] MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase (21 ms)
+312: [----------] 1 test from MetaDb (21 ms total)
+312: 
+312: [----------] Global test environment tear-down
+312: [==========] 1 test from 1 test suite ran. (21 ms total)
+312: [  PASSED  ] 1 test.
+11/25 Test #312: integration.MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase .............................................................................................................................   Passed    0.03 sec
+test 313
+      Start 313: integration.MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase
+
+313: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase" "--gtest_also_run_disabled_tests"
+313: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+313: Test timeout computed to be: 180
+313: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+313: Note: Google Test filter = MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase
+313: [==========] Running 1 test from 1 test suite.
+313: [----------] Global test environment set-up.
+313: [----------] 1 test from MetaDb
+313: [ RUN      ] MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase
+313: [       OK ] MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase (27 ms)
+313: [----------] 1 test from MetaDb (27 ms total)
+313: 
+313: [----------] Global test environment tear-down
+313: [==========] 1 test from 1 test suite ran. (27 ms total)
+313: [  PASSED  ] 1 test.
+12/25 Test #313: integration.MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase .........................................................................................................................................   Passed    0.03 sec
+test 314
+      Start 314: integration.MetaDb.ConcurrentWritersSerialiseOnOneStore
+
+314: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=MetaDb.ConcurrentWritersSerialiseOnOneStore" "--gtest_also_run_disabled_tests"
+314: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+314: Test timeout computed to be: 180
+314: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+314: Note: Google Test filter = MetaDb.ConcurrentWritersSerialiseOnOneStore
+314: [==========] Running 1 test from 1 test suite.
+314: [----------] Global test environment set-up.
+314: [----------] 1 test from MetaDb
+314: [ RUN      ] MetaDb.ConcurrentWritersSerialiseOnOneStore
+314: [       OK ] MetaDb.ConcurrentWritersSerialiseOnOneStore (41 ms)
+314: [----------] 1 test from MetaDb (41 ms total)
+314: 
+314: [----------] Global test environment tear-down
+314: [==========] 1 test from 1 test suite ran. (41 ms total)
+314: [  PASSED  ] 1 test.
+13/25 Test #314: integration.MetaDb.ConcurrentWritersSerialiseOnOneStore .............................................................................................................................................   Passed    0.05 sec
+test 315
+      Start 315: integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+315: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/0" "--gtest_also_run_disabled_tests"
+315: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+315: Test timeout computed to be: 180
+315: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+315: Note: Google Test filter = Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/0
+315: [==========] Running 1 test from 1 test suite.
+315: [----------] Global test environment set-up.
+315: [----------] 1 test from Postgres/IncidentStoreContract
+315: [ RUN      ] Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/0
+315: [       OK ] Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/0 (18 ms)
+315: [----------] 1 test from Postgres/IncidentStoreContract (18 ms total)
+315: 
+315: [----------] Global test environment tear-down
+315: [==========] 1 test from 1 test suite ran. (18 ms total)
+315: [  PASSED  ] 1 test.
+14/25 Test #315: integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> .........   Passed    0.02 sec
+test 316
+      Start 316: integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+316: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/0" "--gtest_also_run_disabled_tests"
+316: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+316: Test timeout computed to be: 180
+316: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+316: Note: Google Test filter = Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/0
+316: [==========] Running 1 test from 1 test suite.
+316: [----------] Global test environment set-up.
+316: [----------] 1 test from Postgres/IncidentStoreContract
+316: [ RUN      ] Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/0
+316: [       OK ] Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/0 (19 ms)
+316: [----------] 1 test from Postgres/IncidentStoreContract (19 ms total)
+316: 
+316: [----------] Global test environment tear-down
+316: [==========] 1 test from 1 test suite ran. (19 ms total)
+316: [  PASSED  ] 1 test.
+15/25 Test #316: integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ...........   Passed    0.03 sec
+test 317
+      Start 317: integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+317: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/0" "--gtest_also_run_disabled_tests"
+317: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+317: Test timeout computed to be: 180
+317: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+317: Note: Google Test filter = Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/0
+317: [==========] Running 1 test from 1 test suite.
+317: [----------] Global test environment set-up.
+317: [----------] 1 test from Postgres/IncidentStoreContract
+317: [ RUN      ] Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/0
+317: [       OK ] Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/0 (19 ms)
+317: [----------] 1 test from Postgres/IncidentStoreContract (19 ms total)
+317: 
+317: [----------] Global test environment tear-down
+317: [==========] 1 test from 1 test suite ran. (20 ms total)
+317: [  PASSED  ] 1 test.
+16/25 Test #317: integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ...   Passed    0.03 sec
+test 318
+      Start 318: integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+318: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/0" "--gtest_also_run_disabled_tests"
+318: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+318: Test timeout computed to be: 180
+318: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+318: Note: Google Test filter = Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/0
+318: [==========] Running 1 test from 1 test suite.
+318: [----------] Global test environment set-up.
+318: [----------] 1 test from Postgres/IncidentStoreContract
+318: [ RUN      ] Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/0
+318: [       OK ] Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/0 (23 ms)
+318: [----------] 1 test from Postgres/IncidentStoreContract (23 ms total)
+318: 
+318: [----------] Global test environment tear-down
+318: [==========] 1 test from 1 test suite ran. (23 ms total)
+318: [  PASSED  ] 1 test.
+17/25 Test #318: integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ......   Passed    0.03 sec
+test 319
+      Start 319: integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+319: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.MissingIdsAreNotFound/0" "--gtest_also_run_disabled_tests"
+319: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+319: Test timeout computed to be: 180
+319: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+319: Note: Google Test filter = Postgres/IncidentStoreContract.MissingIdsAreNotFound/0
+319: [==========] Running 1 test from 1 test suite.
+319: [----------] Global test environment set-up.
+319: [----------] 1 test from Postgres/IncidentStoreContract
+319: [ RUN      ] Postgres/IncidentStoreContract.MissingIdsAreNotFound/0
+319: [       OK ] Postgres/IncidentStoreContract.MissingIdsAreNotFound/0 (18 ms)
+319: [----------] 1 test from Postgres/IncidentStoreContract (18 ms total)
+319: 
+319: [----------] Global test environment tear-down
+319: [==========] 1 test from 1 test suite ran. (18 ms total)
+319: [  PASSED  ] 1 test.
+18/25 Test #319: integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ...................   Passed    0.02 sec
+test 320
+      Start 320: integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+320: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/0" "--gtest_also_run_disabled_tests"
+320: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+320: Test timeout computed to be: 180
+320: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+320: Note: Google Test filter = Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/0
+320: [==========] Running 1 test from 1 test suite.
+320: [----------] Global test environment set-up.
+320: [----------] 1 test from Postgres/IncidentStoreContract
+320: [ RUN      ] Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/0
+320: [       OK ] Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/0 (21 ms)
+320: [----------] 1 test from Postgres/IncidentStoreContract (21 ms total)
+320: 
+320: [----------] Global test environment tear-down
+320: [==========] 1 test from 1 test suite ran. (21 ms total)
+320: [  PASSED  ] 1 test.
+19/25 Test #320: integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ........   Passed    0.03 sec
+test 321
+      Start 321: integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+321: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.RejectsInvalidInput/0" "--gtest_also_run_disabled_tests"
+321: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+321: Test timeout computed to be: 180
+321: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+321: Note: Google Test filter = Postgres/IncidentStoreContract.RejectsInvalidInput/0
+321: [==========] Running 1 test from 1 test suite.
+321: [----------] Global test environment set-up.
+321: [----------] 1 test from Postgres/IncidentStoreContract
+321: [ RUN      ] Postgres/IncidentStoreContract.RejectsInvalidInput/0
+321: [       OK ] Postgres/IncidentStoreContract.RejectsInvalidInput/0 (17 ms)
+321: [----------] 1 test from Postgres/IncidentStoreContract (17 ms total)
+321: 
+321: [----------] Global test environment tear-down
+321: [==========] 1 test from 1 test suite ran. (17 ms total)
+321: [  PASSED  ] 1 test.
+20/25 Test #321: integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> .....................   Passed    0.02 sec
+test 322
+      Start 322: integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+322: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/0" "--gtest_also_run_disabled_tests"
+322: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+322: Test timeout computed to be: 180
+322: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+322: Note: Google Test filter = Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/0
+322: [==========] Running 1 test from 1 test suite.
+322: [----------] Global test environment set-up.
+322: [----------] 1 test from Postgres/IncidentStoreContract
+322: [ RUN      ] Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/0
+322: [       OK ] Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/0 (22 ms)
+322: [----------] 1 test from Postgres/IncidentStoreContract (22 ms total)
+322: 
+322: [----------] Global test environment tear-down
+322: [==========] 1 test from 1 test suite ran. (22 ms total)
+322: [  PASSED  ] 1 test.
+21/25 Test #322: integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ...   Passed    0.03 sec
+test 323
+      Start 323: integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+323: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/0" "--gtest_also_run_disabled_tests"
+323: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+323: Test timeout computed to be: 180
+323: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+323: Note: Google Test filter = Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/0
+323: [==========] Running 1 test from 1 test suite.
+323: [----------] Global test environment set-up.
+323: [----------] 1 test from Postgres/IncidentStoreContract
+323: [ RUN      ] Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/0
+323: [       OK ] Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/0 (26 ms)
+323: [----------] 1 test from Postgres/IncidentStoreContract (26 ms total)
+323: 
+323: [----------] Global test environment tear-down
+323: [==========] 1 test from 1 test suite ran. (26 ms total)
+323: [  PASSED  ] 1 test.
+22/25 Test #323: integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ..........   Passed    0.03 sec
+test 324
+      Start 324: integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+324: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.StatsCountOpenAndResolved/0" "--gtest_also_run_disabled_tests"
+324: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+324: Test timeout computed to be: 180
+324: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+324: Note: Google Test filter = Postgres/IncidentStoreContract.StatsCountOpenAndResolved/0
+324: [==========] Running 1 test from 1 test suite.
+324: [----------] Global test environment set-up.
+324: [----------] 1 test from Postgres/IncidentStoreContract
+324: [ RUN      ] Postgres/IncidentStoreContract.StatsCountOpenAndResolved/0
+324: [       OK ] Postgres/IncidentStoreContract.StatsCountOpenAndResolved/0 (20 ms)
+324: [----------] 1 test from Postgres/IncidentStoreContract (20 ms total)
+324: 
+324: [----------] Global test environment tear-down
+324: [==========] 1 test from 1 test suite ran. (20 ms total)
+324: [  PASSED  ] 1 test.
+23/25 Test #324: integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> ...............   Passed    0.03 sec
+test 325
+      Start 325: integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00>
+
+325: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests/faulttwin_integration_tests "--gtest_filter=Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/0" "--gtest_also_run_disabled_tests"
+325: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+325: Test timeout computed to be: 180
+325: Running main() from /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/_deps/googletest-src/googletest/src/gtest_main.cc
+325: Note: Google Test filter = Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/0
+325: [==========] Running 1 test from 1 test suite.
+325: [----------] Global test environment set-up.
+325: [----------] 1 test from Postgres/IncidentStoreContract
+325: [ RUN      ] Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/0
+325: [       OK ] Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/0 (23 ms)
+325: [----------] 1 test from Postgres/IncidentStoreContract (23 ms total)
+325: 
+325: [----------] Global test environment tear-down
+325: [==========] 1 test from 1 test suite ran. (23 ms total)
+325: [  PASSED  ] 1 test.
+24/25 Test #325: integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-8E 5D-B2 AB-55 00-00 00-00 00-00 00-00 00-00 CC-FA 5E-B2 AB-55 00-00 71-FA 5E-B2 AB-55 00-00> .............   Passed    0.03 sec
+test 340
+      Start 340: integration.faulttwind_metadb
+
+340: Test command: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/scripts/e2e-faulttwind.sh "/tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/src/server/faulttwind" "18181" "--store" "postgres"
+340: Working Directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug/tests
+340: Test timeout computed to be: 60
+340: PASS: faulttwind e2e on port 18181 (--store postgres)
+25/25 Test #340: integration.faulttwind_metadb .......................................................................................................................................................................   Passed    0.26 sec
+
+100% tests passed, 0 tests failed out of 25
+
+Label Time Summary:
+integration    =  20.50 sec*proc (25 tests)
+
+Total Test time (real) =  20.58 sec

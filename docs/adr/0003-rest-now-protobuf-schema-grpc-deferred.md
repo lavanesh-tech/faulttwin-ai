@@ -1,6 +1,7 @@
 # ADR-0003: REST between processes now; Protobuf schemas now; gRPC deferred; Asio only where needed
 
-- Status: Proposed
+- Status: Accepted in part. The REST and gRPC-deferral parts hold. The Protobuf incident log is
+  replaced by the meta-db in Phase 5 (ADR-0020, ADR-0022).
 - Date: 2026-11-25
 
 ## Context

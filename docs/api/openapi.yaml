@@ -1,0 +1,304 @@
+openapi: 3.1.0
+info:
+  title: FaultTwin API
+  version: "1"
+  description: |
+    HTTP API of faulttwind (Phase 5). The contract for /api/v1 (ADR-0021). Within v1 changes are
+    additive only; removing or renaming a field or parameter means /api/v2.
+
+    Every response carries `X-Request-Id` (echoed from the request when it matches
+    `[A-Za-z0-9._-]{1,64}`, otherwise generated), `Cache-Control: no-store` and
+    `X-Content-Type-Options: nosniff`. Errors always use the `Error` body. Times are UTC
+    RFC 3339 with millisecond precision, e.g. `2026-01-01T00:00:00.000Z`.
+
+    Read endpoints have no authentication in Phase 5; faulttwind listens on loopback unless
+    started with `--allow-remote`. The acknowledge endpoint needs `Authorization: Bearer
+    $FT_API_KEY`.
+servers:
+  - url: http://127.0.0.1:8080
+security: []
+paths:
+  /healthz:
+    get:
+      summary: Liveness (the process answers)
+      responses:
+        "200":
+          description: Alive
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status: {const: ok}
+  /readyz:
+    get:
+      summary: Readiness (store reachable, monitor cycling, not draining)
+      responses:
+        "200": {$ref: "#/components/responses/Ready"}
+        "503": {$ref: "#/components/responses/Ready"}
+  /metrics:
+    get:
+      summary: Prometheus metrics (text format 0.0.4)
+      responses:
+        "200":
+          description: Metrics
+          content:
+            text/plain; version=0.0.4:
+              schema: {type: string}
+  /api/v1/version:
+    get:
+      summary: API, build and model versions
+      responses:
+        "200":
+          description: Versions
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [api, build, rule_set_version, feature_schema_version, store]
+                properties:
+                  api: {const: v1}
+                  build: {type: string, examples: ["0.1.0"]}
+                  rule_set_version: {type: string, examples: ["faulttwin.rules.v1"]}
+                  feature_schema_version: {type: string, examples: ["faulttwin.features.v1"]}
+                  store: {enum: [memory, postgres]}
+  /api/v1/nodes:
+    get:
+      summary: Latest node status from the monitor loop, and alerts firing now
+      responses:
+        "200":
+          description: Cluster status
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/ClusterStatus"}
+  /api/v1/incidents:
+    get:
+      summary: List incidents, newest first
+      description: Unknown or repeated query parameters are rejected with 400.
+      parameters:
+        - {name: state, in: query, schema: {enum: [open, resolved]}}
+        - {name: node, in: query, schema: {type: string, maxLength: 128}}
+        - {name: rule, in: query, schema: {type: string, maxLength: 128}}
+        - {name: severity, in: query, schema: {enum: [warning, critical]}}
+        - name: since
+          in: query
+          description: opened_at >= since
+          schema: {type: string, format: date-time}
+        - name: until
+          in: query
+          description: opened_at < until
+          schema: {type: string, format: date-time}
+        - {name: limit, in: query, schema: {type: integer, minimum: 1, maximum: 500, default: 50}}
+        - name: cursor
+          in: query
+          description: The next_cursor of the previous page
+          schema: {type: string}
+      responses:
+        "200":
+          description: One page
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, count, next_cursor]
+                properties:
+                  items:
+                    type: array
+                    items: {$ref: "#/components/schemas/Incident"}
+                  count: {type: integer}
+                  next_cursor: {type: [string, "null"]}
+        "400": {$ref: "#/components/responses/Error"}
+        "503": {$ref: "#/components/responses/Unavailable"}
+  /api/v1/incidents/{id}:
+    get:
+      summary: One incident
+      parameters:
+        - {$ref: "#/components/parameters/IncidentId"}
+      responses:
+        "200":
+          description: The incident
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Incident"}
+        "404": {$ref: "#/components/responses/Error"}
+        "503": {$ref: "#/components/responses/Unavailable"}
+  /api/v1/incidents/{id}/acknowledge:
+    post:
+      summary: Acknowledge an incident (once; never overwritten)
+      security: [{bearer: []}]
+      parameters:
+        - {$ref: "#/components/parameters/IncidentId"}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [by]
+              properties:
+                by: {type: string, minLength: 1, maxLength: 64}
+                note: {type: string, maxLength: 1024}
+      responses:
+        "200":
+          description: The acknowledged incident
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Incident"}
+        "400": {$ref: "#/components/responses/Error"}
+        "401":
+          description: Missing or wrong Bearer token
+          headers:
+            WWW-Authenticate: {schema: {type: string}}
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Error"}
+        "403":
+          description: No API key is configured, so writes are disabled
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Error"}
+        "404": {$ref: "#/components/responses/Error"}
+        "409":
+          description: Already acknowledged
+          content:
+            application/json:
+              schema: {$ref: "#/components/schemas/Error"}
+        "413": {$ref: "#/components/responses/Error"}
+        "415": {$ref: "#/components/responses/Error"}
+        "503": {$ref: "#/components/responses/Unavailable"}
+components:
+  securitySchemes:
+    bearer: {type: http, scheme: bearer}
+  parameters:
+    IncidentId:
+      name: id
+      in: path
+      required: true
+      description: Positive integer in canonical form (no sign, no leading zeros); anything else is 404
+      schema: {type: string, pattern: "^[1-9][0-9]*$"}
+  responses:
+    Error:
+      description: Error
+      content:
+        application/json:
+          schema: {$ref: "#/components/schemas/Error"}
+    Unavailable:
+      description: Incident store unavailable
+      headers:
+        Retry-After: {schema: {type: integer}}
+      content:
+        application/json:
+          schema: {$ref: "#/components/schemas/Error"}
+    Ready:
+      description: Readiness report (200 ready, 503 not ready)
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [status, checks, draining]
+            properties:
+              status: {enum: [ready, not_ready]}
+              checks:
+                type: object
+                properties:
+                  store:
+                    type: object
+                    properties:
+                      ok: {type: boolean}
+                      backend: {enum: [memory, postgres]}
+                      detail: {type: string}
+                  monitor:
+                    type: object
+                    properties:
+                      ok: {type: boolean}
+                      detail: {type: string}
+              draining: {type: boolean}
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message, request_id]
+          properties:
+            code:
+              enum: [invalid_parameter, invalid_json, invalid_body, not_found,
+                     unsupported_api_version, method_not_allowed, unauthorized, writes_disabled,
+                     payload_too_large, unsupported_media_type, conflict, store_unavailable,
+                     internal]
+            message: {type: string}
+            request_id: {type: string}
+    Evidence:
+      type: object
+      description: Feature name to value (null when the feature was not computable)
+      additionalProperties: {type: [number, "null"]}
+    IncidentEvent:
+      type: object
+      required: [kind, severity, at, evidence]
+      properties:
+        kind: {enum: [fired, escalated, resolved]}
+        severity: {enum: [warning, critical]}
+        at: {type: string, format: date-time}
+        evidence: {$ref: "#/components/schemas/Evidence"}
+    Incident:
+      type: object
+      required: [id, rule_set_version, feature_schema_version, rule_id, node, severity, state,
+                 resolution, violation_since, opened_at, resolved_at, updated_at, events,
+                 acknowledgement]
+      properties:
+        id: {type: integer, minimum: 1}
+        rule_set_version: {type: string}
+        feature_schema_version: {type: string}
+        rule_id: {type: string}
+        node: {type: string}
+        severity: {enum: [warning, critical], description: highest severity reached}
+        state: {enum: [open, resolved]}
+        resolution: {enum: [recovered, monitor_restarted, null]}
+        violation_since: {type: string, format: date-time}
+        opened_at: {type: string, format: date-time}
+        resolved_at: {type: [string, "null"], format: date-time}
+        updated_at: {type: string, format: date-time}
+        events:
+          type: array
+          maxItems: 3
+          items: {$ref: "#/components/schemas/IncidentEvent"}
+        acknowledgement:
+          oneOf:
+            - type: "null"
+            - type: object
+              required: [by, note, at]
+              properties:
+                by: {type: string}
+                note: {type: string}
+                at: {type: string, format: date-time}
+    ClusterStatus:
+      type: object
+      required: [source, cycles, last_cycle_at, nodes, firing]
+      properties:
+        source: {enum: [postgres, synthetic]}
+        cycles: {type: integer}
+        last_cycle_at: {type: [string, "null"], format: date-time}
+        nodes:
+          type: array
+          items:
+            type: object
+            required: [node, role, availability, observed_at, replication_lag_seconds,
+                       probe_latency_ms]
+            properties:
+              node: {type: string}
+              role: {enum: [primary, replica, unknown]}
+              availability: {enum: [up, degraded, down]}
+              observed_at: {type: string, format: date-time}
+              replication_lag_seconds: {type: [number, "null"]}
+              probe_latency_ms: {type: [number, "null"]}
+        firing:
+          type: array
+          items:
+            type: object
+            required: [rule_id, node]
+            properties:
+              rule_id: {type: string}
+              node: {type: string}

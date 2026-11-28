@@ -33,6 +33,9 @@ include(Libpq)
 # whole program (including GoogleTest) is instrumented consistently.
 faulttwin_configure_sanitizers()
 
+# Drogon is fetched after the sanitizer flags are set, so it is instrumented like our code.
+include(Drogon)
+
 if(FAULTTWIN_ENABLE_CLANG_TIDY)
   find_program(FAULTTWIN_CLANG_TIDY_EXE NAMES clang-tidy REQUIRED)
 endif()

@@ -65,8 +65,9 @@ std::variant<std::unique_ptr<LibpqSession>, SqlError> LibpqSession::connect(
     const std::string connect_timeout = std::to_string(options.connect_timeout.count());
     // Server-side guards for every session, independent of the role's own defaults.
     const std::string session_options =
-        "-c default_transaction_read_only=on -c statement_timeout=" +
-        std::to_string(options.statement_timeout.count()) + " -c lock_timeout=1000";
+        std::string(options.read_only ? "-c default_transaction_read_only=on " : "") +
+        "-c statement_timeout=" + std::to_string(options.statement_timeout.count()) +
+        " -c lock_timeout=1000";
 
     const std::array<const char*, 11> keywords{"host",
                                                "port",
@@ -184,12 +185,23 @@ std::optional<SqlOutcome> read_results(PGconn* conn) {
 }  // namespace
 
 SqlOutcome LibpqSession::query(std::string_view sql) {
+    return query_params(sql, {});
+}
+
+SqlOutcome LibpqSession::query_params(std::string_view sql,
+                                      const std::vector<std::optional<std::string>>& params) {
     PGconn* const conn = impl_->conn.get();
     if (!usable()) {
         return SqlError{SqlErrorKind::kConnectionFailed, {}, "connection is not usable"};
     }
     const std::string statement(sql);
-    if (PQsendQueryParams(conn, statement.c_str(), 0, nullptr, nullptr, nullptr, nullptr, 0) == 0) {
+    std::vector<const char*> values;
+    values.reserve(params.size());
+    for (const auto& p : params) {
+        values.push_back(p ? p->c_str() : nullptr);
+    }
+    if (PQsendQueryParams(conn, statement.c_str(), static_cast<int>(values.size()), nullptr,
+                          values.empty() ? nullptr : values.data(), nullptr, nullptr, 0) == 0) {
         impl_->broken = PQstatus(conn) != CONNECTION_OK;
         return SqlError{
             SqlErrorKind::kConnectionFailed, {}, sanitize_message(PQerrorMessage(conn))};

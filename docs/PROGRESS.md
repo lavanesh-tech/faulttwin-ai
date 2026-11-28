@@ -11,8 +11,8 @@ approves it after technical review.
 | 1 | C++20 engineering foundation | Complete | Commits `3223488`, `b36a903`. Linux: GCC + Clang, 4 presets pass. macOS debug passes. CI green (run #1) |
 | 2 | Concurrent telemetry ingestion | Complete | Commits `3539c5c`, `f0624a4`. Approved by the owner; criterion 2.11 (full Experiment 2) deferred to Phase 11. Linux: GCC + Clang, 4 presets pass, TSan clean. macOS debug + release pass (AppleClang 21). CI green (run #3). Benchmarks measured in a cloud container only |
 | 3 | PostgreSQL monitoring | Complete | Commits `09d2e74`, `6e23c81`. Approved by the owner. macOS (owner): debug 179/179, integration 7/7. CI green (run #6). Collection measured in a cloud container only |
-| 4 | Time-series features and anomaly detection | In review | Linux container: GCC + Clang, 4 presets pass (246/248 tests), 8/8 integration tests. Rules, naive baseline, k-NN and perceptron evaluated on synthetic scenarios only. Commit `34879bf`. macOS (owner): debug 246/246, integration 8/8. CI green (run #8) |
-| 5 | Persistence, APIs and observability | Not started | |
+| 4 | Time-series features and anomaly detection | Complete | Commits `34879bf`, `6209dee`. Approved by the owner. Linux container: GCC + Clang, 4 presets pass (246/248 tests), 8/8 integration tests. Rules, naive baseline, k-NN and perceptron evaluated on synthetic scenarios only. macOS (owner): debug 246/246, integration 8/8. CI green (run #8) |
+| 5 | Persistence, APIs and observability | In review | Linux container: GCC + Clang, 4 presets pass (342/344 tests), sanitizers clean; integration 25/25 against the lab and the meta-db; Prometheus scrape verified. gRPC deferred (ADR-0022). Not yet run on macOS or in CI |
 | 6 | Chaos engineering and dataset generation | Not started | |
 | 7 | ML training and native C++ inference | Not started | |
 | 8 | Custom digital twin | Not started | |
@@ -22,6 +22,31 @@ approves it after technical review.
 | 12 | Portfolio, documentation and interview preparation | Not started | |
 
 ## Phase log
+
+### 2026-11-28 — Phase 4 approved; Phase 5 submitted for review
+- The owner approved Phase 4 and authorised Phase 5 ("next").
+- Implemented:
+  - `faulttwin_core`: bounded JSON parser and writer, time conversion, JSON-lines logger with
+    redaction;
+  - `faulttwin_observability`: Prometheus registry with bounded cardinality;
+  - `faulttwin_storage`: incident model, memory and PostgreSQL stores, recorder with an ordered
+    retry queue;
+  - `faulttwin_api`: `/api/v1`, health, readiness and metrics;
+  - `faulttwind`: monitor loop, recorder and Drogon v1.9.9.
+- Lab additions: the meta-db service, and opt-in Prometheus and Grafana. ADR-0019 to ADR-0022
+  added. ADR-0003 and ADR-0004 updated.
+- gRPC deferred: no telemetry crosses a process boundary yet (ADR-0022).
+- Verified (assistant, Linux container):
+  - GCC + Clang, 4 presets pass (342/344 tests), sanitizers clean;
+  - integration 25/25 with `FT_INTEGRATION=1`;
+  - clang-format and clang-tidy clean;
+  - Phase 4 evaluation output still byte-identical;
+  - Prometheus scrape and Grafana provisioning checked.
+- Measured: Drogon adds 50.4 s of build time on 4 vCPUs (1 run).
+- Owner-run on the Mac (after building Trantor without TLS, because it fails against OpenSSL 4.x): debug 342/342, integration 25/25.
+- Not run: CI with the Phase 5 workflow, API load and latency.
+- Waiting on: CI (5.13), owner review and approval (5.14). Phase 6 not started.
+- Report: `docs/phase-reports/phase-05.md`.
 
 ### 2026-11-26 — Phase 3 approved; Phase 4 submitted for review
 - The owner approved Phase 3 and authorised Phase 4 ("next"). During Phase 4 the owner also

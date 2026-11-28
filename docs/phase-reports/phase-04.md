@@ -1,6 +1,6 @@
 # Phase 4 Implementation Report — Time-Series Features and Anomaly Detection
 
-Date: 2026-11-26 · Prepared for independent technical review · Status: **In review, not complete.**
+Date: 2026-11-26 · Prepared for independent technical review · Status: **Complete (approved by the owner on 2026-11-28).**
 
 Terminology: *implemented* = code exists; *tested* = automated tests ran and passed;
 *measured* = a metric was recorded under a protocol; *independently verified* = someone other
@@ -546,7 +546,6 @@ From `docs/architecture/acceptance-criteria.md` (Phase 4 criteria made explicit 
 | 4.11 | Builds and tests on the owner's Mac | ✅ owner-run: debug 246/246, integration 8/8, evaluation byte-identical |
 | 4.12 | CI green with the Phase 4 workflow | ✅ CI run #8 on `34879bf` green (6m 4s) |
 | 4.13 | No AI authorship; no assistant commits | ✅ |
-| 4.14 | Owner approval after independent review | ⏳ |
+| 4.14 | Owner approval after independent review | ✅ approved 2026-11-28 |
 
-**Phase 4 is not complete.** Still open: your review and
-approval (4.14). Phase 5 has not been started.
+**Phase 4 is complete.** The owner approved it on 2026-11-28 and authorised Phase 5.

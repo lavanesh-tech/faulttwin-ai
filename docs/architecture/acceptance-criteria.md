@@ -93,11 +93,25 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 4.11 | Builds and tests on the owner's Mac | ✅ owner-run (Apple Silicon, AppleClang): debug 246/246 after a test-only fix (the golden-hash test hashed the raw `system_clock` tick count, which differs between libstdc++ and libc++); integration 8/8; `summary.json` byte-identical to Linux | `results/phase-04/integration/darwin-arm64.log` |
 | 4.12 | CI green with the Phase 4 workflow | ✅ CI run #8 on `34879bf` green (6m 4s, seen in the owner's GitHub Actions screenshot), including the step that reproduces the committed detection results byte for byte | GitHub Actions run #8 |
 | 4.13 | No AI authorship; no assistant commits | ✅ | phase report §20 |
-| 4.14 | Owner approval after independent review | ⏳ | |
+| 4.14 | Owner approval after independent review | ✅ approved by the owner on 2026-11-28 ("next") | `docs/PROGRESS.md` |
 
 ## Phase 5 — Persistence, APIs and observability
-- Incident storage, versioned Drogon REST API, health/readiness, Prometheus metrics, structured logs.
-- gRPC transport only with a recorded justification (ADR).
+| # | Criterion | Status | Evidence |
+|---|---|---|---|
+| 5.1 | Incident model and lifecycle: open, escalate, resolve, orphans closed at startup, write-once acknowledgement | ✅ tested | `recorder_test.cpp`, contract suite |
+| 5.2 | Persistent incident store outside the monitored cluster (own network, volume, least-privilege role), versioned migrations that refuse a newer schema | ✅ tested (integration, Linux container) | ADR-0020, `tests/integration/metadb_test.cpp`, `results/phase-05/integration/` |
+| 5.3 | The memory and PostgreSQL stores pass the same contract | ✅ tested (11 cases each) | `incident_store_contract.hpp` |
+| 5.4 | Store outages do not lose or reorder accepted detections; the retry queue is bounded and drops are counted | ✅ tested | `RecorderTest.*` |
+| 5.5 | Versioned REST API under `/api/v1` with an OpenAPI contract, strict query and body validation, one error format | ✅ tested | ADR-0021, `docs/api/openapi.yaml`, `api_service_test.cpp` |
+| 5.6 | Drogon HTTP service; drains and exits 0 on SIGTERM | ✅ tested (e2e) | `scripts/e2e-faulttwind.sh`, `e2e.faulttwind_synthetic`, `integration.faulttwind_metadb` |
+| 5.7 | Health and readiness reflect store reachability, monitor progress and draining | ✅ tested | `ApiTest.ReadyzNeedsAMonitorCycleAndAStore` |
+| 5.8 | Prometheus metrics with bounded label cardinality; Prometheus and Grafana provisioned | ✅ tested; scrape verified (Linux container) | ADR-0019, `metrics_test.cpp`, `results/phase-05/observability/` |
+| 5.9 | Structured JSON logs with secret redaction | ✅ tested | `time_logger_test.cpp` |
+| 5.10 | gRPC transport only with a recorded justification | ✅ deferred with a recorded justification | ADR-0022 |
+| 5.11 | All presets pass with GCC and Clang on Linux; clang-tidy and clang-format clean; Phase 4 evaluation output unchanged | ✅ tested (Linux container): 8/8 presets, sanitizers clean, Phase 4 output byte-identical | `results/phase-05/{gcc,clang}/`, phase report §14 |
+| 5.12 | Builds and tests on the owner's Mac | ✅ owner-run (Apple Silicon, AppleClang, Homebrew OpenSSL 4.1 present but unused): debug 342/342 including the `faulttwind` CLI and end-to-end tests, integration 25/25 with the lab and the meta-db, after the `TRANTOR_USE_TLS=none` build fix | `results/phase-05/integration/darwin-arm64.log` |
+| 5.13 | CI green with the Phase 5 workflow | ⏳ NOT RUN | |
+| 5.14 | No AI authorship; no assistant commits; owner approval after independent review | ⏳ approval | phase report §20 |
 
 ## Phase 6 — Chaos engineering and dataset generation
 - Scenario files with all ten fields from Module G; ≥ 30 distinct configurations *(T)*.

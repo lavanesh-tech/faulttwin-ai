@@ -87,6 +87,20 @@ results and should not be phrased as such.
 | Phase 4 CI run (`34879bf`, including the byte-for-byte detection reproduction step) | TESTED (CI) | GitHub Actions `ci` run #8, green, 6m 4s |
 | k-NN and perceptron: exact scoring, deterministic training, no train/tune/test overlap | TESTED | `tests/unit/detection/learned_test.cpp`, `cli.detect_rejects_overlapping_splits` |
 
+## Phase 5 functional evidence (not resume metrics)
+
+| Item | Status | Evidence |
+|---|---|---|
+| Incident store contract (11 cases) passes on the memory store and on PostgreSQL | TESTED (Linux container) | `tests/unit/storage/incident_store_contract.hpp`, `results/phase-05/integration/` |
+| Meta-db: idempotent migrations, newer schema refused, one-open-incident index, least-privilege role | TESTED (Linux container) | `tests/integration/metadb_test.cpp` |
+| Store outage: detections kept in order and replayed; bounded queue drops are counted | TESTED | `RecorderTest.*` |
+| `/api/v1` validation, auth, error format, request ids, readiness | TESTED | `tests/unit/api/api_service_test.cpp` |
+| `faulttwind` over real HTTP, memory and PostgreSQL stores, clean SIGTERM exit | TESTED (Linux container) | `scripts/e2e-faulttwind.sh`, `e2e.faulttwind_synthetic`, `integration.faulttwind_metadb` |
+| Prometheus scrapes `faulttwind`; Grafana datasource and dashboard provisioned | TESTED (Linux container) | `results/phase-05/observability/linux-x86_64-container.txt` |
+| Drogon build cost: 50.4 s on 4 vCPUs | MEASURED (1 run, container) | `results/phase-05/build-cost/linux-x86_64-container.txt` |
+| Phase 5 on macOS (debug 342/342, integration 25/25, AppleClang) | TESTED (owner-run) | `results/phase-05/integration/darwin-arm64.log` |
+| Phase 5 CI run | NOT RUN | |
+
 ## Phase 4 (detection on synthetic scenarios)
 
 Measured by the AI assistant in one 4-vCPU Linux cloud container, GCC 13.3 Release, base

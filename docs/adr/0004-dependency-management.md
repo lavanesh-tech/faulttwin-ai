@@ -1,6 +1,7 @@
 # ADR-0004: Dependency management — pinned FetchContent now, package manager when heavy dependencies arrive
 
-- Status: Accepted for Phase 1; the Phase 5 part is Proposed
+- Status: Accepted. The Phase 5 part was settled by ADR-0021: FetchContent with commit pins
+  continues and vcpkg is not adopted.
 - Date: 2026-11-25
 - Supersedes: the earlier draft "vcpkg manifest mode inside a pinned dev container"
 

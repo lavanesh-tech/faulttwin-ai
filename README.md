@@ -6,13 +6,15 @@ telemetry, detect anomalies, predict developing failures, simulate recovery stra
 discrete-event digital twin and recommend evidence-based actions. It is advisory: it does not
 execute destructive or production recovery actions.
 
-> **Status: Phase 4 of 12 (time-series features and anomaly detection) submitted for review.**
+> **Status: Phase 5 of 12 (incident storage, HTTP API, self-observability) submitted for review.**
 > What exists today is the build system, the telemetry value model with validation, a
 > synthetic-data CLI, a bounded concurrent ingest pipeline, a Docker Compose PostgreSQL lab
 > (primary + 2 streaming replicas), a read-only PostgreSQL and host collector
 > (`faulttwin-monitor`), event-time rolling-window features, a rule-based anomaly detector with an
-> evaluation harness on synthetic scenarios (`faulttwin-detect`), and tests, including integration
-> tests against the lab. Measurements so far come from one cloud container and are not
+> evaluation harness on synthetic scenarios (`faulttwin-detect`), the `faulttwind` daemon (monitor
+> loop, incidents stored in a separate PostgreSQL meta-db, a versioned HTTP API on Drogon,
+> Prometheus metrics, JSON logs), and tests, including integration tests against the lab. gRPC is
+> designed for but not built (ADR-0022). Measurements so far come from one cloud container and are not
 > independently reproduced; detection quality has only been measured on synthetic data. Everything
 > else is design. See [`docs/PROGRESS.md`](docs/PROGRESS.md).
 
@@ -53,6 +55,18 @@ execute destructive or production recovery actions.
   k-NN distance detector (unsupervised) and an averaged perceptron (supervised), train on the
   first half of the validation seeds, pick their alert thresholds on the second half and are
   evaluated on the same test splits (ADR-0018).
+- `faulttwin_storage`: incidents (one alert lifetime per rule and node, at most 3 events,
+  write-once acknowledgement), an `IncidentStore` interface with a bounded in-memory store and a
+  PostgreSQL store on a separate meta-db (single-statement writes, bind parameters only,
+  versioned migrations), and a recorder with a bounded, ordered retry queue for store outages
+  (ADR-0020).
+- `faulttwin_api`, `faulttwin_observability`, `faulttwin_core`: the HTTP API as a
+  transport-free service (routing, strict query and body validation, Bearer auth for writes,
+  one error format, request ids), a Prometheus metrics registry with bounded label sets, JSON-lines
+  logging with secret redaction, and a strict bounded JSON parser (ADR-0019, ADR-0021).
+- `faulttwind` (needs libpq and jsoncpp): runs the monitor loop against the lab (or a synthetic
+  scenario), records incidents, and serves `/api/v1`, `/healthz`, `/readyz` and `/metrics` on
+  Drogon. Loopback only unless `--allow-remote`; drains cleanly on SIGTERM.
 
 ## Build and test
 
@@ -60,14 +74,16 @@ Requirements: CMake ≥ 3.25, Ninja, GCC ≥ 13 or Clang ≥ 18, network access 
 first configure (GoogleTest is fetched at a pinned commit). Sanitizer builds with Clang on Ubuntu
 also need `libclang-rt-18-dev`. The PostgreSQL collector and its tests need libpq
 (`sudo apt-get install libpq-dev` or `brew install libpq`; found automatically on macOS); without
-it they are skipped and everything else still builds.
+it they are skipped and everything else still builds. `faulttwind` also needs jsoncpp
+(`sudo apt-get install libjsoncpp-dev uuid-dev zlib1g-dev` or `brew install jsoncpp`); Drogon itself
+is fetched at a pinned commit on the first configure. Without jsoncpp `faulttwind` is skipped.
 
 ```bash
 cmake --preset debug          # or: release, asan-ubsan, tsan
 cmake --build --preset debug
 ctest --preset debug
 
-# Everything, with full logs saved under results/phase-04/<compiler>/
+# Everything, with full logs saved under results/phase-05/<compiler>/
 scripts/verify-presets.sh gcc
 scripts/verify-presets.sh clang
 
@@ -91,6 +107,22 @@ docker compose down -v                   # stop and delete the lab data
 
 Integration tests that need the cluster are skipped unless `FT_INTEGRATION=1`, so a plain `ctest`
 passes without Docker. `scripts/measure-collection.sh` records collection cost and freshness.
+
+## faulttwind (incidents and HTTP API)
+
+```bash
+set -a; . ./.env; set +a                 # FT_API_KEY, FT_METADB_*, FT_MONITOR_*
+./build/debug/src/server/faulttwind --source postgres --store postgres   # live lab, meta-db
+./build/debug/src/server/faulttwind                                      # synthetic, in memory
+curl -s 127.0.0.1:8080/readyz
+curl -s '127.0.0.1:8080/api/v1/incidents?state=open&limit=10'
+curl -s -X POST -H "Authorization: Bearer $FT_API_KEY" -H 'Content-Type: application/json' \
+     -d '{"by":"me","note":"looking"}' 127.0.0.1:8080/api/v1/incidents/1/acknowledge
+docker compose --profile observability up -d   # Prometheus on :59090, Grafana on :53000
+```
+
+The API contract is [`docs/api/openapi.yaml`](docs/api/openapi.yaml). The synthetic source replays
+a Phase 4 scenario, so every value it reports is generated, not measured.
 
 ## Anomaly detection
 
@@ -124,6 +156,10 @@ include/faulttwin/collectors/  Reading quality, LSN, SQL session, PostgreSQL sna
                                topology, Linux resources, libpq adapter
 include/faulttwin/features/    Observation, rolling window, feature schema, extractor, adapters
 include/faulttwin/detection/   Rules, rule engine, online detector, scenarios, evaluation, JSON
+include/faulttwin/core/        JSON parser and writer, time conversion, structured logger
+include/faulttwin/observability/  Prometheus metrics registry
+include/faulttwin/storage/     Incident model, store interface, memory and PostgreSQL stores, recorder
+include/faulttwin/api/         HTTP request/response, API service, status board
 src/telemetry/                 Library implementation
 src/concurrency/, src/ingest/  Library implementations
 bench/                         Google Benchmark suite (Release only)
@@ -132,10 +168,14 @@ src/monitor/                   faulttwin-monitor CLI
 src/features/, src/detection/  Feature and detection libraries
 src/detect/                    faulttwin-detect CLI (tuning and evaluation on synthetic scenarios)
 src/cli/                       faulttwin-synth (options + report are a small testable library)
+src/core/, src/observability/, src/storage/, src/api/  Phase 5 libraries
+src/server/                    faulttwind (options, monitor loop, Drogon adapter, main)
 tests/unit/                    GoogleTest suites
 tests/integration/             Tests against the Compose lab (skipped without FT_INTEGRATION=1)
 tests/cli/                     CLI determinism checks (CMake scripts)
-compose.yaml, lab/             Lab cluster definition, init and replica bootstrap scripts
+compose.yaml, lab/             Lab cluster and meta-db definition, init and replica bootstrap scripts
+infra/                         Prometheus scrape config, Grafana provisioning and dashboard
+docs/api/openapi.yaml          HTTP API contract (v1)
 .env.example                   Lab configuration template (copy to .env; never commit .env)
 cmake/                         Warnings, sanitizers, pinned dependencies
 scripts/verify-presets.sh      Configure/build/test every preset and save logs
@@ -145,7 +185,8 @@ scripts/lab-init-env.sh        Create .env with random passwords
 scripts/run-integration-tests.sh, measure-collection.sh  Lab tests and collection measurements
 scripts/features-reference.py  Exact-arithmetic reference for the feature golden fixture
 scripts/run-detection-benchmarks.sh  Release build + Phase 4 benchmarks
-results/phase-01/ … phase-04/  Raw logs and measurement output per phase
+scripts/e2e-faulttwind.sh      Start faulttwind and check it over real HTTP
+results/phase-01/ … phase-05/  Raw logs and measurement output per phase
 docs/                          Architecture, ADRs, evaluation plan, evidence ledger, phase reports
 .github/workflows/ci.yml       Linux CI: gcc/clang × 4 presets, clang-format, clang-tidy, lab integration
 ```
@@ -164,7 +205,9 @@ Directories for later modules are created only when those modules are implemente
   [limitations](docs/evaluation/limitations.md)
 - [Evidence ledger](docs/resume/evidence-ledger.md)
 - [Phase 1 report](docs/phase-reports/phase-01.md), [Phase 2 report](docs/phase-reports/phase-02.md),
-  [Phase 3 report](docs/phase-reports/phase-03.md), [Phase 4 report](docs/phase-reports/phase-04.md)
+  [Phase 3 report](docs/phase-reports/phase-03.md), [Phase 4 report](docs/phase-reports/phase-04.md),
+  [Phase 5 report](docs/phase-reports/phase-05.md)
+- [HTTP API (OpenAPI)](docs/api/openapi.yaml)
 
 ## Development process and AI assistance
 
@@ -175,4 +218,6 @@ reported only when measured.
 ## Licence
 
 Not yet chosen. Third-party components keep their own licences (GoogleTest: BSD-3-Clause;
-Google Benchmark: Apache-2.0; libpq and the PostgreSQL image: PostgreSQL Licence).
+Google Benchmark: Apache-2.0; libpq and the PostgreSQL image: PostgreSQL Licence; Drogon: MIT;
+Trantor: BSD-3-Clause; jsoncpp: MIT; Prometheus and Grafana images: Apache-2.0 and AGPL-3.0, used
+as separate services only).

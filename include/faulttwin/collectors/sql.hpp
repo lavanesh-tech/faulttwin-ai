@@ -54,6 +54,16 @@ class SqlSession {
 
     /// Runs one statement without parameters and returns all rows as text.
     [[nodiscard]] virtual SqlOutcome query(std::string_view sql) = 0;
+
+    /// Runs one statement with $1..$n text parameters (std::nullopt is SQL NULL). Values are
+    /// sent separately from the statement text, so they can never change the SQL. Sessions that
+    /// only run fixed monitoring queries need not support it.
+    [[nodiscard]] virtual SqlOutcome query_params(
+        std::string_view sql, const std::vector<std::optional<std::string>>& params) {
+        (void)sql;
+        (void)params;
+        return SqlError{SqlErrorKind::kQueryFailed, {}, "this session does not take parameters"};
+    }
 };
 
 /// Collapses a message to one line and at most `max_length` bytes.

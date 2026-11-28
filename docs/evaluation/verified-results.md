@@ -56,3 +56,18 @@ Detection quality is on deterministic **synthetic** scenarios only.
 | Shifted split (weaker faults) | seeds 2001–2040 | F1: rules 0.970, naive 0.749, k-NN 0.904, perceptron 0.638 | as above | MEASURED (synthetic) |
 | Live stale-telemetry detection | `docker compose stop` of a replica, 1 s cycles | fired 3037–3046 ms after stop returned; resolved 6097–6125 ms after start | `results/phase-04/integration/` | MEASURED (container, 3 single runs) |
 | Benchmarks (GCC / Clang Release, median of 5) | see phase report §16 | rule evaluation 143 / 141 ns; feature vector 5.0 / 3.5 µs; k-NN score 11.9 / 11.2 µs; perceptron 6.9 / 6.6 ns | `results/phase-04/benchmarks/{gcc,clang}/` | MEASURED (container) |
+
+## Phase 5 (persistence, APIs and observability)
+
+Run by the AI assistant in one 4-vCPU Linux cloud container, base `6209dee` plus uncommitted
+Phase 5 changes. **Not independently verified; not run in CI. Owner-run on macOS: debug 342/342, integration 25/25.** These are
+functional results and one build-cost measurement. No API performance is claimed.
+
+| Item | Configuration | Value | Artifact | Status |
+|---|---|---|---|---|
+| Integration suite with the meta-db | GCC debug, `FT_INTEGRATION=1` | 25/25 passed (8 lab, 16 meta-db, 1 daemon e2e on PostgreSQL) | `results/phase-05/integration/linux-x86_64-container.log` | TESTED (container) |
+| Presets | GCC + Clang × debug, release, asan-ubsan, tsan | all 8 pass (342 tests; 344 in release); ASan, UBSan and TSan clean | `results/phase-05/{gcc,clang}/` | TESTED (container) |
+| Phase 4 evaluation output after the refactor | GCC debug | 8/8 files byte-identical to `results/phase-04/detection/` | phase report §14 | TESTED (container) |
+| Prometheus scrape and Grafana provisioning | Prometheus 3.5.0, Grafana 12.1.0, faulttwind on docker0 | `up` = 1; datasource health OK; dashboard provisioned | `results/phase-05/observability/linux-x86_64-container.txt` | TESTED (container) |
+| Drogon build cost | release, fresh build dir, -j4, GCC 13.3 | 50.4 s (rest of the project 66.2 s, configure 8.0 s) | `results/phase-05/build-cost/linux-x86_64-container.txt` | MEASURED (1 run, container) |
+| Meta-db memory | `docker stats` after the integration run | 39.8 MiB | phase report / ADR-0020 | MEASURED (1 sample) |

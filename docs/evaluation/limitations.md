@@ -98,3 +98,22 @@ Kept current with the implementation. Each phase adds its limitations here.
 - Cross-platform bit-identity of the scenarios rests on `-ffp-contract=off` and IEEE-754 doubles;
   it is tested on Linux x86_64 with GCC and Clang, and on Apple Silicon with AppleClang
   (`summary.json` byte-identical, owner-run).
+
+## Phase 5
+- Read endpoints have no authentication, and there is no TLS or rate limiting. `faulttwind`
+  listens on loopback by default, and any other address needs `--allow-remote`. Phase 11.
+- TLS is compiled out of Drogon's network library (`TRANTOR_USE_TLS=none`), so turning TLS on
+  later needs a rebuild and an OpenSSL that Trantor supports (it fails against OpenSSL 4.x).
+- One meta-db connection behind a mutex serves both API reads and recorder writes. This is fine
+  at lab rates but was not measured under load. No API latency or throughput number exists yet.
+- The recorder's retry queue is in memory. Detections queued during a meta-db outage are lost if
+  the daemon is killed before the store returns. They are counted, and the next start closes
+  orphans as `monitor_restarted`.
+- The migration lock (advisory lock in one transaction) is designed for concurrent starts, but
+  that race is not tested.
+- `/api/v1/nodes` shows only the latest cycle. There is no history or trend endpoint yet.
+- The synthetic source replays Phase 4 scenarios, so its values are generated, not measured.
+- A Prometheus scrape of a loopback-bound `faulttwind` was verified only on Linux, through the
+  docker0 address with `--allow-remote`. On Docker Desktop for macOS it is expected to work
+  through `host.docker.internal`, but it was not verified.
+- Grafana is AGPL-3.0. It runs as a separate, unmodified container only.

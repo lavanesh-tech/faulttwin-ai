@@ -1,0 +1,10 @@
+date_utc: 2026-11-28T16:32:17Z
+cpus: 4
+cpu: Intel(R) Xeon(R) Processor @ 2.30GHz
+compiler: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+preset: release, fresh build directory. FETCHCONTENT_SOURCE_DIR_DROGON points at an existing checkout, so download time is excluded.
+configure_wall_s: 8.0
+drogon_and_trantor_build_wall_s (target drogon, -j4): 50.4
+rest_of_project_build_wall_s (all remaining targets incl. tests and benchmarks, -j4): 66.2
+10839188 = drogon_plus_trantor_static_lib_bytes
+faulttwind_binary_bytes: 3638696

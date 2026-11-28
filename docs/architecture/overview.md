@@ -307,7 +307,7 @@ JSON logs with `trace_id` propagated from HTTP request to jobs.
 | Small, synthetic datasets overfit | Inflated metrics | Grouped split by scenario, held-out fault type, report CIs and FP/hour |
 | Twin may not match reality | Misleading rankings | Calibration error reported; outcomes labelled simulated; rank stability shown |
 
-## 10. Implemented so far (Phases 1–4)
+## 10. Implemented so far (Phases 1–5)
 
 | Component | Location | Status |
 |---|---|---|
@@ -323,6 +323,11 @@ JSON logs with `trace_id` propagated from HTTP request to jobs.
 | Features: `Observation`, `RollingWindow` (Welford), `FeatureSchema` v1, `FeatureExtractor`, adapters | `include/faulttwin/features/`, `src/features/` | Phase 4: implemented, unit tested, golden fixture (ADR-0016) |
 | Detection: `Rule`, `RuleEngine`, `OnlineDetector`, scenarios, scoring, tuning; `faulttwin-detect`; `faulttwin-monitor --detect` | `include/faulttwin/detection/`, `src/detection/`, `src/detect/` | Phase 4: implemented, tested; evaluated on synthetic scenarios only (ADR-0017) |
 | Learned comparison detectors: `KnnDetector`, `AveragedPerceptron`, `Standardizer`, `ScoreAlerter`, `train_and_tune` | `include/faulttwin/detection/learned.hpp`, `src/detection/learned.cpp` | Phase 4: implemented, tested; synthetic scenarios only; not the Phase 7 model (ADR-0018) |
+| Core: bounded JSON parser and writer, time conversion, JSON-lines logger with redaction | `include/faulttwin/core/`, `src/core/` | Phase 5: implemented, unit tested (ADR-0019) |
+| Metrics registry (Prometheus text 0.0.4, bounded cardinality) | `include/faulttwin/observability/`, `src/observability/` | Phase 5: implemented, unit tested (ADR-0019) |
+| Incidents: model, `IncidentStore` (memory, PostgreSQL meta-db), `IncidentRecorder` | `include/faulttwin/storage/`, `src/storage/` | Phase 5: implemented; contract tested on both stores (ADR-0020) |
+| HTTP API (`ApiService`, `/api/v1`), `faulttwind` daemon on Drogon | `include/faulttwin/api/`, `src/api/`, `src/server/`, `docs/api/openapi.yaml` | Phase 5: implemented, unit and e2e tested (ADR-0021) |
+| Meta-db, Prometheus, Grafana | `compose.yaml`, `lab/metadb/`, `infra/` | Phase 5: tested in the Linux container |
 
 Phase 2 differences from the target design in §4–§6: there is no `core` library yet (the only
 clock abstraction needed is the injectable `NowFn`), the event type is still the Phase 1
@@ -337,3 +342,9 @@ detector interface is a concrete `RuleEngine` over `FeatureVector`s rather than 
 abstraction, because there is one implementation; EWMA and median/MAD detectors are deferred
 (ADR-0017). `ml/feature_spec.yaml` does not exist yet; the C++ `FeatureSchema` plus the golden
 fixture from `scripts/features-reference.py` are the current contract.
+
+Phase 5 differences from §4–§6: `faulttwind` runs the monitor loop, the incident recorder and the
+HTTP API in one process, as planned. The "incident log" is the PostgreSQL meta-db, not a Protobuf
+file (ADR-0020, ADR-0022). There is no gRPC (ADR-0022). The API layer is transport-free
+(`ApiService`), and Drogon is only an adapter (ADR-0021). Read endpoints are unauthenticated and
+loopback-only by default; TLS and read authentication are Phase 11.

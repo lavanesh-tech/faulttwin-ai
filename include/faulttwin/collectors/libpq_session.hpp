@@ -29,10 +29,14 @@ struct ConnectOptions {
     /// Server-side statement_timeout set for the session as a second line of defence.
     std::chrono::milliseconds statement_timeout{1500};
     std::string application_name{"faulttwin-collector"};
+    /// Forces default_transaction_read_only=on for the session. Collectors always keep it on;
+    /// only FaultTwin's own meta-db store turns it off (Phase 5).
+    bool read_only{true};
 };
 
-/// Owns one libpq connection. Every session is forced read-only
-/// (default_transaction_read_only=on) in addition to the role's own settings.
+/// Owns one libpq connection. Sessions are forced read-only
+/// (default_transaction_read_only=on) in addition to the role's own settings unless
+/// ConnectOptions::read_only is false.
 class LibpqSession final : public SqlSession {
   public:
     [[nodiscard]] static std::variant<std::unique_ptr<LibpqSession>, SqlError> connect(
@@ -46,6 +50,8 @@ class LibpqSession final : public SqlSession {
     ~LibpqSession() override;
 
     [[nodiscard]] SqlOutcome query(std::string_view sql) override;
+    [[nodiscard]] SqlOutcome query_params(
+        std::string_view sql, const std::vector<std::optional<std::string>>& params) override;
     /// False after a connection-level failure or a client-side timeout.
     [[nodiscard]] bool usable() const noexcept;
 
