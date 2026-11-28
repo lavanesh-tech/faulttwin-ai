@@ -44,8 +44,9 @@ approves it after technical review.
   - Prometheus scrape and Grafana provisioning checked.
 - Measured: Drogon adds 50.4 s of build time on 4 vCPUs (1 run).
 - Owner-run on the Mac (after building Trantor without TLS, because it fails against OpenSSL 4.x): debug 342/342, integration 25/25.
-- Not run: CI with the Phase 5 workflow, API load and latency.
-- Waiting on: CI (5.13), owner review and approval (5.14). Phase 6 not started.
+- Owner pushed `3548ec2` and `c96a6c4` (Trantor TSan suppression). CI run #10 on `3548ec2` green (8m 18s) and run #11 on `c96a6c4` green (8m 17s), seen in the owner's GitHub Actions screenshot.
+- Not run: API load and latency.
+- Waiting on: owner review and approval (5.14). Phase 6 not started.
 - Report: `docs/phase-reports/phase-05.md`.
 
 ### 2026-11-26 — Phase 3 approved; Phase 4 submitted for review

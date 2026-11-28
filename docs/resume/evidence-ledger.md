@@ -99,7 +99,7 @@ results and should not be phrased as such.
 | Prometheus scrapes `faulttwind`; Grafana datasource and dashboard provisioned | TESTED (Linux container) | `results/phase-05/observability/linux-x86_64-container.txt` |
 | Drogon build cost: 50.4 s on 4 vCPUs | MEASURED (1 run, container) | `results/phase-05/build-cost/linux-x86_64-container.txt` |
 | Phase 5 on macOS (debug 342/342, integration 25/25, AppleClang) | TESTED (owner-run) | `results/phase-05/integration/darwin-arm64.log` |
-| Phase 5 CI run | NOT RUN | |
+| Phase 5 CI runs (#10 on `3548ec2`, #11 on `c96a6c4`) | TESTED (CI, green) | owner's GitHub Actions screenshot |
 
 ## Phase 4 (detection on synthetic scenarios)
 

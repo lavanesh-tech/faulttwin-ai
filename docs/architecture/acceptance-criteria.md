@@ -110,7 +110,7 @@ Status legend: ✅ met (evidence linked) · ⏳ not yet verified · ❌ not met 
 | 5.10 | gRPC transport only with a recorded justification | ✅ deferred with a recorded justification | ADR-0022 |
 | 5.11 | All presets pass with GCC and Clang on Linux; clang-tidy and clang-format clean; Phase 4 evaluation output unchanged | ✅ tested (Linux container): 8/8 presets, sanitizers clean, Phase 4 output byte-identical | `results/phase-05/{gcc,clang}/`, phase report §14 |
 | 5.12 | Builds and tests on the owner's Mac | ✅ owner-run (Apple Silicon, AppleClang, Homebrew OpenSSL 4.1 present but unused): debug 342/342 including the `faulttwind` CLI and end-to-end tests, integration 25/25 with the lab and the meta-db, after the `TRANTOR_USE_TLS=none` build fix | `results/phase-05/integration/darwin-arm64.log` |
-| 5.13 | CI green with the Phase 5 workflow | ⏳ NOT RUN | |
+| 5.13 | CI green with the Phase 5 workflow | ✅ CI run #10 on `3548ec2` green (8m 18s) and run #11 on `c96a6c4` green (8m 17s), seen in the owner's GitHub Actions screenshot | GitHub Actions runs #10, #11 |
 | 5.14 | No AI authorship; no assistant commits; owner approval after independent review | ⏳ approval | phase report §20 |
 
 ## Phase 6 — Chaos engineering and dataset generation

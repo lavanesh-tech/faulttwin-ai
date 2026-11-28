@@ -8,7 +8,7 @@ other than the implementer reproduced it.
 
 In Phase 5, everything was built, tested and measured **by the AI assistant in one Linux cloud
 container**, then built and tested by the owner on their Mac (debug 342/342, integration 25/25).
-CI has not run yet (§22), and nothing is independently verified.
+CI passed on both Phase 5 commits (§20). Nothing is independently verified.
 
 Base: the owner's `main` at `6209dee` (Phase 4 plus the Mac follow-up docs). All Phase 5 changes
 are uncommitted in the owner's working tree. The assistant ran no git command that changes
@@ -443,7 +443,8 @@ directory, Drogon source already downloaded, 4 vCPUs, GCC 13.3
 
 `libdrogon.a` plus `libtrantor.a` take 10.8 MB, and the release `faulttwind` binary is 3.6 MB.
 Each CI matrix job builds Drogon once, so expect about 50 s more per job on a 4-vCPU runner
-(not yet observed in CI).
+CI runs went from 6m 4s (Phase 4, run #8) to 8m 18s and 8m 17s (runs #10 and #11).
+That is whole-run wall time, which includes everything else Phase 5 added, not Drogon alone.
 
 ## 17. Baseline comparison
 There is no performance baseline in this phase.
@@ -509,6 +510,9 @@ Phase 5: incident storage, versioned HTTP API, metrics and logging
   docs, evidence and CI updates
 ```
 
+Pushed by the owner: `3548ec2` (Phase 5, 97 files) and `c96a6c4` (Trantor TSan suppression,
+refreshed Linux logs, 14 files). CI run #10 on `3548ec2` green (8m 18s) and run #11 on `c96a6c4` green (8m 17s), seen in the owner's GitHub Actions screenshot.
+
 ## 21. Known bugs and limitations
 No known bugs. Limitations, also in `docs/evaluation/limitations.md`:
 1. **Read endpoints have no authentication**, and there is no TLS or rate limiting. Loopback is
@@ -527,8 +531,8 @@ No known bugs. Limitations, also in `docs/evaluation/limitations.md`:
    warning when it starts with it.
 8. A Prometheus scrape of a loopback listener was verified only on Linux, via docker0 and
    `--allow-remote`. On Docker Desktop for macOS it is expected but unverified.
-9. All measurements ran in one 4-vCPU cloud container. The Mac run checked correctness only. CI has
-   not run.
+9. All measurements ran in one 4-vCPU cloud container. The Mac run checked correctness only. CI ran
+   on GitHub's runners (§20).
 10. The first macOS build failed inside Trantor (Drogon's network library): its OpenSSL provider
     does not compile against Homebrew OpenSSL 4.1.0. Trantor is now built with
     `TRANTOR_USE_TLS=none`, so `faulttwind` has no TLS and no OpenSSL dependency. It serves plain
@@ -538,7 +542,7 @@ No known bugs. Limitations, also in `docs/evaluation/limitations.md`:
 - **Still to do by the owner:**
   - moving `ci.phase-05.yml` into place and a green CI run;
   - review and approval.
-- **NOT RUN:** macOS release and sanitizer presets; CI with the Phase 5 workflow; API load and latency
+- **NOT RUN:** macOS release and sanitizer presets; API load and latency
   measurement; the macOS Prometheus/Grafana check.
 - **Deferred with an ADR:** gRPC telemetry transport (ADR-0022).
 - **Not implemented:** TLS, authentication for reads, rate limiting (Phase 11); incident
@@ -614,8 +618,8 @@ From `docs/architecture/acceptance-criteria.md` (Phase 5 criteria made explicit 
 | 5.10 | gRPC only with a recorded justification | ✅ deferred, ADR-0022 |
 | 5.11 | All presets pass with GCC and Clang; tidy and format clean; Phase 4 output unchanged | ✅ tested (Linux container) |
 | 5.12 | Builds and tests on the owner's Mac | ✅ owner-run (Apple Silicon, AppleClang, Homebrew OpenSSL 4.1 present but unused): debug 342/342 including the `faulttwind` CLI and end-to-end tests, integration 25/25 with the lab and the meta-db, after the `TRANTOR_USE_TLS=none` build fix |
-| 5.13 | CI green with the Phase 5 workflow | ⏳ NOT RUN |
+| 5.13 | CI green with the Phase 5 workflow | ✅ CI run #10 on `3548ec2` green (8m 18s) and run #11 on `c96a6c4` green (8m 17s), seen in the owner's GitHub Actions screenshot |
 | 5.14 | No AI authorship; no assistant commits; owner approval after review | ⏳ approval |
 
-**Phase 5 is not complete.** Still open: CI (5.13) and your review and
+**Phase 5 is not complete.** Still open: your review and
 approval (5.14). Phase 6 has not been started.

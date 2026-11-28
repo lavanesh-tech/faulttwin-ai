@@ -60,7 +60,7 @@ Detection quality is on deterministic **synthetic** scenarios only.
 ## Phase 5 (persistence, APIs and observability)
 
 Run by the AI assistant in one 4-vCPU Linux cloud container, base `6209dee` plus uncommitted
-Phase 5 changes. **Not independently verified; not run in CI. Owner-run on macOS: debug 342/342, integration 25/25.** These are
+Phase 5 changes. **Not independently verified. Owner-run on macOS: debug 342/342, integration 25/25. CI green (runs #10 and #11).** These are
 functional results and one build-cost measurement. No API performance is claimed.
 
 | Item | Configuration | Value | Artifact | Status |
