@@ -10,7 +10,7 @@ Preset CMake variables:
 
 -- FaultTwin: libpq 16.15 found; building faulttwin-monitor
 -- compiler: GNU
--- Trantor using SSL library: OpenSSL
+-- Trantor using SSL library: None
 -- Could NOT find c-ares (missing: C-ARES_INCLUDE_DIRS C-ARES_LIBRARIES) 
 -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
 -- Found std::filesystem
@@ -20,12 +20,48 @@ Preset CMake variables:
 -- Found UUID: /usr/lib/x86_64-linux-gnu/libuuid.so
 -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
 -- FaultTwin: Drogon v1.9.9 enabled; building faulttwind
--- Configuring done (0.6s)
+-- Configuring done (1.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug-gcc
 + cmake --build /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug-gcc
-[1/2] Building CXX object src/server/CMakeFiles/faulttwind.dir/main.cpp.o
-[2/2] Linking CXX executable src/server/faulttwind
+[1/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/LogStream.cc.o
+[2/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/MsgBuffer.cc.o
+[3/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/Date.cc.o
+[4/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/Logger.cc.o
+[5/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/ConcurrentTaskQueue.cc.o
+[6/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/SerialTaskQueue.cc.o
+[7/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/TimingWheel.cc.o
+[8/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/AsyncFileLogger.cc.o
+[9/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/EventLoop.cc.o
+[10/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/EventLoopThreadPool.cc.o
+[11/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/InetAddress.cc.o
+[12/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/Utilities.cc.o
+[13/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/Channel.cc.o
+[14/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/EventLoopThread.cc.o
+[15/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/Poller.cc.o
+[16/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/Acceptor.cc.o
+[17/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/Socket.cc.o
+[18/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/MemBufferNode.cc.o
+[19/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/TcpClient.cc.o
+[20/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/Connector.cc.o
+[21/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/StreamBufferNode.cc.o
+[22/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/AsyncStreamBufferNode.cc.o
+[23/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/Timer.cc.o
+[24/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/poller/KQueue.cc.o
+[25/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/TcpServer.cc.o
+[26/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/crypto/sha3.cc.o
+[27/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/crypto/md5.cc.o
+[28/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/crypto/sha1.cc.o
+[29/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/FileBufferNodeUnix.cc.o
+[30/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/crypto/sha256.cc.o
+[31/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/utils/crypto/blake2.cc.o
+[32/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/poller/EpollPoller.cc.o
+[33/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/TimerQueue.cc.o
+[34/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/poller/PollPoller.cc.o
+[35/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/TcpConnectionImpl.cc.o
+[36/38] Building CXX object _deps/drogon-build/trantor/CMakeFiles/trantor.dir/trantor/net/inner/NormalResolver.cc.o
+[37/38] Linking CXX static library _deps/drogon-build/trantor/libtrantor.a
+[38/38] Linking CXX executable src/server/faulttwind
 + env ctest --test-dir /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug-gcc --output-on-failure --no-tests=error
 Internal ctest changing into directory: /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug-gcc
 Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scratchpad/ft/build/debug-gcc
@@ -34,57 +70,57 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start   2: NodeIdTest.RejectsEmpty
   2/342 Test   #2: NodeIdTest.RejectsEmpty .................................................................................................................................................................................................................................   Passed    0.01 sec
         Start   3: NodeIdTest.LengthBoundaryIsInclusive
-  3/342 Test   #3: NodeIdTest.LengthBoundaryIsInclusive ....................................................................................................................................................................................................................   Passed    0.00 sec
+  3/342 Test   #3: NodeIdTest.LengthBoundaryIsInclusive ....................................................................................................................................................................................................................   Passed    0.01 sec
         Start   4: NodeIdTest.TooLongIsReportedBeforeCharacterErrors
   4/342 Test   #4: NodeIdTest.TooLongIsReportedBeforeCharacterErrors .......................................................................................................................................................................................................   Passed    0.01 sec
         Start   5: NodeIdTest.RejectsNonAlphanumericFirstCharacter
-  5/342 Test   #5: NodeIdTest.RejectsNonAlphanumericFirstCharacter .........................................................................................................................................................................................................   Passed    0.00 sec
+  5/342 Test   #5: NodeIdTest.RejectsNonAlphanumericFirstCharacter .........................................................................................................................................................................................................   Passed    0.01 sec
         Start   6: NodeIdTest.RejectsDisallowedCharacters
   6/342 Test   #6: NodeIdTest.RejectsDisallowedCharacters ..................................................................................................................................................................................................................   Passed    0.01 sec
         Start   7: NodeIdTest.RejectsEmbeddedNul
-  7/342 Test   #7: NodeIdTest.RejectsEmbeddedNul ...........................................................................................................................................................................................................................   Passed    0.00 sec
+  7/342 Test   #7: NodeIdTest.RejectsEmbeddedNul ...........................................................................................................................................................................................................................   Passed    0.01 sec
         Start   8: NodeRoleTest.DeclaredEnumeratorsAreValid
   8/342 Test   #8: NodeRoleTest.DeclaredEnumeratorsAreValid ................................................................................................................................................................................................................   Passed    0.01 sec
         Start   9: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid
-  9/342 Test   #9: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid .......................................................................................................................................................................................................   Passed    0.00 sec
+  9/342 Test   #9: NodeRoleTest.OutOfRangeUnderlyingValuesAreInvalid .......................................................................................................................................................................................................   Passed    0.01 sec
         Start  10: NodeRoleTest.StringRoundTrip
- 10/342 Test  #10: NodeRoleTest.StringRoundTrip ............................................................................................................................................................................................................................   Passed    0.00 sec
+ 10/342 Test  #10: NodeRoleTest.StringRoundTrip ............................................................................................................................................................................................................................   Passed    0.01 sec
         Start  11: NodeRoleTest.ParseIsExactAndCaseSensitive
  11/342 Test  #11: NodeRoleTest.ParseIsExactAndCaseSensitive ...............................................................................................................................................................................................................   Passed    0.01 sec
         Start  12: ValidationTest.EachPercentageFieldIsReportedSeparately
- 12/342 Test  #12: ValidationTest.EachPercentageFieldIsReportedSeparately ..................................................................................................................................................................................................   Passed    0.00 sec
+ 12/342 Test  #12: ValidationTest.EachPercentageFieldIsReportedSeparately ..................................................................................................................................................................................................   Passed    0.01 sec
         Start  13: ValidationTest.TimestampPolicy
  13/342 Test  #13: ValidationTest.TimestampPolicy ..........................................................................................................................................................................................................................   Passed    0.01 sec
         Start  14: ValidationTest.FutureSkewIsConfigurable
- 14/342 Test  #14: ValidationTest.FutureSkewIsConfigurable .................................................................................................................................................................................................................   Passed    0.00 sec
+ 14/342 Test  #14: ValidationTest.FutureSkewIsConfigurable .................................................................................................................................................................................................................   Passed    0.01 sec
         Start  15: ValidationTest.MissingLagOnReplicaIsNotZeroLag
  15/342 Test  #15: ValidationTest.MissingLagOnReplicaIsNotZeroLag ..........................................................................................................................................................................................................   Passed    0.01 sec
         Start  16: ValidationTest.ZeroLagOnReplicaIsAMeasurement
- 16/342 Test  #16: ValidationTest.ZeroLagOnReplicaIsAMeasurement ...........................................................................................................................................................................................................   Passed    0.00 sec
+ 16/342 Test  #16: ValidationTest.ZeroLagOnReplicaIsAMeasurement ...........................................................................................................................................................................................................   Passed    0.01 sec
         Start  17: ValidationTest.ReplicationLagRules
  17/342 Test  #17: ValidationTest.ReplicationLagRules ......................................................................................................................................................................................................................   Passed    0.01 sec
         Start  18: ValidationTest.InvalidRoleStillChecksLagNumerically
- 18/342 Test  #18: ValidationTest.InvalidRoleStillChecksLagNumerically .....................................................................................................................................................................................................   Passed    0.00 sec
+ 18/342 Test  #18: ValidationTest.InvalidRoleStillChecksLagNumerically .....................................................................................................................................................................................................   Passed    0.01 sec
         Start  19: ValidationTest.PrimaryLagStateIsNotApplicable
  19/342 Test  #19: ValidationTest.PrimaryLagStateIsNotApplicable ...........................................................................................................................................................................................................   Passed    0.01 sec
         Start  20: ValidationTest.ValidSamplePreservesEveryField
- 20/342 Test  #20: ValidationTest.ValidSamplePreservesEveryField ...........................................................................................................................................................................................................   Passed    0.00 sec
+ 20/342 Test  #20: ValidationTest.ValidSamplePreservesEveryField ...........................................................................................................................................................................................................   Passed    0.01 sec
         Start  21: ValidationTest.ReportsAllIssuesInFieldOrder
- 21/342 Test  #21: ValidationTest.ReportsAllIssuesInFieldOrder .............................................................................................................................................................................................................   Passed    0.00 sec
+ 21/342 Test  #21: ValidationTest.ReportsAllIssuesInFieldOrder .............................................................................................................................................................................................................   Passed    0.01 sec
         Start  22: ValidationTest.ValidationIsDeterministic
- 22/342 Test  #22: ValidationTest.ValidationIsDeterministic ................................................................................................................................................................................................................   Passed    0.00 sec
+ 22/342 Test  #22: ValidationTest.ValidationIsDeterministic ................................................................................................................................................................................................................   Passed    0.01 sec
         Start  23: ValidationTest.StableStringForms
  23/342 Test  #23: ValidationTest.StableStringForms ........................................................................................................................................................................................................................   Passed    0.01 sec
         Start  24: FreshnessTest.StaleIsAPropertyOfValidData
- 24/342 Test  #24: FreshnessTest.StaleIsAPropertyOfValidData ...............................................................................................................................................................................................................   Passed    0.00 sec
+ 24/342 Test  #24: FreshnessTest.StaleIsAPropertyOfValidData ...............................................................................................................................................................................................................   Passed    0.01 sec
         Start  25: FreshnessTest.SlightlyFutureSampleIsFresh
  25/342 Test  #25: FreshnessTest.SlightlyFutureSampleIsFresh ...............................................................................................................................................................................................................   Passed    0.01 sec
         Start  26: SyntheticTest.ProducesNodeCountTimesSamples
- 26/342 Test  #26: SyntheticTest.ProducesNodeCountTimesSamples .............................................................................................................................................................................................................   Passed    0.00 sec
+ 26/342 Test  #26: SyntheticTest.ProducesNodeCountTimesSamples .............................................................................................................................................................................................................   Passed    0.01 sec
         Start  27: SyntheticTest.SameSeedSameSequence
  27/342 Test  #27: SyntheticTest.SameSeedSameSequence ......................................................................................................................................................................................................................   Passed    0.01 sec
         Start  28: SyntheticTest.DifferentSeedDifferentSequence
- 28/342 Test  #28: SyntheticTest.DifferentSeedDifferentSequence ............................................................................................................................................................................................................   Passed    0.00 sec
+ 28/342 Test  #28: SyntheticTest.DifferentSeedDifferentSequence ............................................................................................................................................................................................................   Passed    0.01 sec
         Start  29: SyntheticTest.GoldenFirstSample
  29/342 Test  #29: SyntheticTest.GoldenFirstSample .........................................................................................................................................................................................................................   Passed    0.01 sec
         Start  30: SyntheticTest.CleanRunIsEntirelyValid
@@ -96,7 +132,7 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start  33: SyntheticTest.ReferenceNowIsLastTick
  33/342 Test  #33: SyntheticTest.ReferenceNowIsLastTick ....................................................................................................................................................................................................................   Passed    0.01 sec
         Start  34: CliOptionsTest.DefaultsWithNoArguments
- 34/342 Test  #34: CliOptionsTest.DefaultsWithNoArguments ..................................................................................................................................................................................................................   Passed    0.00 sec
+ 34/342 Test  #34: CliOptionsTest.DefaultsWithNoArguments ..................................................................................................................................................................................................................   Passed    0.01 sec
         Start  35: CliOptionsTest.ParsesEveryOption
  35/342 Test  #35: CliOptionsTest.ParsesEveryOption ........................................................................................................................................................................................................................   Passed    0.01 sec
         Start  36: CliOptionsTest.HelpWinsImmediately
@@ -104,11 +140,11 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start  37: CliOptionsTest.RejectsMalformedAndOutOfRangeValues
  37/342 Test  #37: CliOptionsTest.RejectsMalformedAndOutOfRangeValues ......................................................................................................................................................................................................   Passed    0.01 sec
         Start  38: CliOptionsTest.UsageMentionsProgramName
- 38/342 Test  #38: CliOptionsTest.UsageMentionsProgramName .................................................................................................................................................................................................................   Passed    0.00 sec
+ 38/342 Test  #38: CliOptionsTest.UsageMentionsProgramName .................................................................................................................................................................................................................   Passed    0.01 sec
         Start  39: CliReportTest.FormatsTimestampAsUtcWithMilliseconds
  39/342 Test  #39: CliReportTest.FormatsTimestampAsUtcWithMilliseconds .....................................................................................................................................................................................................   Passed    0.01 sec
         Start  40: CliReportTest.JsonQuoteEscapesUntrustedText
- 40/342 Test  #40: CliReportTest.JsonQuoteEscapesUntrustedText .............................................................................................................................................................................................................   Passed    0.00 sec
+ 40/342 Test  #40: CliReportTest.JsonQuoteEscapesUntrustedText .............................................................................................................................................................................................................   Passed    0.01 sec
         Start  41: CliReportTest.GroundTruthMatching
  41/342 Test  #41: CliReportTest.GroundTruthMatching .......................................................................................................................................................................................................................   Passed    0.01 sec
         Start  42: CliReportTest.SummaryCountsAndJsonLineShape
@@ -150,23 +186,23 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start  60: BoundedQueueTest.PopBatchWakesBlockedProducers
  60/342 Test  #60: BoundedQueueTest.PopBatchWakesBlockedProducers ..........................................................................................................................................................................................................   Passed    0.01 sec
         Start  61: BoundedQueueTest.SupportsMoveOnlyTypes
- 61/342 Test  #61: BoundedQueueTest.SupportsMoveOnlyTypes ..................................................................................................................................................................................................................   Passed    0.00 sec
+ 61/342 Test  #61: BoundedQueueTest.SupportsMoveOnlyTypes ..................................................................................................................................................................................................................   Passed    0.01 sec
         Start  62: BoundedQueueTest.PolicyNamesRoundTrip
- 62/342 Test  #62: BoundedQueueTest.PolicyNamesRoundTrip ...................................................................................................................................................................................................................   Passed    0.00 sec
+ 62/342 Test  #62: BoundedQueueTest.PolicyNamesRoundTrip ...................................................................................................................................................................................................................   Passed    0.01 sec
         Start  63: UnboundedQueueTest.AcceptsEverythingUntilClosed
  63/342 Test  #63: UnboundedQueueTest.AcceptsEverythingUntilClosed .........................................................................................................................................................................................................   Passed    0.01 sec
         Start  64: UnboundedQueueTest.PopTimesOutAndCancels
  64/342 Test  #64: UnboundedQueueTest.PopTimesOutAndCancels ................................................................................................................................................................................................................   Passed    0.02 sec
         Start  65: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce
- 65/342 Test  #65: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce .................................................................................................................................................................................................   Passed    0.12 sec
+ 65/342 Test  #65: QueueStressTest.BlockPolicyDeliversEveryItemExactlyOnce .................................................................................................................................................................................................   Passed    0.18 sec
         Start  66: QueueStressTest.RejectNewestAccountsForEveryItem
- 66/342 Test  #66: QueueStressTest.RejectNewestAccountsForEveryItem ........................................................................................................................................................................................................   Passed    0.05 sec
+ 66/342 Test  #66: QueueStressTest.RejectNewestAccountsForEveryItem ........................................................................................................................................................................................................   Passed    0.07 sec
         Start  67: QueueStressTest.DropOldestAccountsForEveryItem
- 67/342 Test  #67: QueueStressTest.DropOldestAccountsForEveryItem ..........................................................................................................................................................................................................   Passed    0.06 sec
+ 67/342 Test  #67: QueueStressTest.DropOldestAccountsForEveryItem ..........................................................................................................................................................................................................   Passed    0.10 sec
         Start  68: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce
- 68/342 Test  #68: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce ..........................................................................................................................................................................................   Passed    0.06 sec
+ 68/342 Test  #68: QueueStressTest.UnboundedReferenceDeliversEveryItemExactlyOnce ..........................................................................................................................................................................................   Passed    0.09 sec
         Start  69: QueueStressTest.ConsumersSeeEachProducersItemsInOrder
- 69/342 Test  #69: QueueStressTest.ConsumersSeeEachProducersItemsInOrder ...................................................................................................................................................................................................   Passed    0.30 sec
+ 69/342 Test  #69: QueueStressTest.ConsumersSeeEachProducersItemsInOrder ...................................................................................................................................................................................................   Passed    0.46 sec
         Start  70: QueueStressTest.CancellingBlockedProducersLosesNothing
  70/342 Test  #70: QueueStressTest.CancellingBlockedProducersLosesNothing ..................................................................................................................................................................................................   Passed    0.01 sec
         Start  71: OrderTrackerTest.RejectsZeroConfiguration
@@ -184,11 +220,11 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start  77: OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit
  77/342 Test  #77: OrderTrackerTest.ConcurrentObserversNeverExceedTheNodeLimit .............................................................................................................................................................................................   Passed    0.01 sec
         Start  78: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce
- 78/342 Test  #78: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce .......................................................................................................................................................................................   Passed    0.04 sec
+ 78/342 Test  #78: OrderTrackerTest.ConcurrentObserversOnOneNodeSeeEachTimestampOnce .......................................................................................................................................................................................   Passed    0.05 sec
         Start  79: PipelineTest.RejectsInvalidConfiguration
  79/342 Test  #79: PipelineTest.RejectsInvalidConfiguration ................................................................................................................................................................................................................   Passed    0.01 sec
         Start  80: PipelineTest.DeliversEveryValidEventExactlyOnce
- 80/342 Test  #80: PipelineTest.DeliversEveryValidEventExactlyOnce .........................................................................................................................................................................................................   Passed    0.01 sec
+ 80/342 Test  #80: PipelineTest.DeliversEveryValidEventExactlyOnce .........................................................................................................................................................................................................   Passed    0.02 sec
         Start  81: PipelineTest.InvalidEventsReachTheSinkWithTheirIssues
  81/342 Test  #81: PipelineTest.InvalidEventsReachTheSinkWithTheirIssues ...................................................................................................................................................................................................   Passed    0.01 sec
         Start  82: PipelineTest.NodeLimitIsEnforcedAndCounted
@@ -198,7 +234,7 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start  84: PipelineTest.RejectNewestHandsTheSampleBackUnderOverload
  84/342 Test  #84: PipelineTest.RejectNewestHandsTheSampleBackUnderOverload ................................................................................................................................................................................................   Passed    0.01 sec
         Start  85: PipelineTest.DropOldestHandsTheEvictedSampleBack
- 85/342 Test  #85: PipelineTest.DropOldestHandsTheEvictedSampleBack ........................................................................................................................................................................................................   Passed    0.00 sec
+ 85/342 Test  #85: PipelineTest.DropOldestHandsTheEvictedSampleBack ........................................................................................................................................................................................................   Passed    0.01 sec
         Start  86: PipelineTest.BlockingSubmitTimesOut
  86/342 Test  #86: PipelineTest.BlockingSubmitTimesOut .....................................................................................................................................................................................................................   Passed    0.04 sec
         Start  87: PipelineTest.BlockingSubmitIsCancelledByStopToken
@@ -218,7 +254,7 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start  94: PipelineTest.DestructorDrainsWithoutExplicitShutdown
  94/342 Test  #94: PipelineTest.DestructorDrainsWithoutExplicitShutdown ....................................................................................................................................................................................................   Passed    0.01 sec
         Start  95: PipelineTest.ManyProducersAndConsumersKeepTheInvariants
- 95/342 Test  #95: PipelineTest.ManyProducersAndConsumersKeepTheInvariants .................................................................................................................................................................................................   Passed    0.07 sec
+ 95/342 Test  #95: PipelineTest.ManyProducersAndConsumersKeepTheInvariants .................................................................................................................................................................................................   Passed    0.13 sec
         Start  96: BaselineTest.MatchesThePipelineOnTheSameInput
  96/342 Test  #96: BaselineTest.MatchesThePipelineOnTheSameInput ...........................................................................................................................................................................................................   Passed    0.01 sec
         Start  97: ReadingTest.DefaultIsMissingNotZero
@@ -240,7 +276,7 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 105: SqlTest.ClassifiesSqlstates
 105/342 Test #105: SqlTest.ClassifiesSqlstates .............................................................................................................................................................................................................................   Passed    0.01 sec
         Start 106: SqlTest.SanitizeCollapsesWhitespaceDropsControlsAndBounds
-106/342 Test #106: SqlTest.SanitizeCollapsesWhitespaceDropsControlsAndBounds ...............................................................................................................................................................................................   Passed    0.00 sec
+106/342 Test #106: SqlTest.SanitizeCollapsesWhitespaceDropsControlsAndBounds ...............................................................................................................................................................................................   Passed    0.01 sec
         Start 107: EndpointTest.ParsesList
 107/342 Test #107: EndpointTest.ParsesList .................................................................................................................................................................................................................................   Passed    0.01 sec
         Start 108: EndpointTest.AcceptsIpv6HostByLastColon
@@ -262,15 +298,15 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 116: PgCollectorTest.SilentReceiverMakesReceiveDerivedReadingsStale
 116/342 Test #116: PgCollectorTest.SilentReceiverMakesReceiveDerivedReadingsStale ..........................................................................................................................................................................................   Passed    0.01 sec
         Start 117: PgCollectorTest.MissingPgStatStatementsIsAQualityNotAnError
-117/342 Test #117: PgCollectorTest.MissingPgStatStatementsIsAQualityNotAnError .............................................................................................................................................................................................   Passed    0.00 sec
+117/342 Test #117: PgCollectorTest.MissingPgStatStatementsIsAQualityNotAnError .............................................................................................................................................................................................   Passed    0.01 sec
         Start 118: PgCollectorTest.PermissionDeniedDegradesAndRestartsTheTransaction
 118/342 Test #118: PgCollectorTest.PermissionDeniedDegradesAndRestartsTheTransaction .......................................................................................................................................................................................   Passed    0.01 sec
         Start 119: PgCollectorTest.GarbageValuesAreInvalidNotZero
-119/342 Test #119: PgCollectorTest.GarbageValuesAreInvalidNotZero ..........................................................................................................................................................................................................   Passed    0.00 sec
+119/342 Test #119: PgCollectorTest.GarbageValuesAreInvalidNotZero ..........................................................................................................................................................................................................   Passed    0.01 sec
         Start 120: PgCollectorTest.UnexpectedResultShapeIsReported
 120/342 Test #120: PgCollectorTest.UnexpectedResultShapeIsReported .........................................................................................................................................................................................................   Passed    0.01 sec
         Start 121: PgCollectorTest.UnreadableRoleLeavesRoleUnknown
-121/342 Test #121: PgCollectorTest.UnreadableRoleLeavesRoleUnknown .........................................................................................................................................................................................................   Passed    0.00 sec
+121/342 Test #121: PgCollectorTest.UnreadableRoleLeavesRoleUnknown .........................................................................................................................................................................................................   Passed    0.01 sec
         Start 122: PgCollectorTest.UnreachableSnapshotIsAllMissing
 122/342 Test #122: PgCollectorTest.UnreachableSnapshotIsAllMissing .........................................................................................................................................................................................................   Passed    0.01 sec
         Start 123: PgCollectorTest.StalenessIsSeparateFromMissing
@@ -398,9 +434,9 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 184: DetectionReportTest.JsonIsStableAndEscaped
 184/342 Test #184: DetectionReportTest.JsonIsStableAndEscaped ..............................................................................................................................................................................................................   Passed    0.01 sec
         Start 185: ScenarioTest.SameSeedSameScenarioDifferentSeedDifferentScenario
-185/342 Test #185: ScenarioTest.SameSeedSameScenarioDifferentSeedDifferentScenario .........................................................................................................................................................................................   Passed    0.07 sec
+185/342 Test #185: ScenarioTest.SameSeedSameScenarioDifferentSeedDifferentScenario .........................................................................................................................................................................................   Passed    0.06 sec
         Start 186: ScenarioTest.GoldenHashPinsCrossPlatformDeterminism
-186/342 Test #186: ScenarioTest.GoldenHashPinsCrossPlatformDeterminism .....................................................................................................................................................................................................   Passed    0.02 sec
+186/342 Test #186: ScenarioTest.GoldenHashPinsCrossPlatformDeterminism .....................................................................................................................................................................................................   Passed    0.03 sec
         Start 187: ScenarioTest.ObservationsAreOrderedAndGroundTruthIsInsideTheRun
 187/342 Test #187: ScenarioTest.ObservationsAreOrderedAndGroundTruthIsInsideTheRun .........................................................................................................................................................................................   Passed    0.03 sec
         Start 188: ScoringTest.MatchesByNodeAndWindowWithGrace
@@ -412,11 +448,11 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 191: ScoringTest.NearestRankPercentile
 191/342 Test #191: ScoringTest.NearestRankPercentile .......................................................................................................................................................................................................................   Passed    0.01 sec
         Start 192: EndToEndTest.ExtractionHasNoLookAhead
-192/342 Test #192: EndToEndTest.ExtractionHasNoLookAhead ...................................................................................................................................................................................................................   Passed    0.04 sec
+192/342 Test #192: EndToEndTest.ExtractionHasNoLookAhead ...................................................................................................................................................................................................................   Passed    0.07 sec
         Start 193: EndToEndTest.TuningSeesOnlyTheScenariosItIsGiven
 193/342 Test #193: EndToEndTest.TuningSeesOnlyTheScenariosItIsGiven ........................................................................................................................................................................................................   Passed    0.01 sec
         Start 194: EndToEndTest.TunedRulesBeatTheNaiveBaselineOnFalseAlertsOnASmallValidationSet
-194/342 Test #194: EndToEndTest.TunedRulesBeatTheNaiveBaselineOnFalseAlertsOnASmallValidationSet ...........................................................................................................................................................................   Passed    1.31 sec
+194/342 Test #194: EndToEndTest.TunedRulesBeatTheNaiveBaselineOnFalseAlertsOnASmallValidationSet ...........................................................................................................................................................................   Passed    1.75 sec
         Start 195: DetectOptionsTest.EvaluateDefaultsAreDisjointSplits
 195/342 Test #195: DetectOptionsTest.EvaluateDefaultsAreDisjointSplits .....................................................................................................................................................................................................   Passed    0.01 sec
         Start 196: DetectOptionsTest.ParsesRangesAndOptions
@@ -440,9 +476,9 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 205: LearnedTest.AlerterSustainsClearsAndCoolsDown
 205/342 Test #205: LearnedTest.AlerterSustainsClearsAndCoolsDown ...........................................................................................................................................................................................................   Passed    0.01 sec
         Start 206: LearnedTest.LabelsLeaveTheRecoveryTailOut
-206/342 Test #206: LearnedTest.LabelsLeaveTheRecoveryTailOut ...............................................................................................................................................................................................................   Passed    0.00 sec
+206/342 Test #206: LearnedTest.LabelsLeaveTheRecoveryTailOut ...............................................................................................................................................................................................................   Passed    0.01 sec
         Start 207: LearnedTest.TrainAndTuneIsDeterministicAndUsesOnlyItsInputs
-207/342 Test #207: LearnedTest.TrainAndTuneIsDeterministicAndUsesOnlyItsInputs .............................................................................................................................................................................................   Passed    0.32 sec
+207/342 Test #207: LearnedTest.TrainAndTuneIsDeterministicAndUsesOnlyItsInputs .............................................................................................................................................................................................   Passed    0.31 sec
         Start 208: JsonParse.ParsesEveryValueType
 208/342 Test #208: JsonParse.ParsesEveryValueType ..........................................................................................................................................................................................................................   Passed    0.01 sec
         Start 209: JsonParse.KeepsMemberOrder
@@ -474,11 +510,11 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 222: Logger.WritesOneJsonObjectPerLine
 222/342 Test #222: Logger.WritesOneJsonObjectPerLine .......................................................................................................................................................................................................................   Passed    0.01 sec
         Start 223: Logger.DropsRecordsBelowTheThreshold
-223/342 Test #223: Logger.DropsRecordsBelowTheThreshold ....................................................................................................................................................................................................................   Passed    0.00 sec
+223/342 Test #223: Logger.DropsRecordsBelowTheThreshold ....................................................................................................................................................................................................................   Passed    0.01 sec
         Start 224: Logger.RedactsSecretFieldsAndSecretsInText
 224/342 Test #224: Logger.RedactsSecretFieldsAndSecretsInText ..............................................................................................................................................................................................................   Passed    0.01 sec
         Start 225: Logger.ReservedFieldNamesCannotOverwriteTheEnvelope
-225/342 Test #225: Logger.ReservedFieldNamesCannotOverwriteTheEnvelope .....................................................................................................................................................................................................   Passed    0.00 sec
+225/342 Test #225: Logger.ReservedFieldNamesCannotOverwriteTheEnvelope .....................................................................................................................................................................................................   Passed    0.01 sec
         Start 226: Logger.EscapesInjectedNewlines
 226/342 Test #226: Logger.EscapesInjectedNewlines ..........................................................................................................................................................................................................................   Passed    0.01 sec
         Start 227: Logger.LinesFromManyThreadsNeverInterleave
@@ -540,61 +576,61 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 255: ApiTest.AcknowledgeRequiresTheBearerToken
 255/342 Test #255: ApiTest.AcknowledgeRequiresTheBearerToken ...............................................................................................................................................................................................................   Passed    0.01 sec
         Start 256: ApiTest.WritesAreDisabledWithoutAConfiguredKey
-256/342 Test #256: ApiTest.WritesAreDisabledWithoutAConfiguredKey ..........................................................................................................................................................................................................   Passed    0.00 sec
+256/342 Test #256: ApiTest.WritesAreDisabledWithoutAConfiguredKey ..........................................................................................................................................................................................................   Passed    0.01 sec
         Start 257: ApiTest.AcknowledgeValidatesTheBody
 257/342 Test #257: ApiTest.AcknowledgeValidatesTheBody .....................................................................................................................................................................................................................   Passed    0.01 sec
         Start 258: ApiTest.MethodsAndUnknownRoutes
 258/342 Test #258: ApiTest.MethodsAndUnknownRoutes .........................................................................................................................................................................................................................   Passed    0.01 sec
         Start 259: ApiTest.KeepsAValidClientRequestIdAndReplacesAnInvalidOne
-259/342 Test #259: ApiTest.KeepsAValidClientRequestIdAndReplacesAnInvalidOne ...............................................................................................................................................................................................   Passed    0.00 sec
+259/342 Test #259: ApiTest.KeepsAValidClientRequestIdAndReplacesAnInvalidOne ...............................................................................................................................................................................................   Passed    0.01 sec
         Start 260: ApiTest.AccessLogHasRequestIdRouteAndStatus
-260/342 Test #260: ApiTest.AccessLogHasRequestIdRouteAndStatus .............................................................................................................................................................................................................   Passed    0.00 sec
+260/342 Test #260: ApiTest.AccessLogHasRequestIdRouteAndStatus .............................................................................................................................................................................................................   Passed    0.01 sec
         Start 261: Http.ConstantTimeEquals
-261/342 Test #261: Http.ConstantTimeEquals .................................................................................................................................................................................................................................   Passed    0.00 sec
+261/342 Test #261: Http.ConstantTimeEquals .................................................................................................................................................................................................................................   Passed    0.01 sec
         Start 262: Http.ParsesQueryStrings
-262/342 Test #262: Http.ParsesQueryStrings .................................................................................................................................................................................................................................   Passed    0.00 sec
+262/342 Test #262: Http.ParsesQueryStrings .................................................................................................................................................................................................................................   Passed    0.01 sec
         Start 263: MonitorOptionsTest.DefaultsAndEnvironment
-263/342 Test #263: MonitorOptionsTest.DefaultsAndEnvironment ...............................................................................................................................................................................................................   Passed    0.00 sec
+263/342 Test #263: MonitorOptionsTest.DefaultsAndEnvironment ...............................................................................................................................................................................................................   Passed    0.01 sec
         Start 264: MonitorOptionsTest.ParsesOptions
-264/342 Test #264: MonitorOptionsTest.ParsesOptions ........................................................................................................................................................................................................................   Passed    0.00 sec
+264/342 Test #264: MonitorOptionsTest.ParsesOptions ........................................................................................................................................................................................................................   Passed    0.01 sec
         Start 265: MonitorOptionsTest.RejectsBadInput
-265/342 Test #265: MonitorOptionsTest.RejectsBadInput ......................................................................................................................................................................................................................   Passed    0.00 sec
+265/342 Test #265: MonitorOptionsTest.RejectsBadInput ......................................................................................................................................................................................................................   Passed    0.01 sec
         Start 266: MonitorOptionsTest.RequiresNodesAndPasswordFromEnvironment
 266/342 Test #266: MonitorOptionsTest.RequiresNodesAndPasswordFromEnvironment ..............................................................................................................................................................................................   Passed    0.01 sec
         Start 267: MonitorReportTest.JsonEscape
-267/342 Test #267: MonitorReportTest.JsonEscape ............................................................................................................................................................................................................................   Passed    0.00 sec
+267/342 Test #267: MonitorReportTest.JsonEscape ............................................................................................................................................................................................................................   Passed    0.01 sec
         Start 268: MonitorReportTest.NearestRankPercentile
-268/342 Test #268: MonitorReportTest.NearestRankPercentile .................................................................................................................................................................................................................   Passed    0.00 sec
+268/342 Test #268: MonitorReportTest.NearestRankPercentile .................................................................................................................................................................................................................   Passed    0.01 sec
         Start 269: MonitorReportTest.SummaryCountsSuccessAndCoverage
-269/342 Test #269: MonitorReportTest.SummaryCountsSuccessAndCoverage .......................................................................................................................................................................................................   Passed    0.00 sec
+269/342 Test #269: MonitorReportTest.SummaryCountsSuccessAndCoverage .......................................................................................................................................................................................................   Passed    0.01 sec
         Start 270: DaemonOptions.DefaultsAreLoopbackSyntheticAndMemory
-270/342 Test #270: DaemonOptions.DefaultsAreLoopbackSyntheticAndMemory .....................................................................................................................................................................................................   Passed    0.00 sec
+270/342 Test #270: DaemonOptions.DefaultsAreLoopbackSyntheticAndMemory .....................................................................................................................................................................................................   Passed    0.01 sec
         Start 271: DaemonOptions.HelpIsRecognised
-271/342 Test #271: DaemonOptions.HelpIsRecognised ..........................................................................................................................................................................................................................   Passed    0.00 sec
+271/342 Test #271: DaemonOptions.HelpIsRecognised ..........................................................................................................................................................................................................................   Passed    0.01 sec
         Start 272: DaemonOptions.RejectsBadValues
-272/342 Test #272: DaemonOptions.RejectsBadValues ..........................................................................................................................................................................................................................   Passed    0.00 sec
+272/342 Test #272: DaemonOptions.RejectsBadValues ..........................................................................................................................................................................................................................   Passed    0.01 sec
         Start 273: DaemonOptions.NonLoopbackListenNeedsAllowRemote
-273/342 Test #273: DaemonOptions.NonLoopbackListenNeedsAllowRemote .........................................................................................................................................................................................................   Passed    0.00 sec
+273/342 Test #273: DaemonOptions.NonLoopbackListenNeedsAllowRemote .........................................................................................................................................................................................................   Passed    0.01 sec
         Start 274: DaemonOptions.ApiKeyComesFromTheEnvironmentAndMustBeLongEnough
-274/342 Test #274: DaemonOptions.ApiKeyComesFromTheEnvironmentAndMustBeLongEnough ..........................................................................................................................................................................................   Passed    0.00 sec
+274/342 Test #274: DaemonOptions.ApiKeyComesFromTheEnvironmentAndMustBeLongEnough ..........................................................................................................................................................................................   Passed    0.01 sec
         Start 275: DaemonOptions.PostgresSourceAndStoreNeedTheirSecrets
 275/342 Test #275: DaemonOptions.PostgresSourceAndStoreNeedTheirSecrets ....................................................................................................................................................................................................   Passed    0.01 sec
         Start 276: DaemonOptions.UsageNamesEverySecretVariable
-276/342 Test #276: DaemonOptions.UsageNamesEverySecretVariable .............................................................................................................................................................................................................   Passed    0.00 sec
+276/342 Test #276: DaemonOptions.UsageNamesEverySecretVariable .............................................................................................................................................................................................................   Passed    0.01 sec
         Start 277: NodeStatus.DerivedFromOneCyclesObservations
 277/342 Test #277: NodeStatus.DerivedFromOneCyclesObservations .............................................................................................................................................................................................................   Passed    0.01 sec
         Start 278: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero
-278/342 Test #278: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ................................................................................................................................................................................   Passed    0.00 sec
+278/342 Test #278: Boundaries/PercentageCheckTest.ClassifiesValue/Zero  # GetParam() = Zero ................................................................................................................................................................................   Passed    0.01 sec
         Start 279: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero
-279/342 Test #279: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero ................................................................................................................................................................   Passed    0.00 sec
+279/342 Test #279: Boundaries/PercentageCheckTest.ClassifiesValue/NegativeZero  # GetParam() = NegativeZero ................................................................................................................................................................   Passed    0.01 sec
         Start 280: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred
 280/342 Test #280: Boundaries/PercentageCheckTest.ClassifiesValue/Hundred  # GetParam() = Hundred ..........................................................................................................................................................................   Passed    0.01 sec
         Start 281: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty
-281/342 Test #281: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty ..............................................................................................................................................................................   Passed    0.00 sec
+281/342 Test #281: Boundaries/PercentageCheckTest.ClassifiesValue/Fifty  # GetParam() = Fifty ..............................................................................................................................................................................   Passed    0.01 sec
         Start 282: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero
-282/342 Test #282: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero ..............................................................................................................................................................   Passed    0.00 sec
+282/342 Test #282: Boundaries/PercentageCheckTest.ClassifiesValue/JustBelowZero  # GetParam() = JustBelowZero ..............................................................................................................................................................   Passed    0.01 sec
         Start 283: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred
-283/342 Test #283: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred ........................................................................................................................................................   Passed    0.00 sec
+283/342 Test #283: Boundaries/PercentageCheckTest.ClassifiesValue/JustAboveHundred  # GetParam() = JustAboveHundred ........................................................................................................................................................   Passed    0.01 sec
         Start 284: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive  # GetParam() = MinusFive
 284/342 Test #284: Boundaries/PercentageCheckTest.ClassifiesValue/MinusFive  # GetParam() = MinusFive ......................................................................................................................................................................   Passed    0.01 sec
         Start 285: Boundaries/PercentageCheckTest.ClassifiesValue/NaN  # GetParam() = NaN
@@ -603,38 +639,38 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
 286/342 Test #286: Boundaries/PercentageCheckTest.ClassifiesValue/PlusInfinity  # GetParam() = PlusInfinity ................................................................................................................................................................   Passed    0.01 sec
         Start 287: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity  # GetParam() = MinusInfinity
 287/342 Test #287: Boundaries/PercentageCheckTest.ClassifiesValue/MinusInfinity  # GetParam() = MinusInfinity ..............................................................................................................................................................   Passed    0.01 sec
-        Start 288: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate  # GetParam() = 40-byte object <67-4D 8E-E9 DD-55 00-00 00-00 00-00 00-00 00-00 20-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00>
-288/342 Test #288: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate  # GetParam() = 40-byte object <67-4D 8E-E9 DD-55 00-00 00-00 00-00 00-00 00-00 20-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00> ...   Passed    0.01 sec
-        Start 289: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate  # GetParam() = 40-byte object <4C-4D 8E-E9 DD-55 00-00 01-00 00-00 00-00 00-00 20-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00>
-289/342 Test #289: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate  # GetParam() = 40-byte object <4C-4D 8E-E9 DD-55 00-00 01-00 00-00 00-00 00-00 20-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00> ...   Passed    0.01 sec
-        Start 290: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate  # GetParam() = 40-byte object <31-4D 8E-E9 DD-55 00-00 00-01 00-00 00-00 00-00 20-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00>
-290/342 Test #290: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate  # GetParam() = 40-byte object <31-4D 8E-E9 DD-55 00-00 00-01 00-00 00-00 00-00 20-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00 24-E9 0D-23 DE-55 00-00> ...   Passed    0.01 sec
-        Start 291: Memory/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-291/342 Test #291: Memory/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> ...........................................................................   Passed    0.01 sec
-        Start 292: Memory/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-292/342 Test #292: Memory/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> .............................................................................   Passed    0.01 sec
-        Start 293: Memory/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-293/342 Test #293: Memory/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> .....................................................................   Passed    0.01 sec
-        Start 294: Memory/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-294/342 Test #294: Memory/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> ........................................................................   Passed    0.00 sec
-        Start 295: Memory/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-295/342 Test #295: Memory/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> .....................................................................................   Passed    0.00 sec
-        Start 296: Memory/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-296/342 Test #296: Memory/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> ..........................................................................   Passed    0.01 sec
-        Start 297: Memory/IncidentStoreContract.RejectsInvalidInput/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-297/342 Test #297: Memory/IncidentStoreContract.RejectsInvalidInput/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> .......................................................................................   Passed    0.00 sec
-        Start 298: Memory/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-298/342 Test #298: Memory/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> .....................................................................   Passed    0.00 sec
-        Start 299: Memory/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-299/342 Test #299: Memory/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> ............................................................................   Passed    0.01 sec
-        Start 300: Memory/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-300/342 Test #300: Memory/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> .................................................................................   Passed    0.01 sec
-        Start 301: Memory/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00>
-301/342 Test #301: Memory/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-63 75-E9 DD-55 00-00 77-63 75-E9 DD-55 00-00> ...............................................................................   Passed    0.00 sec
+        Start 288: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate  # GetParam() = 40-byte object <67-BD EC-74 23-56 00-00 00-00 00-00 00-00 00-00 20-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00>
+288/342 Test #288: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesAcceptLate  # GetParam() = 40-byte object <67-BD EC-74 23-56 00-00 00-00 00-00 00-00 00-00 20-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00> ...   Passed    0.01 sec
+        Start 289: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate  # GetParam() = 40-byte object <4C-BD EC-74 23-56 00-00 01-00 00-00 00-00 00-00 20-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00>
+289/342 Test #289: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/AcceptDuplicatesAcceptLate  # GetParam() = 40-byte object <4C-BD EC-74 23-56 00-00 01-00 00-00 00-00 00-00 20-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00> ...   Passed    0.01 sec
+        Start 290: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate  # GetParam() = 40-byte object <31-BD EC-74 23-56 00-00 00-01 00-00 00-00 00-00 20-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00>
+290/342 Test #290: Policies/PipelinePolicyTest.AppliesDuplicateAndOutOfOrderPolicies/RejectDuplicatesRejectLate  # GetParam() = 40-byte object <31-BD EC-74 23-56 00-00 00-01 00-00 00-00 00-00 20-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00 24-39 52-A0 23-56 00-00> ...   Passed    0.01 sec
+        Start 291: Memory/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+291/342 Test #291: Memory/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> ...........................................................................   Passed    0.01 sec
+        Start 292: Memory/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+292/342 Test #292: Memory/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> .............................................................................   Passed    0.01 sec
+        Start 293: Memory/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+293/342 Test #293: Memory/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> .....................................................................   Passed    0.01 sec
+        Start 294: Memory/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+294/342 Test #294: Memory/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> ........................................................................   Passed    0.01 sec
+        Start 295: Memory/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+295/342 Test #295: Memory/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> .....................................................................................   Passed    0.01 sec
+        Start 296: Memory/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+296/342 Test #296: Memory/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> ..........................................................................   Passed    0.01 sec
+        Start 297: Memory/IncidentStoreContract.RejectsInvalidInput/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+297/342 Test #297: Memory/IncidentStoreContract.RejectsInvalidInput/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> .......................................................................................   Passed    0.01 sec
+        Start 298: Memory/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+298/342 Test #298: Memory/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> .....................................................................   Passed    0.01 sec
+        Start 299: Memory/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+299/342 Test #299: Memory/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> ............................................................................   Passed    0.01 sec
+        Start 300: Memory/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+300/342 Test #300: Memory/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> .................................................................................   Passed    0.01 sec
+        Start 301: Memory/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00>
+301/342 Test #301: Memory/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 D2-D3 D3-74 23-56 00-00 77-D3 D3-74 23-56 00-00> ...............................................................................   Passed    0.01 sec
         Start 302: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError
-302/342 Test #302: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError ........................................................................................................................................................................................   Passed    0.00 sec
+302/342 Test #302: integration.LibpqSessionTest.RefusedConnectionIsAClassifiedError ........................................................................................................................................................................................   Passed    0.01 sec
         Start 303: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown
-303/342 Test #303: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown ....................................................................................................................................................................................   Passed    0.00 sec
+303/342 Test #303: integration.LibpqSessionTest.CollectorReportsAnUnreachableNodeAsDown ....................................................................................................................................................................................   Passed    0.01 sec
         Start 304: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas
 304/342 Test #304: integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas .................................................................................................................................................................................***Skipped   0.00 sec
         Start 305: integration.LabClusterTest.MonitoringRoleIsReadOnlyAndLeastPrivileged
@@ -644,7 +680,7 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 307: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers
 307/342 Test #307: integration.LabClusterTest.StoppedReplicaIsDetectedAsDownAndRecovers ....................................................................................................................................................................................***Skipped   0.00 sec
         Start 308: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging
-308/342 Test #308: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging ........................................................................................................................................................................................***Skipped   0.00 sec
+308/342 Test #308: integration.LabClusterTest.PausedReplicaTimesOutInsteadOfHanging ........................................................................................................................................................................................***Skipped   0.01 sec
         Start 309: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves
 309/342 Test #309: integration.LabDetectionTest.StoppedReplicaRaisesStaleTelemetryAndResolves ..............................................................................................................................................................................***Skipped   0.00 sec
         Start 310: integration.MetaDb.MigrateIsIdempotent
@@ -652,35 +688,35 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 311: integration.MetaDb.RefusesASchemaNewerThanThisBuild
 311/342 Test #311: integration.MetaDb.RefusesASchemaNewerThanThisBuild .....................................................................................................................................................................................................***Skipped   0.00 sec
         Start 312: integration.MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase
-312/342 Test #312: integration.MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase .................................................................................................................................................................................***Skipped   0.00 sec
+312/342 Test #312: integration.MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase .................................................................................................................................................................................***Skipped   0.01 sec
         Start 313: integration.MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase
 313/342 Test #313: integration.MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase .............................................................................................................................................................................................***Skipped   0.00 sec
         Start 314: integration.MetaDb.ConcurrentWritersSerialiseOnOneStore
 314/342 Test #314: integration.MetaDb.ConcurrentWritersSerialiseOnOneStore .................................................................................................................................................................................................***Skipped   0.00 sec
-        Start 315: integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-315/342 Test #315: integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> .............................................................***Skipped   0.00 sec
-        Start 316: integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-316/342 Test #316: integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> ...............................................................***Skipped   0.00 sec
-        Start 317: integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-317/342 Test #317: integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> .......................................................***Skipped   0.00 sec
-        Start 318: integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-318/342 Test #318: integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> ..........................................................***Skipped   0.00 sec
-        Start 319: integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-319/342 Test #319: integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> .......................................................................***Skipped   0.00 sec
-        Start 320: integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-320/342 Test #320: integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> ............................................................***Skipped   0.00 sec
-        Start 321: integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-321/342 Test #321: integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> .........................................................................***Skipped   0.00 sec
-        Start 322: integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-322/342 Test #322: integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> .......................................................***Skipped   0.00 sec
-        Start 323: integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-323/342 Test #323: integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> ..............................................................***Skipped   0.00 sec
-        Start 324: integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-324/342 Test #324: integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> ...................................................................***Skipped   0.01 sec
-        Start 325: integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00>
-325/342 Test #325: integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> .................................................................***Skipped   0.00 sec
+        Start 315: integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+315/342 Test #315: integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> .............................................................***Skipped   0.01 sec
+        Start 316: integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+316/342 Test #316: integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> ...............................................................***Skipped   0.00 sec
+        Start 317: integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+317/342 Test #317: integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> .......................................................***Skipped   0.00 sec
+        Start 318: integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+318/342 Test #318: integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> ..........................................................***Skipped   0.00 sec
+        Start 319: integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+319/342 Test #319: integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> .......................................................................***Skipped   0.01 sec
+        Start 320: integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+320/342 Test #320: integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> ............................................................***Skipped   0.00 sec
+        Start 321: integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+321/342 Test #321: integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> .........................................................................***Skipped   0.01 sec
+        Start 322: integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+322/342 Test #322: integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> .......................................................***Skipped   0.00 sec
+        Start 323: integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+323/342 Test #323: integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> ..............................................................***Skipped   0.00 sec
+        Start 324: integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+324/342 Test #324: integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> ...................................................................***Skipped   0.00 sec
+        Start 325: integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00>
+325/342 Test #325: integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> .................................................................***Skipped   0.01 sec
         Start 326: cli.help
-326/342 Test #326: cli.help ................................................................................................................................................................................................................................................   Passed    0.00 sec
+326/342 Test #326: cli.help ................................................................................................................................................................................................................................................   Passed    0.07 sec
         Start 327: cli.rejects_unknown_option
 327/342 Test #327: cli.rejects_unknown_option ..............................................................................................................................................................................................................................   Passed    0.00 sec
         Start 328: cli.rejects_out_of_range_fraction
@@ -690,13 +726,13 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 330: cli.deterministic_output
 330/342 Test #330: cli.deterministic_output ................................................................................................................................................................................................................................   Passed    0.02 sec
         Start 331: cli.detect_help
-331/342 Test #331: cli.detect_help .........................................................................................................................................................................................................................................   Passed    0.00 sec
+331/342 Test #331: cli.detect_help .........................................................................................................................................................................................................................................   Passed    0.23 sec
         Start 332: cli.detect_rejects_overlapping_splits
 332/342 Test #332: cli.detect_rejects_overlapping_splits ...................................................................................................................................................................................................................   Passed    0.00 sec
         Start 333: cli.detect_scenario
-333/342 Test #333: cli.detect_scenario .....................................................................................................................................................................................................................................   Passed    0.10 sec
+333/342 Test #333: cli.detect_scenario .....................................................................................................................................................................................................................................   Passed    0.18 sec
         Start 334: cli.detect_deterministic
-334/342 Test #334: cli.detect_deterministic ................................................................................................................................................................................................................................   Passed    5.14 sec
+334/342 Test #334: cli.detect_deterministic ................................................................................................................................................................................................................................   Passed    5.68 sec
         Start 335: cli.faulttwind_help
 335/342 Test #335: cli.faulttwind_help .....................................................................................................................................................................................................................................   Passed    0.01 sec
         Start 336: cli.faulttwind_refuses_remote_listen
@@ -704,23 +740,23 @@ Test project /tmp/claude-0/-home-user/76df6662-7860-5ea1-99fd-70425073659f/scrat
         Start 337: cli.faulttwind_rejects_short_api_key
 337/342 Test #337: cli.faulttwind_rejects_short_api_key ....................................................................................................................................................................................................................   Passed    0.01 sec
         Start 338: cli.faulttwind_rejects_unknown_option
-338/342 Test #338: cli.faulttwind_rejects_unknown_option ...................................................................................................................................................................................................................   Passed    0.01 sec
+338/342 Test #338: cli.faulttwind_rejects_unknown_option ...................................................................................................................................................................................................................   Passed    0.00 sec
         Start 339: e2e.faulttwind_synthetic
-339/342 Test #339: e2e.faulttwind_synthetic ................................................................................................................................................................................................................................   Passed    5.28 sec
+339/342 Test #339: e2e.faulttwind_synthetic ................................................................................................................................................................................................................................   Passed    5.35 sec
         Start 340: integration.faulttwind_metadb
 340/342 Test #340: integration.faulttwind_metadb ...........................................................................................................................................................................................................................***Skipped   0.00 sec
         Start 341: cli.monitor_help
-341/342 Test #341: cli.monitor_help ........................................................................................................................................................................................................................................   Passed    0.00 sec
+341/342 Test #341: cli.monitor_help ........................................................................................................................................................................................................................................   Passed    0.16 sec
         Start 342: cli.monitor_requires_password
 342/342 Test #342: cli.monitor_requires_password ...........................................................................................................................................................................................................................   Passed    0.01 sec
 
 100% tests passed, 0 tests failed out of 342
 
 Label Time Summary:
-e2e            =   5.28 sec*proc (1 test)
-integration    =   0.10 sec*proc (25 tests)
+e2e            =   5.35 sec*proc (1 test)
+integration    =   0.12 sec*proc (25 tests)
 
-Total Test time (real) =  15.17 sec
+Total Test time (real) =  18.20 sec
 
 The following tests did not run:
 	304 - integration.LabClusterTest.TopologyIsOnePrimaryWithTwoStreamingReplicas (Skipped)
@@ -734,15 +770,15 @@ The following tests did not run:
 	312 - integration.MetaDb.OneOpenIncidentPerRuleAndNodeIsEnforcedByTheDatabase (Skipped)
 	313 - integration.MetaDb.AppRoleHasNoPrivilegesOutsideItsDatabase (Skipped)
 	314 - integration.MetaDb.ConcurrentWritersSerialiseOnOneStore (Skipped)
-	315 - integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	316 - integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	317 - integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	318 - integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	319 - integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	320 - integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	321 - integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	322 - integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	323 - integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	324 - integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
-	325 - integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-BE AF-44 FC-55 00-00 00-00 00-00 00-00 00-00 CC-2A B1-44 FC-55 00-00 71-2A B1-44 FC-55 00-00> (Skipped)
+	315 - integration.Postgres/IncidentStoreContract.OpenThenGetRoundTripsEveryField/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	316 - integration.Postgres/IncidentStoreContract.OneOpenIncidentPerRuleAndNode/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	317 - integration.Postgres/IncidentStoreContract.EscalateRaisesSeverityAndAppendsEvent/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	318 - integration.Postgres/IncidentStoreContract.ResolveClosesAndAllowsANewIncident/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	319 - integration.Postgres/IncidentStoreContract.MissingIdsAreNotFound/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	320 - integration.Postgres/IncidentStoreContract.AcknowledgeOnceAndNeverOverwrite/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	321 - integration.Postgres/IncidentStoreContract.RejectsInvalidInput/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	322 - integration.Postgres/IncidentStoreContract.CloseOrphansResolvesEveryOpenIncident/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	323 - integration.Postgres/IncidentStoreContract.ListFiltersAndPagesNewestFirst/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	324 - integration.Postgres/IncidentStoreContract.StatsCountOpenAndResolved/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
+	325 - integration.Postgres/IncidentStoreContract.StoresUntrustedTextVerbatim/32-byte object <59-AE F7-24 D6-55 00-00 00-00 00-00 00-00 00-00 CC-1A F9-24 D6-55 00-00 71-1A F9-24 D6-55 00-00> (Skipped)
 	340 - integration.faulttwind_metadb (Skipped)

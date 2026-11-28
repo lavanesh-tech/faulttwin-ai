@@ -414,6 +414,19 @@ could deadlock if the signal arrived while that mutex was held. The fix is to di
 handler, block the signals in all threads, and receive them on one thread with `sigwait`. The
 matrix above was re-run after the fix.
 
+**Found by ThreadSanitizer in Drogon, suppressed (not fixed).** The re-run after the
+`TRANTOR_USE_TLS=none` change failed `e2e.faulttwind_synthetic` once under Clang TSan with a data
+race between `write` and `close` on an eventfd, at shutdown. The race is inside Trantor, not in
+FaultTwin code. Drogon's `quit()` calls `EventLoop::quit()` on each I/O loop from the main thread,
+and `quit()` sets the stop flag *before* writing to the loop's wakeup fd. The I/O thread can see
+the flag, leave its loop and run its `thread_local` `EventLoop` destructor, which closes the fd,
+while the write is still in progress. Upstream Trantor's `EventLoop::quit()` has the same code.
+It did not recur in 30 further Clang TSan runs or in any GCC TSan run, so it is rare.
+`faulttwind` now carries a TSan suppression compiled into TSan builds only
+(`__tsan_default_suppressions` in `src/server/main.cpp`), for this one pattern:
+`race:trantor::EventLoop::~EventLoop`. A standalone reproduction confirmed the pattern matches the
+report, which is still raised without it. Fixing it needs an upstream Trantor change.
+
 ## 16. Benchmark results
 No throughput or latency benchmark was run for the API in Phase 5. API latency and load are
 Phase 11 work (Experiment 5), and no API performance number is claimed.

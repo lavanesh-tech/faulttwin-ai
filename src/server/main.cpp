@@ -29,6 +29,29 @@
 #include "faulttwin/storage/pg_incident_store.hpp"
 #include "monitor_loop.hpp"
 
+#if defined(__has_feature)
+#if __has_feature(thread_sanitizer)
+#define FAULTTWIN_TSAN 1
+#endif
+#endif
+#if defined(__SANITIZE_THREAD__)
+#define FAULTTWIN_TSAN 1
+#endif
+
+#ifdef FAULTTWIN_TSAN
+// One known race inside Trantor (Drogon's network library), not in FaultTwin code, suppressed
+// for this binary only. At shutdown Drogon's quit() calls EventLoop::quit() on each I/O loop from
+// the main thread: quit() sets the flag and then writes to the loop's wakeup eventfd. The I/O
+// thread can see the flag, leave its loop and run its thread_local EventLoop destructor, which
+// closes that fd, before the write returns. TSan reports the write/close pair as a race. It is
+// shutdown-only and present in upstream Trantor's EventLoop::quit(). Seen once in about 30 Clang
+// TSan runs of e2e.faulttwind_synthetic. See docs/evaluation/limitations.md (Phase 5).
+// NOLINTNEXTLINE(bugprone-reserved-identifier,cert-dcl37-c,cert-dcl51-cpp,readability-identifier-naming)
+extern "C" const char* __tsan_default_suppressions() {
+    return "race:trantor::EventLoop::~EventLoop\n";
+}
+#endif
+
 namespace {
 
 namespace srv = faulttwin::server;

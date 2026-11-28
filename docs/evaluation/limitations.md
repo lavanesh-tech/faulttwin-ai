@@ -102,6 +102,9 @@ Kept current with the implementation. Each phase adds its limitations here.
 ## Phase 5
 - Read endpoints have no authentication, and there is no TLS or rate limiting. `faulttwind`
   listens on loopback by default, and any other address needs `--allow-remote`. Phase 11.
+- A rare shutdown race inside Trantor (`EventLoop::quit()` writes the wakeup fd while the I/O
+  thread may already be closing it) is suppressed for `faulttwind` in TSan builds, not fixed. It
+  needs an upstream fix. Any other race involving `trantor::EventLoop::~EventLoop` is hidden too.
 - TLS is compiled out of Drogon's network library (`TRANTOR_USE_TLS=none`), so turning TLS on
   later needs a rebuild and an OpenSSL that Trantor supports (it fails against OpenSSL 4.x).
 - One meta-db connection behind a mutex serves both API reads and recorder writes. This is fine
